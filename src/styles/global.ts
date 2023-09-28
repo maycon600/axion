@@ -6,5 +6,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: white;
   }
+
+  body, button, input, textarea {
+    font-family: 'Archivo', sans-serif;
+  }
 `;
 export default GlobalStyle;
