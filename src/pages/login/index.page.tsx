@@ -1,5 +1,7 @@
+import { useState } from "react";
 import {
   ArtSection,
+  AxionLogo,
   Container,
   FormGroup,
   GoogleLogin,
@@ -8,9 +10,22 @@ import {
 } from "./styles";
 
 export default function Login() {
+  const [showPassword, setShowPassword] = useState("password");
+
+  function toggleShowPassword() {
+    if (showPassword === "password") {
+      setShowPassword("text");
+    } else {
+      setShowPassword("password");
+    }
+  }
+
   return (
     <Container>
       <LoginForm>
+        <AxionLogo>
+          <img src="/axionLogo.svg" alt="" />
+        </AxionLogo>
         <LoginFormHeader>
           <strong>Faça seu login para utilizar a plataforma.</strong>
           <span>Acesse aqui todas as suas contas pelo painel principal.</span>
@@ -24,17 +39,19 @@ export default function Login() {
         <div
           style={{
             position: "relative",
+            margin: "3rem 0",
           }}
         >
-          <div style={{ border: "1px solid gray" }} />
+          <div style={{ border: "1px solid lightgray" }} />
           <p
             style={{
+              color: "lightgray",
               textAlign: "center",
               position: "absolute",
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              padding: '0 2rem',
+              padding: "0 2rem",
             }}
           >
             ou
@@ -46,9 +63,10 @@ export default function Login() {
           <input type="email" />
         </FormGroup>
 
-        <FormGroup>
+        <FormGroup style={{ position: "relative" }}>
           <label htmlFor="password">Senha</label>
-          <input type="password" />
+          <input type={showPassword} />
+          <img src="/eye-slash.svg" alt="" onClick={toggleShowPassword} />
         </FormGroup>
 
         <button>Esqueceu sua senha?</button>
