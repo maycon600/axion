@@ -37,25 +37,15 @@ export const LoginFormHeader = styled.div`
   }
 `;
 
-export const GoogleLogin = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid ${({ theme }) => theme.color.gray_40};
-  border-radius: 9px;
-  padding: 0.5rem;
-  margin: 2.5vh 0;
-`;
-
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2vh;
+  margin: 4vh 0;
 
   & label {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: ${({ theme }) => theme.color.gray_80};
   }
 
   & input {
@@ -64,26 +54,9 @@ export const FormGroup = styled.div`
     border-radius: 5px;
     transition: 0.3s;
   }
-
-  img {
-    position: absolute;
-    right: 1rem;
-    bottom: 0.6rem;
-    cursor: pointer;
-  }
 `;
 
-export const PasswordRecovery = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
-  button {
-    border: 0;
-    color: ${({ theme }) => theme.color.brand_blue};
-  }
-`;
-
-export const LoginButton = styled.button`
+export const RecoveryButton = styled.button`
   width: 100%;
   padding: 0.8rem;
   border-radius: 5px;
@@ -92,6 +65,8 @@ export const LoginButton = styled.button`
   color: white;
   font-weight: bold;
 `;
+
+export const Guide = styled(LoginFormHeader)``;
 
 export const ArtSection = styled.div`
   align-self: flex-start;

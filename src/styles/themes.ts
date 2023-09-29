@@ -54,6 +54,8 @@ const Theme = {
     yellow_80: "#8E6115",
     yellow_90: "#70490F",
     yellow_100: "#51350B",
+
+    brand_blue: "#2f5cfc"
   },
   fonts: {},
   sizes: {
