@@ -6,6 +6,7 @@ import {
   Container,
   FormGroup,
   Guide,
+  IframeContainer,
   LoginForm,
   LoginFormHeader,
   Main,
@@ -56,6 +57,17 @@ export default function RecoverPassword() {
               O vídeo abaixo vai te ajudar a resolver em poucos minutos.
             </span>
           </Guide>
+
+          <IframeContainer>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/LXb3EKWsInQ?si=aD2Nlsj93iw4cQgB"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </IframeContainer>
         </LoginForm>
         <ArtSection></ArtSection>
       </Main>

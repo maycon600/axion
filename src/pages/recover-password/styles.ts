@@ -60,13 +60,29 @@ export const RecoveryButton = styled.button`
   width: 100%;
   padding: 0.8rem;
   border-radius: 5px;
-  margin: 2rem 0;
+  margin: 3vh 0;
+  border: 0;
   background-color: ${({ theme }) => theme.color.darkBlueAxion};
   color: white;
   font-weight: bold;
 `;
 
 export const Guide = styled(LoginFormHeader)``;
+
+export const IframeContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 export const ArtSection = styled.div`
   align-self: flex-start;

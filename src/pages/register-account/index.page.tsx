@@ -14,22 +14,15 @@ import {
 import Theme from "@/styles/themes";
 import { Footer } from "@/components/Global/Footer";
 import { useRouter } from "next/router";
-import { FormGroupComponent } from "@/components/Global/FormGroup";
+import { RegisterHeader } from "@/components/Global/Header/styles";
+import { RegisterAccountHeader } from "@/components/Global/Header";
 
-export default function Login() {
+export default function RegisterAccount() {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState("password");
-
-  function toggleShowPassword() {
-    if (showPassword === "password") {
-      setShowPassword("text");
-    } else {
-      setShowPassword("password");
-    }
-  }
 
   return (
     <Container>
+      <RegisterAccountHeader />
       <Main>
         <LoginForm>
           <AxionLogo>
@@ -65,17 +58,14 @@ export default function Login() {
             </p>
           </div>
 
-          <FormGroupComponent
-            type="email"
-            placeholder="Digite o seu email"
-            label="Seu Email"
-            id="email"
-          />
-
+          <FormGroup>
+            <label htmlFor="email">Seu Email</label>
+            <input type="email" />
+          </FormGroup>
           <FormGroup style={{ position: "relative" }}>
             <label htmlFor="password">Senha</label>
-            <input type={showPassword} />
-            <img src="/eye-slash.svg" alt="" onClick={toggleShowPassword} />
+            <input type="text" />
+            <img src="/eye-slash.svg" alt="" />
           </FormGroup>
           <PasswordRecovery>
             <button onClick={() => router.push("/recover-password")}>
@@ -85,12 +75,12 @@ export default function Login() {
           <LoginButton>Entrar</LoginButton>
           <p style={{ fontSize: "0.9rem", fontWeight: "bold" }}>
             Não tem uma conta?{" "}
-            <span
-              style={{ color: Theme.color.brand_blue, cursor: "pointer" }}
-              onClick={() => router.push("/register-account")}
+            <a
+              href="#"
+              style={{ textDecoration: "none", color: Theme.color.brand_blue }}
             >
               Cadastre-se
-            </span>
+            </a>
           </p>
         </LoginForm>
         <ArtSection></ArtSection>
