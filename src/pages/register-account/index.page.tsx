@@ -1,21 +1,16 @@
-import { useState } from "react";
+import { Footer } from "@/components/Global/Footer";
+import { RegisterAccountHeader } from "@/components/Global/Header";
+import { useRouter } from "next/router";
 import {
   ArtSection,
-  AxionLogo,
   Container,
   FormGroup,
-  GoogleLogin,
   LoginButton,
-  LoginForm,
-  LoginFormHeader,
   Main,
-  PasswordRecovery,
+  RegisterForm,
+  RegisterFormHeader,
+  TermsContainer,
 } from "./styles";
-import Theme from "@/styles/themes";
-import { Footer } from "@/components/Global/Footer";
-import { useRouter } from "next/router";
-import { RegisterHeader } from "@/components/Global/Header/styles";
-import { RegisterAccountHeader } from "@/components/Global/Header";
 
 export default function RegisterAccount() {
   const router = useRouter();
@@ -24,65 +19,44 @@ export default function RegisterAccount() {
     <Container>
       <RegisterAccountHeader />
       <Main>
-        <LoginForm>
-          <AxionLogo>
-            <img src="/axionLogo.svg" alt="" />
-          </AxionLogo>
-          <LoginFormHeader>
-            <strong>Faça seu login para utilizar a plataforma.</strong>
-            <span>Acesse aqui todas as suas contas pelo painel principal.</span>
-          </LoginFormHeader>
-          <GoogleLogin>
-            <img src="/Google.svg" alt="" />
-            <strong>Entrar com conta Google</strong>
-          </GoogleLogin>
-          <div
-            style={{
-              position: "relative",
-              margin: "5vh 0",
-            }}
-          >
-            <div style={{ border: "1px solid lightgray" }} />
-            <p
-              style={{
-                color: "lightgray",
-                textAlign: "center",
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                padding: "0 2rem",
-              }}
-            >
-              ou
-            </p>
-          </div>
+        <RegisterForm>
+          <RegisterFormHeader>
+            <strong>Dados Básicos</strong>
+            <span>Preencha os campos logo abaixo</span>
+          </RegisterFormHeader>
 
           <FormGroup>
-            <label htmlFor="email">Seu Email</label>
-            <input type="email" />
+            <label htmlFor="name">Nome Completo</label>
+            <input type="text" id="name" placeholder="Seu nome" />
           </FormGroup>
-          <FormGroup style={{ position: "relative" }}>
-            <label htmlFor="password">Senha</label>
-            <input type="text" />
-            <img src="/eye-slash.svg" alt="" />
+          <FormGroup>
+            <label htmlFor="email">Email</label>
+            <input type="email" placeholder="Digite seu email" />
           </FormGroup>
-          <PasswordRecovery>
-            <button onClick={() => router.push("/recover-password")}>
-              Esqueceu sua senha?
-            </button>
-          </PasswordRecovery>
-          <LoginButton>Entrar</LoginButton>
-          <p style={{ fontSize: "0.9rem", fontWeight: "bold" }}>
-            Não tem uma conta?{" "}
-            <a
-              href="#"
-              style={{ textDecoration: "none", color: Theme.color.brand_blue }}
-            >
-              Cadastre-se
-            </a>
-          </p>
-        </LoginForm>
+          <FormGroup>
+            <label htmlFor="phoneNumber">Telefone</label>
+            <input
+              type="text"
+              id="phoneNumber"
+              placeholder="Digite seu telefone"
+            />
+          </FormGroup>
+          <FormGroup>
+            <label htmlFor="password">Crie uma senha</label>
+            <input type="password" placeholder="Crie uma senha segura" />
+          </FormGroup>
+
+          <TermsContainer>
+            <input type="checkbox" id="terms" />
+            <label htmlFor="terms">
+              Ao informar meus dados, tenho ciência dos{" "}
+              <span>Termos de Uso</span> e da{" "}
+              <span>Política de Privacidade</span>.
+            </label>
+          </TermsContainer>
+
+          <LoginButton>Próximo</LoginButton>
+        </RegisterForm>
         <ArtSection></ArtSection>
       </Main>
       <Footer />

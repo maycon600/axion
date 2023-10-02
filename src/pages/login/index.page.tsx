@@ -14,7 +14,6 @@ import {
 import Theme from "@/styles/themes";
 import { Footer } from "@/components/Global/Footer";
 import { useRouter } from "next/router";
-import { FormGroupComponent } from "@/components/Global/FormGroup";
 
 export default function Login() {
   const router = useRouter();
@@ -65,12 +64,10 @@ export default function Login() {
             </p>
           </div>
 
-          <FormGroupComponent
-            type="email"
-            placeholder="Digite o seu email"
-            label="Seu Email"
-            id="email"
-          />
+          <FormGroup>
+            <label htmlFor="email">Email</label>
+            <input type="email" />
+          </FormGroup>
 
           <FormGroup style={{ position: "relative" }}>
             <label htmlFor="password">Senha</label>
