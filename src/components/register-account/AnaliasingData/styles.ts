@@ -16,14 +16,4 @@ export const Container = styled.div`
   span {
     font-size: 1.4rem;
   }
-`
-
-export const AccessButton = styled.button`
-  background-color: ${({theme}) => theme.color.purple_light};
-  color: white;
-  padding: 1rem 10rem;
-  border: 0;
-  border-radius: 5px;
-  margin-top: 2rem;
-
-`
+`;

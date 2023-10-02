@@ -6,6 +6,20 @@ export const Container = styled.div`
   padding-bottom: 4rem;
 `;
 
+interface ProgressBarProps {
+  step: number;
+}
+
+export const ProgressBar = styled.div<ProgressBarProps>`
+  position: absolute;
+  top: 3.7rem;
+  background-color: ${({ theme }) => theme.color.darkBlueAxion};
+  height: 5px;
+  transition: 0.5s ease-in-out;
+
+  width: ${({ step}) => step === 1 ? "10%" : step === 2 ? "50%" : step === 3 ? "90%" : "100%"};
+`;
+
 export const Main = styled.main`
   width: 100%;
   display: flex;
@@ -13,13 +27,10 @@ export const Main = styled.main`
   align-items: center;
 `;
 
-
 export const FormContainer = styled.div`
   padding: 0 8%;
   width: 50vw;
-
-
-`
+`;
 
 export const RegisterFormHeader = styled.div`
   display: flex;
@@ -33,7 +44,7 @@ export const RegisterFormHeader = styled.div`
 
   span {
     font-size: 0.9rem;
-    color: ${({theme}) => theme.color.gray_80};
+    color: ${({ theme }) => theme.color.gray_80};
   }
 `;
 
@@ -72,7 +83,6 @@ export const TermsContainer = styled.div`
   font-size: 0.9rem;
 
   input {
-    
   }
 
   span {
@@ -84,7 +94,7 @@ export const TermsContainer = styled.div`
       color: ${({ theme }) => theme.color.purpleAxion};
     }
   }
-`
+`;
 
 export const NextButton = styled.button`
   width: 100%;
