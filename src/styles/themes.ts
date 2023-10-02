@@ -4,6 +4,9 @@ const Theme = {
     lightBlueAxion: "#13AAE3",
     purpleAxion: "#540280",
 
+    purple_light: "#881DB9",
+    purple_dark: "#540280",
+
     primary_20: "#",
     primary_40: "#",
     primary_60: "#",

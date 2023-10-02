@@ -1,39 +1,10 @@
-@keyframes rotate {
-  from {
-      transform: rotate(0deg);
-  }
-  to { 
-      transform: rotate(360deg);
-  }
+.custom-loader {
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:conic-gradient(#C4C4C4 10%,#7B61FF);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 16px),#000 0);
+  animation:s3 1s infinite linear;
 }
 
-
-@-webkit-keyframes rotate {
-  from {
-      -webkit-transform: rotate(0deg);
-  }
-  to { 
-      -webkit-transform: rotate(360deg);
-  }
-}
-
-.load {
-width: 100px;
-height: 100px;
-margin: 110px auto 0;
-border:solid 10px #8822aa;
-border-radius: 50%;
-border-right-color: transparent;
-border-bottom-color: transparent;
- -webkit-transition: all 0.5s ease-in;
-  -webkit-animation-name:             rotate; 
-  -webkit-animation-duration:         1.0s; 
-  -webkit-animation-iteration-count:  infinite;
-  -webkit-animation-timing-function: linear;
-    
-     transition: all 0.5s ease-in;
-  animation-name:             rotate; 
-  animation-duration:         1.0s; 
-  animation-iteration-count:  infinite;
-  animation-timing-function: linear; 
-}
+@keyframes s3 {to{transform: rotate(1turn)}}
