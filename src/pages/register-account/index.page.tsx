@@ -55,7 +55,7 @@ export default function RegisterAccount() {
             </label>
           </TermsContainer>
 
-          <LoginButton>Próximo</LoginButton>
+          <LoginButton onClick={() => router.push("/personal-data")}>Próximo</LoginButton>
         </RegisterForm>
         <ArtSection></ArtSection>
       </Main>
