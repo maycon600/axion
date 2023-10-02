@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "@/components/Global/Animations/Spinner/animation.css";
 import "../styles/bootstrap.scss";
 import GlobalStyle from "@/styles/global";
 import { ThemeProvider } from "styled-components";

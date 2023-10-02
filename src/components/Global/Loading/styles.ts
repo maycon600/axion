@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 
 
 
@@ -7,7 +8,7 @@ export const Container = styled.div`
     width: 100px;
     height: 100px;
     margin: 110px auto 0;
-    border: solid 10px #8822aa;
+    border: solid 10px red;
     border-radius: 50%;
     border-right-color: transparent;
     border-bottom-color: transparent;

@@ -13,10 +13,13 @@ export const Main = styled.main`
   align-items: center;
 `;
 
-export const RegisterForm = styled.div`
-  width: 50vw;
+
+export const FormContainer = styled.div`
   padding: 0 8%;
-`;
+  width: 50vw;
+
+
+`
 
 export const RegisterFormHeader = styled.div`
   display: flex;
@@ -83,22 +86,28 @@ export const TermsContainer = styled.div`
   }
 `
 
-export const LoginButton = styled.button`
+export const NextButton = styled.button`
   width: 100%;
   padding: 0.8rem;
   border-radius: 5px;
   margin: 3vh 0;
   border: 0;
   background-color: ${({ theme }) => theme.color.darkBlueAxion};
+  border: 2px solid ${({ theme }) => theme.color.darkBlueAxion};
   color: white;
   font-weight: bold;
 `;
 
+export const BackButton = styled(NextButton)`
+  background-color: transparent;
+  color: ${({ theme }) => theme.color.darkBlueAxion};
+`;
+
 export const ArtSection = styled.div`
-  align-self: flex-start;
+  align-self: flex-end;
   background-image: url("/foto.png");
-  min-height: 100vh;
-  height: 100%;
+  min-height: calc(100vh - 4rem);
+  height: auto;
   width: 50vw;
   background-size: cover;
   background-repeat: no-repeat;

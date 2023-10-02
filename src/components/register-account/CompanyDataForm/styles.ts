@@ -14,8 +14,7 @@ export const Main = styled.main`
 `;
 
 export const RegisterForm = styled.div`
-  width: 50vw;
-  padding: 0 8%;
+ 
 `;
 
 export const RegisterFormHeader = styled.div`
@@ -71,18 +70,3 @@ export const NextButton = styled.button`
   font-weight: bold;
 `;
 
-export const BackButton = styled(NextButton)`
-  background-color: transparent;
-  color: ${({ theme }) => theme.color.darkBlueAxion};
-`;
-
-export const ArtSection = styled.div`
-  align-self: flex-start;
-  background-image: url("/foto.png");
-  min-height: 100vh;
-  height: 100%;
-  width: 50vw;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-`;

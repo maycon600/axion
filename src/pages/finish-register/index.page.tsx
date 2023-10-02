@@ -2,6 +2,6 @@ import { LoadingScreen } from "@/components/Global/Loading";
 
 export default function FinishRegisterAccount() {
   return (
-    <LoadingScreen />
+    <div className="load" />
   );
 }

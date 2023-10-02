@@ -5,6 +5,7 @@ export const RegisterHeader = styled.header`
   align-items: center;
   justify-content: flex-end;
   height: 4rem;
+  border-bottom: 2px solid ${({ theme }) => theme.color.gray_40};
 
   button {
     padding: 0.6rem 0.8rem;
