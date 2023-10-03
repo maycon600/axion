@@ -44,7 +44,7 @@ export default function RegisterAccount() {
                 <NextButton onClick={() => setStep(step + 1)}>
                   Proximo
                 </NextButton>
-              ) : (
+              ) : step === 2 ? (
                 <div
                   style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}
                 >
@@ -53,6 +53,17 @@ export default function RegisterAccount() {
                   </BackButton>
                   <NextButton onClick={() => setStep(step + 1)}>
                     Continuar
+                  </NextButton>
+                </div>
+              ) : (
+                <div
+                  style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}
+                >
+                  <BackButton onClick={() => setStep(step - 1)}>
+                    Voltar
+                  </BackButton>
+                  <NextButton onClick={() => setStep(step + 1)}>
+                    Finalizar Cadastro
                   </NextButton>
                 </div>
               )}

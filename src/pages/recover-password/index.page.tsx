@@ -69,7 +69,14 @@ export default function RecoverPassword() {
             />
           </IframeContainer>
         </LoginForm>
-        <ArtSection></ArtSection>
+        <ArtSection>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eaque
+            nemo architecto ut, ipsam, laboriosam ex enim veniam voluptates
+            minima exercitationem qui amet nam obcaecati perferendis corrupti
+            sequi facere laudantium.
+          </div>
+        </ArtSection>
       </Main>
       <Footer />
     </Container>

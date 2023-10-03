@@ -11,6 +11,7 @@ export const Main = styled.main`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-grow: 1;
 `;
 
 export const LoginForm = styled.div`
@@ -87,10 +88,8 @@ export const IframeContainer = styled.div`
 export const ArtSection = styled.div`
   align-self: flex-start;
   background-image: url("/foto.png");
-  min-height: 100vh;
-  height: 100%;
+  min-height: 115vh;
   width: 50vw;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
 `;

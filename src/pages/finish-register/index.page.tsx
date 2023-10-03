@@ -12,7 +12,7 @@ export default function FinishRegisterAccount() {
           maxWidth: "480px",
           textAlign: "center",
         }}
-        className="mt-3 mb-5"
+        className="mt-3 mb-3"
       >
         Acesse agora mesmo o sistema Axion e ganhe tempo tomando decisões
         inteligentes.

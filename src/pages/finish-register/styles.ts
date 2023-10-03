@@ -25,5 +25,9 @@ export const AccessButton = styled.button`
   border: 0;
   border-radius: 5px;
   margin-top: 2rem;
+  transition: 0.3s;
 
+  &:hover {
+    background-color: ${({theme}) => theme.color.purple_dark};
+  }
 `
