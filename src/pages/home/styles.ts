@@ -4,4 +4,6 @@ interface ContainerProps {
   type: boolean;
 }
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+`;
