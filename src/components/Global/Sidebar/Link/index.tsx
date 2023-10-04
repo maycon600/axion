@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Collapse } from "react-bootstrap";
 import { NavBrand, NavIcons } from "./styles";
 
 interface LinkProps {
@@ -15,7 +14,7 @@ export function LinkComponent({ href, imgSrc, name }: LinkProps) {
 
   const handleClick = () => {
     router.push(href);
-  }
+  };
 
   const useWindowDimensions = () => {
     const [width, setWidth] = useState(100);
