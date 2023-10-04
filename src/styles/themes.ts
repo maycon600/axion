@@ -1,6 +1,7 @@
 const Theme = {
   color: {
     darkBlueAxion: "#0D123C",
+    hoverDarkBlueAxion: "#323452",
     lightBlueAxion: "#13AAE3",
     purpleAxion: "#540280",
 

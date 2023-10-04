@@ -1,8 +1,11 @@
 import { Footer } from "@/components/Global/Footer";
 import { AccessButton, Container } from "./styles";
 import Theme from "@/styles/themes";
+import { useRouter } from "next/router";
 
 export default function FinishRegisterAccount() {
+  const router = useRouter();
+
   return (
     <Container>
       <strong>Cadastro aprovado!</strong>
@@ -18,7 +21,7 @@ export default function FinishRegisterAccount() {
         inteligentes.
       </span>
       <img src="/verify.svg" alt="" />
-      <AccessButton>Acessar Plataforma</AccessButton>
+      <AccessButton onClick={() => router.push("/")}>Acessar Plataforma</AccessButton>
       <Footer />
     </Container>
   );

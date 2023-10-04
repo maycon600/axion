@@ -14,7 +14,7 @@ export const LinkContainer = styled(Link)<LinkProps>`
 `;
 
 export const NavIcons = styled(Image)`
-  width: 1.3rem;
+  width: 1.2rem;
   height: auto;
 `;
 

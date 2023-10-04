@@ -41,7 +41,7 @@ export function AnialiasingFormData() {
           Isso leva menos de 1 minuto, aguarde aqui mesmo.
         </span>
         <div className="custom-loader mt-3 mb-5" />
-        <span style={{ color: Theme.color.purple_light, position: "relative" }}>
+        <span style={{ color: Theme.color.darkBlueAxion, position: "relative" }}>
           CARREGANDO<span style={{ position: "absolute", right: "-20px", width: '20px' }}>{pontos}</span>
         </span>
       </Container>

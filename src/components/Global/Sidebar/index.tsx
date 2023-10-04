@@ -35,6 +35,16 @@ export function Sidebar() {
           imgSrc="/sidebar/financial.svg"
           href="/financial"
         />
+        <LinkComponent
+          name="Usuários"
+          imgSrc="/sidebar/users.svg"
+          href="/users"
+        />
+        <LinkComponent
+          name="Configurações"
+          imgSrc="/sidebar/settings.svg"
+          href="/settings"
+        />
       </div>
     </SidebarContainer>
   );

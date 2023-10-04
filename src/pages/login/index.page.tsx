@@ -58,6 +58,7 @@ export default function Login() {
                 left: "50%",
                 transform: "translate(-50%, -50%)",
                 padding: "0 2rem",
+                backgroundColor: "white",
               }}
             >
               ou

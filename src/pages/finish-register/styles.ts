@@ -19,7 +19,7 @@ export const Container = styled.div`
 `
 
 export const AccessButton = styled.button`
-  background-color: ${({theme}) => theme.color.purple_light};
+  background-color: ${({theme}) => theme.color.darkBlueAxion};
   color: white;
   padding: 1rem 10rem;
   border: 0;
@@ -28,6 +28,6 @@ export const AccessButton = styled.button`
   transition: 0.3s;
 
   &:hover {
-    background-color: ${({theme}) => theme.color.purple_dark};
+    background-color: ${({theme}) => theme.color.hoverDarkBlueAxion};
   }
 `

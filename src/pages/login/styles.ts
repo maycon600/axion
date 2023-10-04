@@ -78,6 +78,7 @@ export const PasswordRecovery = styled.div`
   justify-content: flex-end;
 
   button {
+    background: transparent;
     border: 0;
     color: ${({ theme }) => theme.color.brand_blue};
   }
