@@ -16,3 +16,7 @@ export const AxionLogoContainer = styled.div`
   align-items: center;
   padding-right: 2rem;
 `
+
+export const UserMenu = styled.div`
+  
+`

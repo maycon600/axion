@@ -1,5 +1,5 @@
 import { LinkComponent } from "./Link";
-import { AxionLogoContainer, SidebarContainer } from "./styles";
+import { AxionLogoContainer, SidebarContainer, UserMenu } from "./styles";
 
 export function Sidebar() {
   return (
@@ -27,7 +27,7 @@ export function Sidebar() {
         />
         <LinkComponent
           name="Notificações"
-          imgSrc="/sidebar/notification.svg"  
+          imgSrc="/sidebar/notification.svg"
           href="/notifications"
         />
         <LinkComponent
@@ -46,6 +46,13 @@ export function Sidebar() {
           href="/settings"
         />
       </div>
+      <UserMenu>
+        <img src="/sidebar/user.png" alt="" />
+        <div>
+          <strong>Robert Martins</strong>
+          <span>contato@</span>
+        </div>
+      </UserMenu>
     </SidebarContainer>
   );
 }
