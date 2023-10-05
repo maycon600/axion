@@ -1,5 +1,10 @@
 import { LinkComponent } from "./Link";
-import { AxionLogoContainer, SidebarContainer, UserMenu } from "./styles";
+import {
+  AxionLogoContainer,
+  NameAndEmail,
+  SidebarContainer,
+  UserMenu,
+} from "./styles";
 
 export function Sidebar() {
   return (
@@ -15,8 +20,10 @@ export function Sidebar() {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "1.5rem",
+          gap: "2vh",
           marginTop: "3rem",
+          paddingLeft: "2rem",
+          paddingBottom: "5rem",
         }}
       >
         <LinkComponent name="Empresas" imgSrc="/sidebar/company.svg" href="/" />
@@ -48,10 +55,10 @@ export function Sidebar() {
       </div>
       <UserMenu>
         <img src="/sidebar/user.png" alt="" />
-        <div>
+        <NameAndEmail>
           <strong>Robert Martins</strong>
-          <span>contato@</span>
-        </div>
+          <span>contato@robertmartins.com.br</span>
+        </NameAndEmail>
       </UserMenu>
     </SidebarContainer>
   );

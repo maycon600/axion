@@ -7,16 +7,43 @@ export const SidebarContainer = styled.nav`
   height: 100vh;
   position: sticky;
   top: 0;
-  padding-left: 2rem;
-`
+  overflow: auto;
+`;
 
 export const AxionLogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 2rem;
-`
+`;
 
 export const UserMenu = styled.div`
-  
-`
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: ${({ theme }) => theme.color.gray_60};
+  width: 100%;
+  margin-top: 10rem;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+  }
+`;
+
+export const NameAndEmail = styled.div`
+  display: flex;
+  flex-direction: column;
+  strong {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+
+  span {
+    font-size: 0.7rem;
+    color: ${({ theme }) => theme.color.gray_40};
+  }
+`;

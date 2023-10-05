@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <Container>
       <Sidebar />
-      <main>
+      <main style={{height: '150vh'}}>
         <h1>Home</h1>
       </main>
     </Container>
