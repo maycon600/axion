@@ -1,3 +1,4 @@
+import { NotificationSVG } from "../../../../public/sidebar/notification";
 import { LinkComponent } from "./Link";
 import {
   AxionLogoContainer,
@@ -26,7 +27,7 @@ export function Sidebar() {
           paddingBottom: "5rem",
         }}
       >
-        <LinkComponent name="Empresas" imgSrc="/sidebar/company.svg" href="/" />
+        <LinkComponent name="Dashboard" imgSrc="/sidebar/dashboard.svg" href="/" />
         <LinkComponent
           name="Meu Perfil"
           imgSrc="/sidebar/profile.svg"

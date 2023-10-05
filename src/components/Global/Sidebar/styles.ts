@@ -23,7 +23,7 @@ export const UserMenu = styled.div`
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 1.5rem;
-  background-color: ${({ theme }) => theme.color.gray_60};
+  background-color: ${({ theme }) => theme.color.gray_50};
   width: 100%;
   margin-top: 10rem;
 

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import React, { ReactComponentElement, useEffect, useState } from "react";
 import { NavBrand, NavIcons } from "./styles";
 
 interface LinkProps {
