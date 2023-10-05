@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-export const mobile = (maxHeigth: number) => {
+export const windowHeight = (maxHeigth: number) => {
   const [width, setWidth] = useState(100);
 
   const updateDimensions = () => {
     setWidth(window.innerWidth);
   };
   useEffect(() => {
-    setWidth(window.innerWidth);
+    setWidth(window.innerHeight);
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
-  return width < maxWidth ? true : false;
+  return width < maxHeigth ? true : false;
 }

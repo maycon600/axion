@@ -8,23 +8,24 @@ interface LinkProps {
   isActive: boolean;
 }
 
-export const LinkContainer = styled(Link)<LinkProps>`
-  position: relative;
-  
-`;
+interface IconProps {
+  color?: string;
+}
 
-export const NavIcons = styled(Image)`
+export const NavIcons = styled.div<IconProps>`
   width: 1.2rem;
   height: auto;
+  color: ${({ color }) => color ? color : "white"};
 `;
 
-export const NavBrand = styled(Navbar.Brand)<LinkProps>`
+export const NavLink = styled.div<LinkProps>`
   position: relative;
   display: flex;
   gap: 1rem;
   padding: 0.8rem 1rem;
   align-items: center;
   width: 100%;
+  cursor: pointer;
   transition: ease-in-out 0.2s all;
   background-color: ${({ isActive }) => (isActive ? "#232323" : "transparent")};
   opacity: ${({ isActive }) => (isActive ? "1" : "0.4")};

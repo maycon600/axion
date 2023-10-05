@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
 import React, { ReactComponentElement, useEffect, useState } from "react";
-import { NavBrand, NavIcons } from "./styles";
+import { NavIcons, NavLink } from "./styles";
 
 interface LinkProps {
   href: string;
-  imgSrc: string;
+  imgSrc: React.ReactElement;
   name: string;
+  color?: string;
 }
 
-export function LinkComponent({ href, imgSrc, name }: LinkProps) {
+export function LinkComponent({ href, imgSrc, name, color }: LinkProps) {
   const router = useRouter();
   const pageActive = router.asPath === href;
 
@@ -16,28 +17,14 @@ export function LinkComponent({ href, imgSrc, name }: LinkProps) {
     router.push(href);
   };
 
-  const useWindowDimensions = () => {
-    const [width, setWidth] = useState(100);
-
-    const updateDimensions = () => {
-      setWidth(window.innerWidth);
-    };
-    useEffect(() => {
-      setWidth(window.innerWidth);
-      window.addEventListener("resize", updateDimensions);
-      return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
-    return width > 991 ? true : false;
-  };
-
-  const isWindowAbove991 = useWindowDimensions();
-
   return (
     <>
-      <NavBrand href={href} isActive={pageActive} onClick={handleClick}>
-        <NavIcons src={imgSrc} width={50} height={50} alt="Home" />
+      <NavLink color={color} isActive={pageActive} onClick={handleClick}>
+        <NavIcons>
+          {imgSrc}
+        </NavIcons>
         <span>{name}</span>
-      </NavBrand>
+      </NavLink>
     </>
   );
 }

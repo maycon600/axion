@@ -25,7 +25,6 @@ export const UserMenu = styled.div`
   padding: 1rem 1.5rem;
   background-color: ${({ theme }) => theme.color.gray_50};
   width: 100%;
-  margin-top: 10rem;
 
   img {
     width: 3rem;

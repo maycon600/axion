@@ -1,4 +1,9 @@
+import { Dashboard } from "../../../../public/sidebar/dashboard";
+import { FinancialSVG } from "../../../../public/sidebar/financial";
 import { NotificationSVG } from "../../../../public/sidebar/notification";
+import { ProfileSVG } from "../../../../public/sidebar/profile";
+import { SettingsSVG } from "../../../../public/sidebar/settings";
+import { UsersSVG } from "../../../../public/sidebar/users";
 import { LinkComponent } from "./Link";
 import {
   AxionLogoContainer,
@@ -8,6 +13,8 @@ import {
 } from "./styles";
 
 export function Sidebar() {
+  // const isHeightAbove991 = useWindowDimensions();
+
   return (
     <SidebarContainer>
       <AxionLogoContainer>
@@ -27,30 +34,26 @@ export function Sidebar() {
           paddingBottom: "5rem",
         }}
       >
-        <LinkComponent name="Dashboard" imgSrc="/sidebar/dashboard.svg" href="/" />
+        <LinkComponent name="Dashboard" imgSrc={<Dashboard />} href="/" />
         <LinkComponent
           name="Meu Perfil"
-          imgSrc="/sidebar/profile.svg"
+          imgSrc={<ProfileSVG />}
           href="/profile"
         />
         <LinkComponent
           name="Notificações"
-          imgSrc="/sidebar/notification.svg"
+          imgSrc={<NotificationSVG />}
           href="/notifications"
         />
         <LinkComponent
           name="Financeiro"
-          imgSrc="/sidebar/financial.svg"
+          imgSrc={<FinancialSVG />}
           href="/financial"
         />
-        <LinkComponent
-          name="Usuários"
-          imgSrc="/sidebar/users.svg"
-          href="/users"
-        />
+        <LinkComponent name="Usuários" imgSrc={<UsersSVG />} href="/users" />
         <LinkComponent
           name="Configurações"
-          imgSrc="/sidebar/settings.svg"
+          imgSrc={<SettingsSVG />}
           href="/settings"
         />
       </div>

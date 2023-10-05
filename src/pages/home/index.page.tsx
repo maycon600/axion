@@ -1,19 +1,21 @@
 import { Sidebar } from "@/components/Global/Sidebar";
 import { Container } from "../profile/styles";
+import { Header, Main } from "./styles";
 import { NotificationSVG } from "../../../public/sidebar/notification";
+import Theme from "@/styles/themes";
 
 export default function Home() {
   return (
     <Container>
       <Sidebar />
-      <main style={{ height: "150vh", background: 'gray' }}>
-        <header>
+      <Main>
+        <Header>
           <strong>Seja bem-vindo, Robert</strong>
-          <span style={{ color: 'red'}}>
+          <span style={{ color: Theme.color.gray_80 }}>
             <NotificationSVG />
           </span>
-        </header>
-      </main>
+        </Header>
+      </Main>
     </Container>
   );
 }

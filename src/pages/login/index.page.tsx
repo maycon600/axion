@@ -14,6 +14,7 @@ import {
 import Theme from "@/styles/themes";
 import { Footer } from "@/components/Global/Footer";
 import { useRouter } from "next/router";
+import { Messages } from "@/components/Global/Messages";
 
 export default function Login() {
   const router = useRouter();
@@ -91,7 +92,9 @@ export default function Login() {
             </span>
           </p>
         </LoginForm>
-        <ArtSection></ArtSection>
+        <ArtSection>
+          <Messages />
+        </ArtSection>
       </Main>
       <Footer />
     </Container>

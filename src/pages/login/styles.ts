@@ -96,6 +96,7 @@ export const LoginButton = styled.button`
 `;
 
 export const ArtSection = styled.div`
+  position: relative;
   align-self: flex-start;
   background-image: url("/foto.png");
   min-height: 100vh;
