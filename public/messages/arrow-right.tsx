@@ -1,38 +1,28 @@
 export function ArrowRightSVG() {
   return (
     <svg
-      width="30"
-      height="30"
-      viewBox="0 0 30 30"
+      width="12"
+      height="10"
+      viewBox="0 0 12 10"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g opacity="0.5">
-        <circle
-          cx="14.7209"
-          cy="14.7209"
-          r="14.2608"
-          transform="matrix(-1 0 0 1 29.5542 0.363129)"
-          stroke="currentColor"
-          stroke-width="0.920054"
-        />
-        <path
-          d="M16.1583 11.7745L19.4678 15.084L16.1583 18.3934"
-          stroke="currentColor"
-          stroke-width="1.38008"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M10.199 15.084H19.375"
-          stroke="currentColor"
-          stroke-width="1.38008"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </g>
+      <path
+        d="M7.43995 1.40308L11.037 5.00011L7.43995 8.59715"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M0.962946 5H10.9363"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
   );
 }
