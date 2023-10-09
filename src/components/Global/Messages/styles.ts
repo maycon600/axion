@@ -18,7 +18,6 @@ export const Container = styled.div`
   position: absolute;
   bottom: 3rem;
   left: 5%;
-  transition: 0.3s;
 `;
 
 export const Author = styled.div`

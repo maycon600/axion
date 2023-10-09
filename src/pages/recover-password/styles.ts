@@ -86,10 +86,13 @@ export const IframeContainer = styled.div`
 `;
 
 export const ArtSection = styled.div`
+  transition: 0.3s;
+  position: relative;
   align-self: flex-start;
   background-image: url("/foto.png");
-  min-height: 115vh;
+  min-height: 100vh;
   width: 50vw;
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: cover;
 `;

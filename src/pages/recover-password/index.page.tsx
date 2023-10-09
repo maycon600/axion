@@ -13,6 +13,7 @@ import {
   RecoveryButton,
 } from "./styles";
 import { useRouter } from "next/router";
+import { Messages } from "@/components/Global/Messages";
 
 export default function RecoverPassword() {
   const router = useRouter();
@@ -71,10 +72,7 @@ export default function RecoverPassword() {
         </LoginForm>
         <ArtSection>
           <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eaque
-            nemo architecto ut, ipsam, laboriosam ex enim veniam voluptates
-            minima exercitationem qui amet nam obcaecati perferendis corrupti
-            sequi facere laudantium.
+            <Messages />
           </div>
         </ArtSection>
       </Main>
