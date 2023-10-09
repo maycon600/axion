@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: flex;
 `;
 
-export const Main = styled.main`
+export const Content = styled.div`
   width: calc(100% - 17rem);
 `
 

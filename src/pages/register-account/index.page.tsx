@@ -1,5 +1,5 @@
 import { Footer } from "@/components/Global/Footer";
-import { RegisterAccountHeader } from "@/components/Global/Header";
+import { RegisterAccountHeader } from "@/components/register-account/Header";
 import { BasicDataForm } from "@/components/register-account/BasicDataForm";
 import { useRouter } from "next/router";
 import { useState } from "react";

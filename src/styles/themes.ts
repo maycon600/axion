@@ -20,6 +20,7 @@ const Theme = {
     secondary_80: "#",
     secondary_100: "#",
 
+    gray_10: "#F5F6FA",
     gray_20: "#E5E8F2",
     gray_40: "#5C5C5C",
     gray_60: "#",
@@ -60,7 +61,8 @@ const Theme = {
     yellow_90: "#70490F",
     yellow_100: "#51350B",
 
-    brand_blue: "#2f5cfc"
+    brand_blue: "#2f5cfc",
+    brand_blue_hover: "#2144bf",
   },
   fonts: {},
   sizes: {
