@@ -86,7 +86,9 @@ export const PaymentAndEmail = styled.div`
     input {
       border: 1px solid ${({ theme }) => theme.color.gray_60};
       border-radius: 5px;
-      padding: 0.5rem 1rem;
+      padding: 1.25rem 1rem;
+      width: 25rem;
+      
     }
   }
 `;

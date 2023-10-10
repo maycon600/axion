@@ -46,7 +46,7 @@ const Theme = {
     green_40: "#65E673",
     green_50: "#2BCD3E",
     green_60: "#25AF36",
-    green_70: "#1F932D",
+    green_70: "#0C9447",
     green_80: "#197624",
     green_90: "#145D1D",
     green_100: "#104C18",
