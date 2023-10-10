@@ -6,20 +6,11 @@ interface ContainerProps {
 
 export const Container = styled.div`
   display: flex;
-  background-color: ${({ theme }) => theme.color.gray_10};
 `;
 
 export const Content = styled.div`
+  background-color: ${({ theme }) => theme.color.gray_10};
   width: calc(100% - 17rem);
-`;
-
-export const Header = styled.header`
-  height: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  background-color: white;
 `;
 
 export const Main = styled.main`

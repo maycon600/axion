@@ -12,7 +12,7 @@ import {
   PasswordRecovery,
 } from "./styles";
 import Theme from "@/styles/themes";
-import { Footer } from "@/components/Global/Footer";
+import { Footer } from "@/components/register-account/Footer";
 import { useRouter } from "next/router";
 import { Messages } from "@/components/Global/Messages";
 

@@ -1,4 +1,12 @@
+import { GlobalButton } from "@/components/Global/Button";
+import { HeaderComponent } from "@/components/Global/Header";
 import { Sidebar } from "@/components/Global/Sidebar";
+import { BlockAccountModal } from "@/components/profile/BlockAccountModal";
+import { NewPasswordModal } from "@/components/profile/NewPasswordModal";
+import Theme from "@/styles/themes";
+import { useState } from "react";
+import { UserEditSVG } from "../../../public/UserEdit";
+import { TrashCanSVG } from "../../../public/profile/TrashCan";
 import {
   AvatarContainer,
   CompanyInfo,
@@ -7,22 +15,12 @@ import {
   DeleteAccount,
   FormGroup,
   FormSection,
-  Header,
   Main,
   PersonalInfo,
   RadioContainer,
   RadioGroup,
-  RadioSelector,
-  UpdateInfo,
+  RadioSelector
 } from "./styles";
-import Theme from "@/styles/themes";
-import { NotificationSVG } from "../../../public/sidebar/notification";
-import { UserEditSVG } from "../../../public/UserEdit";
-import { useState } from "react";
-import { TrashCanSVG } from "../../../public/profile/TrashCan";
-import { NewPasswordModal } from "@/components/profile/NewPasswordModal";
-import { GlobalButton } from "@/components/Global/Button";
-import { BlockAccountModal } from "@/components/profile/BlockAccountModal";
 
 export default function Profile() {
   const [selectedGender, setSelectedGender] = useState("");
@@ -38,12 +36,7 @@ export default function Profile() {
     <Container>
       <Sidebar />
       <Content>
-        <Header>
-          <strong>Seja bem-vindo, Robert</strong>
-          <span style={{ color: Theme.color.gray_80 }}>
-            <NotificationSVG />
-          </span>
-        </Header>
+        <HeaderComponent />
         <Main>
           <header>
             <h2>Meu Perfil</h2>

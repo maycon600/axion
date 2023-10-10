@@ -1,4 +1,4 @@
-import { Footer } from "@/components/Global/Footer";
+import { Footer } from "@/components/register-account/Footer";
 import Theme from "@/styles/themes";
 import {
   ArtSection,

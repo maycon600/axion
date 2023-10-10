@@ -1,4 +1,4 @@
-import { Footer } from "@/components/Global/Footer";
+import { Footer } from "@/components/register-account/Footer";
 import { RegisterAccountHeader } from "@/components/register-account/Header";
 import { BasicDataForm } from "@/components/register-account/BasicDataForm";
 import { useRouter } from "next/router";
