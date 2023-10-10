@@ -1,26 +1,16 @@
+import { Modal } from "react-bootstrap";
 import styled from "styled-components";
 
+interface ModalProps {
+  isVisible: boolean;
+}
 
-export const Content = styled.main`
+export const Content = styled.main<ModalProps>`
   margin: auto;
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
 `;
 
-export const Close = styled.button`
-  background-color: transparent;
-  border: 0;
-
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  transition: 0.3s;
-  color: ${({theme}) => theme.color.gray_100};
-
-  &:hover {
-    color: ${({theme}) => theme.color.gray_80};
-  }
-`;
-
-export const Form = styled.form`
+export const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.4em;
@@ -63,5 +53,34 @@ export const FormGroup = styled.div`
     outline: 0;
     color: ${({ theme }) => theme.color.gray_100};
     font-size: 0.9rem;
+  }
+`;
+
+export const SuccessModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: 3.5rem 0 1.5rem;
+  }
+
+  h2 {
+    color: ${({ theme }) => theme.color.gray_100};
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  span {
+    text-align: center;
+    color: ${({ theme }) => theme.color.gray_100};
+  }
+
+  .button {
+    width: 70%;
+    margin: 3rem 0 4.5rem;
   }
 `;
