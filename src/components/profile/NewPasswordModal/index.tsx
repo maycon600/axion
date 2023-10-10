@@ -26,7 +26,6 @@ export function NewPasswordModal({ show, onHide }: ModalProps) {
   function handleClose() {
     setShowSuccess(false);
     onHide();
-    // setIsVisible(true);
   }
 
   return (

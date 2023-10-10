@@ -22,15 +22,17 @@ import { useState } from "react";
 import { TrashCanSVG } from "../../../public/profile/TrashCan";
 import { NewPasswordModal } from "@/components/profile/NewPasswordModal";
 import { GlobalButton } from "@/components/Global/Button";
+import { BlockAccountModal } from "@/components/profile/BlockAccountModal";
 
 export default function Profile() {
   const [selectedGender, setSelectedGender] = useState("");
+  const [showNewPasswordModal, setShowNewPasswordModal] = useState(false);
+  const [showBlockAccountModal, setShowBlockAccountModal] = useState(false);
 
   const handleRadioChange = (event: { target: { value: string } }) => {
     setSelectedGender(event.target.value);
   };
 
-  const [showNewPasswordModal, setShowNewPasswordModal] = useState(false);
 
   return (
     <Container>
@@ -163,7 +165,7 @@ export default function Profile() {
                 />
               </FormGroup>
               <DeleteAccount>
-                <button>
+                <button onClick={() => setShowBlockAccountModal(true)}>
                   <TrashCanSVG />
                   <span>Excluir Cadastro?</span>
                 </button>
@@ -176,6 +178,11 @@ export default function Profile() {
       <NewPasswordModal
         show={showNewPasswordModal}
         onHide={() => setShowNewPasswordModal(false)}
+      />
+
+      <BlockAccountModal 
+        show={showBlockAccountModal}
+        onHide={() => setShowBlockAccountModal(false)}
       />
     </Container>
   );
