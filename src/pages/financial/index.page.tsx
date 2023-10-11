@@ -48,7 +48,7 @@ export default function Financial() {
           </PaymentAndEmail>
 
           <hr />
-
+          <h2 style={{ fontSize: '1.6rem', fontWeight: '600', margin: '2rem 0 1rem' }}>Invoices</h2>
           <FinancialTable />
         </Main>
       </Content>

@@ -88,7 +88,6 @@ export const PaymentAndEmail = styled.div`
       border-radius: 5px;
       padding: 1.25rem 1rem;
       width: 25rem;
-      
     }
   }
 `;
