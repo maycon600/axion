@@ -30,13 +30,13 @@ export const Container = styled.div`
 `;
 
 export const Author = styled.div`
-animation: ${fadeIn} ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
 
   strong {
+    animation: ${fadeIn} ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     font-size: 1.5rem;
   }
 

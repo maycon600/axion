@@ -42,9 +42,7 @@ export function Messages() {
   return (
     <div>
       <Container>
-        <div>
           <p>{messages[step].message}</p>
-        </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Author>
             <strong>{messages[step].author}</strong>
