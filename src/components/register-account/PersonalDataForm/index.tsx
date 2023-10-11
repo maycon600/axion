@@ -1,6 +1,22 @@
-import { BackButton, FormGroup, NextButton, RegisterForm, RegisterFormHeader } from "./styles";
+import { useState } from "react";
+import {
+  BackButton,
+  FormGroup,
+  NextButton,
+  RadioContainer,
+  RadioGroup,
+  RadioSelector,
+  RegisterForm,
+  RegisterFormHeader,
+} from "./styles";
 
 export function PersonalDataForm() {
+  const [selectedGender, setSelectedGender] = useState("");
+
+  const handleRadioChange = (event: { target: { value: string } }) => {
+    setSelectedGender(event.target.value);
+  };
+
   return (
     <RegisterForm>
       <RegisterFormHeader>
@@ -22,17 +38,37 @@ export function PersonalDataForm() {
       >
         Sexo
       </label>
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-        <div style={{ display: "flex", gap: "0.3rem" }}>
-          <input type="radio" name="gender" id="male" />
+      <RadioContainer>
+        <RadioGroup>
+          <RadioSelector htmlFor="male" checked={selectedGender === "male"}>
+            <div />
+          </RadioSelector>
+          <input
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+            checked={selectedGender === "male"}
+            onChange={handleRadioChange}
+          />
           <label htmlFor="male">Masculino</label>
-        </div>
+        </RadioGroup>
 
-        <div style={{ display: "flex", gap: "0.3rem" }}>
-          <input type="radio" name="gender" id="female" />
+        <RadioGroup>
+          <RadioSelector htmlFor="female" checked={selectedGender === "female"}>
+            <div />
+          </RadioSelector>
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+            checked={selectedGender === "female"}
+            onChange={handleRadioChange}
+          />
           <label htmlFor="female">Feminino</label>
-        </div>
-      </div>
+        </RadioGroup>
+      </RadioContainer>
     </RegisterForm>
   );
 }

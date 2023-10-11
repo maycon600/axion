@@ -13,9 +13,7 @@ export const Main = styled.main`
   align-items: center;
 `;
 
-export const RegisterForm = styled.div`
-
-`;
+export const RegisterForm = styled.div``;
 
 export const RegisterFormHeader = styled.div`
   display: flex;
@@ -29,7 +27,7 @@ export const RegisterFormHeader = styled.div`
 
   span {
     font-size: 0.9rem;
-    color: ${({theme}) => theme.color.gray_80};
+    color: ${({ theme }) => theme.color.gray_80};
   }
 `;
 
@@ -48,6 +46,44 @@ export const FormGroup = styled.div`
     border: 1px solid lightgray;
     border-radius: 5px;
     transition: 0.3s;
+  }
+`;
+
+export const RadioContainer = styled.div`
+  display: flex;
+  gap: 1.25rem;
+
+  input[type="radio"] {
+    display: none;
+  }
+`;
+
+export const RadioGroup = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+`;
+
+interface RadioSelectorProps {
+  checked: boolean;
+}
+
+export const RadioSelector = styled.label<RadioSelectorProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.625rem;
+  height: 1.625rem;
+  border: 1px solid ${({ theme }) => theme.color.gray_60};
+  border-radius: 50%;
+
+  div {
+    transition: 0.3s;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: ${({ theme, checked }) =>
+      checked ? theme.color.gray_60 : "trasnsparent"};
+    border-radius: 50%;
   }
 `;
 

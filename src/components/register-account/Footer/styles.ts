@@ -4,7 +4,7 @@ export const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid ${({ theme }) => theme.color.gray_40};
+  border-top: 1px solid ${({ theme }) => theme.color.gray_60};
   height: 4rem;
   font-size: 0.85rem;
   color: #4e4b59;

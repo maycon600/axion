@@ -3,9 +3,15 @@ import styled from "styled-components";
 export const RegisterHeader = styled.header`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 4rem;
-  border-bottom: 2px solid ${({ theme }) => theme.color.gray_40};
+  border-bottom: 1px solid ${({ theme }) => theme.color.gray_60};
+
+  img {
+    width: 10rem;
+    height: auto;
+    margin-left: 1rem;
+  }
 
   button {
     padding: 0.6rem 0.8rem;

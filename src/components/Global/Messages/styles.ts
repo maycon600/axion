@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const fadeIn = keyframes`
+0% { 
+  opacity: 0;   
+}
+
+100% { 
+  opacity: 1;
+}`;
 
 export const Container = styled.div`
   border-radius: 9.201px;
@@ -21,6 +30,9 @@ export const Container = styled.div`
 `;
 
 export const Author = styled.div`
+animation: ${fadeIn} ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
 
