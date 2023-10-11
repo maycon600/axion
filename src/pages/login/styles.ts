@@ -42,9 +42,9 @@ export const GoogleLogin = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid ${({ theme }) => theme.color.gray_40};
+  border: 1px solid ${({ theme }) => theme.color.gray_60};
   border-radius: 9px;
-  padding: 0.5rem;
+  padding: 1rem 0;
   margin: 2.5vh 0;
 `;
 
