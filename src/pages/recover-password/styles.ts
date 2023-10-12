@@ -9,20 +9,49 @@ export const Container = styled.div`
 export const Main = styled.main`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  flex-grow: 1;
+  margin-bottom: 6.1rem;
+
+  @media(min-width: 768px) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 export const LoginForm = styled.div`
-  width: 50vw;
+  width: calc(100% - 3vw);
   padding: 0 8%;
+
+  @media (min-width: 1024px) {
+    width: 50vw;
+  }
+
+  .loginButton {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 2.8rem 0 2rem;
+  }
 `;
 
 export const AxionLogo = styled.div`
   display: flex;
   justify-content: center;
   padding: 5vh;
+
+  img {
+    width: 12rem;
+  }
+
+  @media (min-width: 1024px) {
+    img {
+      width: auto;
+    }
+  }
 `;
 
 export const LoginFormHeader = styled.div`
@@ -87,13 +116,17 @@ export const IframeContainer = styled.div`
 `;
 
 export const ArtSection = styled.div`
-  transition: 0.3s;
   position: relative;
   align-self: flex-start;
   background-image: url("/foto.png");
   min-height: 100vh;
-  width: 50vw;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: cover;
+
+  @media(min-width: 1024px) {
+    width: 50vw;
+  }
 `;

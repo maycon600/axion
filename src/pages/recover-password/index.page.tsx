@@ -22,7 +22,7 @@ export default function RecoverPassword() {
       <Main>
         <LoginForm>
           <AxionLogo>
-            <img src="/axionLogo.svg" alt="" />
+            <img src="/axionLogo.png" alt="" />
           </AxionLogo>
           <LoginFormHeader>
             <strong>Esqueceu sua senha?</strong>
