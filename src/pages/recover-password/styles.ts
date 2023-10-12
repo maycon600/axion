@@ -75,6 +75,7 @@ export const IframeContainer = styled.div`
   width: 100%;
   padding-bottom: 56.25%;
   height: 0;
+  margin-bottom: 1rem;
 
   iframe {
     position: absolute;

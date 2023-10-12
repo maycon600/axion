@@ -15,6 +15,7 @@ import Theme from "@/styles/themes";
 import { Footer } from "@/components/register-account/Footer";
 import { useRouter } from "next/router";
 import { Messages } from "@/components/Global/Messages";
+import { GlobalButton } from "@/components/Global/Button";
 
 export default function Login() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function Login() {
       <Main>
         <LoginForm>
           <AxionLogo>
-            <img src="/axionLogo.svg" alt="" />
+            <img src="/axionLogo.png" alt="" />
           </AxionLogo>
           <LoginFormHeader>
             <strong>Faça seu login para utilizar a plataforma.</strong>
@@ -81,7 +82,7 @@ export default function Login() {
               Esqueceu sua senha?
             </button>
           </PasswordRecovery>
-          <LoginButton>Entrar</LoginButton>
+          <GlobalButton content="Entrar" className="loginButton" />
           <p style={{ fontSize: "0.9rem", fontWeight: "bold" }}>
             Não tem uma conta?{" "}
             <span

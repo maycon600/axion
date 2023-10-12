@@ -5,7 +5,7 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid ${({ theme }) => theme.color.gray_60};
-  height: 4rem;
+  height: 10rem;
   font-size: 0.85rem;
   color: #4e4b59;
   position: absolute;
@@ -18,5 +18,9 @@ export const StyledFooter = styled.footer`
 
   p {
     margin: 0;
+  }
+
+  @media(min-width: 768px) {
+    height: 4rem;
   }
 `

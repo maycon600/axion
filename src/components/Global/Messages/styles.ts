@@ -1,13 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-export const fadeInAnimation = keyframes`
-0% { 
-  opacity: 0;   
-}
-
-100% { 
-  opacity: 1;
-}`;
+import styled from "styled-components";
 
 export const Container = styled.div`
   border-width: 1px;
@@ -23,17 +14,30 @@ export const Container = styled.div`
   text-align: justify;
   padding: 3.2rem;
   color: white;
-  font-size: 1.2rem;
   margin: auto;
+  font-size: 1rem;
   position: absolute;
   bottom: 3rem;
   left: 5%;
+
+  @media (min-width: 1024px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const AuthorAndArrows = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media(min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const Author = styled.div`
-  animation: ${fadeInAnimation} 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
 
@@ -50,7 +54,9 @@ export const Arrows = styled.div`
   color: white;
   display: flex;
   gap: 1rem;
-  align-self: flex-end;
+
+  @media(min-width: 768px) {
+  }
 
   div {
     border-radius: 50%;

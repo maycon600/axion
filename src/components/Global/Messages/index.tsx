@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowLeftSVG } from "../../../../public/messages/arrow-left";
 import { ArrowRightSVG } from "../../../../public/messages/arrow-right";
-import { Arrows, Author, Container } from "./styles";
+import { Arrows, Author, AuthorAndArrows, Container } from "./styles";
 import { motion, useAnimation } from "framer-motion";
 
 export function Messages() {
@@ -25,7 +25,6 @@ export function Messages() {
   ];
 
   const [step, setStep] = useState(0);
-  const [fadeIn, setFadeIn] = useState(false);
 
   const control = useAnimation();
 
@@ -58,7 +57,7 @@ export function Messages() {
         <motion.div initial={{ opacity: 1 }} animate={control}>
           <p>{messages[step].message}</p>
         </motion.div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <AuthorAndArrows>
           <motion.div initial={{ opacity: 1 }} animate={control}>
             <Author>
               <strong>{messages[step].author}</strong>
@@ -73,7 +72,7 @@ export function Messages() {
               <ArrowRightSVG />
             </div>
           </Arrows>
-        </div>
+        </AuthorAndArrows>
       </Container>
     </div>
   );
