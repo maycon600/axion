@@ -9,13 +9,10 @@ export const fadeInAnimation = keyframes`
   opacity: 1;
 }`;
 
-interface Props {
-  fadeIn: boolean;
-}
-
 export const Container = styled.div`
-  border-radius: 9.201px;
-  border: 1.5px solid white;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
   background: radial-gradient(
     340.32% 136.38% at 0% 3.35%,
     rgba(255, 255, 255, 0.3) 0%,
@@ -33,8 +30,8 @@ export const Container = styled.div`
   left: 5%;
 `;
 
-export const Author = styled.div<Props>`
-  animation: ${({fadeIn}) => (fadeIn ? fadeInAnimation : "none")};
+export const Author = styled.div`
+  animation: ${fadeInAnimation} 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   display: flex;
