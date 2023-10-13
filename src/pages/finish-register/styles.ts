@@ -10,24 +10,47 @@ export const Container = styled.div`
   padding-bottom: 15rem;
 
   strong {
-    font-size: 3rem;
-  }
+      font-size: 1.5rem;
+    }
 
-  span {
-    font-size: 1.4rem;
+    span {
+      font-size: 1.1rem;
+    }
+
+    img {
+      width: 8rem;
+      height: auto;
+    }
+
+  @media (min-width: 768px) {
+    strong {
+      font-size: 3rem;
+    }
+
+    span {
+      font-size: 1.4rem;
+    }
+
+    img {
+      width: 12rem;
+    }
   }
-`
+`;
 
 export const AccessButton = styled.button`
-  background-color: ${({theme}) => theme.color.darkBlueAxion};
+  background-color: ${({ theme }) => theme.color.darkBlueAxion};
   color: white;
-  padding: 1rem 10rem;
+  padding: 0.6rem 5rem;
   border: 0;
   border-radius: 5px;
   margin-top: 2rem;
   transition: 0.3s;
 
   &:hover {
-    background-color: ${({theme}) => theme.color.hoverDarkBlueAxion};
+    background-color: ${({ theme }) => theme.color.hoverDarkBlueAxion};
   }
-`
+
+  @media(min-width: 768px) {
+    padding: 1rem 10rem;
+  }
+`;
