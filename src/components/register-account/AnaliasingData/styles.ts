@@ -10,10 +10,24 @@ export const Container = styled.div`
   padding-bottom: 5rem;
 
   strong {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   span {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  @media(min-width: 768px) {
+    strong {
+      font-size: 3rem;
+    }
+
+    span {
+      font-size: 1.4rem;
+    }
+  }
+
+  .custom-loader {
+  
   }
 `;

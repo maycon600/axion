@@ -15,9 +15,9 @@ import {
 import { PersonalDataForm } from "@/components/register-account/PersonalDataForm";
 import { CompanyDataForm } from "@/components/register-account/CompanyDataForm";
 import { AnialiasingFormData } from "@/components/register-account/AnaliasingData";
+import { Messages } from "@/components/Global/Messages";
 
 export default function RegisterAccount() {
-  const router = useRouter();
   const [step, setStep] = useState(1);
 
   return (
@@ -69,7 +69,9 @@ export default function RegisterAccount() {
               )}
             </FormContainer>
 
-            <ArtSection></ArtSection>
+            <ArtSection>
+              <Messages />
+            </ArtSection>
           </Main>
         </>
       )}

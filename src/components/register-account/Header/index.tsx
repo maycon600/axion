@@ -6,7 +6,7 @@ export function RegisterAccountHeader() {
 
   return (
     <RegisterHeader>
-      <img src="/axionLogo.svg" alt="" />
+      <img src="/axionLogo.png" alt="" />
       <button onClick={() => router.push("/login")}>Já é cliente? Acessar</button>
     </RegisterHeader>
   );

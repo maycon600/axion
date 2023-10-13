@@ -2,6 +2,7 @@ import Theme from "@/styles/themes";
 import { Container } from "./styles";
 import { Footer } from "@/components/register-account/Footer";
 import { useEffect, useState } from "react";
+import { windowWidth } from "@/utils/mobile";
 
 export function AnialiasingFormData() {
   const [dotsValue, setDotsValue] = useState('.');
@@ -40,7 +41,11 @@ export function AnialiasingFormData() {
         >
           Isso leva menos de 1 minuto, aguarde aqui mesmo.
         </span>
-        <div className="custom-loader mt-3 mb-5" />
+        {windowWidth(768) ? (
+          <div className="custom-loader-small mt-3 mb-5" />
+        ) : (
+          <div className="custom-loader-big mt-3 mb-5" />
+        )}
         <span style={{ color: Theme.color.darkBlueAxion, position: "relative" }}>
           CARREGANDO<span style={{ position: "absolute", right: "-20px", width: '20px' }}>{pontos}</span>
         </span>

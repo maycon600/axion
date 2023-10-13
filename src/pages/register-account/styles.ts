@@ -23,13 +23,33 @@ export const ProgressBar = styled.div<ProgressBarProps>`
 export const Main = styled.main`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 6.1rem;
+
+  @media(min-width: 768px) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 export const FormContainer = styled.div`
+  width: calc(100% - 3vw);
   padding: 0 8%;
-  width: 50vw;
+
+  @media (min-width: 1024px) {
+    width: 50vw;
+  }
+
+  .loginButton {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 2.8rem 0 2rem;
+  }
 `;
 
 export const RegisterFormHeader = styled.div`
@@ -114,12 +134,17 @@ export const BackButton = styled(NextButton)`
 `;
 
 export const ArtSection = styled.div`
-  align-self: flex-end;
+  position: relative;
+  align-self: flex-start;
   background-image: url("/foto.png");
-  min-height: calc(100vh - 4rem);
-  height: auto;
-  width: 50vw;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+
+  @media(min-width: 1024px) {
+    width: 50vw;
+  }
 `;
