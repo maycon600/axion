@@ -47,7 +47,7 @@ export default function Profile() {
           <PersonalInfo>
             <AvatarContainer>
               <img src="/sidebar/user.png" alt="" />
-              <button>
+              <button disabled={!isEditing}>
                 <UserEditSVG />
                 Substituir
               </button>
@@ -155,7 +155,7 @@ export default function Profile() {
 
               <FormGroup>
                 <GlobalButton
-                  content="Atualizar Cadastro"
+                  content={isEditing ? "Salvar" : "Atualizar Cadastro"}
                   style={{ marginTop: "1.7rem" }}
                   onClick={() => setIsEditing(!isEditing)}
                 />

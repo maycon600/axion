@@ -75,6 +75,10 @@ export const AvatarContainer = styled.div`
     &:hover {
       color: ${({ theme }) => theme.color.brand_blue_hover};
     }
+
+    &:disabled {
+      color: ${({theme}) => theme.color.gray_80};
+    }
   }
 `;
 
@@ -87,7 +91,7 @@ export const FormGroup = styled.div`
   select,
   option {
     padding: 1.25rem 1rem;
-    width: 30vw;
+    width: clamp(10rem, 20vw , 20rem);
     border-radius: 5px;
     border: 1px solid ${({ theme }) => theme.color.gray_20};
     outline: 0;
