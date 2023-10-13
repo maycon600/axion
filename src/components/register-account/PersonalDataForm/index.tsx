@@ -20,7 +20,7 @@ export function PersonalDataForm() {
   return (
     <RegisterForm>
       <RegisterFormHeader>
-        <strong>Dados Básicos</strong>
+        <strong>Dados Pessoais</strong>
         <span>Preencha os campos logo abaixo</span>
       </RegisterFormHeader>
 

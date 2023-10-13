@@ -125,6 +125,7 @@ export const RadioSelector = styled.label<RadioSelectorProps>`
   border-radius: 50%;
 
   div {
+    transition: 0.3s;
     width: 1.125rem;
     height: 1.125rem;
     background-color: ${({ theme, checked }) =>
