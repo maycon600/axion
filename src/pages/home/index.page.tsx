@@ -7,6 +7,7 @@ import { PieChart } from "@/components/dashboard/PieChart";
 import { VerticalBarChart } from "@/components/dashboard/VerticalBarChart";
 import { HorizontalBarChart } from "@/components/dashboard/HorizontalBarChart";
 import { MultipleLineChart } from "@/components/dashboard/MultipleLineChart";
+import { LikesCard } from "@/components/dashboard/LikesCard";
 
 export default function Home() {
   return (
@@ -16,11 +17,18 @@ export default function Home() {
         <HeaderComponent />
         <Main>
           <header>
-            <h2>Meu Perfil</h2>
-            <button>Trocar Senha</button>
+            <h2>Dashboard</h2>
+            {/* <button>Trocar Senha</button> */}
           </header>
 
-          <div style={{ display: "flex", gap: "1rem" }}>
+          <LikesCard
+            name="Facebook"
+            barColor="#3b5998"
+            likes={100}
+            dislikes={50}
+          />
+
+          {/* <div style={{ display: "flex", gap: "1rem" }}>
             <div style={{ width: "500px", height: "auto" }}>
               <AreaChart />
             </div>
@@ -40,7 +48,7 @@ export default function Home() {
             <div style={{ width: "500px", height: "auto" }}>
               <MultipleLineChart />
             </div>
-          </div>
+          </div> */}
         </Main>
       </Content>
     </Container>

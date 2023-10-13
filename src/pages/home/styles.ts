@@ -23,7 +23,7 @@ export const Header = styled.header`
 
 export const Main = styled.main`
   margin: 2%;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 10px;
   padding: 2.25rem;
 
