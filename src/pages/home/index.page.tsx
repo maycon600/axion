@@ -8,6 +8,7 @@ import { VerticalBarChart } from "@/components/dashboard/VerticalBarChart";
 import { HorizontalBarChart } from "@/components/dashboard/HorizontalBarChart";
 import { MultipleLineChart } from "@/components/dashboard/MultipleLineChart";
 import { LikesCard } from "@/components/dashboard/LikesCard";
+import { TotalQuotes } from "@/components/dashboard/TotalQuotes";
 
 export default function Home() {
   return (
@@ -21,12 +22,22 @@ export default function Home() {
             {/* <button>Trocar Senha</button> */}
           </header>
 
-          <LikesCard
-            name="Facebook"
-            barColor="#3b5998"
-            likes={100}
-            dislikes={50}
-          />
+          <div style={{ display: "flex", gap: "1rem" }}>
+            <LikesCard
+              name="Facebook"
+              barColor="#3b5998"
+              likes={100}
+              dislikes={50}
+            />
+
+            <TotalQuotes
+              barColor="#0000ff"
+              totalQuotes={1000}
+              initialDate="01/01/2022"
+              finalDate="31/12/2022"
+              popularityVariation={10}
+            />
+          </div>
 
           {/* <div style={{ display: "flex", gap: "1rem" }}>
             <div style={{ width: "500px", height: "auto" }}>

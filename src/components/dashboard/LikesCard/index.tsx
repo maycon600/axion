@@ -32,7 +32,7 @@ export function LikesCard({ name, likes, dislikes, barColor }: LikesCardProps) {
       </Feedback>
 
       <div style={{ margin: "1.3rem 0 0.5rem" }}>
-        <p>
+        <p style={{ color: Theme.color.gray_70}}>
           <img src="/dashboard/downArrow.svg" alt="" />
           <span style={{ color: Theme.color.red_70 }}>-10%</span> de queda desde
           o mês passado
