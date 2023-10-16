@@ -9,13 +9,23 @@ import {
   RegisterForm,
   RegisterFormHeader,
 } from "./styles";
+import { maskCpfCnpj } from "@/utils/masks";
 
 export function PersonalDataForm() {
+  const [cpf, setCpf] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
 
   const handleRadioChange = (event: { target: { value: string } }) => {
     setSelectedGender(event.target.value);
   };
+
+  function handleCpfChange(cpf: string) {
+    let cleanedCpf = cpf.replace(/\D/g, "");
+    if (cleanedCpf.length >= 11) {
+      return setCpf(maskCpfCnpj(cleanedCpf.slice(0, 11)));
+    }
+    setCpf(maskCpfCnpj(cpf));
+  }
 
   return (
     <RegisterForm>
@@ -26,7 +36,13 @@ export function PersonalDataForm() {
 
       <FormGroup>
         <label htmlFor="cpf">Seu CPF</label>
-        <input type="text" id="cpf" placeholder="Digite seu CPF" />
+        <input
+          type="text"
+          id="cpf"
+          placeholder="Digite seu CPF"
+          value={cpf}
+          onChange={(e) => handleCpfChange(e.target.value)}
+        />
       </FormGroup>
       <FormGroup>
         <label htmlFor="bithDate">Data de Nascimento</label>

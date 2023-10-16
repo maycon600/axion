@@ -1,10 +1,18 @@
-import {
-  FormGroup,
-  RegisterForm,
-  RegisterFormHeader,
-} from "./styles";
+import { useState } from "react";
+import { FormGroup, RegisterForm, RegisterFormHeader } from "./styles";
+import { maskCnpj } from "@/utils/masks";
 
 export function CompanyDataForm() {
+  const [Cnpj, setCnpj] = useState("");
+
+  function handleCpfChange(cnpj: string) {
+    let cleanedCnpj = Cnpj.replace(/\D/g, "");
+    if (cleanedCnpj.length >= 14) {
+      return setCnpj(maskCnpj(cleanedCnpj.slice(0, 14)));
+    }
+    setCnpj(maskCnpj(cnpj));
+  }
+
   return (
     <RegisterForm>
       <RegisterFormHeader>
@@ -23,7 +31,12 @@ export function CompanyDataForm() {
 
       <FormGroup>
         <label htmlFor="cnpj">CNPJ</label>
-        <input type="text" placeholder="Digite o CNPJ" />
+        <input
+          type="text"
+          placeholder="Digite o CNPJ"
+          value={Cnpj}
+          onChange={(e) => handleCpfChange(e.target.value)}
+        />
       </FormGroup>
 
       <FormGroup>

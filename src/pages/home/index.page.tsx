@@ -39,7 +39,7 @@ export default function Home() {
             />
           </div>
 
-          {/* <div style={{ display: "flex", gap: "1rem" }}>
+          <div style={{ display: "flex", gap: "1rem" }}>
             <div style={{ width: "500px", height: "auto" }}>
               <AreaChart />
             </div>
@@ -59,7 +59,7 @@ export default function Home() {
             <div style={{ width: "500px", height: "auto" }}>
               <MultipleLineChart />
             </div>
-          </div> */}
+          </div>
         </Main>
       </Content>
     </Container>
