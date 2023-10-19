@@ -1,10 +1,22 @@
-import {
-  FormGroup,
-  RegisterForm,
-  RegisterFormHeader,
-} from "./styles";
+import { useState } from "react";
+import { FormGroup, RegisterForm, RegisterFormHeader } from "./styles";
+import { maskCnpj } from "@/utils/masks";
+import { Dropdown } from "react-bootstrap";
+import Theme from "@/styles/themes";
+import { Value } from "sass";
 
 export function CompanyDataForm() {
+  const [Cnpj, setCnpj] = useState("");
+  const [selectedRole, setSelectedRole] = useState("Seu cargo");
+
+  function handleCpfChange(cnpj: string) {
+    let cleanedCnpj = Cnpj.replace(/\D/g, "");
+    if (cleanedCnpj.length >= 14) {
+      return setCnpj(maskCnpj(cleanedCnpj.slice(0, 14)));
+    }
+    setCnpj(maskCnpj(cnpj));
+  }
+
   return (
     <RegisterForm>
       <RegisterFormHeader>
@@ -23,18 +35,37 @@ export function CompanyDataForm() {
 
       <FormGroup>
         <label htmlFor="cnpj">CNPJ</label>
-        <input type="text" placeholder="Digite o CNPJ" />
+        <input
+          type="text"
+          placeholder="Digite o CNPJ"
+          value={Cnpj}
+          onChange={(e) => handleCpfChange(e.target.value)}
+        />
       </FormGroup>
 
       <FormGroup>
         <label htmlFor="role">Seu Cargo</label>
-        <select name="role" id="role">
-          <option value="" selected disabled hidden>
-            Selecione o seu cargo
-          </option>
-          <option value="Administrado">Administrador</option>
-          <option value="Administrado">Administrador</option>
-        </select>
+        <Dropdown>
+          <Dropdown.Toggle
+            style={{
+              backgroundColor: "#fff",
+              border: "1px solid lightgray",
+              color: Theme.color.gray_100,
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            {selectedRole}
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu style={{ width: '100%' }}>
+            <Dropdown.Item onClick={() => setSelectedRole("Administrador")}>Administrador</Dropdown.Item>
+            <Dropdown.Item onClick={() => setSelectedRole("Administrador")}>Administrador</Dropdown.Item>
+            <Dropdown.Item onClick={() => setSelectedRole("Administrador")}>Administrador</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </FormGroup>
     </RegisterForm>
   );

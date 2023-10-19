@@ -1,6 +1,15 @@
-import { FormGroup, RegisterForm, RegisterFormHeader, TermsContainer } from "./styles";
+import { maskPhone } from "@/utils/masks";
+import {
+  FormGroup,
+  RegisterForm,
+  RegisterFormHeader,
+  TermsContainer,
+} from "./styles";
+import { useState } from "react";
 
 export function BasicDataForm() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   return (
     <RegisterForm>
       <RegisterFormHeader>
@@ -18,7 +27,13 @@ export function BasicDataForm() {
       </FormGroup>
       <FormGroup>
         <label htmlFor="phoneNumber">Telefone</label>
-        <input type="text" id="phoneNumber" placeholder="Digite seu telefone" />
+        <input
+          type="text"
+          id="phoneNumber"
+          value={phoneNumber}
+          placeholder="Digite seu telefone"
+          onChange={(e) => setPhoneNumber(maskPhone(e.target.value))}
+        />
       </FormGroup>
       <FormGroup>
         <label htmlFor="password">Crie uma senha</label>
@@ -32,7 +47,6 @@ export function BasicDataForm() {
           da <span>Política de Privacidade</span>.
         </label>
       </TermsContainer>
-
     </RegisterForm>
   );
 }
