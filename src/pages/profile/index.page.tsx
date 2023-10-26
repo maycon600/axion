@@ -56,22 +56,42 @@ export default function Profile() {
             <FormSection>
               <FormGroup>
                 <label htmlFor="name">Nome Completo</label>
-                <input type="text" id="name" value={"Robert Martins"} disabled={!isEditing} />
+                <input
+                  type="text"
+                  id="name"
+                  value={"Robert Martins"}
+                  disabled={!isEditing}
+                />
               </FormGroup>
               <FormGroup>
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" value={"rober@axion.com.br"} disabled={!isEditing} />
+                <input
+                  type="email"
+                  id="email"
+                  value={"rober@axion.com.br"}
+                  disabled={!isEditing}
+                />
               </FormGroup>
               <FormGroup>
                 <label htmlFor="phone">Telefone</label>
-                <input type="tel" id="phone" value={"(11) 99999-999"} disabled={!isEditing} />
+                <input
+                  type="tel"
+                  id="phone"
+                  value={"(11) 99999-999"}
+                  disabled={!isEditing}
+                />
               </FormGroup>
             </FormSection>
 
             <FormSection>
               <FormGroup>
                 <label htmlFor="CPF">Seu CPF</label>
-                <input type="text" id="CPF" value={"111.111.111-11"} disabled={!isEditing} />
+                <input
+                  type="text"
+                  id="CPF"
+                  value={"111.111.111-11"}
+                  disabled={!isEditing}
+                />
               </FormGroup>
               <FormGroup>
                 <label htmlFor="birthDate">Data de Nascimento</label>
@@ -79,7 +99,7 @@ export default function Profile() {
               </FormGroup>
 
               <div>
-                <label htmlFor="gender" style={{ marginBottom: "0.75rem"}}>
+                <label htmlFor="gender" style={{ marginBottom: "0.75rem" }}>
                   Sexo
                 </label>
                 <RadioContainer>
@@ -137,7 +157,12 @@ export default function Profile() {
             <FormSection>
               <FormGroup>
                 <label htmlFor="companyName">Nome da Empresa</label>
-                <input type="text" id="companyName" value={"Axion"} disabled={!isEditing} />
+                <input
+                  type="text"
+                  id="companyName"
+                  value={"Axion"}
+                  disabled={!isEditing}
+                />
               </FormGroup>
               <FormGroup>
                 <label htmlFor="role">Seu Cargo</label>
@@ -150,7 +175,12 @@ export default function Profile() {
             <FormSection>
               <FormGroup>
                 <label htmlFor="cnpj">CNPJ</label>
-                <input type="text" id="cnpj" value={"11.111.111/1111-11"} disabled={!isEditing} />
+                <input
+                  type="text"
+                  id="cnpj"
+                  value={"11.111.111/1111-11"}
+                  disabled={!isEditing}
+                />
               </FormGroup>
 
               <FormGroup>
