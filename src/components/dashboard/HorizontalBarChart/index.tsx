@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,9 +7,9 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
   CategoryScale,
@@ -21,43 +21,54 @@ ChartJS.register(
 );
 
 export const options = {
-  indexAxis: 'y' as const,
+  indexAxis: "y" as const,
   elements: {
     bar: {
-      borderWidth: 2,
+      borderWidth: 1,
     },
   },
   responsive: true,
   plugins: {
     legend: {
-      position: 'right' as const,
+      position: "top" as const,
     },
     title: {
       display: true,
-      text: 'Chart.js Horizontal Bar Chart',
+      text: "Chart.js Horizontal Bar Chart",
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ["SP", "RJ", "GO", "MG", "SC"];
 
 export const data = {
-  labels,
+  labels: ["SP", "RJ", "GO", "MG", "SC"],
   datasets: [
     {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      label: "Positivos",
+      backgroundColor: "#22C24F",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
     },
     {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      label: "Negativos",
+      backgroundColor: "#E73F3F",
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
     },
   ],
 };
+// datasets: [
+//   {
+//     label: "Positivos",
+//     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+//     backgroundColor: "#22C24F",
+//   },
+//   {
+//     label: "Negativos",
+//     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+//     backgroundColor: "#E73F3F",
+//   },
+
+// ],
 
 export function HorizontalBarChart() {
   return <Bar options={options} data={data} />;
