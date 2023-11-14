@@ -1,10 +1,9 @@
 import { HeaderComponent } from "@/components/Global/Header";
 import { Sidebar } from "@/components/Global/Sidebar";
-import { LineChartComponent } from "@/components/dashboard/recharts/linechart";
 import { Container } from "../profile/styles";
 import { Content, Main } from "./styles";
-import { BarChartComponent } from "@/components/dashboard/recharts/verticalBarChart";
-import TesteComponent from "@/components/dashboard/recharts/test";
+import { LineChartComponent } from "@/components/home/recharts/linechart";
+import { BarChartComponent } from "@/components/home/recharts/verticalBarChart";
 
 export default function Home() {
   return (

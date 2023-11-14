@@ -34,7 +34,7 @@ export function Sidebar() {
           paddingBottom: "5rem",
         }}
       >
-        <LinkComponent name="Dashboard" imgSrc={<Dashboard />} href="/" />
+        <LinkComponent name="Dashboard" imgSrc={<Dashboard />} href="/home" />
         <LinkComponent
           name="Meu Perfil"
           imgSrc={<ProfileSVG />}

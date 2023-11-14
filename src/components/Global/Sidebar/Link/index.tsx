@@ -11,7 +11,7 @@ interface LinkProps {
 
 export function LinkComponent({ href, imgSrc, name, color }: LinkProps) {
   const router = useRouter();
-  const pageActive = router.asPath === href;
+  const pageActive = `/${router.asPath.split("/")[1]}` === href;
 
   const handleClick = () => {
     router.push(href);
@@ -20,9 +20,7 @@ export function LinkComponent({ href, imgSrc, name, color }: LinkProps) {
   return (
     <>
       <NavLink color={color} isActive={pageActive} onClick={handleClick}>
-        <NavIcons>
-          {imgSrc}
-        </NavIcons>
+        <NavIcons>{imgSrc}</NavIcons>
         <span>{name}</span>
       </NavLink>
     </>

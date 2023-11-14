@@ -19,6 +19,7 @@ export const NavIcons = styled.div<IconProps>`
 `;
 
 export const NavLink = styled.div<LinkProps>`
+border-radius: 10px;
   position: relative;
   display: flex;
   gap: 1rem;
