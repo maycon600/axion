@@ -1,9 +1,10 @@
 import { HeaderComponent } from "@/components/Global/Header";
 import { Sidebar } from "@/components/Global/Sidebar";
 import { LineChartComponent } from "@/components/dashboard/recharts/linechart";
-import BarChartComponent from "@/components/dashboard/recharts/verticalBarChart";
 import { Container } from "../profile/styles";
 import { Content, Main } from "./styles";
+import { BarChartComponent } from "@/components/dashboard/recharts/verticalBarChart";
+import TesteComponent from "@/components/dashboard/recharts/test";
 
 export default function Home() {
   return (
@@ -58,7 +59,13 @@ export default function Home() {
 
           <LineChartComponent />
 
-          <BarChartComponent />
+          <div style={{ width: "100%", height: "25rem" }	}>
+            <BarChartComponent />
+          </div>
+
+          {/* <div style={{ width: "40rem", height: "10rem" }}>
+            <TesteComponent />
+          </div> */}
         </Main>
       </Content>
     </Container>
