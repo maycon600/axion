@@ -3,7 +3,7 @@ import { Container, Content, Main } from "./styles";
 import { useRouter } from "next/router";
 import { HeaderComponent } from "@/components/home/Header";
 
-export default function SeuEleitorado() {
+export default function MidiasSociais() {
   const router = useRouter();
   return (
     <Container>

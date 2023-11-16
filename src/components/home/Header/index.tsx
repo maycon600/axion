@@ -42,7 +42,7 @@ export function HeaderComponent() {
         <MenuItemComponent
           imgSrc="/dashboard/midias-sociais-menu.png"
           href="/midias-sociais"
-          name="MÍDIA SOCIAL"
+          name="MÍDIAS SOCIAIS"
         />
         <MenuItemComponent
           imgSrc="/dashboard/suas-noticias-menu.png"
