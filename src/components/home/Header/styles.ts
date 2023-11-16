@@ -115,3 +115,36 @@ export const CandidateInfo = styled.div`
     border-radius: 50%;
   }
 `;
+
+export const Options = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+`;
+
+export const VerifyPopularity = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  width: 15.5rem;
+  height: 2.9rem;
+  line-height: 1;
+  font-weight: bold;
+  color: #292d32;
+  font-size: 1.01638rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.01638rem;
+  border-radius: 16px;
+  border: 1px solid #0d123c;
+
+  img {
+    margin-left: 1.2rem;
+  }
+`;
+
+export const VerifyCompetition = styled(VerifyPopularity)`
+  background-color: #0d123c;
+  color: white;
+`;

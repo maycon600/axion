@@ -7,7 +7,10 @@ import {
   HeaderMenu,
   HeaderTop,
   Instruction,
+  Options,
   UserMenu,
+  VerifyCompetition,
+  VerifyPopularity,
 } from "./styles";
 import Image from "next/image";
 
@@ -62,13 +65,25 @@ export function HeaderComponent() {
           />
           <div className="info">
             <strong>Roberto Dorner</strong>
-            <span className="candidateNumber">Número do Candidato: xxxxxxxxxx</span>
+            <span className="candidateNumber">
+              Número do Candidato: xxxxxxxxxx
+            </span>
             <span className="status">
               <div className="statusCircle" />
               Participando da Eleição
             </span>
           </div>
         </CandidateInfo>
+        <Options>
+          <VerifyPopularity>
+            <img src="/dashboard/like-blue.svg" alt="" /> Verificar Popularidade
+            Estimada
+          </VerifyPopularity>
+          <VerifyCompetition>
+            <img src="/dashboard/competitors.svg" alt="" /> Analisar
+            Concorrentes
+          </VerifyCompetition>
+        </Options>
       </Candidate>
     </HeaderContainer>
   );
