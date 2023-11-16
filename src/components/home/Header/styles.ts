@@ -6,8 +6,8 @@ export const HeaderContainer = styled.header`
 
 export const HeaderTop = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
 `;
 
 export const Instruction = styled.div`
@@ -16,15 +16,20 @@ export const Instruction = styled.div`
   border-radius: 48px;
   border: 1px solid #c3c3c3;
   font-weight: bold;
-  font-size: 1.375rem;
-  margin-right: 5vw;
+  font-size: 1.1rem;
 
   img {
     margin-right: 0.3rem;
   }
+
+  @media (max-width: 1320px) {
+    margin-right: calc(40vw - 17rem);
+  }
 `;
 
 export const UserMenu = styled.div`
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -52,5 +57,31 @@ export const UserMenu = styled.div`
     width: 0.75rem;
     height: 0.75rem;
     margin-left: 0.3rem;
+  }
+`;
+
+export const HeaderMenu = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+`;
+
+interface MenuItemProps {
+  active: boolean;
+}
+
+export const MenuItem = styled.div<MenuItemProps>`
+  position: relative;
+  opacity: ${({ active }) => (active ? "1" : "0.4")};
+  cursor: pointer;
+
+  img {
+    border-radius: 12px;
+  }
+
+  .title {
+    position: absolute;
+    top: 40%;
+    left: 20%;
   }
 `;
