@@ -12,9 +12,6 @@ export default function SeuEleitorado() {
         <HeaderComponent />
         <Main>
           <h1>osdajsaddsadsadsadassdadassdadas</h1>
-          <button onClick={() => alert(router.asPath.split("/")[1])}>
-            dslalds
-          </button>
         </Main>
       </Content>
     </Container>
