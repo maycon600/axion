@@ -7,9 +7,7 @@ import { UsersSVG } from "../../../../public/sidebar/users";
 import { LinkComponent } from "./Link";
 import {
   AxionLogoContainer,
-  NameAndEmail,
-  SidebarContainer,
-  UserMenu,
+  SidebarContainer
 } from "./styles";
 
 export function Sidebar() {
@@ -57,13 +55,6 @@ export function Sidebar() {
           href="/settings"
         />
       </div>
-      <UserMenu>
-        <img src="/sidebar/user.png" alt="" />
-        <NameAndEmail>
-          <strong>Robert Martins</strong>
-          <span>contato@robertmartins.com.br</span>
-        </NameAndEmail>
-      </UserMenu>
     </SidebarContainer>
   );
 }

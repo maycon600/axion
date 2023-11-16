@@ -15,34 +15,3 @@ export const AxionLogoContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export const UserMenu = styled.div`
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  background-color: ${({ theme }) => theme.color.gray_50};
-  width: 100%;
-
-  img {
-    width: 3rem;
-    height: 3rem;
-    object-fit: cover;
-  }
-`;
-
-export const NameAndEmail = styled.div`
-  display: flex;
-  flex-direction: column;
-  strong {
-    font-size: 0.9rem;
-    font-weight: normal;
-  }
-
-  span {
-    font-size: 0.7rem;
-    color: ${({ theme }) => theme.color.gray_40};
-  }
-`;
