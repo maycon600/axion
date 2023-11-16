@@ -66,22 +66,52 @@ export const HeaderMenu = styled.nav`
   margin-top: 2.4rem;
 `;
 
-interface MenuItemProps {
-  active: boolean;
-}
+export const Candidate = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+`;
 
-export const MenuItem = styled.div<MenuItemProps>`
-  position: relative;
-  opacity: ${({ active }) => (active ? "1" : "0.4")};
-  cursor: pointer;
+export const CandidateInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 
   img {
-    border-radius: 12px;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
   }
 
-  .title {
-    position: absolute;
-    top: 40%;
-    left: 20%;
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  strong {
+    color: #292d32;
+    font-size: 1.625rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .candidateNumber {
+    color: #8790ab;
+    font-size: 0.75rem;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #22c24f;
+    font-size: 0.5625rem;
+  }
+
+  .statusCircle {
+    width: 0.3125rem;
+    height: 0.3125rem;
+    background-color: #22c24f;
+    border-radius: 50%;
   }
 `;
