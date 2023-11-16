@@ -17,17 +17,8 @@ export const Content = styled.div`
   padding: 1.2rem;
 `;
 
-export const Header = styled.header`
-  height: 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-`;
-
 export const Main = styled.main`
   margin: 2%;
-  /* background-color: white; */
   border-radius: 10px;
   padding: 2.25rem;
 
@@ -52,6 +43,28 @@ export const Main = styled.main`
       &:hover {
         background-color: ${({ theme }) => theme.color.brand_blue_hover};
       }
+    }
+  }
+`;
+
+export const InstructionContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  .instruction {
+    background-color: white;
+    display: flex;
+    gap: 0.5rem;
+    text-align: center;
+    width: 35rem;
+    padding: 1rem 0.75rem;
+    border-radius: 48px;
+    border: 1px solid #c3c3c3;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    img {
+      margin-right: 0.3rem;
     }
   }
 `;
