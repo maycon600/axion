@@ -3,6 +3,7 @@ import {
   CardsContainer,
   ChatBody,
   ChatContainer,
+  ChatFooter,
   ChatHeader,
   Container,
   Content,
@@ -65,8 +66,17 @@ export default function InteligenciaArtificial() {
                   "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat ut blanditiis dicta maxime perferendis quas nihil natus nisi, molestias quasi culpa aliquid, inventore dolor animi non expedita doloremque nulla repellat!"
                 }
               />
-              <IaMessage />
+              <IaMessage
+                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+                commodi necessitatibus voluptas nisi iste eos hic magnam, delectus magni
+                adipisci sint repudiandae culpa animi voluptatem vitae repellat natus
+                ipsa veritatis."
+              />
             </ChatBody>
+            <ChatFooter>
+              <textarea placeholder="Escreva sua mensagem" />
+              <img src="/dashboard/iaSendMessage.svg" alt="" />
+            </ChatFooter>
           </ChatContainer>
         </Main>
       </Content>

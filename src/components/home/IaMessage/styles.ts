@@ -22,7 +22,7 @@ export const IaMessageContainer = styled.div`
 
 export const MessageHeader = styled.div`
   display: flex;
-  gap: 0.5rem;
   align-items: flex-start;
+  gap: 0.5rem;
   padding: 0.8rem 0;
 `;

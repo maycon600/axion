@@ -1,25 +1,31 @@
 import { IaMessageContainer, MessageHeader } from "./styles";
 
-export function IaMessage() {
+interface Props {
+  content: string;
+}
+
+export function IaMessage({ content }: Props) {
   return (
     <IaMessageContainer>
       <MessageHeader>
         <img src="/sidebar/axion-white.svg" alt="" />
         <div
           style={{
-            padding: "0.2rem",
-            borderRadius: "10px",
+            width: '1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: "0.1rem",
+            borderRadius: "4px",
             background: "linear-gradient(109deg, #D8D8D8 0%, #0D123C 96.63%)",
+            height: '1.2rem'
           }}
         >
-          <img src="/ia.png" alt="" />
+          <img src="/ia.png" alt="" style={{ width: "0.8rem" }} />
         </div>
       </MessageHeader>
       <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-        commodi necessitatibus voluptas nisi iste eos hic magnam, delectus magni
-        adipisci sint repudiandae culpa animi voluptatem vitae repellat natus
-        ipsa veritatis.
+        {content}
       </div>
     </IaMessageContainer>
   );
