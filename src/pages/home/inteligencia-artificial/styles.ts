@@ -68,3 +68,31 @@ export const InstructionContainer = styled.div`
     }
   }
 `;
+
+export const CardsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ChatContainer = styled.div`
+  margin-top: 2rem;
+`;
+
+export const ChatHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+export const ChatBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  background-color: white;
+  margin-top: 1rem;
+  border-radius: 30px;
+  padding: 1rem;
+`;
+

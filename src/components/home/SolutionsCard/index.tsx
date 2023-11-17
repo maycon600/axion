@@ -7,20 +7,20 @@ import {
 } from "./styles";
 
 export interface FuncionalitiesProps {
-  created_at: string;
+  // created_at: string;
   description: string;
-  id: string;
+  // id: string;
   name: string;
-  page_url: string;
+  // page_url: string;
   update_time: string;
-  video_url: string;
+  // video_url: string;
 }
 
 export function SolutionsCard({
   description,
   name,
-  page_url,
-  video_url,
+  // page_url,
+  // video_url,
   update_time,
 }: FuncionalitiesProps) {
   const router = useRouter();
@@ -29,7 +29,7 @@ export function SolutionsCard({
       <CardHeader>
         <div className="title">
           <div className="imgContainer">
-            <img src={"/home/solutionCardImg1.svg"} alt="" />
+            <img src={"/dashboard/cardImg1.svg"} alt="" />
           </div>
           <strong>{name}</strong>
         </div>
@@ -43,9 +43,8 @@ export function SolutionsCard({
       </TextContainer>
 
       <ButtonsContainer>
-        <button onClick={() => router.push(page_url)}>Utilizar Solução</button>
-        <a href={video_url} target="_blank">
-          <img src="/home/youtubeLogo.svg" alt="" />{" "}
+        <a href={"#"} target="_blank">
+          <img src="/dashboard/youtube.svg" alt="" />{" "}
           <span>Assistir Vídeo Explicativo</span>
         </a>
       </ButtonsContainer>

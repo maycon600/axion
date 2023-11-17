@@ -4,28 +4,32 @@ export const Container = styled.div`
   width: 16.75rem;
   margin-top: 2rem;
   border-radius: 11px;
-  border: 1px solid #d2ae6d;
+  border: 1px solid #d1d1d1;
   padding: 1rem 0.625rem 0.3rem;
   height: 100%;
-
-  background: linear-gradient(144deg, #a07d40 25.42%, #282a3b 78.84%);
+  background: linear-gradient(144deg, #505175 25.42%, #282a3b 78.84%);
 `;
 
 export const CardHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+
   .title {
     display: flex;
     align-items: center;
     font-size: 1.1rem;
     color: white;
     gap: 0.5rem;
+    font-style: italic;
   }
 
   .imgContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
+    flex-shrink: 0;
+    width: 3.2rem;
+    height: 3.2rem;
     border-radius: 50%;
     background-color: white;
 
@@ -52,6 +56,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  padding: 1.5rem;
 
   button,
   a {
