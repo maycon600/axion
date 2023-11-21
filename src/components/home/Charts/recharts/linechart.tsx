@@ -1,5 +1,5 @@
 import { windowWidth } from "@/utils/mobile";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useId } from "react";
 import {
   LineChart,
   Line,
@@ -10,6 +10,7 @@ import {
 } from "recharts";
 
 export function LineChartComponent() {
+  const chartId = useId();
   const [width, setWidth] = useState(600);
 
   let isWindowAbove1000 = !windowWidth(1000);
@@ -32,6 +33,7 @@ export function LineChartComponent() {
 
   return (
     <LineChart
+      id={chartId}
       width={width}
       height={300}
       data={data}

@@ -1,55 +1,40 @@
-import { useId } from "react";
+import React, { PureComponent, useEffect, useState, useId } from "react";
 import {
-  Bar,
   BarChart,
-  CartesianGrid,
-  ComposedChart,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
+  Bar,
+  Cell,
   XAxis,
   YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 const data = [
   {
-    name: "16-18",
-    uv: 590,
-    pv: 800,
+    name: "16:00",
+    uv: 4000,
   },
   {
-    name: "19-29",
-    uv: 868,
-    pv: 967,
+    name: "17:00",
+    uv: 3000,
   },
   {
-    name: "30-40",
-    uv: 1397,
-    pv: 1098,
+    name: "21:00",
+    uv: 2000,
   },
   {
-    name: "41-50",
-    uv: 1480,
-    pv: 1200,
+    name: "08:00",
+    uv: 2780,
   },
   {
-    name: "51-60",
-    uv: 1520,
-    pv: 1108,
-  },
-  {
-    name: "61-70",
-    uv: 1400,
-    pv: 680,
-  },
-  {
-    name: "+70",
-    uv: 250,
-    pv: 500,
+    name: "10:00",
+    uv: 1890,
   },
 ];
 
-export function BarChartComponent() {
+export function VotersActive() {
   const chartId = useId();
 
   return (
@@ -72,8 +57,7 @@ export function BarChartComponent() {
         <YAxis dataKey="name" type="category" scale="auto" />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" barSize={10} fill="#22C24F" />
-        <Bar dataKey="uv" barSize={10} fill="#E73F3F" />
+        <Bar dataKey="uv" barSize={10} fill="#22C24F" />
       </BarChart>
     </ResponsiveContainer>
   );
