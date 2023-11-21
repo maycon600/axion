@@ -42,7 +42,7 @@ export function DoughnutChart() {
       ],
     },
     options: {
-      cutout: "20%",
+      cutout: "35%",
       maintainAspectRatio: false,
       offset: 20,
     },

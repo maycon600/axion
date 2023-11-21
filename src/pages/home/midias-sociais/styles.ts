@@ -62,3 +62,13 @@ export const LikesAndComentsContainer = styled.div`
   gap: 0.6rem;
   flex-wrap: wrap;
 `;
+
+export const ChartContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 33rem;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 0.3px solid #c3c3c3;
+  min-height: 400px;
+`;

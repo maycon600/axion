@@ -1,13 +1,18 @@
 import { Sidebar } from "@/components/Global/Sidebar";
-import { Container, Content, LikesAndComentsContainer, Main } from "./styles";
-import { useRouter } from "next/router";
-import { HeaderComponent } from "@/components/home/Header";
+import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
 import { VotersActive } from "@/components/home/Charts/VotersActive";
 import { LineChartComponent } from "@/components/home/Charts/recharts/linechart";
 import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
-import { TotalQuotes } from "@/components/home/Charts/TotalQuotes";
-import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
-import { DoughnutChart } from "@/components/home/Charts/DoughnutChart";
+import { HeaderComponent } from "@/components/home/Header";
+import { useRouter } from "next/router";
+import {
+  ChartContainer,
+  Container,
+  Content,
+  LikesAndComentsContainer,
+  Main,
+} from "./styles";
+import { PieChart } from "@/components/home/Charts/PieChart";
 
 export default function MidiasSociais() {
   const router = useRouter();
@@ -44,13 +49,29 @@ export default function MidiasSociais() {
               name="Facebook"
             />
           </LikesAndComentsContainer>
+
           {/* <DoughnutChart /> */}
-          <div style={{ width: "100%", height: "25rem" }}>
-            <VotersActive />
-          </div>
-          <LineChartComponent />
-          <div style={{ width: "100%", height: "25rem" }}>
-            <BarChartComponent />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+              justifyItems: "center",
+              alignItems: "center",
+              gap: "3rem",
+            }}
+          >
+            <ChartContainer style={{ height: "450px" }}>
+              <PieChart />
+            </ChartContainer>
+            <ChartContainer>
+              <VotersActive />
+            </ChartContainer>
+            <ChartContainer>
+              <LineChartComponent />
+            </ChartContainer>
+            <ChartContainer>
+              <BarChartComponent />
+            </ChartContainer>
           </div>
         </Main>
       </Content>
