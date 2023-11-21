@@ -5,6 +5,8 @@ import { HeaderComponent } from "@/components/home/Header";
 import { VotersActive } from "@/components/home/Charts/VotersActive";
 import { LineChartComponent } from "@/components/home/Charts/recharts/linechart";
 import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
+import { TotalQuotes } from "@/components/home/Charts/TotalQuotes";
+import { LikesCard } from "@/components/home/Charts/LikesCard";
 
 export default function MidiasSociais() {
   const router = useRouter();
@@ -14,6 +16,20 @@ export default function MidiasSociais() {
       <Content>
         <HeaderComponent />
         <Main>
+          <TotalQuotes
+            barColor="red"
+            finalDate="lkjads"
+            initialDate="dsalksdlk"
+            popularityVariation={10}
+            totalQuotes={2000}
+            key={Math.random()}
+          />
+          <LikesCard
+            barColor="green"
+            dislikes={1000}
+            likes={25000}
+            name="Likes"
+          />
           {/* <DoughnutChart /> */}
           <div style={{ width: "100%", height: "25rem" }}>
             <VotersActive />
