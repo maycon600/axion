@@ -22,7 +22,7 @@ export function LikesAndComentsCard({
         <FeedbackGroup>
           <div className="group">
             <img src="/dashboard/like.svg" alt="" />
-            <strong>{likes}</strong>
+            <strong>{likes}K</strong>
           </div>
           <span>Likes em publicações</span>
         </FeedbackGroup>
@@ -30,14 +30,14 @@ export function LikesAndComentsCard({
         <FeedbackGroup>
           <div className="group">
             <img src="/dashboard/coments.svg" alt="" />
-            <strong>{coments}</strong>
+            <strong>{coments}K</strong>
           </div>
           <span>Comentários</span>
         </FeedbackGroup>
       </Feedback>
 
       <div style={{ margin: "1.3rem 0 0.5rem" }}>
-        <p style={{ color: Theme.color.gray_70 }}>
+        <p style={{ color: Theme.color.gray_70, fontSize: "0.625rem" }}>
           <img src="/dashboard/downArrow.svg" alt="" />
           <span style={{ color: Theme.color.red_70 }}>-10%</span> de queda desde
           o mês passado

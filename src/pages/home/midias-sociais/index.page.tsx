@@ -1,5 +1,5 @@
 import { Sidebar } from "@/components/Global/Sidebar";
-import { Container, Content, Main } from "./styles";
+import { Container, Content, LikesAndComentsContainer, Main } from "./styles";
 import { useRouter } from "next/router";
 import { HeaderComponent } from "@/components/home/Header";
 import { VotersActive } from "@/components/home/Charts/VotersActive";
@@ -7,6 +7,7 @@ import { LineChartComponent } from "@/components/home/Charts/recharts/linechart"
 import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
 import { TotalQuotes } from "@/components/home/Charts/TotalQuotes";
 import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
+import { DoughnutChart } from "@/components/home/Charts/DoughnutChart";
 
 export default function MidiasSociais() {
   const router = useRouter();
@@ -16,20 +17,33 @@ export default function MidiasSociais() {
       <Content>
         <HeaderComponent />
         <Main>
-          <TotalQuotes
-            barColor="red"
-            finalDate="lkjads"
-            initialDate="dsalksdlk"
-            popularityVariation={10}
-            totalQuotes={2000}
-            key={Math.random()}
-          />
-          <LikesAndComentsCard
-            barColor="green"
-            coments={1000}
-            likes={25000}
-            name="Likes"
-          />
+          <h1>Redes Sociais</h1>
+          <LikesAndComentsContainer>
+            <LikesAndComentsCard
+              barColor="#5162FF"
+              coments={1}
+              likes={25}
+              name="Facebook"
+            />
+            <LikesAndComentsCard
+              barColor="#5162FF"
+              coments={1}
+              likes={25}
+              name="Facebook"
+            />
+            <LikesAndComentsCard
+              barColor="#5162FF"
+              coments={1}
+              likes={25}
+              name="Facebook"
+            />
+            <LikesAndComentsCard
+              barColor="#5162FF"
+              coments={1}
+              likes={25}
+              name="Facebook"
+            />
+          </LikesAndComentsContainer>
           {/* <DoughnutChart /> */}
           <div style={{ width: "100%", height: "25rem" }}>
             <VotersActive />

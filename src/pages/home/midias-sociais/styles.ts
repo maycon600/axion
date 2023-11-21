@@ -29,7 +29,7 @@ export const Main = styled.main`
   margin: 2%;
   /* background-color: white; */
   border-radius: 10px;
-  padding: 2.25rem;
+  /* padding: 2.25rem; */
 
   header {
     display: flex;
@@ -54,4 +54,11 @@ export const Main = styled.main`
       }
     }
   }
+`;
+
+export const LikesAndComentsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 `;

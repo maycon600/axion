@@ -6,7 +6,8 @@ interface Props {
 
 export const Container = styled.div<Props>`
   position: relative;
-  width: 22rem;
+  width: 17.5rem;
+  height: 8.875rem;
   background-color: white;
   padding: 1rem 2rem;
   border-radius: 10px;
@@ -29,13 +30,13 @@ export const Container = styled.div<Props>`
 export const Feedback = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.2rem;
 `;
 
 export const FeedbackGroup = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin-top: 0.4rem;
   gap: "0.1rem";
 
   img {
@@ -45,10 +46,11 @@ export const FeedbackGroup = styled.div`
 
   strong {
     font-size: 2rem;
+    line-height: 0.9;
   }
 
   span {
-    font-size: 0.8rem;
+    font-size: 0.625rem;
     color: ${({ theme }) => theme.color.gray_90};
   }
 
