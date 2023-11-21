@@ -6,7 +6,7 @@ import { VotersActive } from "@/components/home/Charts/VotersActive";
 import { LineChartComponent } from "@/components/home/Charts/recharts/linechart";
 import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
 import { TotalQuotes } from "@/components/home/Charts/TotalQuotes";
-import { LikesCard } from "@/components/home/Charts/LikesCard";
+import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
 
 export default function MidiasSociais() {
   const router = useRouter();
@@ -24,9 +24,9 @@ export default function MidiasSociais() {
             totalQuotes={2000}
             key={Math.random()}
           />
-          <LikesCard
+          <LikesAndComentsCard
             barColor="green"
-            dislikes={1000}
+            coments={1000}
             likes={25000}
             name="Likes"
           />
