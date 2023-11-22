@@ -46,7 +46,7 @@ export const options = {
       color: "#fff",
       font: {
         weight: "bold",
-        size: 14,
+        size: 13,
       },
     },
     tooltip: {
@@ -62,7 +62,7 @@ export const data = {
   datasets: [
     {
       label: "Número de Votos",
-      data: [40, 40, 20, 20, 20, 20, 20, 16, 4],
+      data: [40, 40, 20, 20, 20, 20, 20, 20],
       backgroundColor: [
         "#165DFF",
         "#14C9C9",

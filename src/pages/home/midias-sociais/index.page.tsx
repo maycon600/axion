@@ -11,8 +11,10 @@ import {
   Content,
   LikesAndComentsContainer,
   Main,
+  Tip,
 } from "./styles";
 import { PieChart } from "@/components/home/Charts/PieChart";
+import { TitleWithBar } from "@/components/Global/TitleWithBar";
 
 export default function MidiasSociais() {
   const router = useRouter();
@@ -60,15 +62,37 @@ export default function MidiasSociais() {
               gap: "3rem",
             }}
           >
-            <ChartContainer style={{ height: "400px" }}>
-              <div style={{ height: "100%", width: "100%" }}>
+            <ChartContainer>
+              <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
+              <div style={{ height: "100%", width: "400px" }}>
                 <PieChart />
               </div>
             </ChartContainer>
             <ChartContainer style={{ height: "400px" }}>
-              <div style={{ height: "300px", width: "100%" }}>
+              <TitleWithBar
+                content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
+                barColor="#12A9E7"
+                subTitle
+              />
+              <div
+                style={{
+                  height: "300px",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 <VotersActive />
               </div>
+
+              <Tip>
+                <img src="/dashboard/userIcon.svg" alt="" />
+                <p>
+                  Se quiser ter um maior alcance nas Redes Sociais se atente a
+                  estes horários.
+                </p>
+              </Tip>
             </ChartContainer>
             <ChartContainer>
               <LineChartComponent />

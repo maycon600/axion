@@ -14,23 +14,23 @@ import {
 const data = [
   {
     name: "16:00",
-    uv: 4000,
+    Quantidade: 4000,
   },
   {
     name: "17:00",
-    uv: 3000,
+    Quantidade: 3000,
   },
   {
     name: "21:00",
-    uv: 2000,
+    Quantidade: 2000,
   },
   {
     name: "08:00",
-    uv: 2780,
+    Quantidade: 2780,
   },
   {
     name: "10:00",
-    uv: 1890,
+    Quantidade: 1890,
   },
 ];
 
@@ -54,8 +54,7 @@ export function VotersActive() {
         <XAxis type="number" />
         <YAxis dataKey="name" type="category" scale="auto" />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="uv" barSize={10} fill="#22C24F" />
+        <Bar dataKey="Quantidade" barSize={14} fill="#22C24F" />
       </BarChart>
     </ResponsiveContainer>
   );
