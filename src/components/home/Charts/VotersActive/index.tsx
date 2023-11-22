@@ -42,8 +42,6 @@ export function VotersActive() {
       <BarChart
         id={chartId}
         layout="vertical"
-        width={500}
-        height={400}
         data={data}
         margin={{
           top: 20,

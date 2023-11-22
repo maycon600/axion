@@ -60,11 +60,15 @@ export default function MidiasSociais() {
               gap: "3rem",
             }}
           >
-            <ChartContainer style={{ height: "450px" }}>
-              <PieChart />
+            <ChartContainer style={{ height: "400px" }}>
+              <div style={{ height: "100%", width: "100%" }}>
+                <PieChart />
+              </div>
             </ChartContainer>
-            <ChartContainer>
-              <VotersActive />
+            <ChartContainer style={{ height: "400px" }}>
+              <div style={{ height: "300px", width: "100%" }}>
+                <VotersActive />
+              </div>
             </ChartContainer>
             <ChartContainer>
               <LineChartComponent />

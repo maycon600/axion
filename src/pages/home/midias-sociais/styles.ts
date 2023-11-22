@@ -70,5 +70,5 @@ export const ChartContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
-  min-height: 400px;
+  /* min-height: 400px; */
 `;
