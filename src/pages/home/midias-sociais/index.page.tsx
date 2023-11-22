@@ -1,5 +1,7 @@
 import { Sidebar } from "@/components/Global/Sidebar";
+import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
+import { EngagmentChart } from "@/components/home/Charts/PieChart";
 import { VotersActive } from "@/components/home/Charts/VotersActive";
 import { LineChartComponent } from "@/components/home/Charts/recharts/linechart";
 import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
@@ -13,8 +15,8 @@ import {
   Main,
   Tip,
 } from "./styles";
-import { PieChart } from "@/components/home/Charts/PieChart";
-import { TitleWithBar } from "@/components/Global/TitleWithBar";
+import { DoughnutChart } from "@/components/home/Charts/DoughnutChart";
+import { FollowerData } from "@/components/home/Charts/FollowerData";
 
 export default function MidiasSociais() {
   const router = useRouter();
@@ -53,6 +55,7 @@ export default function MidiasSociais() {
           </LikesAndComentsContainer>
 
           {/* <DoughnutChart /> */}
+          <FollowerData />
           <div
             style={{
               display: "grid",
@@ -60,12 +63,13 @@ export default function MidiasSociais() {
               justifyItems: "center",
               alignItems: "center",
               gap: "3rem",
+              marginTop: '1.2rem'
             }}
           >
             <ChartContainer>
               <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
               <div style={{ height: "100%", width: "400px" }}>
-                <PieChart />
+                <EngagmentChart />
               </div>
             </ChartContainer>
             <ChartContainer style={{ height: "400px" }}>

@@ -1,12 +1,19 @@
 import Chart from "chart.js/auto";
 
-export function DoughnutChart() {
+export function FollowerData() {
+  let myChart: any; // Declare a variable to hold the chart instance
+
   const data = [
     { year: 2013, count: 40 },
     { year: 2014, count: 30 },
     { year: 2015, count: 30 },
     { year: 2016, count: 20 },
   ];
+
+  // Check if myChart exists and destroy it if it does
+  if (myChart) {
+    myChart.destroy();
+  }
 
   const labels = data.map((d) => d.year);
 
@@ -29,7 +36,7 @@ export function DoughnutChart() {
     },
   };
 
-  const chart = new Chart("myChart", {
+  myChart = new Chart("myChart", {
     type: "doughnut",
     data: {
       labels: labels,
@@ -37,7 +44,7 @@ export function DoughnutChart() {
         {
           label: "Dataset 1",
           data: data.map((d) => d.count),
-          // backgroundColor: ["#2F5CFC", "#0A2BA0", "#000411", "#E5E8F0"],
+          backgroundColor: ["#2F5CFC", "#0A2BA0", "#000411", "#E5E8F0"],
         },
       ],
     },

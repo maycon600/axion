@@ -5,7 +5,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-export const footeraa = (tooltipItems: any) => {  
+export const footer = (tooltipItems: any) => {  
   let total = 0
   let currentValue = 0
   tooltipItems.forEach(function (tooltipItem: any) {
@@ -51,7 +51,7 @@ export const options = {
     },
     tooltip: {
       callbacks: {
-        footer: footeraa,
+        footer: footer,
       },
     },
   },
@@ -78,6 +78,6 @@ export const data = {
   ],
 };
 
-export function PieChart() {
+export function EngagmentChart() {
   return <Pie data={data} options={options} />;
 }
