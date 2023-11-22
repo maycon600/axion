@@ -17,8 +17,35 @@ import {
 } from "./styles";
 import { DoughnutChart } from "@/components/home/Charts/DoughnutChart";
 import { FollowerData } from "@/components/home/Charts/FollowerData";
+import ReactWordcloud from "react-wordcloud";
+import { SimpleWordcloud } from "@/components/home/Charts/WordCloud";
+import { useEffect, useState } from "react";
 
 export default function MidiasSociais() {
+  const [client, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
+
+  const words = [
+    {
+      text: "told",
+      value: 64,
+    },
+    {
+      text: "mistake",
+      value: 11,
+    },
+    {
+      text: "thought",
+      value: 16,
+    },
+    {
+      text: "bad",
+      value: 17,
+    },
+  ];
   const router = useRouter();
   return (
     <Container>
@@ -55,7 +82,7 @@ export default function MidiasSociais() {
           </LikesAndComentsContainer>
 
           {/* <DoughnutChart /> */}
-          <FollowerData />
+          {/* <FollowerData /> */}
           <div
             style={{
               display: "grid",
@@ -63,7 +90,7 @@ export default function MidiasSociais() {
               justifyItems: "center",
               alignItems: "center",
               gap: "3rem",
-              marginTop: '1.2rem'
+              marginTop: "1.2rem",
             }}
           >
             <ChartContainer>
@@ -99,11 +126,10 @@ export default function MidiasSociais() {
               </Tip>
             </ChartContainer>
             <ChartContainer>
-              <LineChartComponent />
+              <SimpleWordcloud />
+              {/* <LineChartComponent /> */}
             </ChartContainer>
-            <ChartContainer>
-              <BarChartComponent />
-            </ChartContainer>
+            <ChartContainer>{/* <BarChartComponent /> */}</ChartContainer>
           </div>
         </Main>
       </Content>
