@@ -56,19 +56,6 @@ export const data = {
     },
   ],
 };
-// datasets: [
-//   {
-//     label: "Positivos",
-//     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-//     backgroundColor: "#22C24F",
-//   },
-//   {
-//     label: "Negativos",
-//     data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-//     backgroundColor: "#E73F3F",
-//   },
-
-// ],
 
 export function HorizontalBarChart() {
   return <Bar options={options} data={data} />;

@@ -14,42 +14,42 @@ import {
 const data = [
   {
     name: "16-18",
-    uv: 590,
-    pv: 800,
+    Homens: 590,
+    Mulheres: 800,
   },
   {
     name: "19-29",
-    uv: 868,
-    pv: 967,
+    Homens: 868,
+    Mulheres: 967,
   },
   {
     name: "30-40",
-    uv: 1397,
-    pv: 1098,
+    Homens: 1397,
+    Mulheres: 1098,
   },
   {
     name: "41-50",
-    uv: 1480,
-    pv: 1200,
+    Homens: 1480,
+    Mulheres: 1200,
   },
   {
     name: "51-60",
-    uv: 1520,
-    pv: 1108,
+    Homens: 1520,
+    Mulheres: 1108,
   },
   {
     name: "61-70",
-    uv: 1400,
-    pv: 680,
+    Homens: 1400,
+    Mulheres: 680,
   },
   {
     name: "+70",
-    uv: 250,
-    pv: 500,
+    Homens: 250,
+    Mulheres: 500,
   },
 ];
 
-export function BarChartComponent() {
+export function AgeGroupByGender() {
   const chartId = useId();
 
   return (
@@ -71,9 +71,8 @@ export function BarChartComponent() {
         <XAxis type="number" />
         <YAxis dataKey="name" type="category" scale="auto" />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" barSize={10} fill="#22C24F" />
-        <Bar dataKey="uv" barSize={10} fill="#E73F3F" />
+        <Bar dataKey="Homens" barSize={10} fill="#22C24F" />
+        <Bar dataKey="Mulheres" barSize={10} fill="#E73F3F" />
       </BarChart>
     </ResponsiveContainer>
   );
