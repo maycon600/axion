@@ -56,6 +56,7 @@ export function SimpleWordcloud() {
 
   const options = {
     rotations: 0,
+    colors: ['#0000ff', '#0000aa', '#000080', '#000066'],
   }
 
   return (
