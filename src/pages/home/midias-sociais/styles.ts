@@ -68,7 +68,8 @@ export const ChartContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 1.25rem;
-  width: 33rem;
+  width: 35rem;
+  height: 100%;
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;

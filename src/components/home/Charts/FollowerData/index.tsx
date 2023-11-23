@@ -1,5 +1,6 @@
 import Chart from "chart.js/auto";
 import { useState, useEffect } from "react";
+import { ChartCenterInfo } from "./styles";
 
 export function FollowerData() {
   const [myChart, setMyChart] = useState<any>(null);
@@ -7,8 +8,8 @@ export function FollowerData() {
   const data = [
     { year: 2013, count: 40 },
     { year: 2014, count: 30 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 20 },
+    { year: 2015, count: 20 },
+    { year: 2016, count: 10 },
   ];
 
   useEffect(() => {
@@ -16,6 +17,20 @@ export function FollowerData() {
     if (myChart) {
       myChart.destroy();
     }
+
+    const footer = (tooltipItems: any) => {
+      let total = 0;
+      let currentValue = 0;
+      tooltipItems.forEach(function (tooltipItem: any) {
+        let sum = 0;
+        tooltipItem.dataset.data.forEach((data: any) => {
+          sum += data;
+        });
+        total = sum;
+        currentValue = tooltipItem.parsed;
+      });
+      return ((currentValue * 100) / total).toFixed(1) + "%";
+    };
 
     const labels = data.map((d) => d.year);
 
@@ -51,15 +66,34 @@ export function FollowerData() {
         ],
       },
       options: {
+        responsive: true,
         cutout: "36%",
         maintainAspectRatio: false,
         offset: 10,
         plugins: {
           legend: {
             display: false,
+            position: "right" as const,
           },
           datalabels: {
-            color: "#fff",
+            formatter: (value: any, ctx: any) => {
+              let sum = 0;
+              let dataArr = ctx.chart.data.datasets[0].data;
+              dataArr.map((data: any) => {
+                sum += data;
+              });
+              let percentage = ((value * 100) / sum).toFixed(1) + "%";
+              if ((value * 100) / sum < 10) {
+                return "";
+              }
+              return percentage;
+            },
+            color: ["#fff", "#fff", "#fff", "#000"],
+          },
+          tooltip: {
+            callbacks: {
+              footer: footer,
+            },
           },
         },
       },
@@ -77,7 +111,14 @@ export function FollowerData() {
   }, []);
 
   return (
-    <div style={{ width: "400px", height: "400px" }}>
+    <div style={{ height: "400px", width: "400px", position: "relative" }}>
+      <ChartCenterInfo>
+        <strong className="percentage">34%</strong>
+        <strong className="gain">
+          <img src="/dashboard/arrow-up.svg" alt="" /> +6.5%
+        </strong>
+        <span className="description">de ganho em processos</span>
+      </ChartCenterInfo>
       <canvas id="myChart" />
     </div>
   );

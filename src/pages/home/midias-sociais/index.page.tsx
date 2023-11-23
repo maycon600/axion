@@ -22,25 +22,6 @@ import { SimpleWordcloud } from "@/components/home/Charts/WordCloud";
 import { useEffect, useState } from "react";
 
 export default function MidiasSociais() {
-
-  const words = [
-    {
-      text: "told",
-      value: 64,
-    },
-    {
-      text: "mistake",
-      value: 11,
-    },
-    {
-      text: "thought",
-      value: 16,
-    },
-    {
-      text: "bad",
-      value: 17,
-    },
-  ];
   const router = useRouter();
   return (
     <Container>
@@ -76,8 +57,6 @@ export default function MidiasSociais() {
             />
           </LikesAndComentsContainer>
 
-          {/* <DoughnutChart /> */}
-          <FollowerData />
           <div
             style={{
               display: "grid",
@@ -89,10 +68,26 @@ export default function MidiasSociais() {
             }}
           >
             <ChartContainer>
+              <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
+              <div style={{ height: "100%", width: "400px" }}>
+                <FollowerData />
+              </div>
+            </ChartContainer>
+            <ChartContainer>
               <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
               <div style={{ height: "100%", width: "400px" }}>
                 <EngagmentChart />
               </div>
+            </ChartContainer>
+            <ChartContainer
+              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            >
+              <TitleWithBar
+                barColor="#080E45"
+                content="Nuvem de palavras Geral"
+                subTitle
+              />
+              <SimpleWordcloud />
             </ChartContainer>
             <ChartContainer style={{ height: "400px" }}>
               <TitleWithBar
@@ -120,11 +115,6 @@ export default function MidiasSociais() {
                 </p>
               </Tip>
             </ChartContainer>
-            <ChartContainer>
-              <SimpleWordcloud />
-              {/* <LineChartComponent /> */}
-            </ChartContainer>
-            <ChartContainer>{/* <BarChartComponent /> */}</ChartContainer>
           </div>
         </Main>
       </Content>

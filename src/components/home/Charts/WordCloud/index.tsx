@@ -15,40 +15,120 @@ export function SimpleWordcloud() {
 
   const words = [
     {
-      text: 'told',
-      value: 64,
+      text: 'FRAUDE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'mistake',
-      value: 11,
+      text: 'PROPAGANDA ENGANOSA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000), 
     },
     {
-      text: 'thought',
-      value: 16,
+      text: 'RUIM',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'bad',
-      value: 17,
+      text: 'DEMORA NA ENTREGA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'happy',
-      value: 22,
+      text: 'PRODUTO COM DEFEITO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'great',
-      value: 30,
+      text: 'CUMPRE O QUE PROMETE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'wonderful',
-      value: 28,
+      text: 'BOM ATENDIMENTO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'exciting',
-      value: 25,
+      text: 'FRAUDE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     {
-      text: 'amazing',
-      value: 35,
+      text: 'PROPAGANDA ENGANOSA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000), 
+    },
+    {
+      text: 'RUIM',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'DEMORA NA ENTREGA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'PRODUTO COM DEFEITO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'CUMPRE O QUE PROMETE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'BOM ATENDIMENTO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'FRAUDE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'PROPAGANDA ENGANOSA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000), 
+    },
+    {
+      text: 'RUIM',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'DEMORA NA ENTREGA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'PRODUTO COM DEFEITO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'CUMPRE O QUE PROMETE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'BOM ATENDIMENTO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'FRAUDE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'PROPAGANDA ENGANOSA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000), 
+    },
+    {
+      text: 'RUIM',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'DEMORA NA ENTREGA',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'PRODUTO COM DEFEITO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'CUMPRE O QUE PROMETE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'BOM ATENDIMENTO',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
+    },
+    {
+      text: 'FRAUDE',
+      value: Math.round(Math.random() * (5000 - 1000) + 1000),
     },
     // Add more words as needed
 ];
@@ -56,7 +136,10 @@ export function SimpleWordcloud() {
 
   const options = {
     rotations: 0,
-    colors: ['#0000ff', '#0000aa', '#000080', '#000066'],
+    colors: ['#556AFB', '#33429A', '#0A27E6', ],
+    fontWeight: '700',
+    fontFamily: 'Arial',
+    fontSizes: [12, 50],
   }
 
   return (
