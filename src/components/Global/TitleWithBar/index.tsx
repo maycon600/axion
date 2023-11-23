@@ -3,12 +3,13 @@ import { LogoContainer, SubtitleContainer, TitleContainer } from "./styles";
 interface Props {
   content: string;
   barColor: string;
+  width?: string;
   subTitle?: boolean;
 }
 
-export function TitleWithBar({ content, barColor, subTitle = false }: Props) {
+export function TitleWithBar({ content, barColor, width="auto", subTitle = false }: Props) {
   return (
-    <TitleContainer barColor={barColor}>
+    <TitleContainer barColor={barColor} width={width}>
       <div className="bar" />
       <div className="content">
         <h2>{content}</h2>

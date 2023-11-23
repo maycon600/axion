@@ -12,9 +12,9 @@ import {
 } from "./styles";
 import { useRouter } from "next/router";
 import { HeaderComponent } from "@/components/home/Header";
-import { SolutionsCard } from "@/components/home/SolutionsCard";
-import { UserMessage } from "@/components/home/UserMessage";
-import { IaMessage } from "@/components/home/IaMessage";
+import { SolutionsCard } from "@/components/home/inteligencia-artificial/SolutionsCard";
+import { UserMessage } from "@/components/home/inteligencia-artificial/UserMessage";
+import { IaMessage } from "@/components/home/inteligencia-artificial/IaMessage";
 
 export default function InteligenciaArtificial() {
   const router = useRouter();

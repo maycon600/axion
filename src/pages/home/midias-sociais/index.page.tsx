@@ -2,11 +2,11 @@ import { Sidebar } from "@/components/Global/Sidebar";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { FollowerData } from "@/components/home/Charts/FollowerData";
 import { Legend } from "@/components/home/Charts/FollowerData/Legend";
-import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
-import { EngagmentChart } from "@/components/home/Charts/PieChart";
-import { VotersActive } from "@/components/home/Charts/VotersActive";
-import { SimpleWordcloud } from "@/components/home/Charts/WordCloud";
 import { HeaderComponent } from "@/components/home/Header";
+import { EngagmentChart } from "@/components/home/midias-sociais/EngagementData";
+import { LikesAndComentsCard } from "@/components/home/midias-sociais/LikesAndComentsCard";
+import { VotersActive } from "@/components/home/midias-sociais/VotersActive";
+import { SimpleWordcloud } from "@/components/home/midias-sociais/WordCloud";
 import {
   ChartCenterInfo,
   ChartContainer,
@@ -21,10 +21,10 @@ import {
 
 export default function MidiasSociais() {
   const followerData = [
-    { name: "Instagram", count: 80 },
-    { name: "Facebook", count: 30 },
-    { name: "Youtube", count: 20 },
-    { name: "Tiktok", count: 120 },
+    { name: "Instagram", count: 40000 },
+    { name: "Facebook", count: 30000 },
+    { name: "Youtube", count: 20000 },
+    { name: "Tiktok", count: 10000 },
   ];
 
   const colors = ["#2F5CFC", "#0A2BA0", "#000411", "#E5E8F0"];
@@ -112,6 +112,7 @@ export default function MidiasSociais() {
                 content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
                 barColor="#12A9E7"
                 subTitle
+                width="27rem"
               />
               <div
                 style={{

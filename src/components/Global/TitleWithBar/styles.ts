@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 interface Props {
   barColor: string;
+  width: string;
 }
 
 export const TitleContainer = styled.div<Props>`
   position: relative;
+  width: ${({ width }) => width};
 
   .content {
     margin-left: 1rem;
