@@ -22,11 +22,6 @@ import { SimpleWordcloud } from "@/components/home/Charts/WordCloud";
 import { useEffect, useState } from "react";
 
 export default function MidiasSociais() {
-  const [client, setClient] = useState(false);
-
-  useEffect(() => {
-    setClient(true);
-  }, []);
 
   const words = [
     {
@@ -82,7 +77,7 @@ export default function MidiasSociais() {
           </LikesAndComentsContainer>
 
           {/* <DoughnutChart /> */}
-          {/* <FollowerData /> */}
+          <FollowerData />
           <div
             style={{
               display: "grid",
