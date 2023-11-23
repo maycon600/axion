@@ -1,12 +1,9 @@
 import { Sidebar } from "@/components/Global/Sidebar";
-import { Container, Content, Main } from "./styles";
-import { useRouter } from "next/router";
 import { HeaderComponent } from "@/components/home/Header";
+import { SeuEleitoradoCards } from "@/components/home/seu-eleitorado/Cards";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { DoughnutChart } from "@/components/home/Charts/DoughnutChart";
-import { VotersActive } from "@/components/home/midias-sociais/VotersActive";
-import { LineChartComponent } from "@/components/home/Charts/recharts/linechart";
-import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
+import { Container, Content, Main } from "./styles";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -22,8 +19,7 @@ export default function SeuEleitorado() {
       <Content>
         <HeaderComponent />
         <Main>
-          {/* <h1>osdajsaddsadsadsadassdadassdadas</h1> */}
-          
+          <SeuEleitoradoCards />
         </Main>
       </Content>
     </Container>
