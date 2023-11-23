@@ -1,30 +1,36 @@
 import { Sidebar } from "@/components/Global/Sidebar";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
+import { FollowerData } from "@/components/home/Charts/FollowerData";
+import { Legend } from "@/components/home/Charts/FollowerData/Legend";
 import { LikesAndComentsCard } from "@/components/home/Charts/LikesCard";
 import { EngagmentChart } from "@/components/home/Charts/PieChart";
 import { VotersActive } from "@/components/home/Charts/VotersActive";
-import { LineChartComponent } from "@/components/home/Charts/recharts/linechart";
-import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBarChart";
+import { SimpleWordcloud } from "@/components/home/Charts/WordCloud";
 import { HeaderComponent } from "@/components/home/Header";
-import { useRouter } from "next/router";
 import {
   ChartCenterInfo,
   ChartContainer,
   ChartsContainer,
   Container,
   Content,
+  FollowerDataLegend,
   LikesAndComentsContainer,
   Main,
   Tip,
 } from "./styles";
-import { DoughnutChart } from "@/components/home/Charts/DoughnutChart";
-import { FollowerData } from "@/components/home/Charts/FollowerData";
-import ReactWordcloud from "react-wordcloud";
-import { SimpleWordcloud } from "@/components/home/Charts/WordCloud";
-import { useEffect, useState } from "react";
 
 export default function MidiasSociais() {
-  const router = useRouter();
+  const followerData = [
+    { name: "Instagram", count: 80 },
+    { name: "Facebook", count: 30 },
+    { name: "Youtube", count: 20 },
+    { name: "Tiktok", count: 120 },
+  ];
+
+  const colors = ["#2F5CFC", "#0A2BA0", "#000411", "#E5E8F0"];
+
+  const sortedFollowerData = followerData.sort((a, b) => b.count - a.count);
+
   return (
     <Container>
       <Sidebar />
@@ -62,7 +68,7 @@ export default function MidiasSociais() {
           <ChartsContainer>
             <ChartContainer>
               <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
-              <div className="content">
+              <div className="chartContent">
                 <ChartCenterInfo>
                   <strong className="percentage">34%</strong>
                   <strong className="gain">
@@ -70,8 +76,17 @@ export default function MidiasSociais() {
                   </strong>
                   <span className="description">de ganho em processos</span>
                 </ChartCenterInfo>
-                <FollowerData />
-                <p>teste</p>
+                <FollowerData data={followerData} />
+                <FollowerDataLegend>
+                  {sortedFollowerData.map((item, index) => (
+                    <Legend
+                      key={index}
+                      name={item.name}
+                      count={item.count}
+                      circleColor={colors[index]}
+                    />
+                  ))}
+                </FollowerDataLegend>
               </div>
             </ChartContainer>
             <ChartContainer>

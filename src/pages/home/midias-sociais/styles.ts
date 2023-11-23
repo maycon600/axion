@@ -83,7 +83,7 @@ export const ChartContainer = styled.div`
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
 
-  .content {
+  .chartContent {
     position: relative;
     width: 100%;
     height: 100%;
@@ -116,6 +116,12 @@ export const ChartCenterInfo = styled.div`
     font-size: 0.7rem;
     color: #8790ab;
   }
+`;
+
+export const FollowerDataLegend = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 export const Tip = styled.div`

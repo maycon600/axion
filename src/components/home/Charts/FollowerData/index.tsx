@@ -2,15 +2,17 @@ import Chart from "chart.js/auto";
 import { useState, useEffect } from "react";
 import { ChartCenterInfo, Container } from "./styles";
 
-export function FollowerData() {
-  const [myChart, setMyChart] = useState<any>(null);
+interface Props {
+  data: {
+    name: string;
+    count: number;
+  }[];
+}
 
-  const data = [
-    { year: 2013, count: 40 },
-    { year: 2014, count: 30 },
-    { year: 2015, count: 20 },
-    { year: 2016, count: 10 },
-  ];
+export function FollowerData({ data }: Props) {
+  let sortedData = data.sort((a, b) => b.count - a.count);
+
+  const [myChart, setMyChart] = useState<any>(null);
 
   useEffect(() => {
     // Check if myChart exists and destroy it if it does
@@ -32,7 +34,7 @@ export function FollowerData() {
       return ((currentValue * 100) / total).toFixed(1) + "%";
     };
 
-    const labels = data.map((d) => d.year);
+    const labels = data.map((d) => d.name);
 
     const sliceThickness = {
       id: "sliceThickness",
@@ -40,11 +42,12 @@ export function FollowerData() {
         console.log(chart.getDatasetMeta(0).data[0].outerRadius);
         const chart_width = chart.getDatasetMeta(0).data[0].outerRadius;
         let sliceThicknessPixels = [
-          456 * (1 - data[0].count / 100),
-          456 * (1 - data[1].count / 100),
-          456 * (1 - data[2].count / 100),
-          456 * (1 - data[3].count / 100),
+          456 * (1 - 40 / 100),
+          456 * (1 - 30 / 100),
+          456 * (1 - 20 / 100),
+          456 * (1 - 10 / 100),
         ];
+
         sliceThicknessPixels.forEach((d, i) => {
           chart.getDatasetMeta(0).data[i].outerRadius =
             (chart.chartArea.width / (window.innerWidth <= 425 ? d * 2 : d)) *
