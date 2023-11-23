@@ -42,7 +42,7 @@ export const options = {
       color: "#fff",
       font: {
         weight: "bold",
-        size: 13,
+        size: 12,
       },
     },
     tooltip: {

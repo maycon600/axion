@@ -1,6 +1,6 @@
 import Chart from "chart.js/auto";
 import { useState, useEffect } from "react";
-import { ChartCenterInfo } from "./styles";
+import { ChartCenterInfo, Container } from "./styles";
 
 export function FollowerData() {
   const [myChart, setMyChart] = useState<any>(null);
@@ -59,7 +59,7 @@ export function FollowerData() {
         labels: labels,
         datasets: [
           {
-            label: "Dataset 1",
+            label: "Quantidade",
             data: data.map((d) => d.count),
             backgroundColor: ["#2F5CFC", "#0A2BA0", "#000411", "#E5E8F0"],
           },
@@ -111,15 +111,8 @@ export function FollowerData() {
   }, []);
 
   return (
-    <div style={{ height: "400px", width: "400px", position: "relative" }}>
-      <ChartCenterInfo>
-        <strong className="percentage">34%</strong>
-        <strong className="gain">
-          <img src="/dashboard/arrow-up.svg" alt="" /> +6.5%
-        </strong>
-        <span className="description">de ganho em processos</span>
-      </ChartCenterInfo>
-      <canvas id="myChart" />
-    </div>
+    <Container>
+      <canvas id="myChart" style={{ width: "30%", height: "30%" }} />
+    </Container>
   );
 }

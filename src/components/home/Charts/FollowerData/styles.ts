@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  position: relative;
+  height: 23rem;
+  width: 23rem;
+`;
+
 export const ChartCenterInfo = styled.div`
   position: absolute;
   top: 50%;

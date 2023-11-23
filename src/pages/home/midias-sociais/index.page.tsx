@@ -8,7 +8,9 @@ import { BarChartComponent } from "@/components/home/Charts/recharts/verticalBar
 import { HeaderComponent } from "@/components/home/Header";
 import { useRouter } from "next/router";
 import {
+  ChartCenterInfo,
   ChartContainer,
+  ChartsContainer,
   Container,
   Content,
   LikesAndComentsContainer,
@@ -57,25 +59,26 @@ export default function MidiasSociais() {
             />
           </LikesAndComentsContainer>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
-              justifyItems: "center",
-              alignItems: "center",
-              gap: "3rem",
-              marginTop: "1.2rem",
-            }}
-          >
+          <ChartsContainer>
             <ChartContainer>
               <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
-              <div style={{ height: "100%", width: "400px" }}>
+              <div className="content">
+                <ChartCenterInfo>
+                  <strong className="percentage">34%</strong>
+                  <strong className="gain">
+                    <img src="/dashboard/arrow-up.svg" alt="" /> +6.5%
+                  </strong>
+                  <span className="description">de ganho em processos</span>
+                </ChartCenterInfo>
                 <FollowerData />
+                <p>teste</p>
               </div>
             </ChartContainer>
             <ChartContainer>
               <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
-              <div style={{ height: "100%", width: "auto", marginLeft: '4rem' }}>
+              <div
+                style={{ height: "100%", width: "auto", marginLeft: "4rem" }}
+              >
                 <EngagmentChart />
               </div>
             </ChartContainer>
@@ -115,7 +118,7 @@ export default function MidiasSociais() {
                 </p>
               </Tip>
             </ChartContainer>
-          </div>
+          </ChartsContainer>
         </Main>
       </Content>
     </Container>

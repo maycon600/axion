@@ -63,6 +63,15 @@ export const LikesAndComentsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+export const ChartsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1.2rem;
+`;
+
 export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,7 +82,40 @@ export const ChartContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
-  /* min-height: 400px; */
+
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const ChartCenterInfo = styled.div`
+  position: absolute;
+  top: 49%;
+  left: 36%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .percentage {
+    line-height: 1;
+    font-size: 2rem;
+  }
+
+  .gain {
+    font-size: 0.7rem;
+    color: #22c24f;
+  }
+
+  .description {
+    font-size: 0.7rem;
+    color: #8790ab;
+  }
 `;
 
 export const Tip = styled.div`
