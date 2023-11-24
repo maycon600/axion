@@ -92,7 +92,7 @@ export default function MidiasSociais() {
             <ChartContainer>
               <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
               <div
-                style={{ height: "100%", width: "auto", marginLeft: "4rem" }}
+                style={{ height: "100%", width: "100%", marginLeft: "1rem" }}
               >
                 <EngagmentChart />
               </div>

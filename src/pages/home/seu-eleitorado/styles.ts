@@ -42,25 +42,16 @@ export const ChartsContainer = styled.div`
 export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 1.25rem;
   width: 35rem;
   height: 100%;
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
-
-  .chartContent {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
 `;
 
 export const AgeGroupLegend = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-`
+`;

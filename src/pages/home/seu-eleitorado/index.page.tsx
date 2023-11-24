@@ -2,7 +2,7 @@ import { Sidebar } from "@/components/Global/Sidebar";
 import { HeaderComponent } from "@/components/home/Header";
 import { SeuEleitoradoCards } from "@/components/home/seu-eleitorado/Cards";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   AgeGroupLegend,
   ChartContainer,
@@ -13,9 +13,15 @@ import {
 } from "./styles";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { AgeGroupByGender } from "@/components/home/seu-eleitorado/AgeGroupByGender";
+import { VotersInfo } from "@/components/home/seu-eleitorado/VoterInfo";
+import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VoterInfo/VotersInfoSelect";
 
 export default function SeuEleitorado() {
   const router = useRouter();
+
+  const [selectedVoterOption, setSelectedVoterOption] = useState("education");
+
+  const selectVotersValue = ["education", "gender", "age"];
 
   useEffect(() => {
     if (router.pathname === "/") {
@@ -97,7 +103,7 @@ export default function SeuEleitorado() {
                 <AgeGroupLegend>
                   {groupGenderConf.map((item) => {
                     return (
-                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
                         <div
                           key={item.dataKey}
                           style={{
@@ -114,9 +120,15 @@ export default function SeuEleitorado() {
                               backgroundColor: item.color,
                             }}
                           />
-                          <strong style={{ lineHeight: 1 }}>{item.total}</strong>
+                          <strong style={{ lineHeight: 1 }}>
+                            {item.total}
+                          </strong>
                         </div>
-                        <span style={{ fontSize: '0.625rem', color: '#8790AB' }}>{item.dataKey}</span>
+                        <span
+                          style={{ fontSize: "0.625rem", color: "#8790AB" }}
+                        >
+                          {item.dataKey}
+                        </span>
                       </div>
                     );
                   })}
@@ -135,7 +147,24 @@ export default function SeuEleitorado() {
                 />
               </div>
             </ChartContainer>
-            <ChartContainer></ChartContainer>
+            <ChartContainer>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <TitleWithBar
+                  barColor="#2F5CFC"
+                  content={
+                    selectedVoterOption === "education"
+                      ? "Escolaridade dos Eleitores"
+                      : "Idade dos Eleitores"
+                  }
+                />
+                <VotersInfoSelect
+                  selectedValue={selectedVoterOption}
+                  setSelectedValue={setSelectedVoterOption}
+                  values={selectVotersValue}
+                />
+              </div>
+              <VotersInfo />
+            </ChartContainer>
           </ChartsContainer>
         </Main>
       </Content>

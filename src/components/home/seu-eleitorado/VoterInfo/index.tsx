@@ -57,26 +57,34 @@ export const options = {
 };
 
 export const data = {
-  labels: ["Instagram", "YouTube", "Facebook", "TikTok"],
+  labels: [
+    "Ensino Médio Incompleto",
+    "Não Informado",
+    "Ensino Médio Completo",
+    "Ensino Fundamental Completo",
+    "Analfabeto",
+    "Sabe Ler e Escrever",
+    "Ensino Fundamental Incompleto",
+  ],
   datasets: [
     {
-      label: "Número de Votos",
-      data: [40, 40, 20, 20, 20, 20, 20, 20],
+      label: "Número de eleitores",
+      data: [100, 100, 100, 100, 100, 100, 100],
       backgroundColor: [
-        "#165DFF",
-        "#14C9C9",
-        "#F7BA1E",
-        "#722ED1",
-        "#3491FA",
-        "#D91AD9",
-        "#FF7D00",
-        "#7B61FF",
+        "#E7298A",
+        "#1B9E77",
+        "#A6761D",
+        "#66A61E",
+        "#D95F02",
+        "#66A61E",
+        "#666666",
       ],
-      borderWidth: 0,
+      borderWidth: 5,
+      borderColor: "#fff",
     },
   ],
 };
 
-export function EngagmentChart() {
+export function VotersInfo() {
   return <Pie data={data} options={options} />;
 }
