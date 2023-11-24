@@ -92,7 +92,7 @@ export const ChartCenterInfo = styled.div`
   }
 `;
 
-export const FollowerDataLegend = styled.div`
+export const FollowerDataLegendContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;

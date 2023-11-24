@@ -58,3 +58,9 @@ export const ChartContainer = styled.div`
     align-items: center;
   }
 `;
+
+export const AgeGroupLegend = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+`

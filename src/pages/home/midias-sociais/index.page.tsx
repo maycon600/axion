@@ -1,9 +1,8 @@
 import { Sidebar } from "@/components/Global/Sidebar";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
-import { FollowerData } from "@/components/home/Charts/FollowerData";
-import { Legend } from "@/components/home/Charts/FollowerData/Legend";
 import { HeaderComponent } from "@/components/home/Header";
 import { EngagmentChart } from "@/components/home/midias-sociais/EngagementData";
+import { FollowerData } from "@/components/home/midias-sociais/FollowerData";
 import { LikesAndComentsCard } from "@/components/home/midias-sociais/LikesAndComentsCard";
 import { VotersActive } from "@/components/home/midias-sociais/VotersActive";
 import { SimpleWordcloud } from "@/components/home/midias-sociais/WordCloud";
@@ -13,11 +12,12 @@ import {
   ChartsContainer,
   Container,
   Content,
-  FollowerDataLegend,
+  FollowerDataLegendContainer,
   LikesAndComentsContainer,
   Main,
   Tip,
 } from "./styles";
+import { FollowerDataLegend } from "@/components/home/midias-sociais/FollowerData/Legend";
 
 export default function MidiasSociais() {
   const followerData = [
@@ -77,16 +77,16 @@ export default function MidiasSociais() {
                   <span className="description">de ganho em processos</span>
                 </ChartCenterInfo>
                 <FollowerData data={followerData} />
-                <FollowerDataLegend>
+                <FollowerDataLegendContainer>
                   {sortedFollowerData.map((item, index) => (
-                    <Legend
+                    <FollowerDataLegend
                       key={index}
                       name={item.name}
                       count={item.count}
                       circleColor={colors[index]}
                     />
                   ))}
-                </FollowerDataLegend>
+                </FollowerDataLegendContainer>
               </div>
             </ChartContainer>
             <ChartContainer>

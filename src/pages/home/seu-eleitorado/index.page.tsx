@@ -4,6 +4,7 @@ import { SeuEleitoradoCards } from "@/components/home/seu-eleitorado/Cards";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import {
+  AgeGroupLegend,
   ChartContainer,
   ChartsContainer,
   Container,
@@ -21,6 +22,63 @@ export default function SeuEleitorado() {
       router.push("/home/seu-eleitorado");
     }
   }, []);
+
+  const groupGenderData = [
+    {
+      name: "16-18",
+      Homens: 590,
+      Mulheres: 800,
+    },
+    {
+      name: "19-29",
+      Homens: 868,
+      Mulheres: 967,
+    },
+    {
+      name: "30-40",
+      Homens: 1397,
+      Mulheres: 1098,
+    },
+    {
+      name: "41-50",
+      Homens: 1480,
+      Mulheres: 1200,
+    },
+    {
+      name: "51-60",
+      Homens: 1520,
+      Mulheres: 1108,
+    },
+    {
+      name: "61-70",
+      Homens: 1400,
+      Mulheres: 680,
+    },
+    {
+      name: "+70",
+      Homens: 250,
+      Mulheres: 500,
+    },
+  ];
+
+  const total = {
+    homens: groupGenderData.reduce((acc, curr) => acc + curr.Homens, 0),
+    mulheres: groupGenderData.reduce((acc, curr) => acc + curr.Mulheres, 0),
+  };
+
+  const groupGenderConf = [
+    {
+      dataKey: "Homens",
+      color: "#22C24F",
+      total: total.homens,
+    },
+    {
+      dataKey: "Mulheres",
+      color: "#E73F3F",
+      total: total.mulheres,
+    },
+  ];
+
   return (
     <Container>
       <Sidebar />
@@ -30,11 +88,39 @@ export default function SeuEleitorado() {
           <SeuEleitoradoCards />
           <ChartsContainer>
             <ChartContainer>
-              <div>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <TitleWithBar
                   content="Faixa etária da População por gênero"
                   barColor="#2F5CFC"
+                  width={"16rem"}
                 />
+                <AgeGroupLegend>
+                  {groupGenderConf.map((item) => {
+                    return (
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div
+                          key={item.dataKey}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.5rem",
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: "0.625rem",
+                              height: "0.625rem",
+                              borderRadius: "50%",
+                              backgroundColor: item.color,
+                            }}
+                          />
+                          <strong style={{ lineHeight: 1 }}>{item.total}</strong>
+                        </div>
+                        <span style={{ fontSize: '0.625rem', color: '#8790AB' }}>{item.dataKey}</span>
+                      </div>
+                    );
+                  })}
+                </AgeGroupLegend>
               </div>
               <div
                 style={{
@@ -43,7 +129,10 @@ export default function SeuEleitorado() {
                   padding: "3rem 1rem 0 0",
                 }}
               >
-                <AgeGroupByGender />
+                <AgeGroupByGender
+                  data={groupGenderData}
+                  conf={groupGenderConf}
+                />
               </div>
             </ChartContainer>
             <ChartContainer></ChartContainer>

@@ -6,7 +6,7 @@ interface Props {
   circleColor: string;
 }
 
-export function Legend({ name, count, circleColor }: Props) {
+export function FollowerDataLegend({ name, count, circleColor }: Props) {
   return (
     <Container circleColor={circleColor}>
       <div className="verticalBar" />
