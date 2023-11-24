@@ -181,15 +181,19 @@ export default function SeuEleitorado() {
               </div>
               <div
                 style={{
-                  height: "25rem",
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: "100%",
                   width: "auto",
                   padding: "3rem 1rem 0 0",
                 }}
               >
-                <AgeGroupByGender
-                  data={groupGenderData}
-                  conf={groupGenderConf}
-                />
+                <div style={{ width: "100%", height: "25rem" }}>
+                  <AgeGroupByGender
+                    data={groupGenderData}
+                    conf={groupGenderConf}
+                  />
+                </div>
               </div>
             </ChartContainer>
             <ChartContainer>
