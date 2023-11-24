@@ -5,6 +5,10 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
+interface Props {
+  chartData: [];
+}
+
 export const footer = (tooltipItems: any) => {
   let total = 0;
   let currentValue = 0;
@@ -56,35 +60,35 @@ export const options = {
   },
 };
 
-export const data = {
-  labels: [
-    "Ensino Médio Incompleto",
-    "Não Informado",
-    "Ensino Médio Completo",
-    "Ensino Fundamental Completo",
-    "Analfabeto",
-    "Sabe Ler e Escrever",
-    "Ensino Fundamental Incompleto",
-  ],
-  datasets: [
-    {
-      label: "Número de eleitores",
-      data: [100, 100, 100, 100, 100, 100, 100],
-      backgroundColor: [
-        "#E7298A",
-        "#1B9E77",
-        "#A6761D",
-        "#66A61E",
-        "#D95F02",
-        "#66A61E",
-        "#666666",
-      ],
-      borderWidth: 5,
-      borderColor: "#fff",
-    },
-  ],
-};
+export function VotersInfo({ chartData }: Props) {
+  const data = {
+    labels: [
+      "Ensino Médio Incompleto",
+      "Não Informado",
+      "Ensino Médio Completo",
+      "Ensino Fundamental Completo",
+      "Analfabeto",
+      "Sabe Ler e Escrever",
+      "Ensino Fundamental Incompleto",
+    ],
+    datasets: [
+      {
+        label: "Número de eleitores",
+        data: chartData,
+        backgroundColor: [
+          "#E7298A",
+          "#1B9E77",
+          "#A6761D",
+          "#66A61E",
+          "#D95F02",
+          "#66A61E",
+          "#666666",
+        ],
+        borderWidth: 5,
+        borderColor: "#fff",
+      },
+    ],
+  };
 
-export function VotersInfo() {
   return <Pie data={data} options={options} />;
 }

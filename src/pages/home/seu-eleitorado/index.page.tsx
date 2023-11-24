@@ -85,6 +85,12 @@ export default function SeuEleitorado() {
     },
   ];
 
+  const votersInfoData = {
+    education: [100, 100, 100, 100, 100, 100, 100],
+    gender: [100, 250],
+    age: [100, 100, 100, 100, 100, 100, 100],
+  };
+
   return (
     <Container>
       <Sidebar />
@@ -163,7 +169,7 @@ export default function SeuEleitorado() {
                   values={selectVotersValue}
                 />
               </div>
-              <VotersInfo />
+              <VotersInfo chartData={votersInfoData.gender} />
             </ChartContainer>
           </ChartsContainer>
         </Main>
