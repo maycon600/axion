@@ -46,7 +46,7 @@ export default function SeuEleitorado() {
         "Ensino Fundamental Incompleto",
       ]);
     }
-  });
+  }, []);
 
   const selectVotersValue = ["education", "gender", "age"];
 
@@ -181,8 +181,8 @@ export default function SeuEleitorado() {
               </div>
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                   height: "100%",
                   width: "auto",
                   padding: "3rem 1rem 0 0",

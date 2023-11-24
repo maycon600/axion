@@ -105,7 +105,8 @@ export default function MidiasSociais() {
                 content="Nuvem de palavras Geral"
                 subTitle
               />
-              <SimpleWordcloud />
+              {/* <SimpleWordcloud /> */}
+              {/* <Example width={500} height={300} /> */}
             </ChartContainer>
             <ChartContainer style={{ height: "400px" }}>
               <TitleWithBar
