@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -7,6 +7,7 @@ ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 interface Props {
   chartData: [];
+  labels: string[];
 }
 
 export const footer = (tooltipItems: any) => {
@@ -30,8 +31,8 @@ export const options = {
     legend: {
       position: "right" as const,
       labels: {
-        usePointStyle: true
-      }
+        usePointStyle: true,
+      },
     },
     datalabels: {
       formatter: (value: any, ctx: any) => {
@@ -60,17 +61,9 @@ export const options = {
   },
 };
 
-export function VotersInfo({ chartData }: Props) {
+export function VotersInfo({ chartData, labels }: Props) {
   const data = {
-    labels: [
-      "Ensino Médio Incompleto",
-      "Não Informado",
-      "Ensino Médio Completo",
-      "Ensino Fundamental Completo",
-      "Analfabeto",
-      "Sabe Ler e Escrever",
-      "Ensino Fundamental Incompleto",
-    ],
+    labels: labels,
     datasets: [
       {
         label: "Número de eleitores",

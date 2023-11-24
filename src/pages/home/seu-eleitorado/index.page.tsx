@@ -20,6 +20,33 @@ export default function SeuEleitorado() {
   const router = useRouter();
 
   const [selectedVoterOption, setSelectedVoterOption] = useState("education");
+  const [selectedVoterLabels, setSelectedVoterLabels] = useState([""]);
+
+  useEffect(() => {
+    if (selectedVoterOption === "age") {
+      setSelectedVoterLabels([
+        "16-18",
+        "19-29",
+        "30-40",
+        "41-50",
+        "51-60",
+        "61-70",
+        "+70",
+      ]);
+    } else if (selectedVoterOption === "gender") {
+      setSelectedVoterLabels(["Homens", "Mulheres"]);
+    } else if (selectedVoterOption === "education") {
+      setSelectedVoterLabels([
+        "Ensino Médio Incompleto",
+        "Não Informado",
+        "Ensino Médio Completo",
+        "Ensino Fundamental Completo",
+        "Analfabeto",
+        "Sabe Ler e Escrever",
+        "Ensino Fundamental Incompleto",
+      ]);
+    }
+  });
 
   const selectVotersValue = ["education", "gender", "age"];
 
@@ -90,6 +117,18 @@ export default function SeuEleitorado() {
     gender: [100, 250],
     age: [100, 100, 100, 100, 100, 100, 100],
   };
+
+  const [selectedData, setSelectedData] = useState<any>([]);
+
+  useEffect(() => {
+    if (selectedVoterOption === "education") {
+      setSelectedData(votersInfoData.education);
+    } else if (selectedVoterOption === "gender") {
+      setSelectedData(votersInfoData.gender);
+    } else if (selectedVoterOption === "age") {
+      setSelectedData(votersInfoData.age);
+    }
+  }, [selectedVoterOption]);
 
   return (
     <Container>
@@ -169,7 +208,10 @@ export default function SeuEleitorado() {
                   values={selectVotersValue}
                 />
               </div>
-              <VotersInfo chartData={votersInfoData.gender} />
+              <VotersInfo
+                chartData={selectedData}
+                labels={selectedVoterLabels}
+              />
             </ChartContainer>
           </ChartsContainer>
         </Main>
