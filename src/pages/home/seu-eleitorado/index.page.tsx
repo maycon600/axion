@@ -15,6 +15,7 @@ import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { AgeGroupByGender } from "@/components/home/seu-eleitorado/AgeGroupByGender";
 import { VotersInfo } from "@/components/home/seu-eleitorado/VoterInfo";
 import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VoterInfo/VotersInfoSelect";
+import VotersByGender from "@/components/home/midias-sociais/TotalVotersByGender";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -216,6 +217,14 @@ export default function SeuEleitorado() {
                 chartData={selectedData}
                 labels={selectedVoterLabels}
               />
+            </ChartContainer>
+            <ChartContainer>
+
+            </ChartContainer>
+            <ChartContainer>
+              <div style={{ width: '100%', height: '500px' }}>
+                <VotersByGender />
+              </div>
             </ChartContainer>
           </ChartsContainer>
         </Main>
