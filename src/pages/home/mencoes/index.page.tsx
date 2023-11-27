@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { HeaderComponent } from "@/components/home/Header";
 import { TitleBottomBar } from "@/components/home/mencoes/TitleBottomBar";
 import { NewsCard } from "@/components/home/mencoes/NewsCard";
+import { TotalQuotes } from "@/components/home/mencoes/TotalQuotes";
+import { SentimentChart } from "@/components/home/mencoes/SentimentChart";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -13,6 +15,25 @@ export default function SeuEleitorado() {
       <Content>
         <HeaderComponent />
         <Main>
+          <div style={{ display: "flex", gap: "1.5rem" }}>
+            <div
+              style={{
+                width: "17.25rem",
+                height: "100%",
+                backgroundColor: "white",
+              }}
+            >
+              Score total
+            </div>
+            <TotalQuotes />
+
+            <SentimentChart
+              positive={343349}
+              negative={243312}
+              neutral={103231}
+            />
+          </div>
+
           <TitleBottomBar title="Notícias em Destaque" />
           <CardsContainer>
             <NewsCard

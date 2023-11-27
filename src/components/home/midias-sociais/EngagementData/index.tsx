@@ -26,8 +26,8 @@ export const options = {
     legend: {
       position: "right" as const,
       labels: {
-        usePointStyle: true
-      }
+        usePointStyle: true,
+      },
     },
     datalabels: {
       formatter: (value: any, ctx: any) => {
@@ -72,7 +72,8 @@ export const data = {
         "#FF7D00",
         "#7B61FF",
       ],
-      borderWidth: 0,
+      borderWidth: 5,
+      borderColor: "#fff",
     },
   ],
 };
