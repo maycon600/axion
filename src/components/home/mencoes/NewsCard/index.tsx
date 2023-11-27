@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { CardContainer } from "./styles";
+import { useRouter } from "next/router";
 
 interface Props {
   sentiment: "positive" | "neutral" | "negative";
   source: string;
   content: string;
   date: string;
+  url: string;
 }
 
-export function NewsCard({ sentiment, source, content, date }: Props) {
+export function NewsCard({ sentiment, source, content, date, url }: Props) {
   const [color, setColor] = useState("");
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export function NewsCard({ sentiment, source, content, date }: Props) {
   }, [sentiment]);
 
   return (
-    <CardContainer>
+    <CardContainer as ="a" href={url} target="_blank">
       <div
         style={{
           display: "flex",
@@ -30,18 +32,32 @@ export function NewsCard({ sentiment, source, content, date }: Props) {
           alignItems: "flex-start",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            paddingLeft: "0.5rem",
+          }}
+        >
           <div
             style={{
               position: "absolute",
               left: 0,
-              top: 0,
+              top: "0.5rem",
               width: "0.25rem",
               height: "2.75rem",
+              borderRadius: "2px",
               backgroundColor: color,
             }}
           />
-          <strong style={{ fontSize: "1.125rem", lineHeight: 0.9 }}>
+          <strong
+            style={{
+              fontSize: "1.125rem",
+              lineHeight: 0.9,
+              paddingTop: "0.5rem",
+            }}
+          >
             {source}
           </strong>
           <span
@@ -50,8 +66,8 @@ export function NewsCard({ sentiment, source, content, date }: Props) {
             {date}
           </span>
         </div>
-        <div>
-          <strong style={{ color: color }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
+          <strong style={{ fontSize: "0.75rem", color: color }}>
             {sentiment === "positive"
               ? "Positiva"
               : sentiment === "neutral"
@@ -68,6 +84,30 @@ export function NewsCard({ sentiment, source, content, date }: Props) {
             }
           />
         </div>
+      </div>
+      <div
+        style={{
+          marginTop: "1rem",
+          padding: "0 0 0 0.5rem",
+          fontSize: "1.5rem",
+          lineHeight: "1.2",
+        }}
+      >
+        <p style={{ margin: 0 }}>{content}</p>
+      </div>
+      <div
+        style={{ paddingTop: "0.6rem", color: "#626262", fontSize: "0.75rem" }}
+      >
+        <p
+          style={{
+            margin: "1rem 0 0",
+            textAlign: "center",
+            fontStyle: "italic",
+            fontWeight: 500,
+          }}
+        >
+          Clique para ser redirecionado para a notícia
+        </p>
       </div>
     </CardContainer>
   );

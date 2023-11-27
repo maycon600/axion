@@ -29,3 +29,12 @@ export const Main = styled.main`
   margin: 2%;
   border-radius: 10px;
 `;
+
+export const CardsContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  justify-items: center;
+  gap: 1rem;
+  margin: 1.8rem 0;
+`;
