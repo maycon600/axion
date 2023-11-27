@@ -47,7 +47,7 @@ export default function SeuEleitorado() {
         "Ensino Fundamental Incompleto",
       ]);
     }
-  }, []);
+  }, [selectedVoterOption]);
 
   const selectVotersValue = ["education", "gender", "age"];
 

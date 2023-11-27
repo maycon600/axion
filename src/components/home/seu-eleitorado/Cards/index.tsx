@@ -67,12 +67,19 @@ export function SeuEleitoradoCards() {
           <p>Concorrentes:</p>
           <CardBottomInfo>
             <div
-              style={{ display: "flex", gap: "0.5rem", alignItems: "flex-end", marginTop: '0.3rem' }}
+              style={{
+                display: "flex",
+                gap: "0.5rem",
+                alignItems: "flex-end",
+                marginTop: "0.3rem",
+              }}
             >
               <strong style={{ fontSize: "2rem", lineHeight: "1.2" }}>
                 29
               </strong>
-              <span style={{ fontSize: "1.125rem", fontWeight: '600' }}>Prefeitos</span>
+              <span style={{ fontSize: "1.125rem", fontWeight: "600" }}>
+                Prefeitos
+              </span>
             </div>
           </CardBottomInfo>
         </Content>

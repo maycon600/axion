@@ -46,7 +46,7 @@ export function HeaderComponent() {
         />
         <MenuItemComponent
           imgSrc="/dashboard/suas-noticias-menu.png"
-          href="/suas-noticias"
+          href="/mencoes"
           name="MENÇÕES"
         />
         <MenuItemComponent
