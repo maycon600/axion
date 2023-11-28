@@ -1,13 +1,19 @@
 import { Sidebar } from "@/components/Global/Sidebar";
-import { CardsContainer, Container, Content, Main } from "./styles";
-import { useRouter } from "next/router";
-import { HeaderComponent } from "@/components/home/Header";
-import { TitleBottomBar } from "@/components/home/mencoes/TitleBottomBar";
-import { NewsCard } from "@/components/home/mencoes/NewsCard";
-import { TotalQuotes } from "@/components/home/mencoes/TotalQuotes";
-import { SentimentChart } from "@/components/home/mencoes/SentimentChart";
-import { ScoreChart } from "@/components/home/mencoes/ScoreChart";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
+import { HeaderComponent } from "@/components/home/Header";
+import { NewsCard } from "@/components/home/mencoes/NewsCard";
+import { ScoreChart } from "@/components/home/mencoes/ScoreChart";
+import { SentimentChart } from "@/components/home/mencoes/SentimentChart";
+import { TitleBottomBar } from "@/components/home/mencoes/TitleBottomBar";
+import { TotalQuotes } from "@/components/home/mencoes/TotalQuotes";
+import { useRouter } from "next/router";
+import {
+  CardsContainer,
+  Container,
+  Content,
+  Main,
+  TopCardsContainer,
+} from "./styles";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -17,17 +23,25 @@ export default function SeuEleitorado() {
       <Content>
         <HeaderComponent />
         <Main>
-          <div style={{ display: "flex", gap: "1.5rem" }}>
+          <TopCardsContainer>
             <div
               style={{
                 width: "17.25rem",
                 height: "100%",
                 backgroundColor: "white",
+                padding: "1rem 1.25rem",
+                borderRadius: 10,
               }}
             >
               <TitleWithBar content="Score Total" barColor="#D38945" />
-              <div style={{ width: "80%", margin: "auto" }}>
-                <ScoreChart score={722} />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: "0 8%",
+                }}
+              >
+                <ScoreChart score={152} />
               </div>
             </div>
             <TotalQuotes />
@@ -37,7 +51,7 @@ export default function SeuEleitorado() {
               negative={243312}
               neutral={103231}
             />
-          </div>
+          </TopCardsContainer>
 
           <TitleBottomBar title="Notícias em Destaque" />
           <CardsContainer>

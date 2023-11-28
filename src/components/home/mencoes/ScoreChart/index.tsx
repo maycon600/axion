@@ -47,12 +47,13 @@ export function ScoreChart({ score }: Props) {
         ctx.save();
         const xCoor = chart.getDatasetMeta(0).data[0].x;
         const yCoor = chart.getDatasetMeta(0).data[0].y;
-        const score = data.datasets[0].data[0];
         let rating = "";
 
-        if (score < 300) rating = "Ruim";
+        if (score < 150) rating = "Extremamente negativo";
+        if (score >= 150 && score < 300) rating = "Negativo";
         if (score >= 300 && score < 700) rating = "Neutro";
-        if (score >= 700) rating = "Bom";
+        if (score >= 700 && score < 850) rating = "Positivo";
+        if (score >= 850) rating = "Extremamente positivo";
 
         function textLabel(
           text: string,
@@ -69,10 +70,10 @@ export function ScoreChart({ score }: Props) {
           ctx.fillText(text, x, y);
         }
 
-        textLabel("0", left + 10, yCoor + 13, 15, "top", "left");
+        textLabel("100", left, yCoor + 13, 15, "top", "left");
         textLabel("1000", right, yCoor + 13, 15, "bottom", "right");
-        textLabel(score, xCoor, yCoor - 35, 40, "top", "center");
-        textLabel(rating, xCoor, yCoor - 10, 18, "center", "bottom");
+        textLabel(score.toString(), xCoor, yCoor - 28, 40, "top", "center");
+        textLabel(rating, xCoor, yCoor - 10, 13, "center", "bottom");
       },
     };
 
@@ -83,7 +84,7 @@ export function ScoreChart({ score }: Props) {
         datasets: [
           {
             label: "Quantidade",
-            data: [score, score - 1000],
+            data: [score - 100, score - 1000],
             backgroundColor: [gradientSegment, "rgba(0, 0, 0, 0.2)"],
           },
         ],
@@ -102,7 +103,7 @@ export function ScoreChart({ score }: Props) {
             enabled: false,
           },
           datalabels: {
-            color: ["#fff", "#fff", "#fff", "#000"],
+            display: false,
           },
         },
       },
@@ -123,7 +124,7 @@ export function ScoreChart({ score }: Props) {
       <canvas
         ref={canvasRef}
         id="myChart"
-        style={{ width: "30%", height: "30%" }}
+        style={{ width: "100%", height: "100%" }}
       />
     </div>
   );
