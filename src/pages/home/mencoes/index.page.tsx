@@ -6,6 +6,8 @@ import { TitleBottomBar } from "@/components/home/mencoes/TitleBottomBar";
 import { NewsCard } from "@/components/home/mencoes/NewsCard";
 import { TotalQuotes } from "@/components/home/mencoes/TotalQuotes";
 import { SentimentChart } from "@/components/home/mencoes/SentimentChart";
+import { ScoreChart } from "@/components/home/mencoes/ScoreChart";
+import { TitleWithBar } from "@/components/Global/TitleWithBar";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -23,7 +25,10 @@ export default function SeuEleitorado() {
                 backgroundColor: "white",
               }}
             >
-              Score total
+              <TitleWithBar content="Score Total" barColor="#D38945" />
+              <div style={{ width: "80%", margin: "auto" }}>
+                <ScoreChart score={722} />
+              </div>
             </div>
             <TotalQuotes />
 
