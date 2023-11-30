@@ -10,7 +10,6 @@ import {
   ChartCenterInfo,
   ChartContainer,
   ChartsContainer,
-  Container,
   Content,
   FollowerDataLegendContainer,
   LikesAndComentsContainer,
@@ -18,6 +17,9 @@ import {
   Tip,
 } from "./styles";
 import { FollowerDataLegend } from "@/components/home/midias-sociais/FollowerData/Legend";
+import RootLayout from "@/components/Layout";
+import gsap from "gsap";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export default function MidiasSociais() {
   const followerData = [
@@ -31,113 +33,153 @@ export default function MidiasSociais() {
 
   const sortedFollowerData = followerData.sort((a, b) => b.count - a.count);
 
-  return (
-    <Container>
-      <Sidebar />
-      <Content>
-        <HeaderComponent />
-        <Main>
-          <h1>Redes Sociais</h1>
-          <LikesAndComentsContainer>
-            <LikesAndComentsCard
-              barColor="#5162FF"
-              coments={1}
-              likes={25}
-              name="Facebook"
-            />
-            <LikesAndComentsCard
-              barColor="#5162FF"
-              coments={1}
-              likes={25}
-              name="Facebook"
-            />
-            <LikesAndComentsCard
-              barColor="#5162FF"
-              coments={1}
-              likes={25}
-              name="Facebook"
-            />
-            <LikesAndComentsCard
-              barColor="#5162FF"
-              coments={1}
-              likes={25}
-              name="Facebook"
-            />
-          </LikesAndComentsContainer>
+  const main = useRef(null);
+  const content = useRef(null);
 
-          <ChartsContainer>
-            <ChartContainer>
-              <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
-              <div className="chartContent">
-                <ChartCenterInfo>
-                  <strong className="percentage">34%</strong>
-                  <strong className="gain">
-                    <img src="/dashboard/arrow-up.svg" alt="" /> +6.5%
-                  </strong>
-                  <span className="description">de ganho em processos</span>
-                </ChartCenterInfo>
-                <FollowerData data={followerData} />
-                <FollowerDataLegendContainer>
-                  {sortedFollowerData.map((item, index) => (
-                    <FollowerDataLegend
-                      key={index}
-                      name={item.name}
-                      count={item.count}
-                      circleColor={colors[index]}
-                    />
-                  ))}
-                </FollowerDataLegendContainer>
-              </div>
-            </ChartContainer>
-            <ChartContainer>
-              <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
-              <div
-                style={{ height: "100%", width: "100%", marginLeft: "1rem" }}
-              >
-                <EngagmentChart />
-              </div>
-            </ChartContainer>
-            <ChartContainer
-              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-            >
-              <TitleWithBar
-                barColor="#080E45"
-                content="Nuvem de palavras Geral"
-                subTitle
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".mainContent", {
+        x: "-114.5%",
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.2,
+      });
+    }, main);
+    return () => ctx.revert();
+  }, []);
+
+  const fadeOut = () => {
+    const ctx = gsap.context(() => {
+      gsap.to(".mainContent", {
+        opacity: 0,
+        duration: 0.5,
+      });
+    }, main);
+    return () => ctx.revert();
+  };
+
+  return (
+    <main ref={main}>
+      <RootLayout>
+        <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
+          <HeaderComponent fadeOut={() => fadeOut()} />
+          <Main>
+            <h1>Redes Sociais</h1>
+            <LikesAndComentsContainer>
+              <LikesAndComentsCard
+                barColor="#5162FF"
+                coments={1}
+                likes={25}
+                name="Facebook"
               />
-              <SimpleWordcloud />
-              {/* <Example width={500} height={300} /> */}
-            </ChartContainer>
-            <ChartContainer style={{ height: "400px" }}>
-              <TitleWithBar
-                content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
-                barColor="#12A9E7"
-                subTitle
-                width="27rem"
+              <LikesAndComentsCard
+                barColor="#5162FF"
+                coments={1}
+                likes={25}
+                name="Facebook"
               />
-              <div
+              <LikesAndComentsCard
+                barColor="#5162FF"
+                coments={1}
+                likes={25}
+                name="Facebook"
+              />
+              <LikesAndComentsCard
+                barColor="#5162FF"
+                coments={1}
+                likes={25}
+                name="Facebook"
+              />
+            </LikesAndComentsContainer>
+
+            <ChartsContainer>
+              <ChartContainer>
+                <TitleWithBar
+                  content="Dados de Seguidores"
+                  barColor="#080E45"
+                />
+                <div className="chartContent">
+                  <ChartCenterInfo>
+                    <strong className="percentage">34%</strong>
+                    <strong className="gain">
+                      <img src="/dashboard/arrow-up.svg" alt="" /> +6.5%
+                    </strong>
+                    <span className="description">de ganho em processos</span>
+                  </ChartCenterInfo>
+                  <FollowerData data={followerData} />
+                  <FollowerDataLegendContainer>
+                    {sortedFollowerData.map((item, index) => (
+                      <FollowerDataLegend
+                        key={index}
+                        name={item.name}
+                        count={item.count}
+                        circleColor={colors[index]}
+                      />
+                    ))}
+                  </FollowerDataLegendContainer>
+                </div>
+              </ChartContainer>
+              <ChartContainer>
+                <TitleWithBar
+                  content="Dados de Engajamento"
+                  barColor="#12A9E7"
+                />
+                <div
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    marginLeft: "1rem",
+                  }}
+                >
+                  <EngagmentChart />
+                </div>
+              </ChartContainer>
+              <ChartContainer
                 style={{
-                  height: "300px",
-                  width: "100%",
                   display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  flexDirection: "column",
+                  gap: "1rem",
                 }}
               >
-                <VotersActive />
-              </div>
+                <TitleWithBar
+                  barColor="#080E45"
+                  content="Nuvem de palavras Geral"
+                  subTitle
+                />
+                <SimpleWordcloud />
+                {/* <Example width={500} height={300} /> */}
+              </ChartContainer>
+              <ChartContainer style={{ height: "400px" }}>
+                <TitleWithBar
+                  content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
+                  barColor="#12A9E7"
+                  subTitle
+                  width="27rem"
+                />
+                <div
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <VotersActive />
+                </div>
 
-              <Tip>
-                <img src="/dashboard/userIcon.svg" alt="" />
-                <p>
-                  Se quiser ter um maior alcance nas Redes Sociais se atente a
-                  estes horários.
-                </p>
-              </Tip>
-            </ChartContainer>
-          </ChartsContainer>
-        </Main>
-      </Content>
-    </Container>
+                <Tip>
+                  <img src="/dashboard/userIcon.svg" alt="" />
+                  <p>
+                    Se quiser ter um maior alcance nas Redes Sociais se atente a
+                    estes horários.
+                  </p>
+                </Tip>
+              </ChartContainer>
+            </ChartsContainer>
+          </Main>
+        </Content>
+      </RootLayout>
+    </main>
   );
 }

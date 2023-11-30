@@ -4,17 +4,14 @@ interface ContainerProps {
   type: boolean;
 }
 
-export const Container = styled.div`
-  display: flex;
-  background-color: #111;
-`;
-
 export const Content = styled.div`
   background-color: ${({ theme }) => theme.color.gray_10};
-  width: calc(100% - 17rem);
+  width: 100%;
   margin: 0.37rem 0 1rem 0.4rem;
   border-radius: 25px 0 0 25px;
   padding: 1.2rem;
+  position: relative;
+  left: 100%;
 `;
 
 export const Main = styled.main`
@@ -25,7 +22,7 @@ export const Main = styled.main`
 export const TopCardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 export const CardsContainer = styled.div`
   width: 100%;
