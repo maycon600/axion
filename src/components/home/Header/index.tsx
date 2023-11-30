@@ -14,7 +14,11 @@ import {
 } from "./styles";
 import Image from "next/image";
 
-export function HeaderComponent() {
+interface headerProps {
+  fadeOut: any;
+}
+
+export function HeaderComponent({ fadeOut }: headerProps) {
   const router = useRouter();
 
   return (
@@ -35,21 +39,25 @@ export function HeaderComponent() {
       </HeaderTop>
       <HeaderMenu>
         <MenuItemComponent
+          fadeOut={() => fadeOut()}
           imgSrc="/dashboard/seu-eleitorado-menu.png"
           href="/seu-eleitorado"
           name="SEU ELEITORADO"
         />
         <MenuItemComponent
+          fadeOut={() => fadeOut()}
           imgSrc="/dashboard/midias-sociais-menu.png"
           href="/midias-sociais"
           name="MÍDIAS SOCIAIS"
         />
         <MenuItemComponent
+          fadeOut={() => fadeOut()}
           imgSrc="/dashboard/suas-noticias-menu.png"
           href="/mencoes"
           name="MENÇÕES"
         />
         <MenuItemComponent
+          fadeOut={() => fadeOut()}
           imgSrc="/dashboard/inteligencia-artificial-menu.png"
           href="/inteligencia-artificial"
           name="INTELIGENCIA ARTIFICIAL"

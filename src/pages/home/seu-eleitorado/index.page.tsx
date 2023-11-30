@@ -2,20 +2,21 @@ import { Sidebar } from "@/components/Global/Sidebar";
 import { HeaderComponent } from "@/components/home/Header";
 import { SeuEleitoradoCards } from "@/components/home/seu-eleitorado/Cards";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import {
   AgeGroupLegend,
   ChartContainer,
   ChartsContainer,
-  Container,
   Content,
   Main,
 } from "./styles";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { AgeGroupByGender } from "@/components/home/seu-eleitorado/AgeGroupByGender";
 import { VotersInfo } from "@/components/home/seu-eleitorado/VoterInfo";
 import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VoterInfo/VotersInfoSelect";
 import { VotersByGender } from "@/components/home/midias-sociais/TotalVotersByGender";
+import RootLayout from "@/components/Layout";
+import gsap from "gsap";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -131,108 +132,140 @@ export default function SeuEleitorado() {
     }
   }, [selectedVoterOption]);
 
+  const main = useRef(null);
+  const content = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(".mainContent", {
+        x: "-114.5%",
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.2,
+      });
+    }, main);
+    return () => ctx.revert();
+  }, []);
+
+  const fadeOut = () => {
+    const ctx = gsap.context(() => {
+      gsap.to(".mainContent", {
+        opacity: 0,
+        duration: 0.5,
+      });
+    }, main);
+    return () => ctx.revert();
+  };
+
   return (
-    <Container>
-      <Sidebar />
-      <Content>
-        <HeaderComponent />
-        <Main>
-          <SeuEleitoradoCards />
-          <ChartsContainer>
-            <ChartContainer>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <TitleWithBar
-                  content="Faixa etária da População por gênero"
-                  barColor="#2F5CFC"
-                  width={"16rem"}
-                />
-                <AgeGroupLegend>
-                  {groupGenderConf.map((item) => {
-                    return (
-                      <div style={{ display: "flex", flexDirection: "column" }}>
+    <main ref={main}>
+      <RootLayout>
+        <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
+          <HeaderComponent fadeOut={() => fadeOut()} />
+          <Main>
+            <SeuEleitoradoCards />
+            <ChartsContainer>
+              <ChartContainer>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <TitleWithBar
+                    content="Faixa etária da População por gênero"
+                    barColor="#2F5CFC"
+                    width={"16rem"}
+                  />
+                  <AgeGroupLegend>
+                    {groupGenderConf.map((item) => {
+                      return (
                         <div
-                          key={item.dataKey}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.5rem",
-                          }}
+                          style={{ display: "flex", flexDirection: "column" }}
                         >
                           <div
+                            key={item.dataKey}
                             style={{
-                              width: "0.625rem",
-                              height: "0.625rem",
-                              borderRadius: "50%",
-                              backgroundColor: item.color,
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.5rem",
                             }}
-                          />
-                          <strong style={{ lineHeight: 1 }}>
-                            {item.total}
-                          </strong>
+                          >
+                            <div
+                              style={{
+                                width: "0.625rem",
+                                height: "0.625rem",
+                                borderRadius: "50%",
+                                backgroundColor: item.color,
+                              }}
+                            />
+                            <strong style={{ lineHeight: 1 }}>
+                              {item.total}
+                            </strong>
+                          </div>
+                          <span
+                            style={{ fontSize: "0.625rem", color: "#8790AB" }}
+                          >
+                            {item.dataKey}
+                          </span>
                         </div>
-                        <span
-                          style={{ fontSize: "0.625rem", color: "#8790AB" }}
-                        >
-                          {item.dataKey}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </AgeGroupLegend>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  height: "100%",
-                  width: "auto",
-                  padding: "3rem 1rem 0 0",
-                }}
-              >
-                <div style={{ width: "100%", height: "25rem" }}>
-                  <AgeGroupByGender
-                    data={groupGenderData}
-                    conf={groupGenderConf}
+                      );
+                    })}
+                  </AgeGroupLegend>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    height: "100%",
+                    width: "auto",
+                    padding: "3rem 1rem 0 0",
+                  }}
+                >
+                  <div style={{ width: "100%", height: "25rem" }}>
+                    <AgeGroupByGender
+                      data={groupGenderData}
+                      conf={groupGenderConf}
+                    />
+                  </div>
+                </div>
+              </ChartContainer>
+              <ChartContainer>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <TitleWithBar
+                    barColor="#2F5CFC"
+                    content={
+                      selectedVoterOption === "education"
+                        ? "Escolaridade dos Eleitores"
+                        : "Idade dos Eleitores"
+                    }
+                  />
+                  <VotersInfoSelect
+                    selectedValue={selectedVoterOption}
+                    setSelectedValue={setSelectedVoterOption}
+                    values={selectVotersValue}
                   />
                 </div>
-              </div>
-            </ChartContainer>
-            <ChartContainer>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <VotersInfo
+                  chartData={selectedData}
+                  labels={selectedVoterLabels}
+                />
+              </ChartContainer>
+              <ChartContainer></ChartContainer>
+              <ChartContainer>
                 <TitleWithBar
+                  content="Gêneros dos Eleitores"
                   barColor="#2F5CFC"
-                  content={
-                    selectedVoterOption === "education"
-                      ? "Escolaridade dos Eleitores"
-                      : "Idade dos Eleitores"
-                  }
                 />
-                <VotersInfoSelect
-                  selectedValue={selectedVoterOption}
-                  setSelectedValue={setSelectedVoterOption}
-                  values={selectVotersValue}
-                />
-              </div>
-              <VotersInfo
-                chartData={selectedData}
-                labels={selectedVoterLabels}
-              />
-            </ChartContainer>
-            <ChartContainer></ChartContainer>
-            <ChartContainer>
-              <TitleWithBar
-                content="Gêneros dos Eleitores"
-                barColor="#2F5CFC"
-              />
-              <div
-                style={{ width: "100%", height: "500px", paddingTop: "7rem" }}
-              >
-                <VotersByGender />
-              </div>
-            </ChartContainer>
-          </ChartsContainer>
-        </Main>
-      </Content>
-    </Container>
+                <div
+                  style={{ width: "100%", height: "500px", paddingTop: "7rem" }}
+                >
+                  <VotersByGender />
+                </div>
+              </ChartContainer>
+            </ChartsContainer>
+          </Main>
+        </Content>
+      </RootLayout>
+    </main>
   );
 }
