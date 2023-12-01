@@ -17,6 +17,7 @@ import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VoterInfo/Vot
 import { VotersByGender } from "@/components/home/midias-sociais/TotalVotersByGender";
 import RootLayout from "@/components/Layout";
 import gsap from "gsap";
+import { VotersGender } from "@/components/home/seu-eleitorado/VotersGender";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -104,12 +105,12 @@ export default function SeuEleitorado() {
   const groupGenderConf = [
     {
       dataKey: "Homens",
-      color: "#22C24F",
+      color: "#0D123C",
       total: total.homens,
     },
     {
       dataKey: "Mulheres",
-      color: "#E73F3F",
+      color: "#E7298A",
       total: total.mulheres,
     },
   ];
@@ -256,12 +257,19 @@ export default function SeuEleitorado() {
                   content="Gêneros dos Eleitores"
                   barColor="#2F5CFC"
                 />
+                <VotersGender />
+              </ChartContainer>
+              {/* <ChartContainer>
+                <TitleWithBar
+                  content="Gêneros dos Eleitores"
+                  barColor="#2F5CFC"
+                />
                 <div
                   style={{ width: "100%", height: "500px", paddingTop: "7rem" }}
                 >
                   <VotersByGender />
                 </div>
-              </ChartContainer>
+              </ChartContainer> */}
             </ChartsContainer>
           </Main>
         </Content>

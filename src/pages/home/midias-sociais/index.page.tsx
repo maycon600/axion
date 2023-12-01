@@ -20,6 +20,8 @@ import { FollowerDataLegend } from "@/components/home/midias-sociais/FollowerDat
 import RootLayout from "@/components/Layout";
 import gsap from "gsap";
 import { useLayoutEffect, useRef, useState } from "react";
+import { PostEngagement } from "@/components/home/midias-sociais/PostEngagement";
+import { ScoreChart } from "@/components/home/mencoes/ScoreChart";
 
 export default function MidiasSociais() {
   const followerData = [
@@ -93,6 +95,35 @@ export default function MidiasSociais() {
             </LikesAndComentsContainer>
 
             <ChartsContainer>
+              <ChartContainer>
+                <TitleWithBar
+                  content="Dados de Seguidores"
+                  barColor="#080E45"
+                />
+                <PostEngagement />
+              </ChartContainer>
+
+              {/* Score */}
+              <ChartContainer style={{ height: "400px" }}>
+                <TitleWithBar
+                  content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
+                  barColor="#12A9E7"
+                  subTitle
+                  width="27rem"
+                />
+                <div
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  {/* <ScoreChart score={690} /> */}
+                </div>
+              </ChartContainer>
+
               <ChartContainer>
                 <TitleWithBar
                   content="Dados de Seguidores"

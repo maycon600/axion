@@ -11,7 +11,7 @@ export const Content = styled.div`
   border-radius: 25px 0 0 25px;
   padding: 1.2rem;
   position: relative;
-  left: 100%;
+  /* left: 100%; */
 `;
 
 export const Main = styled.main`
@@ -21,7 +21,9 @@ export const Main = styled.main`
 
 export const TopCardsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `;
 
 export const CardsContainer = styled.div`

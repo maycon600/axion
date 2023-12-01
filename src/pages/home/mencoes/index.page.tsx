@@ -20,10 +20,10 @@ export default function SeuEleitorado() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".mainContent", {
-        x: "-114.5%",
-        opacity: 1,
-        duration: 0.5,
-        delay: 0.2,
+        // x: "-114.5%",
+        // opacity: 1,
+        // duration: 0.5,
+        // delay: 0.2,
       });
     }, main);
     return () => ctx.revert();
@@ -31,10 +31,10 @@ export default function SeuEleitorado() {
 
   const fadeOut = () => {
     const ctx = gsap.context(() => {
-      gsap.to(".mainContent", {
-        opacity: 0,
-        duration: 0.5,
-      });
+      // gsap.to(".mainContent", {
+      //   opacity: 0,
+      //   duration: 0.5,
+      // });
     }, main);
     return () => ctx.revert();
   };
@@ -45,6 +45,15 @@ export default function SeuEleitorado() {
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
           <HeaderComponent fadeOut={() => fadeOut()} />
           <Main>
+            <h2
+              style={{
+                fontSize: "1.875rem",
+                fontWeight: 500,
+                marginBottom: "1.25rem",
+              }}
+            >
+              Sites de Notícias
+            </h2>
             <TopCardsContainer>
               <div
                 style={{
@@ -63,7 +72,7 @@ export default function SeuEleitorado() {
                     padding: "0 8%",
                   }}
                 >
-                  <ScoreChart score={152} />
+                  <ScoreChart score={750} />
                 </div>
               </div>
               <TotalQuotes />
@@ -74,7 +83,6 @@ export default function SeuEleitorado() {
                 neutral={103231}
               />
             </TopCardsContainer>
-
             <TitleBottomBar title="Notícias em Destaque" />
             <CardsContainer>
               <NewsCard

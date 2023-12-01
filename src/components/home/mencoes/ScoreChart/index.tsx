@@ -14,7 +14,7 @@ export function ScoreChart({ score }: Props) {
 
   useEffect(() => {
     if (myChart) {
-      myChart.destroy();
+      setMyChart(myChart.destroy());
     }
 
     const chartBox = document.querySelector(".chartBox");
@@ -39,7 +39,6 @@ export function ScoreChart({ score }: Props) {
       afterDatasetDraw(chart: any, args: any, pluginOptions: any) {
         const {
           ctx,
-          data,
           chartArea: { top, bottom, left, right, width, height },
           scales: { r },
         } = chart;
@@ -114,7 +113,7 @@ export function ScoreChart({ score }: Props) {
 
     return () => {
       if (newChart) {
-        newChart.destroy();
+        setMyChart(newChart.destroy());
       }
     };
   }, [score]);
