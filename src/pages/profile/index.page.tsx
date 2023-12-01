@@ -40,6 +40,16 @@ export default function Profile() {
         <Main>
           <header>
             <h2>Meu Perfil</h2>
+            <button
+              style={{
+                marginLeft: "auto",
+                marginRight: "5rem",
+                background: Theme.color.darkBlueAxion,
+              }}
+            >
+              Cadastrar novo Usuário {""}
+              <img src="/newUser.svg" alt="" />
+            </button>
             <button onClick={() => setShowNewPasswordModal(true)}>
               Trocar Senha
             </button>
@@ -152,52 +162,190 @@ export default function Profile() {
             }}
           />
 
-          <CompanyInfo>
-            <div />
-            <FormSection>
-              <FormGroup>
-                <label htmlFor="companyName">Nome da Empresa</label>
-                <input
-                  type="text"
-                  id="companyName"
-                  value={"Axion"}
-                  disabled={!isEditing}
-                />
-              </FormGroup>
-              <FormGroup>
-                <label htmlFor="role">Seu Cargo</label>
-                <select disabled={!isEditing}>
-                  <option value="Funcionário">Funcionário</option>
-                </select>
-              </FormGroup>
-            </FormSection>
-
-            <FormSection>
-              <FormGroup>
-                <label htmlFor="cnpj">CNPJ</label>
-                <input
-                  type="text"
-                  id="cnpj"
-                  value={"11.111.111/1111-11"}
-                  disabled={!isEditing}
-                />
-              </FormGroup>
-
-              <FormGroup>
-                <GlobalButton
-                  content={isEditing ? "Salvar" : "Atualizar Cadastro"}
-                  style={{ marginTop: "1.7rem" }}
-                  onClick={() => setIsEditing(!isEditing)}
-                />
-              </FormGroup>
-              <DeleteAccount>
-                <button onClick={() => setShowBlockAccountModal(true)}>
-                  <TrashCanSVG />
-                  <span>Excluir Cadastro?</span>
-                </button>
-              </DeleteAccount>
-            </FormSection>
-          </CompanyInfo>
+          <div />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <h2>Minha Assinatura</h2>
+            <img
+              src="/axionLogo.png"
+              alt=""
+              style={{ height: "1.5rem", marginLeft: "0.5rem" }}
+            />
+          </div>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div
+              style={{
+                width: "50%",
+                height: "12rem",
+                backgroundColor: "#d9d9d9",
+                borderRadius: 15,
+              }}
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                marginLeft: "2rem",
+                justifyContent: "space-between",
+                width: "100%",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label style={{ lineHeight: "3rem" }}>
+                    Plano Contratado:
+                  </label>
+                  Plano ABC
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label style={{ lineHeight: "3rem" }}>INFO 1</label>
+                  INFO 1
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label style={{ lineHeight: "3rem" }}>
+                    Agentes Monitorados:
+                  </label>
+                  Até 3 Agentes
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label style={{ lineHeight: "3rem" }}>
+                    Plano Contratado:
+                  </label>
+                  Plano ABC
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label style={{ lineHeight: "3rem" }}>INFO 1</label>
+                  INFO 1
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label style={{ lineHeight: "3rem" }}>
+                    Agentes Monitorados:
+                  </label>
+                  Até 3 Agentes
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: "5rem",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <label style={{ lineHeight: "3rem" }}>Data</label>
+              01/01/2024
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <label style={{ lineHeight: "3rem" }}>Descrição</label>
+              Plano ABC
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <label style={{ lineHeight: "3rem" }}>Valor</label>
+              R$5000,00
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <label style={{ lineHeight: "3rem" }}>Status</label>
+              <button
+                style={{
+                  backgroundColor: Theme.color.green_70,
+                  color: "white",
+                  borderRadius: 5,
+                  border: 0,
+                  padding: "0 1rem",
+                }}
+              >
+                PAGO
+              </button>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <label style={{ lineHeight: "3rem" }}>Recibo</label>
+              <a style={{ textDecoration: "underline" }}>Retirar Nota Fiscal</a>
+            </div>
+          </div>
+        </Main>
+        <Main>
+          <header>
+            <h2>Usuários</h2>
+            <button
+              style={{
+                background: Theme.color.darkBlueAxion,
+              }}
+            >
+              Cadastrar novo Usuário {""}
+              <img src="/newUser.svg" alt="" />
+            </button>
+          </header>
         </Main>
       </Content>
 
