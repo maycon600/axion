@@ -1,8 +1,6 @@
-import { Sidebar } from "@/components/Global/Sidebar";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { HeaderComponent } from "@/components/home/Header";
 import { NewsCard } from "@/components/home/mencoes/NewsCard";
-import { ScoreChart } from "@/components/home/mencoes/ScoreChart";
 import { SentimentChart } from "@/components/home/mencoes/SentimentChart";
 import { TitleBottomBar } from "@/components/home/mencoes/TitleBottomBar";
 import { TotalQuotes } from "@/components/home/mencoes/TotalQuotes";
@@ -72,7 +70,7 @@ export default function SeuEleitorado() {
                     padding: "0 8%",
                   }}
                 >
-                  <ScoreChart score={750} />
+                  {/* <ScoreChart score={750} /> */}
                 </div>
               </div>
               <TotalQuotes />
