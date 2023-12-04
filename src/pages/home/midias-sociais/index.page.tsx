@@ -21,7 +21,7 @@ import RootLayout from "@/components/Layout";
 import gsap from "gsap";
 import { useLayoutEffect, useRef, useState } from "react";
 import { PostEngagement } from "@/components/home/midias-sociais/PostEngagement";
-import { ScoreChart } from "@/components/home/mencoes/ScoreChart";
+import { ScoreChart } from "@/components/home/ScoreChart";
 
 export default function MidiasSociais() {
   const followerData = [
@@ -120,7 +120,7 @@ export default function MidiasSociais() {
                     alignItems: "center",
                   }}
                 >
-                  {/* <ScoreChart score={690} /> */}
+                  <ScoreChart score={690} />
                 </div>
               </ChartContainer>
 

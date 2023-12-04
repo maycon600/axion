@@ -10,16 +10,16 @@ export function ScoreChart({ score }: Props) {
   const canvasRef = useRef(null);
   let gradientSegment: any;
 
-  const [myChart, setMyChart] = useState<any>(null);
+  let myChart: any;
 
   useEffect(() => {
     if (myChart) {
-      setMyChart(myChart.destroy());
+      myChart.destroy();
     }
 
     const chartBox = document.querySelector(".chartBox");
 
-    const canvas = document.getElementById("myChart") as HTMLCanvasElement;
+    const canvas = document.getElementById("scoreChart") as HTMLCanvasElement;
 
     let ctx: any;
 
@@ -109,20 +109,20 @@ export function ScoreChart({ score }: Props) {
       plugins: [gaugeChartText],
     });
 
-    setMyChart(newChart);
+    myChart = newChart;
 
     return () => {
       if (newChart) {
-        setMyChart(newChart.destroy());
+        newChart.clear();
       }
     };
-  }, [score]);
+  }, [score, myChart]);
 
   return (
     <div className="chartBox">
       <canvas
         ref={canvasRef}
-        id="myChart"
+        id="scoreChart"
         style={{ width: "100%", height: "100%" }}
       />
     </div>
