@@ -10,7 +10,12 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   background-color: ${({ theme }) => theme.color.gray_10};
-  width: calc(100% - 17rem);
+  width: 100%;
+  margin: 0.37rem 0 1rem 0.4rem;
+  border-radius: 25px 0 0 25px;
+  padding: 1.2rem;
+  left: 100%;
+  position: relative;
 `;
 
 export const Main = styled.main`
@@ -77,7 +82,7 @@ export const AvatarContainer = styled.div`
     }
 
     &:disabled {
-      color: ${({theme}) => theme.color.gray_80};
+      color: ${({ theme }) => theme.color.gray_80};
     }
   }
 `;
@@ -91,7 +96,7 @@ export const FormGroup = styled.div`
   select,
   option {
     padding: 1.25rem 1rem;
-    width: clamp(10rem, 20vw , 20rem);
+    width: clamp(10rem, 20vw, 20rem);
     border-radius: 5px;
     border: 1px solid ${({ theme }) => theme.color.gray_20};
     outline: 0;
@@ -184,7 +189,7 @@ export const DeleteAccount = styled.div`
     }
 
     &:hover {
-      color: ${({theme}) => theme.color.red_90};
+      color: ${({ theme }) => theme.color.red_90};
     }
   }
 `;

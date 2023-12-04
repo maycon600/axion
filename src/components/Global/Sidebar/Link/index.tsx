@@ -7,13 +7,21 @@ interface LinkProps {
   imgSrc: React.ReactElement;
   name: string;
   color?: string;
+  fadeOut: any;
 }
 
-export function LinkComponent({ href, imgSrc, name, color }: LinkProps) {
+export function LinkComponent({
+  href,
+  imgSrc,
+  name,
+  color,
+  fadeOut,
+}: LinkProps) {
   const router = useRouter();
   const pageActive = `/${router.asPath.split("/")[1]}` === href;
 
   const handleClick = () => {
+    fadeOut();
     router.push(href);
   };
 

@@ -20,10 +20,10 @@ export default function SeuEleitorado() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".mainContent", {
-        // x: "-114.5%",
-        // opacity: 1,
-        // duration: 0.5,
-        // delay: 0.2,
+        x: "-100%",
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.2,
       });
     }, main);
     return () => ctx.revert();
@@ -31,17 +31,17 @@ export default function SeuEleitorado() {
 
   const fadeOut = () => {
     const ctx = gsap.context(() => {
-      // gsap.to(".mainContent", {
-      //   opacity: 0,
-      //   duration: 0.5,
-      // });
+      gsap.to(".mainContent", {
+        opacity: 0,
+        duration: 0.5,
+      });
     }, main);
     return () => ctx.revert();
   };
 
   return (
     <main ref={main}>
-      <RootLayout>
+      <RootLayout fadeOut={() => fadeOut()}>
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
           <HeaderComponent fadeOut={() => fadeOut()} />
           <Main>

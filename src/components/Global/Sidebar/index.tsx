@@ -5,12 +5,13 @@ import { ProfileSVG } from "../../../../public/sidebar/profile";
 import { SettingsSVG } from "../../../../public/sidebar/settings";
 import { UsersSVG } from "../../../../public/sidebar/users";
 import { LinkComponent } from "./Link";
-import {
-  AxionLogoContainer,
-  SidebarContainer
-} from "./styles";
+import { AxionLogoContainer, SidebarContainer } from "./styles";
 
-export function Sidebar() {
+interface SidebarProps {
+  fadeOut: any;
+}
+
+export function Sidebar({ fadeOut }: SidebarProps) {
   // const isHeightAbove991 = useWindowDimensions();
 
   return (
@@ -32,28 +33,54 @@ export function Sidebar() {
           paddingBottom: "5rem",
         }}
       >
-        <LinkComponent name="Dashboard" imgSrc={<Dashboard />} href="/home" />
         <LinkComponent
-          name="Meu Perfil"
-          imgSrc={<ProfileSVG />}
-          href="/profile"
+          fadeOut={() => fadeOut()}
+          name="Dashboard"
+          imgSrc={<Dashboard />}
+          href="/home"
         />
         <LinkComponent
+          fadeOut={() => fadeOut()}
+          name="Comparativo"
+          imgSrc={<FinancialSVG />}
+          href="/comparison"
+        />
+        <LinkComponent
+          fadeOut={() => fadeOut()}
           name="Notificações"
           imgSrc={<NotificationSVG />}
           href="/notifications"
         />
         <LinkComponent
+          fadeOut={() => fadeOut()}
+          name="Meu Perfil"
+          imgSrc={<ProfileSVG />}
+          href="/profile"
+        />
+        <LinkComponent
+          fadeOut={() => fadeOut()}
+          name="Ajuda"
+          imgSrc={<img src="/sidebar/HelpSVG.svg" alt="" />}
+          href="/help"
+        />
+        {/* <LinkComponent
+          fadeOut={() => fadeOut()}
           name="Financeiro"
           imgSrc={<FinancialSVG />}
           href="/financial"
         />
-        <LinkComponent name="Usuários" imgSrc={<UsersSVG />} href="/users" />
         <LinkComponent
+          fadeOut={() => fadeOut()}
+          name="Usuários"
+          imgSrc={<UsersSVG />}
+          href="/users"
+        />
+        <LinkComponent
+          fadeOut={() => fadeOut()}
           name="Configurações"
           imgSrc={<SettingsSVG />}
           href="/settings"
-        />
+        /> */}
       </div>
     </SidebarContainer>
   );

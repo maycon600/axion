@@ -29,7 +29,7 @@ export default function InteligenciaArtificial() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".mainContent", {
-        x: "-114.5%",
+        x: "-100%",
         opacity: 1,
         duration: 0.5,
         delay: 0.2,
@@ -50,7 +50,7 @@ export default function InteligenciaArtificial() {
 
   return (
     <main ref={main}>
-      <RootLayout>
+      <RootLayout fadeOut={() => fadeOut()}>
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
           <HeaderComponent fadeOut={() => fadeOut()} />
           <Main>

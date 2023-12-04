@@ -1,10 +1,20 @@
 import styled from "styled-components";
 import { Sidebar } from "./Global/Sidebar";
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  fadeOut: any;
+}
+
+const RootLayout = ({
+  children,
+  fadeOut,
+}: {
+  children: React.ReactNode;
+  fadeOut: LayoutProps["fadeOut"];
+}) => {
   return (
     <Container>
-      <Sidebar />
+      <Sidebar fadeOut={() => fadeOut()} />
       {children}
     </Container>
   );
@@ -16,4 +26,5 @@ const Container = styled.div`
   display: flex;
   background-color: #111;
   overflow: hidden;
+  min-height: 100vh;
 `;
