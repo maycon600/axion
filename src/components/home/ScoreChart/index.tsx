@@ -70,8 +70,8 @@ export function ScoreChart({ score }: Props) {
           ctx.fillText(text, x, y);
         }
 
-        textLabel("100", left, yCoor + 13, 15, "top", "left");
-        textLabel("1000", right, yCoor + 13, 15, "bottom", "right");
+        // textLabel("100", left, yCoor + 13, 15, "top", "left");
+        // textLabel("1000", right, yCoor + 13, 15, "bottom", "right");
         textLabel(score.toString(), xCoor, yCoor - 28, 40, "top", "center");
         textLabel(rating, xCoor, yCoor - 10, 13, "center", "bottom");
       },
@@ -120,7 +120,7 @@ export function ScoreChart({ score }: Props) {
   }, [score, canvas]);
 
   return (
-    <div className="chartBox">
+    <div className="chartBox" style={{ display: 'flex', justifyContent: 'center' }}>
       <canvas
         ref={canvasRef}
         id="myChart"

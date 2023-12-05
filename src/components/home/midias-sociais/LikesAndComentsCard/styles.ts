@@ -8,20 +8,20 @@ interface Props {
 export const Container = styled.div<Props>`
   position: relative;
   width: 20rem;
-  height: 8.875rem;
+  height: 7rem;
   background-color: white;
   padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid #959595;
   transition: 0.2s;
 
   opacity: ${({ isSelected }) => (isSelected ? 1 : 0.5)};
 
   &:hover {
     cursor: pointer;
-  }s
-
-  header {
+  }
+  s header {
     font-size: 1.25rem;
     color: ${({ theme }) => theme.color.gray_100};
   }

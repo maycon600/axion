@@ -15,7 +15,6 @@ export function FollowerData({ data }: Props) {
   const [myChart, setMyChart] = useState<any>(null);
 
   useEffect(() => {
-    // Check if myChart exists and destroy it if it does
     if (myChart) {
       myChart.destroy();
     }
@@ -115,7 +114,7 @@ export function FollowerData({ data }: Props) {
 
   return (
     <Container>
-      <canvas id="followerData" style={{ width: "30%", height: "30%" }} />
+      <canvas id="myChart" style={{ width: "30%", height: "30%" }} />
     </Container>
   );
 }

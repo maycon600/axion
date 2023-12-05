@@ -23,6 +23,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { PostEngagement } from "@/components/home/midias-sociais/PostEngagement";
 import { ScoreChart } from "@/components/home/ScoreChart";
 import { InitialPage } from "@/components/home/midias-sociais/InitialPage";
+import { SocialMidiaPage } from "@/components/home/midias-sociais/SocialMidiaPage";
 
 export default function MidiasSociais() {
   const main = useRef(null);
@@ -61,6 +62,7 @@ export default function MidiasSociais() {
             <h1>Redes Sociais</h1>
             <LikesAndComentsContainer>
               <LikesAndComentsCard
+                type="facebook"
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
@@ -71,30 +73,33 @@ export default function MidiasSociais() {
                 }
               />
               <LikesAndComentsCard
+                type="instagram"
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
-                name="Facebook"
+                name="Instagram"
                 onClick={() => setSelectedPage("instagram")}
                 isSelected={
                   selectedPage === "instagram" || selectedPage === "initial"
                 }
               />
               <LikesAndComentsCard
+                type="tiktok"
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
-                name="Facebook"
+                name="TikTok"
                 onClick={() => setSelectedPage("tiktok")}
                 isSelected={
                   selectedPage === "tiktok" || selectedPage === "initial"
                 }
               />
               <LikesAndComentsCard
+                type="youtube"
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
-                name="Facebook"
+                name="Youtube"
                 onClick={() => setSelectedPage("youtube")}
                 isSelected={
                   selectedPage === "youtube" || selectedPage === "initial"
@@ -103,10 +108,10 @@ export default function MidiasSociais() {
             </LikesAndComentsContainer>
 
             {selectedPage === "initial" && <InitialPage />}
-            {selectedPage === "facebook" && <div>aoooooooo</div>}
-            {selectedPage === "instagram" && <div>aoooooooo</div>}
-            {selectedPage === "tiktok" && <div>aoooooooo</div>}
-            {selectedPage === "youtube" && <div>aoooooooo</div>}
+            {selectedPage === "facebook" && <SocialMidiaPage />}
+            {selectedPage === "instagram" && <SocialMidiaPage />}
+            {selectedPage === "tiktok" && <SocialMidiaPage />}
+            {selectedPage === "youtube" && <SocialMidiaPage />}
           </Main>
         </Content>
       </RootLayout>
