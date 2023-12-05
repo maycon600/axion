@@ -12,7 +12,6 @@ export const ChartsContainer = styled.div`
 export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 1.25rem;
   width: 35rem;
   height: 100%;
