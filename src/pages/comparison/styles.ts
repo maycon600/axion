@@ -63,11 +63,8 @@ export const Image = styled.img`
 
 export const Grid = styled.div`
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 2%;
   padding: 2%;
   border: 1px solid #bebebe;
@@ -92,7 +89,7 @@ export const ComparisonBars = styled.div<ComparisonProps>`
   border-radius: 20px;
   color: white;
   width: ${({ percentage }) => percentage + "%"};
-  height: 3rem;
+  height: 2.5rem;
   align-items: center;
   justify-content: center;
 `;
