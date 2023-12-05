@@ -2,7 +2,7 @@ import Theme from "@/styles/themes";
 import { Container, Feedback, FeedbackGroup } from "./styles";
 
 interface LikesCardProps extends React.HTMLAttributes<HTMLDivElement> {
-
+  type: "facebook" | "instagram" | "tiktok" | "youtube";
   name: string;
   likes: number;
   coments: number;
@@ -16,8 +16,36 @@ export function LikesAndComentsCard({
   coments,
   barColor,
   isSelected,
+  type,
   ...rest
 }: LikesCardProps) {
+  const typeData = {
+    facebook: {
+      leftLabel: "Likes na Página",
+      leftImg: "/dashboard/like.svg",
+      rightLabel: "Seguidores",
+      rightImg: "/dashboard/heart.svg",
+    },
+    instagram: {
+      leftLabel: "Posts",
+      leftImg: "/dashboard/posts.svg",
+      rightLabel: "Seguidores",
+      rightImg: "/dashboard/followers.svg",
+    },
+    tiktok: {
+      leftLabel: "Likes",
+      leftImg: "/dashboard/heart.svg",
+      rightLabel: "Seguidores",
+      rightImg: "/dashboard/followers.svg",
+    },
+    youtube: {
+      leftLabel: "Inscritos",
+      leftImg: "/dashboard/followers.svg",
+      rightLabel: "Visualizações",
+      rightImg: "/dashboard/views.svg",
+    },
+  };
+
   return (
     <Container barColor={barColor} isSelected={isSelected} {...rest}>
       <div className="verticalBar" />
@@ -25,28 +53,20 @@ export function LikesAndComentsCard({
       <Feedback>
         <FeedbackGroup>
           <div className="group">
-            <img src="/dashboard/like.svg" alt="" />
+            <img src={typeData[type].leftImg} alt="" />
             <strong>{likes}K</strong>
           </div>
-          <span>Likes em publicações</span>
+          <span>{typeData[type].leftLabel}</span>
         </FeedbackGroup>
 
         <FeedbackGroup>
           <div className="group">
-            <img src="/dashboard/coments.svg" alt="" />
+            <img src={typeData[type].rightImg} alt="" />
             <strong>{coments}K</strong>
           </div>
-          <span>Comentários</span>
+          <span>{typeData[type].rightLabel}</span>
         </FeedbackGroup>
       </Feedback>
-
-      <div style={{ margin: "1.3rem 0 0.5rem" }}>
-        <p style={{ color: Theme.color.gray_70, fontSize: "0.625rem" }}>
-          <img src="/dashboard/downArrow.svg" alt="" />
-          <span style={{ color: Theme.color.red_70 }}>-10%</span> de queda desde
-          o mês passado
-        </p>
-      </div>
     </Container>
   );
 }

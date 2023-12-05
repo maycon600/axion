@@ -12,6 +12,7 @@ import { EngagmentChart } from "../EngagementData";
 import { SimpleWordcloud } from "../WordCloud";
 import { VotersActive } from "../VotersActive";
 import { FollowerDataLegend } from "../FollowerData/Legend";
+import { FollowerData } from "../FollowerData";
 
 export function InitialPage() {
   const followerData = [
@@ -27,31 +28,7 @@ export function InitialPage() {
 
   return (
     <ChartsContainer>
-      <ChartContainer>
-        <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
-        <PostEngagement />
-      </ChartContainer>
-
       {/* Score */}
-      <ChartContainer style={{ height: "400px" }}>
-        <TitleWithBar
-          content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
-          barColor="#12A9E7"
-          subTitle
-          width="27rem"
-        />
-        <div
-          style={{
-            height: "300px",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <ScoreChart score={750} />
-        </div>
-      </ChartContainer>
 
       <ChartContainer>
         <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
@@ -63,7 +40,8 @@ export function InitialPage() {
             </strong>
             <span className="description">de ganho em processos</span>
           </ChartCenterInfo>
-          {/* <FollowerData data={followerData} /> */}
+          <FollowerData data={followerData} />
+
           <FollowerDataLegendContainer>
             {sortedFollowerData.map((item, index) => (
               <FollowerDataLegend
