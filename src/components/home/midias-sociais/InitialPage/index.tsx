@@ -82,7 +82,7 @@ export function InitialPage() {
       </ChartContainer>
 
       <ChartContainer>
-        <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" />
+        <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" subTitle />
         <div
           style={{ display: "flex", marginTop: "3rem", alignItems: "center" }}
         >
