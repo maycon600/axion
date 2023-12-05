@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { PureComponent } from "react";
 import {
   BarChart,
@@ -77,9 +78,15 @@ export function PostEngagement() {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
         <YAxis />
-        <XAxis dataKey={"name"} />
+        <XAxis
+          tick={
+            <img
+              src="/eye-slash.svg"
+              style={{ width: "25px", height: "25px" }}
+            />
+          }
+        />
         <Tooltip />
         <Bar dataKey="shares" stackId="a" fill="#FFD712" barSize={25} />
         <Bar dataKey="sentiment" stackId="a" fill="#2F5CFC" />

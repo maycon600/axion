@@ -22,19 +22,9 @@ import gsap from "gsap";
 import { useLayoutEffect, useRef, useState } from "react";
 import { PostEngagement } from "@/components/home/midias-sociais/PostEngagement";
 import { ScoreChart } from "@/components/home/ScoreChart";
+import { InitialPage } from "@/components/home/midias-sociais/InitialPage";
 
 export default function MidiasSociais() {
-  const followerData = [
-    { name: "Instagram", count: 40000 },
-    { name: "Facebook", count: 30000 },
-    { name: "Youtube", count: 20000 },
-    { name: "Tiktok", count: 10000 },
-  ];
-
-  const colors = ["#2F5CFC", "#0A2BA0", "#000411", "#E5E8F0"];
-
-  const sortedFollowerData = followerData.sort((a, b) => b.count - a.count);
-
   const main = useRef(null);
   const content = useRef(null);
 
@@ -60,6 +50,8 @@ export default function MidiasSociais() {
     return () => ctx.revert();
   };
 
+  const [selectedPage, setSelectedPage] = useState("initial");
+
   return (
     <main ref={main}>
       <RootLayout fadeOut={() => fadeOut()}>
@@ -73,141 +65,48 @@ export default function MidiasSociais() {
                 coments={1}
                 likes={25}
                 name="Facebook"
+                onClick={() => setSelectedPage("facebook")}
+                isSelected={
+                  selectedPage === "facebook" || selectedPage === "initial"
+                }
               />
               <LikesAndComentsCard
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
                 name="Facebook"
+                onClick={() => setSelectedPage("instagram")}
+                isSelected={
+                  selectedPage === "instagram" || selectedPage === "initial"
+                }
               />
               <LikesAndComentsCard
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
                 name="Facebook"
+                onClick={() => setSelectedPage("tiktok")}
+                isSelected={
+                  selectedPage === "tiktok" || selectedPage === "initial"
+                }
               />
               <LikesAndComentsCard
                 barColor="#5162FF"
                 coments={1}
                 likes={25}
                 name="Facebook"
+                onClick={() => setSelectedPage("youtube")}
+                isSelected={
+                  selectedPage === "youtube" || selectedPage === "initial"
+                }
               />
             </LikesAndComentsContainer>
 
-            <ChartsContainer>
-              <ChartContainer>
-                <TitleWithBar
-                  content="Dados de Seguidores"
-                  barColor="#080E45"
-                />
-                <PostEngagement />
-              </ChartContainer>
-
-              {/* Score */}
-              <ChartContainer style={{ height: "400px" }}>
-                <TitleWithBar
-                  content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
-                  barColor="#12A9E7"
-                  subTitle
-                  width="27rem"
-                />
-                <div
-                  style={{
-                    height: "300px",
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <ScoreChart score={690} />
-                </div>
-              </ChartContainer>
-
-              <ChartContainer>
-                <TitleWithBar
-                  content="Dados de Seguidores"
-                  barColor="#080E45"
-                />
-                <div className="chartContent">
-                  <ChartCenterInfo>
-                    <strong className="percentage">34%</strong>
-                    <strong className="gain">
-                      <img src="/dashboard/arrow-up.svg" alt="" /> +6.5%
-                    </strong>
-                    <span className="description">de ganho em processos</span>
-                  </ChartCenterInfo>
-                  <FollowerData data={followerData} />
-                  <FollowerDataLegendContainer>
-                    {sortedFollowerData.map((item, index) => (
-                      <FollowerDataLegend
-                        key={index}
-                        name={item.name}
-                        count={item.count}
-                        circleColor={colors[index]}
-                      />
-                    ))}
-                  </FollowerDataLegendContainer>
-                </div>
-              </ChartContainer>
-              <ChartContainer>
-                <TitleWithBar
-                  content="Dados de Engajamento"
-                  barColor="#12A9E7"
-                />
-                <div
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    marginLeft: "1rem",
-                  }}
-                >
-                  <EngagmentChart />
-                </div>
-              </ChartContainer>
-              <ChartContainer
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                }}
-              >
-                <TitleWithBar
-                  barColor="#080E45"
-                  content="Nuvem de palavras Geral"
-                  subTitle
-                />
-                <SimpleWordcloud />
-                {/* <Example width={500} height={300} /> */}
-              </ChartContainer>
-              <ChartContainer style={{ height: "400px" }}>
-                <TitleWithBar
-                  content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
-                  barColor="#12A9E7"
-                  subTitle
-                  width="27rem"
-                />
-                <div
-                  style={{
-                    height: "300px",
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <VotersActive />
-                </div>
-
-                <Tip>
-                  <img src="/dashboard/userIcon.svg" alt="" />
-                  <p>
-                    Se quiser ter um maior alcance nas Redes Sociais se atente a
-                    estes horários.
-                  </p>
-                </Tip>
-              </ChartContainer>
-            </ChartsContainer>
+            {selectedPage === "initial" && <InitialPage />}
+            {selectedPage === "facebook" && <div>aoooooooo</div>}
+            {selectedPage === "instagram" && <div>aoooooooo</div>}
+            {selectedPage === "tiktok" && <div>aoooooooo</div>}
+            {selectedPage === "youtube" && <div>aoooooooo</div>}
           </Main>
         </Content>
       </RootLayout>

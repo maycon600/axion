@@ -9,6 +9,7 @@ import { CardsContainer, Content, Main, TopCardsContainer } from "./styles";
 import RootLayout from "@/components/Layout";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScoreChart } from "@/components/home/ScoreChart";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -70,7 +71,7 @@ export default function SeuEleitorado() {
                     padding: "0 8%",
                   }}
                 >
-                  {/* <ScoreChart score={750} /> */}
+                  <ScoreChart score={750} />
                 </div>
               </div>
               <TotalQuotes />

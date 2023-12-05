@@ -9,17 +9,18 @@ export function ScoreChart({ score }: Props) {
   let chartWidth: any;
   const canvasRef = useRef(null);
   let gradientSegment: any;
+  const [canvas, setCanvas] = useState<any>();
 
   let myChart: any;
 
   useEffect(() => {
-    if (myChart) {
-      myChart.destroy();
-    }
+    // if (myChart) {
+    //   myChart.destroy();
+    // }
 
     const chartBox = document.querySelector(".chartBox");
 
-    const canvas = document.getElementById("scoreChart") as HTMLCanvasElement;
+    setCanvas(document.getElementById("myChart") as HTMLCanvasElement);
 
     let ctx: any;
 
@@ -113,16 +114,16 @@ export function ScoreChart({ score }: Props) {
 
     return () => {
       if (newChart) {
-        newChart.clear();
+        newChart.destroy();
       }
     };
-  }, [score, myChart]);
+  }, [score, canvas]);
 
   return (
     <div className="chartBox">
       <canvas
         ref={canvasRef}
-        id="scoreChart"
+        id="myChart"
         style={{ width: "100%", height: "100%" }}
       />
     </div>

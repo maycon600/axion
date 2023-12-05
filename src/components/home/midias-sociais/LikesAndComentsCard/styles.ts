@@ -2,16 +2,24 @@ import styled from "styled-components";
 
 interface Props {
   barColor: string;
+  isSelected: boolean;
 }
 
 export const Container = styled.div<Props>`
   position: relative;
-  width: 17.5rem;
+  width: 20rem;
   height: 8.875rem;
   background-color: white;
   padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+
+  opacity: ${({ isSelected }) => (isSelected ? 1 : 0.5)};
+
+  &:hover {
+    cursor: pointer;
+  }s
 
   header {
     font-size: 1.25rem;

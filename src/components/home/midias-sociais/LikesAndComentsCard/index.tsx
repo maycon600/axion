@@ -1,11 +1,13 @@
 import Theme from "@/styles/themes";
 import { Container, Feedback, FeedbackGroup } from "./styles";
 
-interface LikesCardProps {
+interface LikesCardProps extends React.HTMLAttributes<HTMLDivElement> {
+
   name: string;
   likes: number;
   coments: number;
   barColor: string;
+  isSelected: boolean;
 }
 
 export function LikesAndComentsCard({
@@ -13,9 +15,11 @@ export function LikesAndComentsCard({
   likes,
   coments,
   barColor,
+  isSelected,
+  ...rest
 }: LikesCardProps) {
   return (
-    <Container barColor={barColor}>
+    <Container barColor={barColor} isSelected={isSelected} {...rest}>
       <div className="verticalBar" />
       <header>{name}</header>
       <Feedback>
