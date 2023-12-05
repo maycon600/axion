@@ -207,46 +207,102 @@ export default function Comparison() {
               </Dropdown>
             </HeadToHeadBar>
             <Grid>
-              <ComparisonBars type="instagram" percentage={20}>
-                <ImageCircle style={{ backgroundColor: "#B73041" }}>
+              <div
+                style={{
+                  width: "50%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  justifyContent: "space-evenly",
+                  marginRight: "-2%",
+                }}
+              >
+                <ComparisonBars type="instagram" percentage={50} />
+                <ComparisonBars type="facebook" percentage={20} />
+                <ComparisonBars type="tiktok" percentage={50} />
+                <ComparisonBars type="youtube" percentage={20} />
+              </div>
+              <div
+                style={{
+                  height: "95%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignSelf: "center",
+                  alignItems: "flex-end",
+                  justifyContent: "space-evenly",
+                  zIndex: 2,
+                }}
+              >
+                <ImageCircle
+                  style={{
+                    backgroundColor: "#B73041",
+                  }}
+                >
                   <Image
                     src={"/InstagramLogo.svg"}
                     width={50}
                     height={50}
                     alt=""
+                    style={{ width: "2.5rem", height: "2.5rem" }}
                   />
                 </ImageCircle>
-              </ComparisonBars>
-              <ComparisonBars type="facebook" percentage={40}>
-                <ImageCircle style={{ backgroundColor: "#001958" }}>
+                <ImageCircle
+                  style={{
+                    backgroundColor: "#001958",
+                  }}
+                >
                   <Image
                     src={"/FacebookLogo.svg"}
                     width={50}
                     height={50}
                     alt=""
+                    style={{ width: "2.5rem", height: "2.5rem" }}
                   />
                 </ImageCircle>
-              </ComparisonBars>
-              <ComparisonBars type="tiktok" percentage={60}>
-                <ImageCircle style={{ backgroundColor: "#54858B" }}>
+                <ImageCircle
+                  style={{
+                    backgroundColor: "#54858B",
+                  }}
+                >
                   <Image
                     src={"/TiktokLogo.svg"}
                     width={50}
                     height={50}
                     alt=""
+                    style={{ width: "2.5rem", height: "2.5rem" }}
                   />
                 </ImageCircle>
-              </ComparisonBars>
-              <ComparisonBars type="youtube" percentage={80}>
-                <ImageCircle style={{ backgroundColor: "#8B0000" }}>
+                <ImageCircle
+                  style={{
+                    backgroundColor: "#8B0000",
+                  }}
+                >
                   <Image
                     src={"/YoutubeLogo.svg"}
                     width={50}
                     height={50}
                     alt=""
+                    style={{ width: "2.5rem", height: "2.5rem" }}
                   />
                 </ImageCircle>
-              </ComparisonBars>
+              </div>
+              <div
+                style={{
+                  width: "50%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  justifyContent: "space-evenly",
+                  marginLeft: "-2%",
+                }}
+              >
+                <ComparisonBars type="instagram" percentage={90} />
+                <ComparisonBars type="facebook" percentage={20} />
+                <ComparisonBars type="tiktok" percentage={20} />
+                <ComparisonBars type="youtube" percentage={20} />
+              </div>
             </Grid>
           </Main>
         </Content>
