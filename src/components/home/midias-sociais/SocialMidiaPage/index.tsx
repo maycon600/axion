@@ -3,6 +3,7 @@ import { ChartContainer, ChartsContainer, Tip } from "./styles";
 import { PostEngagement } from "../PostEngagement";
 import { ScoreChart } from "../../ScoreChart";
 import { VotersActive } from "../VotersActive";
+import { SmallBarChart } from "../SmallBarChart";
 
 export function SocialMidiaPage() {
   return (
@@ -44,6 +45,9 @@ export function SocialMidiaPage() {
             margin: "0 auto",
           }}
         />
+        <div className="p-5">
+          <SmallBarChart />
+        </div>
       </ChartContainer>
       <ChartContainer>
         <TitleWithBar
