@@ -64,6 +64,12 @@ export const HeaderMenu = styled.nav`
   display: flex;
   justify-content: space-between;
   margin-top: 2.4rem;
+  gap: 1rem;
+
+  @media(max-width: 1400px) {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Candidate = styled.div`

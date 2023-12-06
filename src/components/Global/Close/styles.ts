@@ -8,9 +8,9 @@ export const Close = styled.button`
   top: 2rem;
   right: 2rem;
   transition: 0.3s;
-  color: ${({theme}) => theme.color.gray_100};
+  color: ${({ theme }) => theme.color.gray_100};
 
   &:hover {
-    color: ${({theme}) => theme.color.gray_80};
+    color: ${({ theme }) => theme.color.gray_80};
   }
 `;

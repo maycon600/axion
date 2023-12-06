@@ -1,17 +1,16 @@
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
+import Image from "next/image";
+import { EngagmentChart } from "../EngagementData";
+import { FollowerData } from "../FollowerData";
+import { FollowerDataLegend } from "../FollowerData/Legend";
+import { SimpleWordcloud } from "../WordCloud";
 import {
   ChartCenterInfo,
   ChartContainer,
   ChartsContainer,
+  EngagmentLegendContainer,
   FollowerDataLegendContainer,
-  Tip,
 } from "./styles";
-import { EngagmentChart } from "../EngagementData";
-import { SimpleWordcloud } from "../WordCloud";
-import { VotersActive } from "../VotersActive";
-import { FollowerDataLegend } from "../FollowerData/Legend";
-import { FollowerData } from "../FollowerData";
-import Image from "next/image";
 
 export function InitialPage() {
   const followerData = [
@@ -35,7 +34,7 @@ export function InitialPage() {
     {
       name: "Facebook",
       count: 40000,
-      color: "#29282C",
+      color: "#2F5CFC",
       imgSrc: "/dashboard/facebookIcon.png",
     },
     {
@@ -47,7 +46,7 @@ export function InitialPage() {
     {
       name: "Tiktok",
       count: 20000,
-      color: "#2F5CFC",
+      color: "#29282C",
       imgSrc: "/dashboard/tiktokIcon.svg",
     },
   ];
@@ -82,7 +81,11 @@ export function InitialPage() {
       </ChartContainer>
 
       <ChartContainer>
-        <TitleWithBar content="Dados de Engajamento" barColor="#12A9E7" subTitle />
+        <TitleWithBar
+          content="Dados de Engajamento"
+          barColor="#12A9E7"
+          subTitle
+        />
         <div
           style={{ display: "flex", marginTop: "3rem", alignItems: "center" }}
         >
@@ -101,21 +104,8 @@ export function InitialPage() {
           >
             {engagmentData.map((item) => {
               return (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "0.5rem",
-                      height: "0.5rem",
-                      borderRadius: "50%",
-                      background: item.color,
-                    }}
-                  />
+                <EngagmentLegendContainer circleColor={item.color}>
+                  <div className="circle" />
                   <strong
                     style={{
                       fontSize: "0.75rem",
@@ -126,53 +116,21 @@ export function InitialPage() {
                     {item.name}
                   </strong>
                   <Image src={item.imgSrc} width={32} height={32} alt="" />
-                </div>
+                </EngagmentLegendContainer>
               );
             })}
           </div>
         </div>
       </ChartContainer>
-      <ChartContainer
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-        }}
-      >
+      <ChartContainer>
         <TitleWithBar
           barColor="#080E45"
           content="Nuvem de palavras Geral"
           subTitle
+          className="mb-3"
         />
         <SimpleWordcloud />
         {/* <Example width={500} height={300} /> */}
-      </ChartContainer>
-      <ChartContainer style={{ height: "400px" }}>
-        <TitleWithBar
-          content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
-          barColor="#12A9E7"
-          subTitle
-          width="27rem"
-        />
-        <div
-          style={{
-            height: "300px",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <VotersActive />
-        </div>
-
-        <Tip>
-          <img src="/dashboard/userIcon.svg" alt="" />
-          <p>
-            Se quiser ter um maior alcance nas Redes Sociais se atente a estes
-            horários.
-          </p>
-        </Tip>
       </ChartContainer>
     </ChartsContainer>
   );

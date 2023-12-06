@@ -1,15 +1,15 @@
 import { LogoContainer, SubtitleContainer, TitleContainer } from "./styles";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   content: string;
   barColor: string;
   width?: string;
   subTitle?: boolean;
 }
 
-export function TitleWithBar({ content, barColor, width="auto", subTitle = false }: Props) {
+export function TitleWithBar({ content, barColor, width="auto", subTitle = false, ...rest }: Props) {
   return (
-    <TitleContainer barColor={barColor} width={width}>
+    <TitleContainer barColor={barColor} width={width} {...rest}>
       <div className="bar" />
       <div className="content">
         <h2>{content}</h2>
