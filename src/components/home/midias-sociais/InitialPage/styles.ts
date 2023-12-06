@@ -60,14 +60,19 @@ export const FollowerDataLegendContainer = styled.div`
   gap: 1rem;
 `;
 
-export const Tip = styled.div`
+interface EngagmentLegendProps {
+  circleColor: string;
+}
+
+export const EngagmentLegendContainer = styled.div<EngagmentLegendProps>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
 
-  p {
-    font-size: 0.75rem;
-    margin: 0;
-    padding: 0;
+  .circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: ${({ circleColor }) => circleColor};
   }
 `;
