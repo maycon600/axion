@@ -21,11 +21,13 @@ import {
 import gsap from "gsap";
 import RootLayout from "@/components/Layout";
 import { UsersTable } from "@/components/users/Table";
+import { NewUserModal } from "@/components/profile/NewUserModal";
 
 export default function Profile() {
   const [selectedGender, setSelectedGender] = useState("male");
   const [showNewPasswordModal, setShowNewPasswordModal] = useState(false);
   const [showBlockAccountModal, setShowBlockAccountModal] = useState(false);
+  const [showNewUserModal, setShowNewUserModal] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleRadioChange = (event: { target: { value: string } }) => {
@@ -38,7 +40,7 @@ export default function Profile() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".mainContent", {
-        x: "-114.5%",
+        x: "-100%",
         opacity: 1,
         duration: 0.5,
         delay: 0.2,
@@ -70,6 +72,7 @@ export default function Profile() {
                   marginRight: "5rem",
                   background: Theme.color.darkBlueAxion,
                 }}
+                onClick={() => setShowNewUserModal(true)}
               >
                 Cadastrar novo Usuário {""}
                 <img src="/newUser.svg" alt="" />
@@ -81,7 +84,7 @@ export default function Profile() {
             <PersonalInfo>
               <AvatarContainer>
                 <img src="/sidebar/user.png" alt="" />
-                <button disabled={!isEditing}>
+                <button>
                   <UserEditSVG />
                   Substituir
                 </button>
@@ -90,46 +93,26 @@ export default function Profile() {
               <FormSection>
                 <FormGroup>
                   <label htmlFor="name">Nome Completo</label>
-                  <input
-                    type="text"
-                    id="name"
-                    value={"Robert Martins"}
-                    disabled={!isEditing}
-                  />
+                  <input type="text" id="name" value={"Robert Martins"} />
                 </FormGroup>
                 <FormGroup>
                   <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={"rober@axion.com.br"}
-                    disabled={!isEditing}
-                  />
+                  <input type="email" id="email" value={"rober@axion.com.br"} />
                 </FormGroup>
                 <FormGroup>
                   <label htmlFor="phone">Telefone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    value={"(11) 99999-999"}
-                    disabled={!isEditing}
-                  />
+                  <input type="tel" id="phone" value={"(11) 99999-999"} />
                 </FormGroup>
               </FormSection>
 
               <FormSection>
                 <FormGroup>
                   <label htmlFor="CPF">Seu CPF</label>
-                  <input
-                    type="text"
-                    id="CPF"
-                    value={"111.111.111-11"}
-                    disabled={!isEditing}
-                  />
+                  <input type="text" id="CPF" value={"111.111.111-11"} />
                 </FormGroup>
                 <FormGroup>
                   <label htmlFor="birthDate">Data de Nascimento</label>
-                  <input type="date" id="birthDate" disabled={!isEditing} />
+                  <input type="date" id="birthDate" />
                 </FormGroup>
 
                 <div>
@@ -151,7 +134,6 @@ export default function Profile() {
                         value="male"
                         checked={selectedGender === "male"}
                         onChange={handleRadioChange}
-                        disabled={!isEditing}
                       />
                       <label htmlFor="male">Masculino</label>
                     </RadioGroup>
@@ -170,11 +152,14 @@ export default function Profile() {
                         value="female"
                         checked={selectedGender === "female"}
                         onChange={handleRadioChange}
-                        disabled={!isEditing}
                       />
                       <label htmlFor="female">Feminino</label>
                     </RadioGroup>
                   </RadioContainer>
+                  <GlobalButton
+                    content="Atualizar Cadastro"
+                    style={{ width: "100%", marginTop: "2rem" }}
+                  />
                 </div>
               </FormSection>
             </PersonalInfo>
@@ -367,6 +352,7 @@ export default function Profile() {
                 style={{
                   background: Theme.color.darkBlueAxion,
                 }}
+                onClick={() => setShowNewUserModal(true)}
               >
                 Cadastrar novo Usuário {""}
                 <img src="/newUser.svg" alt="" />
@@ -384,6 +370,10 @@ export default function Profile() {
         <BlockAccountModal
           show={showBlockAccountModal}
           onHide={() => setShowBlockAccountModal(false)}
+        />
+        <NewUserModal
+          show={showNewUserModal}
+          onHide={() => setShowNewUserModal(false)}
         />
       </RootLayout>
     </main>

@@ -15,11 +15,58 @@ import {
 import { Dropdown } from "react-bootstrap";
 import Theme from "@/styles/themes";
 import { CartesianGrid } from "recharts";
+import { DateSelectorDropdown } from "@/components/Global/Dropdown/DateSelector";
 // import { Dropdown } from "@/components/Global/Dropdown";
 export default function Comparison() {
   const main = useRef(null);
   const content = useRef(null);
-  const [dropdownTitle, setDropdownTitle] = useState("Últimos 15 Dias");
+  const [comparison1, setComparison1] = useState("Roberto Dorner");
+  const [comparison2, setComparison2] = useState("Emanuel Pinheiro");
+  const [comparisonValue, setComparisonValue] = useState("Engajamento");
+  const user1Values = [
+    {
+      type: "instagram",
+      percentage: 23,
+      value: 1533,
+    },
+    {
+      type: "facebook",
+      percentage: 38,
+      value: 4901,
+    },
+    {
+      type: "tiktok",
+      percentage: 40,
+      value: 2804,
+    },
+    {
+      type: "youtube",
+      percentage: 12,
+      value: 920,
+    },
+  ];
+  const user2Values = [
+    {
+      type: "instagram",
+      percentage: 82,
+      value: 8056,
+    },
+    {
+      type: "facebook",
+      percentage: 74,
+      value: 11590,
+    },
+    {
+      type: "tiktok",
+      percentage: 49,
+      value: 3569,
+    },
+    {
+      type: "youtube",
+      percentage: 93,
+      value: 2805,
+    },
+  ];
   const array: number[] = Array(19).fill(0);
 
   useLayoutEffect(() => {
@@ -48,36 +95,7 @@ export default function Comparison() {
     <main ref={main}>
       <RootLayout fadeOut={() => fadeOut()}>
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
-          <Dropdown
-            style={{
-              alignSelf: "flex-end",
-            }}
-          >
-            <Dropdown.Toggle
-              variant="danger"
-              style={{
-                backgroundColor: "white",
-                color: Theme.color.darkBlueAxion,
-              }}
-            >
-              {dropdownTitle}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item
-                onClick={() => setDropdownTitle("Últimas 24 horas")}
-              >
-                Something else
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => setDropdownTitle("Últimos 7 dias")}>
-                Another action
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => setDropdownTitle("Últimos 30 dias")}
-              >
-                Action
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <DateSelectorDropdown />
           <Main>
             <header>
               <h1>Gráfico de Comparativo</h1>
@@ -101,21 +119,21 @@ export default function Comparison() {
                     fontSize: 20,
                   }}
                 >
-                  {dropdownTitle}
+                  {comparison1}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item
-                    onClick={() => setDropdownTitle("Últimas 24 horas")}
+                    onClick={() => setComparison1("Últimas 24 horas")}
                   >
                     Something else
                   </Dropdown.Item>
                   <Dropdown.Item
-                    onClick={() => setDropdownTitle("Últimos 7 dias")}
+                    onClick={() => setComparison1("Últimos 7 dias")}
                   >
                     Another action
                   </Dropdown.Item>
                   <Dropdown.Item
-                    onClick={() => setDropdownTitle("Últimos 30 dias")}
+                    onClick={() => setComparison1("Últimos 30 dias")}
                   >
                     Action
                   </Dropdown.Item>
@@ -143,21 +161,21 @@ export default function Comparison() {
                       fontSize: 15,
                     }}
                   >
-                    {dropdownTitle}
+                    {comparisonValue}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item
-                      onClick={() => setDropdownTitle("Últimas 24 horas")}
+                      onClick={() => setComparisonValue("Últimas 24 horas")}
                     >
                       Something else
                     </Dropdown.Item>
                     <Dropdown.Item
-                      onClick={() => setDropdownTitle("Últimos 7 dias")}
+                      onClick={() => setComparisonValue("Últimos 7 dias")}
                     >
                       Another action
                     </Dropdown.Item>
                     <Dropdown.Item
-                      onClick={() => setDropdownTitle("Últimos 30 dias")}
+                      onClick={() => setComparisonValue("Últimos 30 dias")}
                     >
                       Action
                     </Dropdown.Item>
@@ -185,21 +203,21 @@ export default function Comparison() {
                     fontSize: 20,
                   }}
                 >
-                  {dropdownTitle}
+                  {comparison2}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item
-                    onClick={() => setDropdownTitle("Últimas 24 horas")}
+                    onClick={() => setComparison2("Últimas 24 horas")}
                   >
                     Something else
                   </Dropdown.Item>
                   <Dropdown.Item
-                    onClick={() => setDropdownTitle("Últimos 7 dias")}
+                    onClick={() => setComparison2("Últimos 7 dias")}
                   >
                     Another action
                   </Dropdown.Item>
                   <Dropdown.Item
-                    onClick={() => setDropdownTitle("Últimos 30 dias")}
+                    onClick={() => setComparison2("Últimos 30 dias")}
                   >
                     Action
                   </Dropdown.Item>
@@ -218,10 +236,54 @@ export default function Comparison() {
                   marginRight: "-2%",
                 }}
               >
-                <ComparisonBars type="instagram" percentage={50} />
-                <ComparisonBars type="facebook" percentage={20} />
-                <ComparisonBars type="tiktok" percentage={50} />
-                <ComparisonBars type="youtube" percentage={20} />
+                <ComparisonBars
+                  user={1}
+                  type="instagram"
+                  percentage={user1Values[0].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user1Values[0].percentage}%
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user1Values[0].value}
+                  </label>
+                </ComparisonBars>
+                <ComparisonBars
+                  user={1}
+                  type="facebook"
+                  percentage={user1Values[1].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user1Values[1].percentage}%
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user1Values[1].value}
+                  </label>
+                </ComparisonBars>
+                <ComparisonBars
+                  user={1}
+                  type="tiktok"
+                  percentage={user1Values[2].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user1Values[2].percentage}%
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user1Values[2].value}
+                  </label>
+                </ComparisonBars>
+                <ComparisonBars
+                  user={1}
+                  type="youtube"
+                  percentage={user1Values[3].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user1Values[3].percentage}%
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user1Values[3].value}
+                  </label>
+                </ComparisonBars>
               </div>
               <div
                 style={{
@@ -298,10 +360,54 @@ export default function Comparison() {
                   marginLeft: "-2%",
                 }}
               >
-                <ComparisonBars type="instagram" percentage={90} />
-                <ComparisonBars type="facebook" percentage={20} />
-                <ComparisonBars type="tiktok" percentage={20} />
-                <ComparisonBars type="youtube" percentage={20} />
+                <ComparisonBars
+                  user={2}
+                  type="instagram"
+                  percentage={user2Values[0].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user2Values[0].value}
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user2Values[0].percentage}%
+                  </label>
+                </ComparisonBars>
+                <ComparisonBars
+                  user={2}
+                  type="facebook"
+                  percentage={user2Values[1].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user2Values[1].value}
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user2Values[1].percentage}%
+                  </label>
+                </ComparisonBars>
+                <ComparisonBars
+                  user={2}
+                  type="tiktok"
+                  percentage={user2Values[2].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user2Values[2].value}
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user2Values[2].percentage}%
+                  </label>
+                </ComparisonBars>
+                <ComparisonBars
+                  user={2}
+                  type="youtube"
+                  percentage={user2Values[3].percentage}
+                >
+                  <label style={{ textAlign: "left" }}>
+                    {user2Values[3].value}
+                  </label>
+                  <label style={{ textAlign: "right" }}>
+                    {user2Values[3].percentage}%
+                  </label>
+                </ComparisonBars>
               </div>
             </Grid>
           </Main>

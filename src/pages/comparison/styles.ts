@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface ComparisonProps {
   type: "instagram" | "facebook" | "tiktok" | "youtube";
   percentage: number;
+  user: 1 | 2;
 }
 
 export const Content = styled.div`
@@ -91,5 +92,6 @@ export const ComparisonBars = styled.div<ComparisonProps>`
   width: ${({ percentage }) => percentage + "%"};
   height: 2.5rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: ${({ user }) => (user === 1 ? "0 30px 0 10px" : "0 10px 0 30px")};
 `;

@@ -6,6 +6,7 @@ import { Dropdown } from "react-bootstrap";
 import Theme from "@/styles/themes";
 import { GlobalButton } from "@/components/Global/Button";
 import { Global } from "recharts";
+import { DateSelectorDropdown } from "@/components/Global/Dropdown/DateSelector";
 // import { Dropdown } from "@/components/Global/Dropdown";
 export default function Notifications() {
   const main = useRef(null);
@@ -57,26 +58,7 @@ export default function Notifications() {
     <main ref={main}>
       <RootLayout fadeOut={() => fadeOut()}>
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
-          <Dropdown
-            style={{
-              alignSelf: "flex-end",
-            }}
-          >
-            <Dropdown.Toggle
-              variant="danger"
-              style={{
-                backgroundColor: "white",
-                color: Theme.color.darkBlueAxion,
-              }}
-            >
-              Dropdown Button
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <DateSelectorDropdown />
           <Main>
             <header style={{ display: "flex", width: "100%" }}>
               <div

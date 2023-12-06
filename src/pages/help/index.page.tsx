@@ -1,15 +1,18 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import RootLayout from "@/components/Layout";
 import { Cards, Content, Main } from "./styles";
 import { Dropdown } from "react-bootstrap";
 import Theme from "@/styles/themes";
 import { GlobalButton } from "@/components/Global/Button";
+import { DateSelectorDropdown } from "@/components/Global/Dropdown/DateSelector";
+import { NewPasswordModal } from "@/components/help/NewPasswordModal";
 // import { Dropdown } from "@/components/Global/Dropdown";
 export default function Help() {
   const main = useRef(null);
   const content = useRef(null);
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const [showVideo, setShowVideo] = useState(false);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,26 +40,7 @@ export default function Help() {
     <main ref={main}>
       <RootLayout fadeOut={() => fadeOut()}>
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
-          <Dropdown
-            style={{
-              alignSelf: "flex-end",
-            }}
-          >
-            <Dropdown.Toggle
-              variant="danger"
-              style={{
-                backgroundColor: "white",
-                color: Theme.color.darkBlueAxion,
-              }}
-            >
-              Dropdown Button
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <DateSelectorDropdown />
           <Main>
             <header>
               <h2>Como Utilizar a Plataforma</h2>
@@ -80,7 +64,10 @@ export default function Help() {
                   psum has been the industry's standard dummy text ever since
                   the 1500s, when an unknown printer took, 500s, when an unknown
                   printer took
-                  <GlobalButton content="Ver Vídeo" />
+                  <GlobalButton
+                    content="Ver Vídeo"
+                    onClick={() => setShowVideo(true)}
+                  />
                 </Cards>
               ))}
             </div>
@@ -101,6 +88,7 @@ export default function Help() {
           </Main>
         </Content>
       </RootLayout>
+      <NewPasswordModal show={showVideo} onHide={() => setShowVideo(false)} />
     </main>
   );
 }

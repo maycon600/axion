@@ -9,16 +9,43 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: ${({ theme }) => theme.color.gray_10};
-  width: 100%;
   margin: 0.37rem 0 1rem 0.4rem;
   border-radius: 25px 0 0 25px;
   padding: 1.2rem;
-  left: 100%;
   position: relative;
+  width: calc(100% - 17rem);
+  left: calc(100% - 17rem);
+  align-items: center;
 `;
 
+// export const Main = styled.main`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   text-align: center;
+//   background-color: white;
+//   width: 90%;
+//   height: 85%;
+//   margin: 2%;
+//   border-radius: 10px;
+//   padding: 2%;
+// `;
+
+// export const Content = styled.div`
+//   background-color: ${({ theme }) => theme.color.gray_10};
+//   width: 100%;
+//   margin: 0.37rem 0 1rem 0.4rem;
+//   border-radius: 25px 0 0 25px;
+//   padding: 1.2rem;
+//   left: 100%;
+//   position: relative;
+// `;
+
 export const Main = styled.main`
+  width: 90%;
   margin: 2%;
   background-color: white;
   border-radius: 10px;

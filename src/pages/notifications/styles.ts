@@ -20,7 +20,6 @@ export const Main = styled.main`
   text-align: center;
   background-color: white;
   width: 90%;
-  height: 85%;
   margin: 2%;
   border-radius: 10px;
   padding: 2%;
