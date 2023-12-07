@@ -18,6 +18,8 @@ import { VotersByGender } from "@/components/home/midias-sociais/TotalVotersByGe
 import RootLayout from "@/components/Layout";
 import gsap from "gsap";
 import { VotersGender } from "@/components/home/seu-eleitorado/VotersGender";
+import { GoogleMaps } from "@/components/home/Maps/GoogleMaps";
+import { GoogleMapsWrapper } from "@/components/home/Maps/GoogleMapsWrapper";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -158,6 +160,13 @@ export default function SeuEleitorado() {
     return () => ctx.revert();
   };
 
+  const locations = [
+    {
+      lat: -12.6321605,
+      lng: -61.2228397,
+    },
+  ];
+
   return (
     <main ref={main}>
       <RootLayout fadeOut={() => fadeOut()}>
@@ -251,7 +260,11 @@ export default function SeuEleitorado() {
                   labels={selectedVoterLabels}
                 />
               </ChartContainer>
-              <ChartContainer></ChartContainer>
+              <ChartContainer>
+                <GoogleMapsWrapper>
+                  <GoogleMaps mapId="map_id" locations={locations} />
+                </GoogleMapsWrapper>
+              </ChartContainer>
               <ChartContainer>
                 <TitleWithBar
                   content="Gêneros dos Eleitores"
