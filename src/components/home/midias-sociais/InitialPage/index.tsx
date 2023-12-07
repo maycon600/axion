@@ -10,7 +10,10 @@ import {
   ChartsContainer,
   EngagmentLegendContainer,
   FollowerDataLegendContainer,
+  KeyIndicatorContent,
+  KeyIndicatorsContainer,
 } from "./styles";
+import { KeyIndicator } from "../KeyIndicator";
 
 export function InitialPage() {
   const followerData = [
@@ -49,6 +52,13 @@ export function InitialPage() {
       color: "#29282C",
       imgSrc: "/dashboard/tiktokIcon.svg",
     },
+  ];
+
+  const keyIndicatorsData = [
+    { name: "Likes", previousValue: 12000, currentValue: 9000 },
+    { name: "Comentários", previousValue: 2000, currentValue: 5000 },
+    { name: "Sentimento Médio", previousValue: 2000, currentValue: 15000 },
+    { name: "Compartilhamentos", previousValue: 7000, currentValue: 14000 },
   ];
 
   return (
@@ -131,6 +141,36 @@ export function InitialPage() {
         />
         <SimpleWordcloud />
         {/* <Example width={500} height={300} /> */}
+      </ChartContainer>
+      <ChartContainer>
+        <TitleWithBar
+          content="Indicadores Chave:"
+          barColor="#12A9E7"
+          width="27rem"
+        />
+        <KeyIndicatorsContainer>
+          {keyIndicatorsData.map((indicator, index) => (
+            <div>
+              <KeyIndicatorContent>
+                <strong style={{ fontWeight: 400, fontSize: "1.1rem" }}>
+                  {indicator.name}
+                </strong>
+                <KeyIndicator
+                  key={index}
+                  previousValue={indicator.previousValue}
+                  currentValue={indicator.currentValue}
+                />
+              </KeyIndicatorContent>
+              <div
+                style={{
+                  width: "100%",
+                  borderTop: "1px solid #C8C8C8",
+                  margin: "0 auto",
+                }}
+              />
+            </div>
+          ))}
+        </KeyIndicatorsContainer>
       </ChartContainer>
     </ChartsContainer>
   );

@@ -76,3 +76,19 @@ export const EngagmentLegendContainer = styled.div<EngagmentLegendProps>`
     background-color: ${({ circleColor }) => circleColor};
   }
 `;
+
+export const KeyIndicatorsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  padding-top: 3rem;
+`;
+
+export const KeyIndicatorContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 1rem 2rem;
+`;
