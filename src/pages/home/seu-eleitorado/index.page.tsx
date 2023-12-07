@@ -13,13 +13,13 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import { AgeGroupByGender } from "@/components/home/seu-eleitorado/AgeGroupByGender";
 import { VotersInfo } from "@/components/home/seu-eleitorado/VoterInfo";
-import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VoterInfo/VotersInfoSelect";
 import { VotersByGender } from "@/components/home/midias-sociais/TotalVotersByGender";
 import RootLayout from "@/components/Layout";
 import gsap from "gsap";
 import { VotersGender } from "@/components/home/seu-eleitorado/VotersGender";
 import { GoogleMaps } from "@/components/home/Maps/GoogleMaps";
 import { GoogleMapsWrapper } from "@/components/home/Maps/GoogleMapsWrapper";
+import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VotersInfoSelect";
 
 export default function SeuEleitorado() {
   const router = useRouter();

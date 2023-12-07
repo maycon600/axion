@@ -108,10 +108,10 @@ export default function MidiasSociais() {
             </LikesAndComentsContainer>
 
             {selectedPage === "initial" && <InitialPage />}
-            {selectedPage === "facebook" && <SocialMidiaPage />}
-            {selectedPage === "instagram" && <SocialMidiaPage />}
-            {selectedPage === "tiktok" && <SocialMidiaPage />}
-            {selectedPage === "youtube" && <SocialMidiaPage />}
+            {selectedPage === "facebook" && <SocialMidiaPage pageType="facebook" />}
+            {selectedPage === "instagram" && <SocialMidiaPage pageType="instagram" />}
+            {selectedPage === "tiktok" && <SocialMidiaPage pageType="tiktok" />}
+            {selectedPage === "youtube" && <SocialMidiaPage pageType="youtube" />}
           </Main>
         </Content>
       </RootLayout>

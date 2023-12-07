@@ -2,9 +2,13 @@ import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import {
   ChartContainer,
   ChartsContainer,
+  CommentsContainer,
+  CommentsHeader,
   KeyIndicatorContent,
   KeyIndicatorsContainer,
   PostsAndComments,
+  PostsContainer,
+  PostsHeader,
   Tip,
 } from "./styles";
 import { PostEngagement } from "../PostEngagement";
@@ -12,18 +16,25 @@ import { ScoreChart } from "../../ScoreChart";
 import { VotersActive } from "../VotersActive";
 import { SmallBarChart } from "../SmallBarChart";
 import { KeyIndicator } from "../KeyIndicator";
+import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VotersInfoSelect";
+import { useState } from "react";
+import { OrderSelect } from "../OrderSelect";
+import { PostComponent } from "../PostComponent";
 
 interface Props {
   pageType: "instagram" | "facebook" | "youtube" | "tiktok";
 }
 
-export function SocialMidiaPage() {
+export function SocialMidiaPage({ pageType }: Props) {
   const keyIndicatorsData = [
     { name: "Likes", previousValue: 12000, currentValue: 9000 },
     { name: "Comentários", previousValue: 12000, currentValue: 9000 },
     { name: "Sentimento Médio", previousValue: 12000, currentValue: 9000 },
     { name: "Compartilhamentos", previousValue: 12000, currentValue: 9000 },
   ];
+
+  const [selectedValue, setSelectedValue] = useState("Relevância");
+  const values = ["Relevância", "Mais recente"];
 
   return (
     <>
@@ -129,9 +140,66 @@ export function SocialMidiaPage() {
           </Tip>
         </ChartContainer>
       </ChartsContainer>
-      
+
       <PostsAndComments>
-        
+        <PostsContainer>
+          <PostsHeader>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "1rem",
+              }}
+            >
+              <TitleWithBar content="Publicações" barColor="#12A9E7" />
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  padding: "0.5rem",
+                }}
+              >
+                <label htmlFor="">Ordenar por: </label>
+                <OrderSelect
+                  selectedValue={selectedValue}
+                  values={values}
+                  setSelectedValue={setSelectedValue}
+                />
+              </div>
+            </div>
+          </PostsHeader>
+          <PostComponent type={pageType} />
+        </PostsContainer>
+
+        <CommentsContainer>
+          <CommentsHeader>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "1rem",
+              }}
+            >
+              <TitleWithBar content="Publicações" barColor="#12A9E7" />
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  padding: "0.5rem",
+                }}
+              >
+                <label htmlFor="">Ordenar por: </label>
+                <OrderSelect
+                  selectedValue={selectedValue}
+                  values={values}
+                  setSelectedValue={setSelectedValue}
+                />
+              </div>
+            </div>
+          </CommentsHeader>
+        </CommentsContainer>
       </PostsAndComments>
     </>
   );

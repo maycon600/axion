@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SelectContainer } from "./styles";
-import { DropDownIconSVG } from "../../../../../../public/dashboard/DropdownIconSVG";
+import { DropDownIconSVG } from "../../../../../public/dashboard/DropdownIconSVG";
 
 interface Props {
   values: string[];
@@ -8,11 +8,7 @@ interface Props {
   setSelectedValue: (value: string) => void;
 }
 
-export function VotersInfoSelect({
-  values,
-  selectedValue,
-  setSelectedValue,
-}: Props) {
+export function VotersInfoSelect({ values, selectedValue, setSelectedValue }: Props) {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleBlur = () => {

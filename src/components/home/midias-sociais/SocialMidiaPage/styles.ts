@@ -49,5 +49,24 @@ export const KeyIndicatorContent = styled.div`
 `;
 
 export const PostsAndComments = styled.div`
-  
-`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const PostsContainer = styled.div`
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+  width: 60%;
+`;
+
+export const PostsHeader = styled.div``;
+
+export const CommentsContainer = styled.div`
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+  width: 40%;
+`;
+
+export const CommentsHeader = styled.div``;
