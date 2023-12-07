@@ -7,7 +7,7 @@ interface Props {
 
 export const Container = styled.div<Props>`
   position: relative;
-  width: 20rem;
+  width: 17.5rem;
   height: 7rem;
   background-color: white;
   padding: 1rem 2rem;
