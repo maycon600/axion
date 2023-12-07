@@ -47,3 +47,7 @@ export const KeyIndicatorContent = styled.div`
   justify-content: space-between;
   padding: 0 1rem 1rem 2rem;
 `;
+
+export const PostsAndComments = styled.div`
+  
+`
