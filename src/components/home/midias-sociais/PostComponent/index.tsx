@@ -5,6 +5,9 @@ import {
   PostContent,
   PostFeedback,
 } from "./styles";
+import { HeartSVG } from "../../../../../public/dashboard/midias-sociais/heartSVG";
+import { MessageSVG } from "../../../../../public/dashboard/midias-sociais/messageSVG";
+import { ViewSVG } from "../../../../../public/dashboard/midias-sociais/viewSVG";
 
 interface Props {
   type: "instagram" | "facebook" | "youtube" | "tiktok";
@@ -85,6 +88,52 @@ export function PostComponent({ type, likes, coments, feedbacks }: Props) {
               />
               <strong style={{ color: "#0037C1", fontSize: "0.85rem" }}>
                 {formatNumber(likes)}
+              </strong>
+            </FeedbackContainer>
+          </PostFeedback>
+        )}
+        {type !== "facebook" && (
+          <PostFeedback>
+            <FeedbackContainer
+              style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
+            >
+              <HeartSVG color={type === "instagram" ? "#EB4956" : "#292D32"} />
+              <strong
+                style={{
+                  color: type === "instagram" ? "#EB4956" : "#292D32",
+                  fontSize: "0.85rem",
+                }}
+              >
+                {formatNumber(feedbacks)}
+              </strong>
+            </FeedbackContainer>
+
+            <FeedbackContainer
+              style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
+            >
+              <MessageSVG
+                color={type === "instagram" ? "#EB4956" : "#292D32"}
+              />
+              <strong
+                style={{
+                  color: type === "instagram" ? "#EB4956" : "#292D32",
+                  fontSize: "0.85rem",
+                }}
+              >
+                {formatNumber(feedbacks)}
+              </strong>
+            </FeedbackContainer>
+            <FeedbackContainer
+              style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
+            >
+              <ViewSVG color={type === "instagram" ? "#EB4956" : "#292D32"} />
+              <strong
+                style={{
+                  color: type === "instagram" ? "#EB4956" : "#292D32",
+                  fontSize: "0.85rem",
+                }}
+              >
+                {formatNumber(feedbacks)}
               </strong>
             </FeedbackContainer>
           </PostFeedback>
