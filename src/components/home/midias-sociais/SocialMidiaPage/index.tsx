@@ -9,6 +9,7 @@ import {
   PostsAndComments,
   PostsContainer,
   PostsHeader,
+  SeeMorePosts,
   Tip,
 } from "./styles";
 import { PostEngagement } from "../PostEngagement";
@@ -35,6 +36,8 @@ export function SocialMidiaPage({ pageType }: Props) {
 
   const [selectedValue, setSelectedValue] = useState("Relevância");
   const values = ["Relevância", "Mais recente"];
+
+  const posts = [1, 2, 3];
 
   return (
     <>
@@ -160,16 +163,42 @@ export function SocialMidiaPage({ pageType }: Props) {
                   padding: "0.5rem",
                 }}
               >
-                <label htmlFor="">Ordenar por: </label>
+                <strong
+                  onClick={() =>
+                    document.getElementById("posts-order-select")?.focus()
+                  }
+                >
+                  Ordenar por:
+                </strong>
                 <OrderSelect
                   selectedValue={selectedValue}
                   values={values}
                   setSelectedValue={setSelectedValue}
+                  id="posts-order-select"
                 />
               </div>
             </div>
           </PostsHeader>
-          <PostComponent type={pageType} likes={12500} comments={9000} feedbacks={7200} />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+              padding: "0 0.875rem",
+            }}
+          >
+            {posts.map((post, index) => (
+              <PostComponent
+                type={pageType}
+                likes={Math.floor(Math.random() * 5000)}
+                comments={Math.floor(Math.random() * 5000)}
+                feedbacks={Math.floor(Math.random() * 5000)}
+              />
+            ))}
+          </div>
+          <SeeMorePosts>
+            <button>Ver mais</button>
+          </SeeMorePosts>
         </PostsContainer>
 
         <CommentsContainer>
@@ -181,7 +210,7 @@ export function SocialMidiaPage({ pageType }: Props) {
                 padding: "1rem",
               }}
             >
-              <TitleWithBar content="Publicações" barColor="#12A9E7" />
+              <TitleWithBar content="Comentários" barColor="#12A9E7" />
               <div
                 style={{
                   display: "flex",
@@ -190,11 +219,18 @@ export function SocialMidiaPage({ pageType }: Props) {
                   padding: "0.5rem",
                 }}
               >
-                <label htmlFor="">Ordenar por: </label>
+                <strong
+                  onClick={() =>
+                    document.getElementById("comments-order-select")?.focus()
+                  }
+                >
+                  Ordenar por:
+                </strong>
                 <OrderSelect
                   selectedValue={selectedValue}
                   values={values}
                   setSelectedValue={setSelectedValue}
+                  id="comments-order-select"
                 />
               </div>
             </div>

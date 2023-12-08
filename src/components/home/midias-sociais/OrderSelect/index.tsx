@@ -6,12 +6,14 @@ interface Props {
   values: string[];
   selectedValue: string;
   setSelectedValue: (value: string) => void;
+  id?: string;
 }
 
 export function OrderSelect({
   values,
   selectedValue,
   setSelectedValue,
+  id,
 }: Props) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -26,11 +28,13 @@ export function OrderSelect({
   }
 
   return (
-    <SelectContainer
+    <>
+      <SelectContainer
       tabIndex={0}
       onClick={() => setIsFocused(!isFocused)}
       onBlur={handleBlur}
       isOpen={isFocused}
+      id={id}
     >
       <strong>{selectedValue}</strong>
       <div className="icon">
@@ -47,5 +51,6 @@ export function OrderSelect({
         ))}
       </div>
     </SelectContainer>
+    </>
   );
 }

@@ -41,4 +41,12 @@ export const PostFeedback = styled.div`
   margin-left: 0.5rem;
 `;
 
-export const FeedbackContainer = styled.div``;
+export const FeedbackContainer = styled.div`
+  width: 5rem;
+`;
+
+export const PostDate = styled.div`
+  color: #494949;
+  font-size: 0.9rem;
+  font-weight: 500;
+`;

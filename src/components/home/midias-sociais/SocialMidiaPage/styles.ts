@@ -62,6 +62,22 @@ export const PostsContainer = styled.div`
 
 export const PostsHeader = styled.div``;
 
+export const SeeMorePosts = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 0.5rem;
+
+  button {
+    border: 0;
+    background-color: transparent;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+  }
+`;
+
 export const CommentsContainer = styled.div`
   background-color: white;
   border-radius: 15px;
