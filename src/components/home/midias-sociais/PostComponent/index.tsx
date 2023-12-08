@@ -12,11 +12,11 @@ import { ViewSVG } from "../../../../../public/dashboard/midias-sociais/viewSVG"
 interface Props {
   type: "instagram" | "facebook" | "youtube" | "tiktok";
   likes: number;
-  coments: number;
+  comments: number;
   feedbacks: number;
 }
 
-export function PostComponent({ type, likes, coments, feedbacks }: Props) {
+export function PostComponent({ type, likes, comments, feedbacks }: Props) {
   function formatNumber(number: number) {
     if (number >= 1000) {
       return (number / 1000).toFixed(1) + "k";
@@ -74,7 +74,7 @@ export function PostComponent({ type, likes, coments, feedbacks }: Props) {
                 alt=""
               />
               <strong style={{ color: "#0037C1", fontSize: "0.85rem" }}>
-                {formatNumber(likes)}
+                {formatNumber(comments)}
               </strong>
             </FeedbackContainer>
             <FeedbackContainer
@@ -87,7 +87,7 @@ export function PostComponent({ type, likes, coments, feedbacks }: Props) {
                 alt=""
               />
               <strong style={{ color: "#0037C1", fontSize: "0.85rem" }}>
-                {formatNumber(likes)}
+                {formatNumber(feedbacks)}
               </strong>
             </FeedbackContainer>
           </PostFeedback>
@@ -104,7 +104,7 @@ export function PostComponent({ type, likes, coments, feedbacks }: Props) {
                   fontSize: "0.85rem",
                 }}
               >
-                {formatNumber(feedbacks)}
+                {formatNumber(likes)}
               </strong>
             </FeedbackContainer>
 
@@ -120,7 +120,7 @@ export function PostComponent({ type, likes, coments, feedbacks }: Props) {
                   fontSize: "0.85rem",
                 }}
               >
-                {formatNumber(feedbacks)}
+                {formatNumber(comments)}
               </strong>
             </FeedbackContainer>
             <FeedbackContainer

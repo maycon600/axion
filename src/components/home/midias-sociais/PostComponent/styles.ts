@@ -22,6 +22,7 @@ export const PostContainer = styled.div<PostProps>`
 
 export const PostContent = styled.div`
   p {
+    margin: 0 0 0.2rem 0;
     font-size: 1.125rem;
     font-weight: 500;
     color: #1f1f1f;
@@ -37,8 +38,7 @@ export const PostContent = styled.div`
 export const PostFeedback = styled.div`
   display: flex;
   gap: 2.75rem;
+  margin-left: 0.5rem;
 `;
 
-export const FeedbackContainer = styled.div`
-
-`
+export const FeedbackContainer = styled.div``;
