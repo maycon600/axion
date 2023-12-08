@@ -169,7 +169,7 @@ export function SocialMidiaPage({ pageType }: Props) {
               </div>
             </div>
           </PostsHeader>
-          <PostComponent type={pageType} />
+          <PostComponent type={pageType} likes={12000} coments={9000} feedbacks={9000} />
         </PostsContainer>
 
         <CommentsContainer>
