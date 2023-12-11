@@ -72,7 +72,7 @@ export function SocialMidiaPage({ pageType }: Props) {
               alignItems: "center",
             }}
           >
-            <ScoreChart score={750} />
+            <ScoreChart id="score" score={750} />
           </div>
           <div
             style={{

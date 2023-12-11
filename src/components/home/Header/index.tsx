@@ -13,6 +13,9 @@ import {
   VerifyPopularity,
 } from "./styles";
 import Image from "next/image";
+import { HeaderSelect } from "./Select";
+import { useState } from "react";
+import { Dropdown } from "react-bootstrap";
 
 interface headerProps {
   fadeOut: any;
@@ -20,6 +23,11 @@ interface headerProps {
 
 export function HeaderComponent({ fadeOut }: headerProps) {
   const router = useRouter();
+
+  const [selectedValue, setSelectedValue] = useState("Últimos 15 Dias");
+  const values = ["Últimos 7 Dias", "Últimos 15 Dias", "Últimos 30 Dias"];
+
+  const [comparison1, setComparison1] = useState("Últimos 7 Dias");
 
   return (
     <HeaderContainer>
@@ -82,16 +90,12 @@ export function HeaderComponent({ fadeOut }: headerProps) {
             </span>
           </div>
         </CandidateInfo>
-        <Options>
-          <VerifyPopularity>
-            <img src="/dashboard/like-blue.svg" alt="" /> Verificar Popularidade
-            Estimada
-          </VerifyPopularity>
-          <VerifyCompetition>
-            <img src="/dashboard/competitors.svg" alt="" /> Analisar
-            Concorrentes
-          </VerifyCompetition>
-        </Options>
+        
+        <HeaderSelect
+          values={values}
+          selectedValue={selectedValue}
+          setSelectedValue={setSelectedValue} 
+        />
       </Candidate>
     </HeaderContainer>
   );

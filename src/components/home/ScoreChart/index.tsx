@@ -3,9 +3,10 @@ import { useState, useEffect, useRef } from "react";
 
 interface Props {
   score: number;
+  id: string;
 }
 
-export function ScoreChart({ score }: Props) {
+export function ScoreChart({ score, id }: Props) {
   let chartWidth: any;
   const canvasRef = useRef(null);
   let gradientSegment: any;
@@ -14,13 +15,13 @@ export function ScoreChart({ score }: Props) {
   let myChart: any;
 
   useEffect(() => {
-    // if (myChart) {
-    //   myChart.destroy();
-    // }
+    if (myChart) {
+      myChart.destroy();
+    }
 
     const chartBox = document.querySelector(".chartBox");
 
-    setCanvas(document.getElementById("myChart") as HTMLCanvasElement);
+    setCanvas(document.getElementById(id) as HTMLCanvasElement);
 
     let ctx: any;
 
@@ -77,7 +78,7 @@ export function ScoreChart({ score }: Props) {
       },
     };
 
-    const newChart = new Chart("myChart", {
+    const newChart = new Chart(id, {
       type: "doughnut",
       data: {
         labels: ["teste"],
@@ -120,10 +121,13 @@ export function ScoreChart({ score }: Props) {
   }, [score, canvas]);
 
   return (
-    <div className="chartBox" style={{ display: 'flex', justifyContent: 'center' }}>
+    <div
+      className="chartBox"
+      style={{ display: "flex", justifyContent: "center" }}
+    >
       <canvas
         ref={canvasRef}
-        id="myChart"
+        id={id}
         style={{ width: "100%", height: "100%" }}
       />
     </div>
