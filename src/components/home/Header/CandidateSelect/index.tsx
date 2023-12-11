@@ -9,7 +9,7 @@ interface Props {
   id?: string;
 }
 
-export function HeaderSelect({
+export function HeaderCandidateSelect({
   values,
   selectedValue,
   setSelectedValue,
@@ -36,9 +36,16 @@ export function HeaderSelect({
         isOpen={isFocused}
         id={id}
       >
-        <strong>{selectedValue}</strong>
+        <strong style={{ letterSpacing: 2 }}>
+          {selectedValue.split("-")[0]}
+        </strong>
+        {selectedValue.split("-")[1] && (
+          <>
+            -<strong>{`${selectedValue.split("-")[1]}`}</strong>
+          </>
+        )}
         <div className="icon">
-          <DropDownIconSVG />
+          <DropDownIconSVG color="white" />
         </div>
         <div className="options-container">
           {values.map((value) => (

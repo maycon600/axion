@@ -1,5 +1,8 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { MenuItemComponent } from "./MenuItem";
+import { HeaderTimeSelect } from "./TimeSelect";
 import {
   Candidate,
   CandidateInfo,
@@ -7,15 +10,9 @@ import {
   HeaderMenu,
   HeaderTop,
   Instruction,
-  Options,
   UserMenu,
-  VerifyCompetition,
-  VerifyPopularity,
 } from "./styles";
-import Image from "next/image";
-import { HeaderSelect } from "./Select";
-import { useState } from "react";
-import { Dropdown } from "react-bootstrap";
+import { HeaderCandidateSelect } from "./CandidateSelect";
 
 interface headerProps {
   fadeOut: any;
@@ -24,10 +21,17 @@ interface headerProps {
 export function HeaderComponent({ fadeOut }: headerProps) {
   const router = useRouter();
 
-  const [selectedValue, setSelectedValue] = useState("Últimos 15 Dias");
-  const values = ["Últimos 7 Dias", "Últimos 15 Dias", "Últimos 30 Dias"];
+  const [selectedTimeValue, setSelectedTimeValue] = useState("Últimos 15 Dias");
+  const timeValues = ["Últimos 7 Dias", "Últimos 15 Dias", "Últimos 30 Dias"];
 
-  const [comparison1, setComparison1] = useState("Últimos 7 Dias");
+  const [selectedCandidateValue, setSelectedCandidateValue] = useState(
+    "Roberto Dorner - PSDB"
+  );
+  const candidateValues = [
+    "Roberto Dorner - PSDB",
+    "Todos",
+    "Emanuel Pinheiro",
+  ];
 
   return (
     <HeaderContainer>
@@ -80,7 +84,11 @@ export function HeaderComponent({ fadeOut }: headerProps) {
             alt=""
           />
           <div className="info">
-            <strong>Roberto Dorner</strong>
+            <HeaderCandidateSelect
+              values={candidateValues}
+              selectedValue={selectedCandidateValue}
+              setSelectedValue={setSelectedCandidateValue}
+            />
             <span className="candidateNumber">
               Número do Candidato: xxxxxxxxxx
             </span>
@@ -90,11 +98,11 @@ export function HeaderComponent({ fadeOut }: headerProps) {
             </span>
           </div>
         </CandidateInfo>
-        
-        <HeaderSelect
-          values={values}
-          selectedValue={selectedValue}
-          setSelectedValue={setSelectedValue} 
+
+        <HeaderTimeSelect
+          values={timeValues}
+          selectedValue={selectedTimeValue}
+          setSelectedValue={setSelectedTimeValue}
         />
       </Candidate>
     </HeaderContainer>
