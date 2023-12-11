@@ -21,6 +21,7 @@ import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VotersInfoSel
 import { useState } from "react";
 import { OrderSelect } from "../OrderSelect";
 import { PostComponent } from "../PostComponent";
+import { CommentComponent } from "../ComentComponent";
 
 interface Props {
   pageType: "instagram" | "facebook" | "youtube" | "tiktok";
@@ -234,6 +235,13 @@ export function SocialMidiaPage({ pageType }: Props) {
                 />
               </div>
             </div>
+
+            <CommentComponent
+              type={pageType}
+              likes={Math.floor(Math.random() * 5000)}
+              comments={Math.floor(Math.random() * 5000)}
+              commentScore={700}
+            />
           </CommentsHeader>
         </CommentsContainer>
       </PostsAndComments>

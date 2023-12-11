@@ -1,12 +1,20 @@
+import { useState } from "react";
+
 interface Props {
   color: string;
+  size?: 'small' | 'large';
 }
 
-export function HeartSVG({ color }: Props) {
+export function HeartSVG({ color, size = 'large' }: Props) {
+  const [svgSize, setSvgSize] = useState(
+    size === 'large' ? 19 : 14
+  );
+
+
   return (
     <svg
-      width="19"
-      height="19"
+      width={svgSize}
+      height={svgSize}
       viewBox="0 0 19 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -83,6 +83,7 @@ export const CommentsContainer = styled.div`
   border-radius: 15px;
   margin-top: 1.5rem;
   width: 40%;
+  padding: 0 1rem;
 `;
 
 export const CommentsHeader = styled.div``;
