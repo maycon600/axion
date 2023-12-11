@@ -14,6 +14,7 @@ import {
   KeyIndicatorsContainer,
 } from "./styles";
 import { KeyIndicator } from "../KeyIndicator";
+import { ChartTip } from "../ChartTip";
 
 export function InitialPage() {
   const followerData = [
@@ -96,6 +97,7 @@ export function InitialPage() {
           barColor="#12A9E7"
           subTitle
         />
+        <ChartTip />
         <div
           style={{ display: "flex", marginTop: "3rem", alignItems: "center" }}
         >

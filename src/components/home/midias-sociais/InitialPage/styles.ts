@@ -10,6 +10,7 @@ export const ChartsContainer = styled.div`
 `;
 
 export const ChartContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
