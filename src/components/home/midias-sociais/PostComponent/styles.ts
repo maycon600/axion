@@ -23,7 +23,7 @@ export const PostContainer = styled.div<PostProps>`
 export const PostContent = styled.div`
   p {
     margin: 0 0 0.2rem 0;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #1f1f1f;
     max-height: 5rem;
@@ -39,6 +39,10 @@ export const PostFeedback = styled.div`
   display: flex;
   gap: 2.75rem;
   margin-left: 0.5rem;
+
+  @media (max-width: 1450px) {
+    gap: 1.5rem;
+  }
 `;
 
 export const FeedbackContainer = styled.div`

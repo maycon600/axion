@@ -2,6 +2,7 @@ import { TitleWithBar } from "@/components/Global/TitleWithBar";
 import {
   ChartContainer,
   ChartsContainer,
+  Comments,
   CommentsContainer,
   CommentsHeader,
   KeyIndicatorContent,
@@ -235,14 +236,39 @@ export function SocialMidiaPage({ pageType }: Props) {
                 />
               </div>
             </div>
-
+          </CommentsHeader>
+          <Comments>
             <CommentComponent
               type={pageType}
               likes={Math.floor(Math.random() * 5000)}
               comments={Math.floor(Math.random() * 5000)}
               commentScore={700}
             />
-          </CommentsHeader>
+            <CommentComponent
+              type={pageType}
+              likes={Math.floor(Math.random() * 5000)}
+              comments={Math.floor(Math.random() * 5000)}
+              commentScore={700}
+            />
+            <CommentComponent
+              type={pageType}
+              likes={Math.floor(Math.random() * 5000)}
+              comments={Math.floor(Math.random() * 5000)}
+              commentScore={700}
+            />
+            <CommentComponent
+              type={pageType}
+              likes={Math.floor(Math.random() * 5000)}
+              comments={Math.floor(Math.random() * 5000)}
+              commentScore={700}
+            />
+            <CommentComponent
+              type={pageType}
+              likes={Math.floor(Math.random() * 5000)}
+              comments={Math.floor(Math.random() * 5000)}
+              commentScore={700}
+            />
+          </Comments>
         </CommentsContainer>
       </PostsAndComments>
     </>

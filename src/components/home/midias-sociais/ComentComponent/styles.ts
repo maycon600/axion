@@ -36,8 +36,9 @@ export const NameAndContent = styled.div`
   }
 `;
 
-export const CommentFeedback = styled.div`
+export const CommentFeedback = styled.div<CommentProps>`
   display: flex;
+  justify-content: ${({ type}) => type === "facebook" ? "flex-start" : "space-between"};
   align-items: center;
   gap: 1rem;
 `;
@@ -53,7 +54,6 @@ export const CommentScore = styled.div<ScoreProps>`
   width: 4.875rem;
   height: 0.625rem;
   border-radius: 0.35rem;
-  margin-left: 1.5rem;
   background-image: linear-gradient(
     to right,
     #8d0000,
@@ -72,3 +72,9 @@ export const CommentScore = styled.div<ScoreProps>`
     top: -2px;
   }
 `;
+
+export const CommentDate = styled.div`
+  font-weight: 700;
+  color: #494949;
+  font-size: 0.7rem;
+`

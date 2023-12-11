@@ -51,6 +51,10 @@ export const KeyIndicatorContent = styled.div`
 export const PostsAndComments = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 1380px) {
+    flex-direction: column;
+  }
 `;
 
 export const PostsContainer = styled.div`
@@ -58,6 +62,10 @@ export const PostsContainer = styled.div`
   border-radius: 15px;
   margin-top: 1.5rem;
   width: 60%;
+
+  @media (max-width: 1380px) {
+    width: 100%;
+  }
 `;
 
 export const PostsHeader = styled.div``;
@@ -82,8 +90,18 @@ export const CommentsContainer = styled.div`
   background-color: white;
   border-radius: 15px;
   margin-top: 1.5rem;
-  width: 40%;
-  padding: 0 1rem;
+  width: 43%;
+  padding: 0 1rem 2rem;
+
+  @media (max-width: 1380px) {
+    width: 100%;
+  }
 `;
 
 export const CommentsHeader = styled.div``;
+
+export const Comments = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;

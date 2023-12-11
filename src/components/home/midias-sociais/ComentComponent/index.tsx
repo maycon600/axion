@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   CommentContainer,
   CommentContent,
+  CommentDate,
   CommentFeedback,
   CommentScore,
   FeedbackContainer,
@@ -45,7 +46,7 @@ export function CommentComponent({
           <strong>Nome</strong>
           <p>my text of the printing and typesetting industry.</p>
         </NameAndContent>
-        <CommentFeedback>
+        <CommentFeedback type={type}>
           {type === "facebook" && (
             <CommentFeedback>
               <FeedbackContainer>
@@ -115,6 +116,11 @@ export function CommentComponent({
           <CommentScore score={commentScore}>
             <div className="bar" />
           </CommentScore>
+          {type !== "facebook" && (
+            <CommentDate>
+              <span>23/10/2023 - 16:42</span>
+            </CommentDate>
+          )}
         </CommentFeedback>
       </CommentContent>
     </CommentContainer>
