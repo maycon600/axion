@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface CommentProps {
-  type: "instagram" | "facebook" | "tiktok" | "youtube";
+  type?: "instagram" | "facebook" | "tiktok" | "youtube";
 }
 
 export const CommentContainer = styled.div<CommentProps>`
