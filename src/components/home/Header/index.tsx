@@ -17,11 +17,9 @@ import { HeaderCandidateSelect } from "./CandidateSelect";
 
 interface headerProps {
   fadeOut: any;
-  registerButton: boolean;
-  timeSelect: boolean;
 }
 
-export function HeaderComponent({ fadeOut, registerButton, timeSelect }: headerProps) {
+export function HeaderComponent({ fadeOut }: headerProps) {
   const router = useRouter();
 
   const [selectedTimeValue, setSelectedTimeValue] = useState("Últimos 15 Dias");
@@ -110,15 +108,17 @@ export function HeaderComponent({ fadeOut, registerButton, timeSelect }: headerP
             alignItems: "flex-end",
           }}
         >
-          {/* <Register>
-            Cadastro
-          </Register> */}
+          {router.asPath.split("/")[2] === "seu-eleitorado" && (
+            <Register>Cadastro</Register>
+          )}
 
-          <HeaderTimeSelect
-            values={timeValues}
-            selectedValue={selectedTimeValue}
-            setSelectedValue={setSelectedTimeValue}
-          />
+          {router.asPath.split("/")[2] !== "inteligencia-artificial" && (
+            <HeaderTimeSelect
+              values={timeValues}
+              selectedValue={selectedTimeValue}
+              setSelectedValue={setSelectedTimeValue}
+            />
+          )}
         </div>
       </Candidate>
     </HeaderContainer>
