@@ -1,22 +1,10 @@
-import { Sidebar } from "@/components/Global/Sidebar";
-import {
-  CardsContainer,
-  ChatBody,
-  ChatContainer,
-  ChatFooter,
-  ChatHeader,
-  Content,
-  InstructionContainer,
-  Main,
-} from "./styles";
-import { useRouter } from "next/router";
-import { HeaderComponent } from "@/components/home/Header";
-import { SolutionsCard } from "@/components/home/inteligencia-artificial/SolutionsCard";
-import { UserMessage } from "@/components/home/inteligencia-artificial/UserMessage";
-import { IaMessage } from "@/components/home/inteligencia-artificial/IaMessage";
 import RootLayout from "@/components/Layout";
-import { useLayoutEffect, useRef } from "react";
+import { HeaderComponent } from "@/components/home/Header";
 import gsap from "gsap";
+import { useRouter } from "next/router";
+import { useLayoutEffect, useRef } from "react";
+import { ChatConteiner, ChatFooter, ChatHeader, Content, IaImgContainer } from "./styles";
+import Image from "next/image";
 
 export default function InteligenciaArtificial() {
   const router = useRouter();
@@ -48,64 +36,43 @@ export default function InteligenciaArtificial() {
     return () => ctx.revert();
   };
 
+
+  // function getTextareaHeight(event) {
+
+  //   const textarea = document.getElementById('texto') as HTMLTextAreaElement;
+  //   const scrollHeight = textarea('scrollHeight') as number;
+  //   const textareaHeight = textarea.height() as number;
+  //   if (scrollHeight > textareaHeight + 10) {
+  //       if (scrollHeight > 500) return;
+  //       textarea.css('height', scrollHeight);
+  //   }
+  // }
+
   return (
     <main ref={main}>
       <RootLayout fadeOut={() => fadeOut()}>
         <Content className="mainContent" ref={content} style={{ opacity: 1 }}>
           <HeaderComponent fadeOut={() => fadeOut()} />
-          <Main>
-            <InstructionContainer>
-              <div className="instruction">
-                <img src="/dashboard/click.svg" alt="" />
-                <div>
-                  Clique nos <em>Cards</em> para Extrair o Máximo da <br />{" "}
-                  Inteligência Artificial Axioon - Focada em Campanhas
-                </div>
-              </div>
-            </InstructionContainer>
-            <CardsContainer>
-              {cards.map((card) => (
-                <SolutionsCard
-                  name="Analise de Campanhas e Afins"
-                  update_time="12/09/2023"
-                  description="Passe informações sobre seu cliente, quais são as especificidades do contrato e deixe a Jurid IA trabalhar para você."
-                />
-              ))}
-            </CardsContainer>
-
-            <ChatContainer>
-              <ChatHeader>
-                <img src="/axionLogo.png" alt="" />
-                <div
-                  style={{
-                    padding: "0.2rem",
-                    borderRadius: "10px",
-                    background:
-                      "linear-gradient(109deg, #D8D8D8 0%, #0D123C 96.63%)",
-                  }}
-                >
-                  <img src="/ia.png" alt="" />
-                </div>
-              </ChatHeader>
-              <ChatBody>
-                <UserMessage
-                  content={
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat ut blanditiis dicta maxime perferendis quas nihil natus nisi, molestias quasi culpa aliquid, inventore dolor animi non expedita doloremque nulla repellat!"
-                  }
-                />
-                <IaMessage
-                  content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                commodi necessitatibus voluptas nisi iste eos hic magnam, delectus magni
-                adipisci sint repudiandae culpa animi voluptatem vitae repellat natus
-                ipsa veritatis."
-                />
-              </ChatBody>
-              <ChatFooter>
-                <textarea placeholder="Escreva sua mensagem" />
-                <img src="/dashboard/iaSendMessage.svg" alt="" />
-              </ChatFooter>
-            </ChatContainer>
-          </Main>
+          <ChatConteiner>
+            <ChatHeader>
+              <Image width={343} height={67} src={"/axionLogo.png"} alt="" />
+              <IaImgContainer>
+                <Image width={32} height={20} src={"/ia.png"} alt="" />
+              </IaImgContainer>
+            </ChatHeader>
+            <div
+              style={{
+                fontFamily: "Bruno Ace SC",
+                fontSize: "2rem",
+                color: "#0D123C",
+              }}
+            >
+              Como posso te Ajudar Hoje?
+            </div>
+            <ChatFooter>
+              <textarea name="" id="texto" />
+            </ChatFooter>
+          </ChatConteiner>
         </Content>
       </RootLayout>
     </main>

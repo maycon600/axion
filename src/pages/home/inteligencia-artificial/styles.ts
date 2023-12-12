@@ -14,89 +14,32 @@ export const Content = styled.div`
   left: calc(100% - 17rem);
 `;
 
-export const Main = styled.main`
-  border-radius: 10px;
-  padding: 1.2rem;
-`;
-
-export const InstructionContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  .instruction {
-    background-color: white;
-    display: flex;
-    gap: 0.5rem;
-    text-align: center;
-    width: 35rem;
-    padding: 1rem 0.75rem;
-    border-radius: 48px;
-    border: 1px solid #c3c3c3;
-    font-weight: bold;
-    font-size: 1.1rem;
-
-    img {
-      margin-right: 0.3rem;
-    }
-  }
-`;
-
-export const CardsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const ChatContainer = styled.div`
-  margin: 2rem auto 0;
-  max-width: 1200px;
-`;
-
-export const ChatHeader = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0.5rem;
-`;
-
-export const ChatBody = styled.div`
+export const ChatConteiner = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 2rem 0 1rem;
+`;
+
+export const ChatHeader = styled.header`
+  display: flex;
+  align-items: flex-start;
   gap: 1rem;
-  background-color: white;
-  margin-top: 1rem;
-  border-radius: 30px 30px 0 0;
-  padding: 1rem;
-  height: 40rem;
-  overflow: auto;
+`;
+
+export const IaImgContainer = styled.div`
+  background: linear-gradient(109deg, #d8d8d8 0%, #0d123c 96.63%);
+  border-radius: 6px;
+  width: 48px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ChatFooter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 7rem;
-  background-color: #0d123c;
-  border-radius: 0 0 20px 20px;
-  padding: 0 2.5rem 0 1.8rem;
-
-  textarea {
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    height: 5rem;
-    resize: none;
-    width: 90%;
-    border-radius: 10px;
-  }
-
-  img {
-    cursor: pointer;
-    width: 3.5rem;
-    height: 3.5rem;
-    transition: 0.2s;
-    object-fit: contain;
-
-    &:hover {
-      scale: 1.04;
-    }
-  }
-`;
+  
+`
