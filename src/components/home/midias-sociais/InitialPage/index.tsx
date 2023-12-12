@@ -134,6 +134,7 @@ export function InitialPage() {
           </div>
         </div>
       </ChartContainer>
+
       <ChartContainer>
         <TitleWithBar
           barColor="#080E45"
@@ -141,15 +142,18 @@ export function InitialPage() {
           subTitle
           className="mb-3"
         />
+        <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
         <SimpleWordcloud />
         {/* <Example width={500} height={300} /> */}
       </ChartContainer>
+
       <ChartContainer>
         <TitleWithBar
           content="Indicadores Chave:"
           barColor="#12A9E7"
           width="27rem"
         />
+        <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
         <KeyIndicatorsContainer>
           {keyIndicatorsData.map((indicator, index) => (
             <div>

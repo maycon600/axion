@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const SentimentContainer = styled.div`
   padding: 1rem 1.5rem;
-  width: 35.375rem;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 10px
 `;
 
 export const ChartContainer = styled.div`

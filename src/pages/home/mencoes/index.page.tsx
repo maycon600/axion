@@ -76,11 +76,13 @@ export default function SeuEleitorado() {
               </div>
               <TotalQuotes />
 
-              <SentimentChart
-                positive={343349}
-                negative={243312}
-                neutral={103231}
-              />
+              <div style={{ width: "30rem" }}>
+                <SentimentChart
+                  positive={343349}
+                  negative={243312}
+                  neutral={103231}
+                />
+              </div>
             </TopCardsContainer>
             <h2
               style={{
@@ -113,12 +115,13 @@ export default function SeuEleitorado() {
                 </div>
               </div>
               <TotalQuotes />
-
-              <SentimentChart
-                positive={343349}
-                negative={243312}
-                neutral={103231}
-              />
+              <div style={{ width: "30rem" }}>
+                <SentimentChart
+                  positive={343349}
+                  negative={243312}
+                  neutral={103231}
+                />
+              </div>
             </TopCardsContainer>
             <TitleBottomBar title="Notícias em Destaque" />
             <CardsContainer>

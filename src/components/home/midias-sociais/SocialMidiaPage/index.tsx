@@ -24,6 +24,7 @@ import { useState } from "react";
 import { OrderSelect } from "../OrderSelect";
 import { PostComponent } from "../PostComponent";
 import { CommentComponent } from "../ComentComponent";
+import { ChartTip } from "../ChartTip";
 
 interface Props {
   pageType: "instagram" | "facebook" | "youtube" | "tiktok";
@@ -93,6 +94,7 @@ export function SocialMidiaPage({ pageType }: Props) {
             barColor="#12A9E7"
             width="27rem"
           />
+          <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
           <KeyIndicatorsContainer>
             {keyIndicatorsData.map((indicator, index) => (
               <div>

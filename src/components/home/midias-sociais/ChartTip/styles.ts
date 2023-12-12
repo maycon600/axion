@@ -32,6 +32,7 @@ export const Message = styled.div<MessageProps>`
   background-color: white;
   z-index: ${({ show }) => (show ? 100 : -1)};
   opacity: ${({ show }) => (show ? 1 : 0)};
+  transition: 0.3s ease-in;
 
   .arrow {
     position: absolute;
