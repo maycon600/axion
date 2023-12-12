@@ -71,7 +71,45 @@ export default function SeuEleitorado() {
                     padding: "0 8%",
                   }}
                 >
-                  <ScoreChart score={750} />
+                  <ScoreChart score={750} id="newsScore" />
+                </div>
+              </div>
+              <TotalQuotes />
+
+              <SentimentChart
+                positive={343349}
+                negative={243312}
+                neutral={103231}
+              />
+            </TopCardsContainer>
+            <h2
+              style={{
+                fontSize: "1.875rem",
+                fontWeight: 500,
+                marginBottom: "1.25rem",
+              }}
+            >
+              Sites de Notícias
+            </h2>
+            <TopCardsContainer>
+              <div
+                style={{
+                  width: "17.25rem",
+                  height: "100%",
+                  backgroundColor: "white",
+                  padding: "1rem 1.25rem",
+                  borderRadius: 10,
+                }}
+              >
+                <TitleWithBar content="Score Total" barColor="#D38945" />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "0 8%",
+                  }}
+                >
+                  <ScoreChart score={750} id="mentionsScore" />
                 </div>
               </div>
               <TotalQuotes />

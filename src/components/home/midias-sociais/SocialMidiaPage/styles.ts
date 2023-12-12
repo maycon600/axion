@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
+export const PageContainer = styled.div`
+  max-width: 1225px;
+  margin: auto;
+`;
+
 export const ChartsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  justify-items: center; */
   align-items: center;
   gap: 3rem;
   margin-top: 1.2rem;
@@ -12,7 +20,7 @@ export const ChartsContainer = styled.div`
 export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 1rem;
   width: 35rem;
   height: 25rem;
   background-color: #fff;
@@ -49,7 +57,9 @@ export const KeyIndicatorContent = styled.div`
 `;
 
 export const PostsAndComments = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 59% 40%;
+  justify-items: center;
   gap: 1rem;
 
   @media (max-width: 1380px) {
@@ -61,7 +71,6 @@ export const PostsContainer = styled.div`
   background-color: white;
   border-radius: 15px;
   margin-top: 1.5rem;
-  width: 60%;
 
   @media (max-width: 1380px) {
     width: 100%;
@@ -90,7 +99,6 @@ export const CommentsContainer = styled.div`
   background-color: white;
   border-radius: 15px;
   margin-top: 1.5rem;
-  width: 43%;
   padding: 0 1rem 2rem;
 
   @media (max-width: 1380px) {

@@ -7,6 +7,7 @@ import {
   CommentsHeader,
   KeyIndicatorContent,
   KeyIndicatorsContainer,
+  PageContainer,
   PostsAndComments,
   PostsContainer,
   PostsHeader,
@@ -42,7 +43,7 @@ export function SocialMidiaPage({ pageType }: Props) {
   const posts = [1, 2, 3];
 
   return (
-    <>
+    <PageContainer>
       <ChartsContainer>
         <ChartContainer>
           <TitleWithBar
@@ -271,6 +272,6 @@ export function SocialMidiaPage({ pageType }: Props) {
           </Comments>
         </CommentsContainer>
       </PostsAndComments>
-    </>
+    </PageContainer>
   );
 }
