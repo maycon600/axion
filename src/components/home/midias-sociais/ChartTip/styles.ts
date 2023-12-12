@@ -27,6 +27,8 @@ export const Message = styled.div<MessageProps>`
   bottom: 3.8rem;
   border: 1px solid black;
   border-radius: 10px;
+  text-align: justify;
+  color: #1F1F1F;
   background-color: white;
   z-index: ${({ show }) => (show ? 100 : -1)};
   opacity: ${({ show }) => (show ? 1 : 0)};

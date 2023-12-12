@@ -10,15 +10,18 @@ import {
   HeaderMenu,
   HeaderTop,
   Instruction,
+  Register,
   UserMenu,
 } from "./styles";
 import { HeaderCandidateSelect } from "./CandidateSelect";
 
 interface headerProps {
   fadeOut: any;
+  registerButton: boolean;
+  timeSelect: boolean;
 }
 
-export function HeaderComponent({ fadeOut }: headerProps) {
+export function HeaderComponent({ fadeOut, registerButton, timeSelect }: headerProps) {
   const router = useRouter();
 
   const [selectedTimeValue, setSelectedTimeValue] = useState("Últimos 15 Dias");
@@ -29,8 +32,8 @@ export function HeaderComponent({ fadeOut }: headerProps) {
   );
   const candidateValues = [
     "Roberto Dorner - PSDB",
-    "Todos",
-    "Emanuel Pinheiro",
+    "Roberto Dorner - PSDB",
+    "Roberto Dorner - PSDB",
   ];
 
   return (
@@ -99,11 +102,24 @@ export function HeaderComponent({ fadeOut }: headerProps) {
           </div>
         </CandidateInfo>
 
-        <HeaderTimeSelect
-          values={timeValues}
-          selectedValue={selectedTimeValue}
-          setSelectedValue={setSelectedTimeValue}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            alignItems: "flex-end",
+          }}
+        >
+          {/* <Register>
+            Cadastro
+          </Register> */}
+
+          <HeaderTimeSelect
+            values={timeValues}
+            selectedValue={selectedTimeValue}
+            setSelectedValue={setSelectedTimeValue}
+          />
+        </div>
       </Candidate>
     </HeaderContainer>
   );

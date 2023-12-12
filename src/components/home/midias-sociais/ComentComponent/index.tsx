@@ -47,75 +47,89 @@ export function CommentComponent({
           <p>my text of the printing and typesetting industry.</p>
         </NameAndContent>
         <CommentFeedback type={type}>
-          {type === "facebook" && (
-            <CommentFeedback>
-              <FeedbackContainer>
-                <Image
-                  width={24}
-                  height={24}
-                  src="/dashboard/midias-sociais/facebookLike.png"
-                  alt=""
-                />
-                <strong style={{ color: "#0037C1", fontSize: "0.75rem" }}>
-                  {formatNumber(likes)}
-                </strong>
-              </FeedbackContainer>
-              <FeedbackContainer
-                style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}
-              >
-                <Image
-                  width={18}
-                  height={18}
-                  src="/dashboard/midias-sociais/facebookComment.png"
-                  alt=""
-                />
-                <strong style={{ color: "#0037C1", fontSize: "0.75rem" }}>
-                  {formatNumber(comments)}
-                </strong>
-              </FeedbackContainer>
-            </CommentFeedback>
-          )}
-          {type !== "facebook" && (
-            <CommentFeedback>
-              <FeedbackContainer
-                style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
-              >
-                <HeartSVG
-                  color={type === "instagram" ? "#EB4956" : "#292D32"}
-                  size="small"
-                />
-                <strong
+          <div style={{ display: "flex", alignItems: "center", gap: "0.7rem" }}>
+            {type === "facebook" && (
+              <CommentFeedback>
+                <FeedbackContainer>
+                  <Image
+                    width={24}
+                    height={24}
+                    src="/dashboard/midias-sociais/facebookLike.png"
+                    alt=""
+                  />
+                  <strong style={{ color: "#0037C1", fontSize: "0.75rem" }}>
+                    {formatNumber(likes)}
+                  </strong>
+                </FeedbackContainer>
+                <FeedbackContainer
                   style={{
-                    color: type === "instagram" ? "#EB4956" : "#292D32",
-                    fontSize: "0.85rem",
+                    display: "flex",
+                    gap: "0.4rem",
+                    alignItems: "center",
                   }}
                 >
-                  {formatNumber(likes)}
-                </strong>
-              </FeedbackContainer>
-
-              <FeedbackContainer
-                style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
-              >
-                <MessageSVG
-                  color={type === "instagram" ? "#EB4956" : "#292D32"}
-                  size="small"
-                />
-                <strong
+                  <Image
+                    width={18}
+                    height={18}
+                    src="/dashboard/midias-sociais/facebookComment.png"
+                    alt=""
+                  />
+                  <strong style={{ color: "#0037C1", fontSize: "0.75rem" }}>
+                    {formatNumber(comments)}
+                  </strong>
+                </FeedbackContainer>
+              </CommentFeedback>
+            )}
+            {type !== "facebook" && (
+              <CommentFeedback>
+                <FeedbackContainer
                   style={{
-                    color: type === "instagram" ? "#EB4956" : "#292D32",
-                    fontSize: "0.85rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.4rem",
                   }}
                 >
-                  {formatNumber(comments)}
-                </strong>
-              </FeedbackContainer>
-            </CommentFeedback>
-          )}
+                  <HeartSVG
+                    color={type === "instagram" ? "#EB4956" : "#292D32"}
+                    size="small"
+                  />
+                  <strong
+                    style={{
+                      color: type === "instagram" ? "#EB4956" : "#292D32",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    {formatNumber(likes)}
+                  </strong>
+                </FeedbackContainer>
 
-          <CommentScore score={commentScore}>
-            <div className="bar" />
-          </CommentScore>
+                <FeedbackContainer
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.4rem",
+                  }}
+                >
+                  <MessageSVG
+                    color={type === "instagram" ? "#EB4956" : "#292D32"}
+                    size="small"
+                  />
+                  <strong
+                    style={{
+                      color: type === "instagram" ? "#EB4956" : "#292D32",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    {formatNumber(comments)}
+                  </strong>
+                </FeedbackContainer>
+              </CommentFeedback>
+            )}
+
+            <CommentScore score={commentScore}>
+              <div className="bar" />
+            </CommentScore>
+          </div>
           {type !== "facebook" && (
             <CommentDate>
               <span>23/10/2023 - 16:42</span>

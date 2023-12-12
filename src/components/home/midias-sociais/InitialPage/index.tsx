@@ -97,7 +97,7 @@ export function InitialPage() {
           barColor="#12A9E7"
           subTitle
         />
-        <ChartTip />
+        <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
         <div
           style={{ display: "flex", marginTop: "3rem", alignItems: "center" }}
         >

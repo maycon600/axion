@@ -66,7 +66,7 @@ export const HeaderMenu = styled.nav`
   margin-top: 2.4rem;
   gap: 1rem;
 
-  @media(max-width: 1400px) {
+  @media (max-width: 1400px) {
     justify-content: space-around;
     flex-wrap: wrap;
   }
@@ -76,6 +76,7 @@ export const Candidate = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
+  height: 7rem;
 `;
 
 export const CandidateInfo = styled.div`
@@ -84,8 +85,8 @@ export const CandidateInfo = styled.div`
   gap: 0.8rem;
 
   img {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -127,6 +128,21 @@ export const Options = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+`;
+
+export const Register = styled.button`
+  background-color: #282c49;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2.375rem;
+  color: white;
+  font-size: 1.5rem;
+  border: 0;
+  transition: 0.2s ease-in;
+
+  &:hover {
+    background-color: #474b7a;
+  }
 `;
 
 export const VerifyPopularity = styled.button`

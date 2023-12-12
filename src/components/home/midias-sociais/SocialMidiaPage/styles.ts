@@ -13,7 +13,7 @@ export const ChartsContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
   justify-items: center; */
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
   margin-top: 1.2rem;
 `;
 
@@ -63,7 +63,7 @@ export const PostsAndComments = styled.div`
   gap: 1rem;
 
   @media (max-width: 1380px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 `;
 
