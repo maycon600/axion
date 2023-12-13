@@ -56,7 +56,9 @@ export const SuggestionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  @media(max-width: 1200px) {
+  @media (max-width: 1200px) {
+    gap: 1rem;
+    align-items: center;
     flex-direction: column;
   }
 `;
@@ -87,12 +89,12 @@ export const TextareaAndButton = styled.div`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #CFCFCF;
+      background: #cfcfcf;
       border-radius: 5px;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: #ABABAB;
+      background: #ababab;
     }
 
     &::placeholder {
