@@ -11,6 +11,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScoreChart } from "@/components/home/ScoreChart";
 import { NewsModal } from "@/components/home/mencoes/NewsModal";
+import { MentionsCard } from "@/components/home/mencoes/MentionsCard";
 
 export default function SeuEleitorado() {
   const main = useRef(null);
@@ -147,19 +148,19 @@ export default function SeuEleitorado() {
 
             <TitleBottomBar title="Menções em Destaque" />
             <CardsContainer>
-              <NewsCard
+              <MentionsCard
                 sentiment="positive"
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
               />
-              <NewsCard
+              <MentionsCard
                 sentiment="neutral"
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
               />
-              <NewsCard
+              <MentionsCard
                 sentiment="negative"
                 source="Só Notícias"
                 date="22/10/2023"
