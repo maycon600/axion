@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { SuggestionContainer } from "./styles";
+import { Message, SuggestionContainer, TipContainer } from "./styles";
+import { useState } from "react";
 
 interface Props {
   content: string;
@@ -8,22 +9,26 @@ interface Props {
 }
 
 export function PrompSuggestion({ content, imgSrc, tipContent }: Props) {
+  const [showTip, setShowTip] = useState(false);
+
   return (
     <SuggestionContainer>
       <Image width={30} height={30} src={imgSrc} alt="" />
       <strong>{content}</strong>
-      <Image
-        id="hover"
-        width={24}
-        height={24}
-        src={"/dashboard/midias-sociais/chartHoverTip.svg"}
-        alt=""
-        style={{
-          position: "absolute",
-          top: "0.5rem",
-          right: "0.5rem",
-        }}
-      />
+      <TipContainer>
+        <Image
+          width={24}
+          height={24}
+          src={"/dashboard/midias-sociais/chartHoverTip.svg"}
+          alt=""
+          onMouseEnter={() => setShowTip(true)}
+          onMouseLeave={() => setShowTip(false)}
+        />
+        <Message show={showTip}>
+          {content}
+          <div className="arrow" />
+        </Message>
+      </TipContainer>
     </SuggestionContainer>
   );
 }

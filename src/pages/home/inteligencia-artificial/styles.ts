@@ -1,9 +1,5 @@
 import { styled } from "styled-components";
 
-interface ContainerProps {
-  type: boolean;
-}
-
 export const Content = styled.div`
   background-color: ${({ theme }) => theme.color.gray_10};
   margin: 0.37rem 0 1rem 0.4rem;
@@ -60,6 +56,9 @@ export const SuggestionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media(max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 export const TextareaAndButton = styled.div`
