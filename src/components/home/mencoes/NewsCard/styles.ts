@@ -9,6 +9,7 @@ export const CardContainer = styled.div`
   border-radius: 10px;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 
   transition: 0.2s;
 

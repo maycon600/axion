@@ -7,12 +7,12 @@ import { TotalQuotes } from "@/components/home/mencoes/TotalQuotes";
 import { useRouter } from "next/router";
 import { CardsContainer, Content, Main, TopCardsContainer } from "./styles";
 import RootLayout from "@/components/Layout";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScoreChart } from "@/components/home/ScoreChart";
+import { NewsModal } from "@/components/home/mencoes/NewsModal";
 
 export default function SeuEleitorado() {
-  const router = useRouter();
   const main = useRef(null);
   const content = useRef(null);
 
@@ -130,21 +130,18 @@ export default function SeuEleitorado() {
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
-                url="https://www.sonoticias.com.br/politica/lucas-do-rio-verde-tera-novo-espaco-de-tradicoes-culturais-com-investimento-de-r-36-milhoes/"
               />
               <NewsCard
                 sentiment="neutral"
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
-                url="https://www.sonoticias.com.br/politica/lucas-do-rio-verde-tera-novo-espaco-de-tradicoes-culturais-com-investimento-de-r-36-milhoes/"
               />
               <NewsCard
                 sentiment="negative"
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
-                url="https://www.sonoticias.com.br/politica/lucas-do-rio-verde-tera-novo-espaco-de-tradicoes-culturais-com-investimento-de-r-36-milhoes/"
               />
             </CardsContainer>
 
@@ -155,21 +152,18 @@ export default function SeuEleitorado() {
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
-                url="https://www.sonoticias.com.br/politica/lucas-do-rio-verde-tera-novo-espaco-de-tradicoes-culturais-com-investimento-de-r-36-milhoes/"
               />
               <NewsCard
                 sentiment="neutral"
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
-                url="https://www.sonoticias.com.br/politica/lucas-do-rio-verde-tera-novo-espaco-de-tradicoes-culturais-com-investimento-de-r-36-milhoes/"
               />
               <NewsCard
                 sentiment="negative"
                 source="Só Notícias"
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
-                url="https://www.sonoticias.com.br/politica/lucas-do-rio-verde-tera-novo-espaco-de-tradicoes-culturais-com-investimento-de-r-36-milhoes/"
               />
             </CardsContainer>
           </Main>
