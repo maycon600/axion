@@ -15,13 +15,21 @@ export const Content = styled.div`
 `;
 
 export const ChatConteiner = styled.div`
+  height: 95vh;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 2rem 0 1rem;
+  transition: 0.3s ease-in;
+`;
+
+export const ChatContent = styled.div`
+  height: 100%;
+  max-width: 57rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  border-radius: 50px;
-  padding: 2rem 0 1rem;
+  margin: auto;
 `;
 
 export const ChatHeader = styled.header`
@@ -41,5 +49,68 @@ export const IaImgContainer = styled.div`
 `;
 
 export const ChatFooter = styled.div`
-  
-`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.75rem;
+`;
+
+export const SuggestionsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const TextareaAndButton = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+
+  #chatInput {
+    border-radius: 10px;
+    border: 2px solid #0d123c;
+    resize: none;
+    width: 100%;
+    max-width: 57rem;
+    overflow: hidden;
+    padding: 0.875rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #CFCFCF;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ABABAB;
+    }
+
+    &::placeholder {
+      font-family: Bruno Ace SC, sans-serif;
+      color: #8c8c8c;
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    margin-bottom: 0.5rem;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+`;

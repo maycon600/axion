@@ -21,7 +21,7 @@ export function ChartTip({ content }: Props) {
       <Message show={showTip}>
         {content}
         <div className="arrow" />
-      </Message>
+      </Message>  
     </ChartTipContainer>
   );
 }
