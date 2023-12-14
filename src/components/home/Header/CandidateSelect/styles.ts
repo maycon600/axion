@@ -23,9 +23,14 @@ export const SelectContainer = styled.div<Props>`
   position: relative;
   transition: 0.2s;
   border-radius: ${({ isOpen }) => (isOpen ? "5px 5px 0 0" : "5px")};
-  color: white;
   width: 230px;
   background-color: #0d123c;
+  color: white;
+
+  .white {
+    font-size: 0.75rem;
+    color: white;
+  }
 
   strong {
     color: white;

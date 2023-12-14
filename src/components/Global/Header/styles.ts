@@ -20,7 +20,7 @@ export const HeaderContainer = styled.header`
   button {
     position: absolute;
     left: 1rem;
-    top: calc(50% - 1rem);
+    top: calc(50% - 1.5rem);
     background-color: transparent;
     border: 0;
   }

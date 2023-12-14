@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { HeaderCandidateSelect } from "./CandidateSelect";
 import { MenuItemComponent } from "./MenuItem";
 import { HeaderTimeSelect } from "./TimeSelect";
 import {
+  ButtonAndSelect,
   Candidate,
   CandidateInfo,
   HeaderContainer,
@@ -13,7 +15,6 @@ import {
   Register,
   UserMenu,
 } from "./styles";
-import { HeaderCandidateSelect } from "./CandidateSelect";
 
 interface headerProps {
   fadeOut: any;
@@ -100,14 +101,7 @@ export function HeaderComponent({ fadeOut }: headerProps) {
           </div>
         </CandidateInfo>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-            alignItems: "flex-end",
-          }}
-        >
+        <ButtonAndSelect>
           {router.asPath.split("/")[2] === "seu-eleitorado" && (
             <Register>Cadastro</Register>
           )}
@@ -119,7 +113,7 @@ export function HeaderComponent({ fadeOut }: headerProps) {
               setSelectedValue={setSelectedTimeValue}
             />
           )}
-        </div>
+        </ButtonAndSelect>
       </Candidate>
     </HeaderContainer>
   );

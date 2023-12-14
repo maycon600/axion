@@ -77,6 +77,24 @@ export const Candidate = styled.div`
   justify-content: space-between;
   margin-top: 3rem;
   height: 7rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+`;
+
+export const ButtonAndSelect = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    margin-top: 1rem;
+  }
 `;
 
 export const CandidateInfo = styled.div`
@@ -98,7 +116,7 @@ export const CandidateInfo = styled.div`
 
   strong {
     color: #292d32;
-    font-size: 1.625rem;
+    /* font-size: 1.625rem; */
     font-weight: 600;
     line-height: 1.25;
   }

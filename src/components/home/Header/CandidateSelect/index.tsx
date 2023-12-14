@@ -36,12 +36,12 @@ export function HeaderCandidateSelect({
         isOpen={isFocused}
         id={id}
       >
-        <strong style={{ letterSpacing: 2 }}>
+        <strong style={{ letterSpacing: 2 }} className="white">
           {selectedValue.split("-")[0]}
         </strong>
         {selectedValue.split("-")[1] && (
           <>
-            -<strong>{`${selectedValue.split("-")[1]}`}</strong>
+            -<strong className="white">{`${selectedValue.split("-")[1]}`}</strong>
           </>
         )}
         <div className="icon">
