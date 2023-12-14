@@ -27,8 +27,6 @@ export function AgeGroupByGender({ data, conf }: Props) {
       <BarChart
         id={chartId}
         layout="vertical"
-        width={500}
-        height={400}
         data={data}
         margin={{
           top: 20,
@@ -44,8 +42,6 @@ export function AgeGroupByGender({ data, conf }: Props) {
         {conf.map((item) => {
           return <Bar dataKey={item.dataKey} barSize={10} fill={item.color} />;
         })}
-        {/* <Bar dataKey="Homens" barSize={10} fill="#22C24F" />
-        <Bar dataKey="Mulheres" barSize={10} fill="#E73F3F" /> */}
       </BarChart>
     </ResponsiveContainer>
   );

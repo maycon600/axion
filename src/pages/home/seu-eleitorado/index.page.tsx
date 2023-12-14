@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import {
   AgeGroupLegend,
   ChartContainer,
+  ChartContent,
   ChartsContainer,
   Content,
   Main,
@@ -229,12 +230,12 @@ export default function SeuEleitorado() {
                     padding: "3rem 1rem 0 0",
                   }}
                 >
-                  <div style={{ width: "100%", height: "25rem" }}>
+                  <ChartContent>
                     <AgeGroupByGender
                       data={groupGenderData}
                       conf={groupGenderConf}
                     />
-                  </div>
+                  </ChartContent>
                 </div>
               </ChartContainer>
               <ChartContainer>
@@ -255,10 +256,12 @@ export default function SeuEleitorado() {
                     values={selectVotersValue}
                   />
                 </div>
-                <VotersInfo
-                  chartData={selectedData}
-                  labels={selectedVoterLabels}
-                />
+                <ChartContent>
+                  <VotersInfo
+                    chartData={selectedData}
+                    labels={selectedVoterLabels}
+                  />
+                </ChartContent>
               </ChartContainer>
               <ChartContainer>
                 <GoogleMapsWrapper>
@@ -272,17 +275,6 @@ export default function SeuEleitorado() {
                 />
                 <VotersGender />
               </ChartContainer>
-              {/* <ChartContainer>
-                <TitleWithBar
-                  content="Gêneros dos Eleitores"
-                  barColor="#2F5CFC"
-                />
-                <div
-                  style={{ width: "100%", height: "500px", paddingTop: "7rem" }}
-                >
-                  <VotersByGender />
-                </div>
-              </ChartContainer> */}
             </ChartsContainer>
           </Main>
         </Content>

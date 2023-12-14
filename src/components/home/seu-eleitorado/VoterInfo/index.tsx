@@ -83,5 +83,9 @@ export function VotersInfo({ chartData, labels }: Props) {
     ],
   };
 
-  return <Pie data={data} options={options} />;
+  return (
+    <div style={{ height: "100%", width: "100%" }}>
+      <Pie data={data} options={options} />
+    </div>
+  );
 }
