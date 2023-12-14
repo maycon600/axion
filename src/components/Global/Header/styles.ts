@@ -1,24 +1,32 @@
+import { Offcanvas } from "react-bootstrap";
 import styled from "styled-components";
 
-export const Header = styled.header`
-  height: 4rem;
+export const HeaderContainer = styled.header`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 2rem;
-  background-color: white;
-  font-size: 1.2rem;
+  justify-content: center;
+  position: relative;
+  height: 4rem;
 
-  color: ${({ theme }) => theme.color.gray_100};
-  transition: 0.3s;
+  .logo {
+    width: 13rem;
+    height: auto;
 
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    @media (max-width: 768px) {
+      width: 10rem;
+    }
   }
 
-  svg:hover {
-    cursor: pointer;
-    color: ${({ theme }) => theme.color.gray_80};
+  button {
+    position: absolute;
+    left: 1rem;
+    top: calc(50% - 1rem);
+    background-color: transparent;
+    border: 0;
   }
+`;
+
+export const StyledOffcanvas = styled(Offcanvas)`
+  background-color: #111;
+  max-width: 15rem;
 `;

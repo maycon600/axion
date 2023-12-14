@@ -2,7 +2,7 @@ import Theme from "@/styles/themes";
 import { Container } from "./styles";
 import { Footer } from "@/components/register-account/Footer";
 import { useEffect, useState } from "react";
-import { windowWidth } from "@/utils/mobile";
+import { windowWidth } from "@/utils/windowWidth";
 
 export function AnialiasingFormData() {
   const [dotsValue, setDotsValue] = useState('.');

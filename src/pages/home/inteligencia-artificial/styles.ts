@@ -8,6 +8,11 @@ export const Content = styled.div`
   position: relative;
   width: calc(100% - 17rem);
   left: calc(100% - 17rem);
+
+  @media(max-width: 1024px) {
+    width: 100%;
+    left: 100%;
+  }
 `;
 
 export const ChatConteiner = styled.div`
