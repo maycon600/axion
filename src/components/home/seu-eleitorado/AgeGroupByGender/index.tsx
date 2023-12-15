@@ -23,16 +23,16 @@ export function AgeGroupByGender({ data, conf }: Props) {
   const chartId = useId();
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <BarChart
         id={chartId}
         layout="vertical"
         data={data}
         margin={{
-          top: 20,
-          right: 20,
-          bottom: 20,
-          left: 20,
+          top: 5,
+          right: 5,
+          bottom: 5,
+          left: 5,
         }}
       >
         <CartesianGrid stroke="#f5f5f5" />

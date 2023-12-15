@@ -8,7 +8,11 @@ interface Props {
   setSelectedValue: (value: string) => void;
 }
 
-export function VotersInfoSelect({ values, selectedValue, setSelectedValue }: Props) {
+export function VotersInfoSelect({
+  values,
+  selectedValue,
+  setSelectedValue,
+}: Props) {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleBlur = () => {

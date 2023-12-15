@@ -24,44 +24,52 @@ export const footer = (tooltipItems: any) => {
   return ((currentValue * 100) / total).toFixed(1) + "%";
 };
 
-export const options = {
-  responsive: true,
-  plugins: {
-    ChartDataLabels,
-    legend: {
-      position: "right" as const,
-      labels: {
-        usePointStyle: true,
-      },
-    },
-    datalabels: {
-      formatter: (value: any, ctx: any) => {
-        let sum = 0;
-        let dataArr = ctx.chart.data.datasets[0].data;
-        dataArr.map((data: any) => {
-          sum += data;
-        });
-        let percentage = ((value * 100) / sum).toFixed(1) + "%";
-        if ((value * 100) / sum < 10) {
-          return "";
-        }
-        return percentage;
-      },
-      color: "#fff",
-      font: {
-        weight: "bold",
-        size: 12,
-      },
-    },
-    tooltip: {
-      callbacks: {
-        footer: footer,
-      },
-    },
-  },
-};
-
 export function VotersInfo({ chartData, labels }: Props) {
+  const [legendPosition, setLegendPosition] = useState("right");
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setLegendPosition("top");
+    }
+  }, []);
+
+  const options = {
+    responsive: true,
+    plugins: {
+      ChartDataLabels,
+      legend: {
+        position: legendPosition,
+        labels: {
+          usePointStyle: true,
+        },
+      },
+      datalabels: {
+        formatter: (value: any, ctx: any) => {
+          let sum = 0;
+          let dataArr = ctx.chart.data.datasets[0].data;
+          dataArr.map((data: any) => {
+            sum += data;
+          });
+          let percentage = ((value * 100) / sum).toFixed(1) + "%";
+          if ((value * 100) / sum < 10) {
+            return "";
+          }
+          return percentage;
+        },
+        color: "#fff",
+        font: {
+          weight: "bold",
+          size: 12,
+        },
+      },
+      tooltip: {
+        callbacks: {
+          footer: footer,
+        },
+      },
+    },
+  };
+
   const data = {
     labels: labels,
     datasets: [
@@ -83,9 +91,5 @@ export function VotersInfo({ chartData, labels }: Props) {
     ],
   };
 
-  return (
-    <div style={{ height: "100%", width: "100%" }}>
-      <Pie data={data} options={options} />
-    </div>
-  );
+  return <Pie data={data} options={options} />;
 }

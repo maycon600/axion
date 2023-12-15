@@ -7,7 +7,13 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   subTitle?: boolean;
 }
 
-export function TitleWithBar({ content, barColor, width="auto", subTitle = false, ...rest }: Props) {
+export function TitleWithBar({
+  content,
+  barColor,
+  width = "auto",
+  subTitle = false,
+  ...rest
+}: Props) {
   return (
     <TitleContainer barColor={barColor} width={width} {...rest}>
       <div className="bar" />

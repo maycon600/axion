@@ -5,11 +5,15 @@ export const Container = styled.div`
   width: 9.5rem;
   height: 0.625rem;
   border-radius: 5px;
-`
+
+  @media (max-width: 768px) {
+    width: 7rem;
+  }
+`;
 
 interface FillProps {
-  fill: string,
-  fillColor: string,
+  fill: string;
+  fillColor: string;
 }
 
 export const SliderFilled = styled.div<FillProps>`
@@ -21,8 +25,8 @@ export const SliderFilled = styled.div<FillProps>`
 `;
 
 interface EmptyProps {
-  empty: string,
-  emptyColor: string,
+  empty: string;
+  emptyColor: string;
 }
 
 export const SliderEmpty = styled.div<EmptyProps>`
@@ -30,4 +34,4 @@ export const SliderEmpty = styled.div<EmptyProps>`
   height: 100%;
   background-color: ${(props) => props.emptyColor};
   border-radius: 0 10px 10px 0;
-`
+`;

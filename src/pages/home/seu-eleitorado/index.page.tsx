@@ -1,26 +1,28 @@
-import { Sidebar } from "@/components/Global/Sidebar";
+import { TitleWithBar } from "@/components/Global/TitleWithBar";
+import RootLayout from "@/components/Layout";
 import { HeaderComponent } from "@/components/home/Header";
+import { GoogleMaps } from "@/components/home/Maps/GoogleMaps";
+import { GoogleMapsWrapper } from "@/components/home/Maps/GoogleMapsWrapper";
+import { AgeGroupByGender } from "@/components/home/seu-eleitorado/AgeGroupByGender";
 import { SeuEleitoradoCards } from "@/components/home/seu-eleitorado/Cards";
+import { VotersInfo } from "@/components/home/seu-eleitorado/VoterInfo";
+import { VotersGender } from "@/components/home/seu-eleitorado/VotersGender";
+import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VotersInfoSelect";
+import gsap from "gsap";
 import { useRouter } from "next/router";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
+  AgeGroupContainer,
   AgeGroupLegend,
   ChartContainer,
-  ChartContent,
   ChartsContainer,
   Content,
   Main,
+  MapContainer,
+  VotersGenderContainer,
+  VotersInfoContainer,
+  VotersInfoTitle,
 } from "./styles";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { TitleWithBar } from "@/components/Global/TitleWithBar";
-import { AgeGroupByGender } from "@/components/home/seu-eleitorado/AgeGroupByGender";
-import { VotersInfo } from "@/components/home/seu-eleitorado/VoterInfo";
-import { VotersByGender } from "@/components/home/midias-sociais/TotalVotersByGender";
-import RootLayout from "@/components/Layout";
-import gsap from "gsap";
-import { VotersGender } from "@/components/home/seu-eleitorado/VotersGender";
-import { GoogleMaps } from "@/components/home/Maps/GoogleMaps";
-import { GoogleMapsWrapper } from "@/components/home/Maps/GoogleMapsWrapper";
-import { VotersInfoSelect } from "@/components/home/seu-eleitorado/VotersInfoSelect";
 
 export default function SeuEleitorado() {
   const router = useRouter();
@@ -176,14 +178,13 @@ export default function SeuEleitorado() {
           <Main>
             <SeuEleitoradoCards />
             <ChartsContainer>
-              <ChartContainer>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
+              {/* <AgeGroupContainer>
+                <VotersInfoTitle>
                   <TitleWithBar
                     content="Faixa etária da População por gênero"
                     barColor="#2F5CFC"
                     width={"16rem"}
+                    className="title"
                   />
                   <AgeGroupLegend>
                     {groupGenderConf.map((item) => {
@@ -220,28 +221,17 @@ export default function SeuEleitorado() {
                       );
                     })}
                   </AgeGroupLegend>
+                </VotersInfoTitle>
+                <div className="chart">
+                  <AgeGroupByGender
+                    data={groupGenderData}
+                    conf={groupGenderConf}
+                  />
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    width: "auto",
-                    padding: "3rem 1rem 0 0",
-                  }}
-                >
-                  <ChartContent>
-                    <AgeGroupByGender
-                      data={groupGenderData}
-                      conf={groupGenderConf}
-                    />
-                  </ChartContent>
-                </div>
-              </ChartContainer>
-              <ChartContainer>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
+              </AgeGroupContainer> */}
+
+              <VotersInfoContainer>
+                <div className="title">
                   <TitleWithBar
                     barColor="#2F5CFC"
                     content={
@@ -250,31 +240,33 @@ export default function SeuEleitorado() {
                         : "Idade dos Eleitores"
                     }
                   />
-                  <VotersInfoSelect
-                    selectedValue={selectedVoterOption}
-                    setSelectedValue={setSelectedVoterOption}
-                    values={selectVotersValue}
-                  />
+                  <div className="select">
+                    <VotersInfoSelect
+                      selectedValue={selectedVoterOption}
+                      setSelectedValue={setSelectedVoterOption}
+                      values={selectVotersValue}
+                    />
+                  </div>
                 </div>
-                <ChartContent>
+                <div className="chart">
                   <VotersInfo
                     chartData={selectedData}
                     labels={selectedVoterLabels}
                   />
-                </ChartContent>
-              </ChartContainer>
-              <ChartContainer>
+                </div>
+              </VotersInfoContainer>
+              {/*<MapContainer>
                 <GoogleMapsWrapper>
                   <GoogleMaps mapId="map_id" locations={locations} />
                 </GoogleMapsWrapper>
-              </ChartContainer>
-              <ChartContainer>
+              </MapContainer>
+              <VotersGenderContainer>
                 <TitleWithBar
                   content="Gêneros dos Eleitores"
                   barColor="#2F5CFC"
                 />
                 <VotersGender />
-              </ChartContainer>
+              </VotersGenderContainer> */}
             </ChartsContainer>
           </Main>
         </Content>

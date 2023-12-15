@@ -15,6 +15,15 @@ export const CellContent = styled.div`
     font-size: 1.25rem;
     font-weight: 400;
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem 1rem 0;
+
+    strong {
+      margin-top: 0.25rem;
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const CellInfo = styled.div`

@@ -30,6 +30,8 @@ export const Header = styled.header`
 export const Main = styled.main`
   margin: 2%;
   border-radius: 10px;
+  max-width: 1160px;
+  margin: auto;
 `;
 
 export const ChartsContainer = styled.div`
@@ -46,39 +48,94 @@ export const ChartsContainer = styled.div`
   }
 `;
 
-export const ChartContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem;
-  width: 35rem;
-  height: 35rem;
-  background-color: #fff;
-  border-radius: 10px;
-  border: 0.3px solid #c3c3c3;
-
-  @media (max-width: 1530px) {
-    width: 30rem;
-    height: 30rem;
-  }
-
-  @media (max-width: 1360px) {
-    width: 26rem;
-    height: 26rem;
-  }
-
-  @media (max-width: 1230px) {
-    width: 90%;
-    height: 35rem;
-  }
-`;
-
 export const AgeGroupLegend = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
+  @media (max-width: 768px) {
+    margin: auto;
+  }
 `;
 
-export const ChartContent = styled.div`
-  width: 100%;
-  height: 100%;
+export const VotersInfoTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
+
+export const ChartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 0.3px solid #c3c3c3;
+`;
+
+export const AgeGroupContainer = styled(ChartContainer)`
+  width: 30rem;
+  height: 30rem;
+
+  .title {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .chart {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+    width: 100%;
+    height: 23rem;
+
+    .chart {
+      height: 18rem;
+    }
+  }
+`;
+
+export const VotersInfoContainer = styled(ChartContainer)`
+  width: 30rem;
+  height: 30rem;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .chart {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 98%;
+    height: 38rem;
+
+    .title {
+      flex-direction: column;
+    }
+
+    .select {
+      margin: 1rem auto;
+    }
+
+    .chart {
+      max-height: 30rem;
+    }
+  }
+`;
+
+export const MapContainer = styled(ChartContainer)``;
+
+export const VotersGenderContainer = styled(ChartContainer)``;
