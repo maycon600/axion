@@ -1,6 +1,6 @@
 import Chart from "chart.js/auto";
 import { useState, useEffect } from "react";
-import { ChartCenterInfo, Container } from "./styles";
+import { Container } from "./styles";
 
 interface Props {
   data: {
@@ -49,7 +49,7 @@ export function FollowerData({ data }: Props) {
 
         sliceThicknessPixels.forEach((d, i) => {
           chart.getDatasetMeta(0).data[i].outerRadius =
-            (chart.chartArea.width / (window.innerWidth <= 425 ? d * 2 : d)) *
+            (chart.chartArea.width / (window.innerWidth <= 300 ? d * 2 : d)) *
             100;
         });
       },

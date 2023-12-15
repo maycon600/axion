@@ -66,7 +66,7 @@ export function InitialPage() {
     <ChartsContainer>
       {/* Score */}
 
-      <ChartContainer>
+      {/* <ChartContainer>
         <TitleWithBar content="Dados de Seguidores" barColor="#080E45" />
         <div className="chartContent">
           <ChartCenterInfo>
@@ -89,7 +89,7 @@ export function InitialPage() {
             ))}
           </FollowerDataLegendContainer>
         </div>
-      </ChartContainer>
+      </ChartContainer> */}
 
       <ChartContainer>
         <TitleWithBar

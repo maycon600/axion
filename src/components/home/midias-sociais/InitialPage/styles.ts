@@ -15,7 +15,7 @@ export const ChartContainer = styled.div`
   flex-direction: column;
   padding: 1.25rem;
   width: 35rem;
-  height: 100%;
+  height: 30rem;
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
@@ -93,3 +93,5 @@ export const KeyIndicatorContent = styled.div`
   justify-content: space-between;
   padding: 0 1rem 1rem 2rem;
 `;
+
+export const FollowerDataContainer = styled(ChartContainer)``;
