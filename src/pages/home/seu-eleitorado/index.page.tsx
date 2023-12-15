@@ -178,7 +178,7 @@ export default function SeuEleitorado() {
           <Main>
             <SeuEleitoradoCards />
             <ChartsContainer>
-              {/* <AgeGroupContainer>
+              <AgeGroupContainer>
                 <VotersInfoTitle>
                   <TitleWithBar
                     content="Faixa etária da População por gênero"
@@ -228,7 +228,7 @@ export default function SeuEleitorado() {
                     conf={groupGenderConf}
                   />
                 </div>
-              </AgeGroupContainer> */}
+              </AgeGroupContainer>
 
               <VotersInfoContainer>
                 <div className="title">
@@ -255,18 +255,20 @@ export default function SeuEleitorado() {
                   />
                 </div>
               </VotersInfoContainer>
-              {/*<MapContainer>
+              <MapContainer>
                 <GoogleMapsWrapper>
                   <GoogleMaps mapId="map_id" locations={locations} />
                 </GoogleMapsWrapper>
               </MapContainer>
               <VotersGenderContainer>
-                <TitleWithBar
-                  content="Gêneros dos Eleitores"
-                  barColor="#2F5CFC"
-                />
+                <div className="title">
+                  <TitleWithBar
+                    content="Gêneros dos Eleitores"
+                    barColor="#2F5CFC"
+                  />
+                </div>
                 <VotersGender />
-              </VotersGenderContainer> */}
+              </VotersGenderContainer>
             </ChartsContainer>
           </Main>
         </Content>

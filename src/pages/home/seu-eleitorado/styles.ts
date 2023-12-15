@@ -17,6 +17,10 @@ export const Content = styled.div`
     width: 100%;
     left: 100%;
   }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const Header = styled.header`
@@ -40,11 +44,15 @@ export const ChartsContainer = styled.div`
   justify-items: center;
   width: 100%;
   align-items: center;
-  gap: 3rem;
+  gap: clamp(1rem, 5vw, 3rem);
   margin-top: 3rem;
 
   @media (max-width: 1230px) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    gap: 3rem;
   }
 `;
 
@@ -79,32 +87,31 @@ export const ChartContainer = styled.div`
 
 export const AgeGroupContainer = styled(ChartContainer)`
   width: 30rem;
-  height: 30rem;
-
-  .title {
-    margin-left: 1rem;
-    margin-top: 0.5rem;
-  }
+  height: 29rem;
 
   .chart {
     width: 100%;
     height: 100%;
   }
 
-  @media (max-width: 768px) {
-    padding: 0;
-    width: 100%;
-    height: 23rem;
+  @media (max-width: 1380px) {
+    width: 28rem;
+    height: 28rem;
+  }
 
-    .chart {
-      height: 18rem;
-    }
+  @media (max-width: 768px) {
+    width: 98%;
   }
 `;
 
 export const VotersInfoContainer = styled(ChartContainer)`
   width: 30rem;
-  height: 30rem;
+  height: 29rem;
+
+  @media (max-width: 1380px) {
+    width: 28rem;
+    height: 28rem;
+  }
 
   .title {
     display: flex;
@@ -121,8 +128,10 @@ export const VotersInfoContainer = styled(ChartContainer)`
   @media (max-width: 768px) {
     width: 98%;
     height: 38rem;
+    padding: 0;
 
     .title {
+      padding: 1rem;
       flex-direction: column;
     }
 
@@ -134,8 +143,47 @@ export const VotersInfoContainer = styled(ChartContainer)`
       max-height: 30rem;
     }
   }
+
+  @media (max-width: 400px) {
+    height: 35rem;
+  }
 `;
 
-export const MapContainer = styled(ChartContainer)``;
+export const MapContainer = styled(ChartContainer)`
+  width: 30rem;
+  height: 29rem;
 
-export const VotersGenderContainer = styled(ChartContainer)``;
+  @media (max-width: 1380px) {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 98%;
+    padding: 0.4rem;
+
+    .title {
+      padding: 1rem;
+    }
+  }
+`;
+
+export const VotersGenderContainer = styled(ChartContainer)`
+  width: 30rem;
+  height: 29rem;
+
+  @media (max-width: 1380px) {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 98%;
+    padding: 0;
+    height: 23rem;
+
+    .title {
+      padding: 1rem;
+    }
+  }
+`;
