@@ -13,629 +13,629 @@ export function SimpleWordcloud() {
 
   const words = [
     {
-        text: "2030",
-        value: 11
+      text: "2030",
+      value: 11,
     },
     {
-        text: "Que",
-        value: 36
+      text: "Que",
+      value: 36,
     },
     {
-        text: "Meu",
-        value: 16
+      text: "Meu",
+      value: 16,
     },
     {
-        text: "orgulho",
-        value: 35
+      text: "orgulho",
+      value: 35,
     },
     {
-        text: "homem",
-        value: 15
+      text: "homem",
+      value: 15,
     },
     {
-        text: "pra",
-        value: 60
+      text: "pra",
+      value: 60,
     },
     {
-        text: "tudo",
-        value: 29
+      text: "tudo",
+      value: 29,
     },
     {
-        text: "certo",
-        value: 7
+      text: "certo",
+      value: 7,
     },
     {
-        text: "mesmo",
-        value: 20
+      text: "mesmo",
+      value: 20,
     },
     {
-        text: "vcs",
-        value: 11
+      text: "vcs",
+      value: 11,
     },
     {
-        text: "Lula",
-        value: 255
+      text: "Lula",
+      value: 255,
     },
     {
-        text: "nosso",
-        value: 60
+      text: "nosso",
+      value: 60,
     },
     {
-        text: "presidente",
-        value: 174
+      text: "presidente",
+      value: 174,
     },
     {
-        text: "dio",
-        value: 11
+      text: "dio",
+      value: 11,
     },
     {
-        text: "dos",
-        value: 31
+      text: "dos",
+      value: 31,
     },
     {
-        text: "por",
-        value: 62
+      text: "por",
+      value: 62,
     },
     {
-        text: "isso",
-        value: 46
+      text: "isso",
+      value: 46,
     },
     {
-        text: "tem",
-        value: 59
+      text: "tem",
+      value: 59,
     },
     {
-        text: "foi",
-        value: 25
+      text: "foi",
+      value: 25,
     },
     {
-        text: "fazer",
-        value: 21
+      text: "fazer",
+      value: 21,
     },
     {
-        text: "para",
-        value: 121
+      text: "para",
+      value: 121,
     },
     {
-        text: "Brasil",
-        value: 147
+      text: "Brasil",
+      value: 147,
     },
     {
-        text: "que",
-        value: 296
+      text: "que",
+      value: 296,
     },
-    // {
-    //     text: "outros",
-    //     value: 7
-    // },
-    // {
-    //     text: "LULA",
-    //     value: 72
-    // },
-    // {
-    //     text: "melhor",
-    //     value: 33
-    // },
-    // {
-    //     text: "entre",
-    //     value: 6
-    // },
-    // {
-    //     text: "come",
-    //     value: 11
-    // },
-    // {
-    //     text: "bem",
-    //     value: 25
-    // },
-    // {
-    //     text: "nos",
-    //     value: 23
-    // },
-    // {
-    //     text: "era",
-    //     value: 14
-    // },
-    // {
-    //     text: "estar",
-    //     value: 6
-    // },
-    // {
-    //     text: "ncia",
-    //     value: 21
-    // },
-    // {
-    //     text: "pela",
-    //     value: 8
-    // },
-    // {
-    //     text: "pessoa",
-    //     value: 6
-    // },
-    // {
-    //     text: "meu",
-    //     value: 40
-    // },
-    // {
-    //     text: "Deus",
-    //     value: 63
-    // },
-    // {
-    //     text: "bom",
-    //     value: 18
-    // },
-    // {
-    //     text: "ver",
-    //     value: 14
-    // },
-    // {
-    //     text: "Marina",
-    //     value: 13
-    // },
-    // {
-    //     text: "Silva",
-    //     value: 20
-    // },
-    // {
-    //     text: "importante",
-    //     value: 6
-    // },
-    // {
-    //     text: "trabalho",
-    //     value: 18
-    // },
-    // {
-    //     text: "menos",
-    //     value: 11
-    // },
-    // {
-    //     text: "esse",
-    //     value: 31
-    // },
-    // {
-    //     text: "est",
-    //     value: 67
-    // },
-    // {
-    //     text: "dinheiro",
-    //     value: 18
-    // },
-    // {
-    //     text: "blico",
-    //     value: 6
-    // },
-    // {
-    //     text: "com",
-    //     value: 120
-    // },
-    // {
-    //     text: "fazendo",
-    //     value: 7
-    // },
-    // {
-    //     text: "quando",
-    //     value: 9
-    // },
-    // {
-    //     text: "povo",
-    //     value: 37
-    // },
-    // {
-    //     text: "poder",
-    //     value: 6
-    // },
-    // {
-    //     text: "agora",
-    //     value: 12
-    // },
-    // {
-    //     text: "dia",
-    //     value: 20
-    // },
-    // {
-    //     text: "vem",
-    //     value: 6
-    // },
-    // {
-    //     text: "Amaz",
-    //     value: 8
-    // },
-    // {
-    //     text: "nia",
-    //     value: 11
-    // },
-    // {
-    //     text: "Grande",
-    //     value: 10
-    // },
-    // {
-    //     text: "Estadista",
-    //     value: 7
-    // },
-    // {
-    //     text: "todo",
-    //     value: 11
-    // },
-    // {
-    //     text: "mundo",
-    //     value: 25
-    // },
-    // {
-    //     text: "nem",
-    //     value: 26
-    // },
-    // {
-    //     text: "vai",
-    //     value: 32
-    // },
-    // {
-    //     text: "Luiz",
-    //     value: 11
-    // },
-    // {
-    //     text: "cio",
-    //     value: 19
-    // },
-    // {
-    //     text: "Presidente",
-    //     value: 97
-    // },
-    // {
-    //     text: "Minha",
-    //     value: 13
-    // },
-    // {
-    //     text: "vida",
-    //     value: 18
-    // },
-    // {
-    //     text: "estamos",
-    //     value: 8
-    // },
-    // {
-    //     text: "uma",
-    //     value: 55
-    // },
-    // {
-    //     text: "casa",
-    //     value: 11
-    // },
-    // {
-    //     text: "olha",
-    //     value: 6
-    // },
-    // {
-    //     text: "voc",
-    //     value: 37
-    // },
-    // {
-    //     text: "querido",
-    //     value: 14
-    // },
-    // {
-    //     text: "aqui",
-    //     value: 21
-    // },
-    // {
-    //     text: "tempo",
-    //     value: 6
-    // },
-    // {
-    //     text: "coment",
-    //     value: 6
-    // },
-    // {
-    //     text: "rios",
-    //     value: 17
-    // },
-    // {
-    //     text: "pobre",
-    //     value: 10
-    // },
-    // {
-    //     text: "fica",
-    //     value: 6
-    // },
-    // {
-    //     text: "POVO",
-    //     value: 7
-    // },
-    // {
-    //     text: "BRASILEIRO",
-    //     value: 7
-    // },
-    // {
-    //     text: "faz",
-    //     value: 20
-    // },
-    // {
-    //     text: "ajudar",
-    //     value: 13
-    // },
-    // {
-    //     text: "Mais",
-    //     value: 7
-    // },
-    // {
-    //     text: "pessoas",
-    //     value: 24
-    // },
-    // {
-    //     text: "mais",
-    //     value: 66
-    // },
-    // {
-    //     text: "foram",
-    //     value: 6
-    // },
-    // {
-    //     text: "precisa",
-    //     value: 8
-    // },
-    // {
-    //     text: "vergonha",
-    //     value: 11
-    // },
-    // {
-    //     text: "como",
-    //     value: 35
-    // },
-    // {
-    //     text: "nossa",
-    //     value: 9
-    // },
-    // {
-    //     text: "hora",
-    //     value: 15
-    // },
-    // {
-    //     text: "ano",
-    //     value: 11
-    // },
-    // {
-    //     text: "fez",
-    //     value: 11
-    // },
-    // {
-    //     text: "anos",
-    //     value: 22
-    // },
-    // {
-    //     text: "governo",
-    //     value: 26
-    // },
-    // {
-    //     text: "grande",
-    //     value: 12
-    // },
-    // {
-    //     text: "muito",
-    //     value: 45
-    // },
-    // {
-    //     text: "minha",
-    //     value: 14
-    // },
-    // {
-    //     text: "gente",
-    //     value: 12
-    // },
-    // {
-    //     text: "Parab",
-    //     value: 65
-    // },
-    // {
-    //     text: "Nosso",
-    //     value: 11
-    // },
-    // {
-    //     text: "nas",
-    //     value: 20
-    // },
-    // {
-    //     text: "vel",
-    //     value: 30
-    // },
-    // {
-    //     text: "tanta",
-    //     value: 6
-    // },
-    // {
-    //     text: "ter",
-    //     value: 36
-    // },
-    // {
-    //     text: "senhor",
-    //     value: 20
-    // },
-    // {
-    //     text: "Orgulho",
-    //     value: 11
-    // },
-    // {
-    //     text: "seus",
-    //     value: 9
-    // },
-    // {
-    //     text: "sim",
-    //     value: 10
-    // },
-    // {
-    //     text: "discurso",
-    //     value: 11
-    // },
-    // {
-    //     text: "dele",
-    //     value: 6
-    // },
-    // {
-    //     text: "conta",
-    //     value: 8
-    // },
-    // {
-    //     text: "cara",
-    //     value: 29
-    // },
-    // {
-    //     text: "estou",
-    //     value: 8
-    // },
-    // {
-    //     text: "pro",
-    //     value: 11
-    // },
-    // {
-    //     text: "gado",
-    //     value: 9
-    // },
-    // {
-    //     text: "entender",
-    //     value: 7
-    // },
-    // {
-    //     text: "sabe",
-    //     value: 11
-    // },
-    // {
-    //     text: "chora",
-    //     value: 6
-    // },
-    // {
-    //     text: "picanha",
-    //     value: 9
-    // },
-    // {
-    //     text: "dar",
-    //     value: 7
-    // },
-    // {
-    //     text: "PARA",
-    //     value: 8
-    // },
-    // {
-    //     text: "SEU",
-    //     value: 6
-    // },
-    // {
-    //     text: "BRASIL",
-    //     value: 10
-    // },
-    // {
-    //     text: "DEUS",
-    //     value: 17
-    // },
-    // {
-    //     text: "ele",
-    //     value: 41
-    // },
-    // {
-    //     text: "sobre",
-    //     value: 7
-    // },
-    // {
-    //     text: "sou",
-    //     value: 15
-    // },
-    // {
-    //     text: "Sou",
-    //     value: 8
-    // },
-    // {
-    //     text: "rio",
-    //     value: 34
-    // },
-    // {
-    //     text: "todos",
-    //     value: 41
-    // },
-    // {
-    //     text: "mas",
-    //     value: 23
-    // },
-    // {
-    //     text: "maior",
-    //     value: 7
-    // },
-    // {
-    //     text: "seja",
-    //     value: 6
-    // },
-    // {
-    //     text: "assim",
-    //     value: 7
-    // },
-    // {
-    //     text: "paz",
-    //     value: 6
-    // },
-    // {
-    //     text: "Como",
-    //     value: 12
-    // },
-    // {
-    //     text: "apoia",
-    //     value: 6
-    // },
-    // {
-    //     text: "bolsa",
-    //     value: 6
-    // },
-    // {
-    //     text: "fam",
-    //     value: 13
-    // },
-    // {
-    //     text: "lia",
-    //     value: 15
-    // },
-    // {
-    //     text: "mulher",
-    //     value: 7
-    // },
-    // {
-    //     text: "lar",
-    //     value: 6
-    // },
-    // {
-    //     text: "sal",
-    //     value: 14
-    // },
-    // {
-    //     text: "comprar",
-    //     value: 8
-    // },
-    // {
-    //     text: "comida",
-    //     value: 7
-    // },
-    // {
-    //     text: "porque",
-    //     value: 15
-    // },
-    // {
-    //     text: "tamb",
-    //     value: 9
-    // },
-    // {
-    //     text: "coisa",
-    //     value: 6
-    // },
-    // {
-    //     text: "quer",
-    //     value: 14
-    // },
-    // {
-    //     text: "vezes",
-    //     value: 7
-    // },
-    // {
-    //     text: "quem",
-    //     value: 26
-    // },
-    // {
-    //     text: "trabalha",
-    //     value: 8
-    // },
+    {
+      text: "outros",
+      value: 7,
+    },
+    {
+      text: "LULA",
+      value: 72,
+    },
+    {
+      text: "melhor",
+      value: 33,
+    },
+    {
+      text: "entre",
+      value: 6,
+    },
+    {
+      text: "come",
+      value: 11,
+    },
+    {
+      text: "bem",
+      value: 25,
+    },
+    {
+      text: "nos",
+      value: 23,
+    },
+    {
+      text: "era",
+      value: 14,
+    },
+    {
+      text: "estar",
+      value: 6,
+    },
+    {
+      text: "ncia",
+      value: 21,
+    },
+    {
+      text: "pela",
+      value: 8,
+    },
+    {
+      text: "pessoa",
+      value: 6,
+    },
+    {
+      text: "meu",
+      value: 40,
+    },
+    {
+      text: "Deus",
+      value: 63,
+    },
+    {
+      text: "bom",
+      value: 18,
+    },
+    {
+      text: "ver",
+      value: 14,
+    },
+    {
+      text: "Marina",
+      value: 13,
+    },
+    {
+      text: "Silva",
+      value: 20,
+    },
+    {
+      text: "importante",
+      value: 6,
+    },
+    {
+      text: "trabalho",
+      value: 18,
+    },
+    {
+      text: "menos",
+      value: 11,
+    },
+    {
+      text: "esse",
+      value: 31,
+    },
+    {
+      text: "est",
+      value: 67,
+    },
+    {
+      text: "dinheiro",
+      value: 18,
+    },
+    {
+      text: "blico",
+      value: 6,
+    },
+    {
+      text: "com",
+      value: 120,
+    },
+    {
+      text: "fazendo",
+      value: 7,
+    },
+    {
+      text: "quando",
+      value: 9,
+    },
+    {
+      text: "povo",
+      value: 37,
+    },
+    {
+      text: "poder",
+      value: 6,
+    },
+    {
+      text: "agora",
+      value: 12,
+    },
+    {
+      text: "dia",
+      value: 20,
+    },
+    {
+      text: "vem",
+      value: 6,
+    },
+    {
+      text: "Amaz",
+      value: 8,
+    },
+    {
+      text: "nia",
+      value: 11,
+    },
+    {
+      text: "Grande",
+      value: 10,
+    },
+    {
+      text: "Estadista",
+      value: 7,
+    },
+    {
+      text: "todo",
+      value: 11,
+    },
+    {
+      text: "mundo",
+      value: 25,
+    },
+    {
+      text: "nem",
+      value: 26,
+    },
+    {
+      text: "vai",
+      value: 32,
+    },
+    {
+      text: "Luiz",
+      value: 11,
+    },
+    {
+      text: "cio",
+      value: 19,
+    },
+    {
+      text: "Presidente",
+      value: 97,
+    },
+    {
+      text: "Minha",
+      value: 13,
+    },
+    {
+      text: "vida",
+      value: 18,
+    },
+    {
+      text: "estamos",
+      value: 8,
+    },
+    {
+      text: "uma",
+      value: 55,
+    },
+    {
+      text: "casa",
+      value: 11,
+    },
+    {
+      text: "olha",
+      value: 6,
+    },
+    {
+      text: "voc",
+      value: 37,
+    },
+    {
+      text: "querido",
+      value: 14,
+    },
+    {
+      text: "aqui",
+      value: 21,
+    },
+    {
+      text: "tempo",
+      value: 6,
+    },
+    {
+      text: "coment",
+      value: 6,
+    },
+    {
+      text: "rios",
+      value: 17,
+    },
+    {
+      text: "pobre",
+      value: 10,
+    },
+    {
+      text: "fica",
+      value: 6,
+    },
+    {
+      text: "POVO",
+      value: 7,
+    },
+    {
+      text: "BRASILEIRO",
+      value: 7,
+    },
+    {
+      text: "faz",
+      value: 20,
+    },
+    {
+      text: "ajudar",
+      value: 13,
+    },
+    {
+      text: "Mais",
+      value: 7,
+    },
+    {
+      text: "pessoas",
+      value: 24,
+    },
+    {
+      text: "mais",
+      value: 66,
+    },
+    {
+      text: "foram",
+      value: 6,
+    },
+    {
+      text: "precisa",
+      value: 8,
+    },
+    {
+      text: "vergonha",
+      value: 11,
+    },
+    {
+      text: "como",
+      value: 35,
+    },
+    {
+      text: "nossa",
+      value: 9,
+    },
+    {
+      text: "hora",
+      value: 15,
+    },
+    {
+      text: "ano",
+      value: 11,
+    },
+    {
+      text: "fez",
+      value: 11,
+    },
+    {
+      text: "anos",
+      value: 22,
+    },
+    {
+      text: "governo",
+      value: 26,
+    },
+    {
+      text: "grande",
+      value: 12,
+    },
+    {
+      text: "muito",
+      value: 45,
+    },
+    {
+      text: "minha",
+      value: 14,
+    },
+    {
+      text: "gente",
+      value: 12,
+    },
+    {
+      text: "Parab",
+      value: 65,
+    },
+    {
+      text: "Nosso",
+      value: 11,
+    },
+    {
+      text: "nas",
+      value: 20,
+    },
+    {
+      text: "vel",
+      value: 30,
+    },
+    {
+      text: "tanta",
+      value: 6,
+    },
+    {
+      text: "ter",
+      value: 36,
+    },
+    {
+      text: "senhor",
+      value: 20,
+    },
+    {
+      text: "Orgulho",
+      value: 11,
+    },
+    {
+      text: "seus",
+      value: 9,
+    },
+    {
+      text: "sim",
+      value: 10,
+    },
+    {
+      text: "discurso",
+      value: 11,
+    },
+    {
+      text: "dele",
+      value: 6,
+    },
+    {
+      text: "conta",
+      value: 8,
+    },
+    {
+      text: "cara",
+      value: 29,
+    },
+    {
+      text: "estou",
+      value: 8,
+    },
+    {
+      text: "pro",
+      value: 11,
+    },
+    {
+      text: "gado",
+      value: 9,
+    },
+    {
+      text: "entender",
+      value: 7,
+    },
+    {
+      text: "sabe",
+      value: 11,
+    },
+    {
+      text: "chora",
+      value: 6,
+    },
+    {
+      text: "picanha",
+      value: 9,
+    },
+    {
+      text: "dar",
+      value: 7,
+    },
+    {
+      text: "PARA",
+      value: 8,
+    },
+    {
+      text: "SEU",
+      value: 6,
+    },
+    {
+      text: "BRASIL",
+      value: 10,
+    },
+    {
+      text: "DEUS",
+      value: 17,
+    },
+    {
+      text: "ele",
+      value: 41,
+    },
+    {
+      text: "sobre",
+      value: 7,
+    },
+    {
+      text: "sou",
+      value: 15,
+    },
+    {
+      text: "Sou",
+      value: 8,
+    },
+    {
+      text: "rio",
+      value: 34,
+    },
+    {
+      text: "todos",
+      value: 41,
+    },
+    {
+      text: "mas",
+      value: 23,
+    },
+    {
+      text: "maior",
+      value: 7,
+    },
+    {
+      text: "seja",
+      value: 6,
+    },
+    {
+      text: "assim",
+      value: 7,
+    },
+    {
+      text: "paz",
+      value: 6,
+    },
+    {
+      text: "Como",
+      value: 12,
+    },
+    {
+      text: "apoia",
+      value: 6,
+    },
+    {
+      text: "bolsa",
+      value: 6,
+    },
+    {
+      text: "fam",
+      value: 13,
+    },
+    {
+      text: "lia",
+      value: 15,
+    },
+    {
+      text: "mulher",
+      value: 7,
+    },
+    {
+      text: "lar",
+      value: 6,
+    },
+    {
+      text: "sal",
+      value: 14,
+    },
+    {
+      text: "comprar",
+      value: 8,
+    },
+    {
+      text: "comida",
+      value: 7,
+    },
+    {
+      text: "porque",
+      value: 15,
+    },
+    {
+      text: "tamb",
+      value: 9,
+    },
+    {
+      text: "coisa",
+      value: 6,
+    },
+    {
+      text: "quer",
+      value: 14,
+    },
+    {
+      text: "vezes",
+      value: 7,
+    },
+    {
+      text: "quem",
+      value: 26,
+    },
+    {
+      text: "trabalha",
+      value: 8,
+    },
     // {
     //     text: "ser",
     //     value: 46
@@ -1145,34 +1145,34 @@ export function SimpleWordcloud() {
     //     value: 6
     // },
     {
-        text: "Jesus",
-        value: 9
+      text: "Jesus",
+      value: 9,
     },
     {
-        text: "SENHOR",
-        value: 8
+      text: "SENHOR",
+      value: 8,
     },
     {
-        text: "AND",
-        value: 9
+      text: "AND",
+      value: 9,
     },
     {
-        text: "THE",
-        value: 6
-    }
-]
-
-console.log(`Palavras: ${words.length}`)
+      text: "THE",
+      value: 6,
+    },
+  ];
 
   const options = {
     rotations: 0,
     colors: ["#556AFB", "#33429A", "#0A27E6"],
     fontWeight: "700",
     fontFamily: "Impact",
-    fontSizes: [20, 50],
+    fontSizes: [20, 40],
   };
 
   return (
-    <div>{client && <ReactWordcloud words={words} options={options} />}</div>
+    <div style={{ height: "100%" }}>
+      {client && <ReactWordcloud words={words} options={options} />}
+    </div>
   );
 }

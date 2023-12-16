@@ -13,9 +13,18 @@ export const Content = styled.div`
   width: calc(100% - 17rem);
   left: calc(100% - 17rem);
 
-  @media(max-width: 1024px) {
+  @media (max-width: 1024px) {
     width: 100%;
     left: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 425px) {
+    padding: 0.1rem;
+    margin: 0.37rem 0 1rem 0.1rem;
   }
 `;
 
@@ -30,6 +39,10 @@ export const Header = styled.header`
 export const Main = styled.main`
   margin: 2%;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export const LikesAndComentsContainer = styled.div`

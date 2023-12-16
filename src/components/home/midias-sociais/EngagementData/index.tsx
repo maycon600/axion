@@ -74,5 +74,12 @@ export function EngagmentChart({ chartData }: Props) {
       },
     ],
   };
-  return <Pie data={data} options={options} />;
+  return (
+    <Pie
+      data={data}
+      options={options}
+      style={{ width: "100%" }}
+      height={"100%"}
+    />
+  );
 }

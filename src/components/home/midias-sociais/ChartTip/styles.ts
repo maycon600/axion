@@ -9,8 +9,18 @@ export const ChartTipContainer = styled.div`
   cursor: pointer;
 
   img {
+    width: 2.25rem;
+    height: 2.25rem;
+
     &:hover {
       opacity: 0.8;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 `;
@@ -28,7 +38,7 @@ export const Message = styled.div<MessageProps>`
   border: 1px solid black;
   border-radius: 10px;
   text-align: justify;
-  color: #1F1F1F;
+  color: #1f1f1f;
   background-color: white;
   z-index: ${({ show }) => (show ? 100 : -1)};
   opacity: ${({ show }) => (show ? 1 : 0)};

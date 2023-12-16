@@ -1,20 +1,12 @@
 import { TitleWithBar } from "@/components/Global/TitleWithBar";
-import Image from "next/image";
-import { EngagmentChart } from "../EngagementData";
-import { FollowerData } from "../FollowerData";
-import { FollowerDataLegend } from "../FollowerData/Legend";
-import { SimpleWordcloud } from "../WordCloud";
-import {
-  ChartCenterInfo,
-  ChartContainer,
-  ChartsContainer,
-  EngagmentLegendContainer,
-  FollowerDataLegendContainer,
-  KeyIndicatorContent,
-  KeyIndicatorsContainer,
-} from "./styles";
-import { KeyIndicator } from "../KeyIndicator";
 import { ChartTip } from "../ChartTip";
+import { KeyIndicators } from "../KeyIndicators";
+import {
+  ChartsContainer,
+  KeyIndicatorsContainer,
+  WordCloudContainer,
+} from "./styles";
+import { SimpleWordcloud } from "../WordCloud";
 
 export function InitialPage() {
   const followerData = [
@@ -55,13 +47,6 @@ export function InitialPage() {
     },
   ];
 
-  const keyIndicatorsData = [
-    { name: "Likes", previousValue: 12000, currentValue: 9000 },
-    { name: "Comentários", previousValue: 2000, currentValue: 5000 },
-    { name: "Sentimento Médio", previousValue: 2000, currentValue: 15000 },
-    { name: "Compartilhamentos", previousValue: 7000, currentValue: 14000 },
-  ];
-
   return (
     <ChartsContainer>
       {/* Score */}
@@ -91,93 +76,53 @@ export function InitialPage() {
         </div>
       </ChartContainer> */}
 
-      <ChartContainer>
+      {/* <EngagmentDataContainer>
         <TitleWithBar
           content="Dados de Engajamento"
           barColor="#12A9E7"
           subTitle
         />
         <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
-        <div
-          style={{ display: "flex", marginTop: "3rem", alignItems: "center" }}
-        >
-          <div>
+        <div className="chartContent">
+          <div className="chart">
             <EngagmentChart chartData={engagmentData} />
           </div>
-          <div
-            style={{
-              width: "auto",
-              height: "auto",
-              marginLeft: "2rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-            }}
-          >
+          <div className="legends">
             {engagmentData.map((item) => {
               return (
                 <EngagmentLegendContainer circleColor={item.color}>
                   <div className="circle" />
-                  <strong
-                    style={{
-                      fontSize: "0.75rem",
-                      width: "4rem",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item.name}
-                  </strong>
+                  <strong style={{}}>{item.name}</strong>
                   <Image src={item.imgSrc} width={32} height={32} alt="" />
                 </EngagmentLegendContainer>
               );
             })}
           </div>
         </div>
-      </ChartContainer>
+      </EngagmentDataContainer> */}
 
-      <ChartContainer>
-        <TitleWithBar
-          barColor="#080E45"
-          content="Nuvem de palavras Geral"
-          subTitle
-          className="mb-3"
-        />
+      <WordCloudContainer>
+        <div className="title">
+          <TitleWithBar
+            barColor="#080E45"
+            content="Nuvem de palavras Geral"
+            subTitle
+            className="mb-3"
+          />
+        </div>
         <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
         <SimpleWordcloud />
-        {/* <Example width={500} height={300} /> */}
-      </ChartContainer>
+      </WordCloudContainer>
 
-      <ChartContainer>
+      <KeyIndicatorsContainer>
         <TitleWithBar
           content="Indicadores Chave:"
           barColor="#12A9E7"
-          width="27rem"
+          subTitle
         />
         <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
-        <KeyIndicatorsContainer>
-          {keyIndicatorsData.map((indicator, index) => (
-            <div>
-              <KeyIndicatorContent>
-                <strong style={{ fontWeight: 400, fontSize: "1.1rem" }}>
-                  {indicator.name}
-                </strong>
-                <KeyIndicator
-                  key={index}
-                  previousValue={indicator.previousValue}
-                  currentValue={indicator.currentValue}
-                />
-              </KeyIndicatorContent>
-              <div
-                style={{
-                  width: "100%",
-                  borderTop: "1px solid #C8C8C8",
-                  margin: "0 auto",
-                }}
-              />
-            </div>
-          ))}
-        </KeyIndicatorsContainer>
-      </ChartContainer>
+        <KeyIndicators />
+      </KeyIndicatorsContainer>
     </ChartsContainer>
   );
 }

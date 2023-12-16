@@ -7,6 +7,10 @@ export const ChartsContainer = styled.div`
   align-items: center;
   gap: 3rem;
   margin-top: 1.2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ChartContainer = styled.div`
@@ -14,8 +18,6 @@ export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
-  width: 35rem;
-  height: 30rem;
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
@@ -26,6 +28,108 @@ export const ChartContainer = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
+  }
+`;
+
+export const EngagmentDataContainer = styled(ChartContainer)`
+  width: 35rem;
+  height: 30rem;
+
+  .chartContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .legends {
+    width: auto;
+    height: auto;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    width: 100%;
+    height: 37rem;
+
+    .chartContent {
+      flex-direction: column-reverse;
+    }
+
+    .chart {
+      width: 100%;
+      max-height: 20rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .legends {
+      justify-content: center;
+      flex-direction: row;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+`;
+
+export const EngagmentLegendContainer = styled.div<EngagmentLegendProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: ${({ circleColor }) => circleColor};
+  }
+
+  strong {
+    width: 4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    strong {
+      width: auto;
+    }
+  }
+`;
+
+export const WordCloudContainer = styled(ChartContainer)`
+  width: 35rem;
+  height: 30rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 550px) {
+    height: 35rem;
+    padding: 1rem 0rem;
+
+    .title {
+      padding: 1rem 0.5rem;
+    }
+  }
+`;
+
+export const KeyIndicatorsContainer = styled(ChartContainer)`
+  width: 35rem;
+  height: 30rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 550px) {
+    height: 31rem;
+    padding: 1rem 0.4rem;
   }
 `;
 
@@ -64,34 +168,5 @@ export const FollowerDataLegendContainer = styled.div`
 interface EngagmentLegendProps {
   circleColor: string;
 }
-
-export const EngagmentLegendContainer = styled.div<EngagmentLegendProps>`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  .circle {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background-color: ${({ circleColor }) => circleColor};
-  }
-`;
-
-export const KeyIndicatorsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%;
-  padding-top: 3rem;
-`;
-
-export const KeyIndicatorContent = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem 1rem 2rem;
-`;
 
 export const FollowerDataContainer = styled(ChartContainer)``;

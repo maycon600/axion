@@ -17,10 +17,10 @@ export function KeyIndicator({ previousValue, currentValue }: Props) {
   const previousValuePercentage = (previousValue * 100) / total;
 
   function formatNumber(number: number) {
-    if(number > 1000) {
-      return `${(number / 1000).toFixed(1)}K`
+    if (number > 1000) {
+      return `${(number / 1000).toFixed(1)}K`;
     } else {
-      return number
+      return number;
     }
   }
 
@@ -33,7 +33,7 @@ export function KeyIndicator({ previousValue, currentValue }: Props) {
         </PreviousValueBar>
         <CurrentValueBar width={`${currentValuePercentage}%`} />
       </Bar>
-      <span>{formatNumber(currentValue)}</span>
+      <span style={{ width: "3.5rem" }}>{formatNumber(currentValue)}</span>
     </Indicator>
   );
 }
