@@ -145,7 +145,18 @@ export const PostsContainer = styled.div`
   }
 `;
 
-export const PostsHeader = styled.div``;
+export const PostsHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+`;
+
+export const LabelAndSelect = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+`;
 
 export const SeeMorePosts = styled.div`
   display: flex;
