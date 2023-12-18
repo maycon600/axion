@@ -3,10 +3,14 @@ import { ChartTip } from "../ChartTip";
 import { KeyIndicators } from "../KeyIndicators";
 import {
   ChartsContainer,
+  EngagmentDataContainer,
+  EngagmentLegendContainer,
   KeyIndicatorsContainer,
   WordCloudContainer,
 } from "./styles";
 import { SimpleWordcloud } from "../WordCloud";
+import { EngagmentChart } from "../EngagementData";
+import Image from "next/image";
 
 export function InitialPage() {
   const followerData = [
@@ -76,7 +80,7 @@ export function InitialPage() {
         </div>
       </ChartContainer> */}
 
-      {/* <EngagmentDataContainer>
+      <EngagmentDataContainer>
         <TitleWithBar
           content="Dados de Engajamento"
           barColor="#12A9E7"
@@ -99,7 +103,7 @@ export function InitialPage() {
             })}
           </div>
         </div>
-      </EngagmentDataContainer> */}
+      </EngagmentDataContainer>
 
       <WordCloudContainer>
         <div className="title">

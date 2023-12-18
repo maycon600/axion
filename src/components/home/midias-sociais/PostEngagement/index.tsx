@@ -1,5 +1,6 @@
+import { windowWidth } from "@/utils/windowWidth";
 import Image from "next/image";
-import React, { PureComponent } from "react";
+import React, { PureComponent, useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -65,6 +66,8 @@ export function PostEngagement() {
     },
   ];
 
+  const [barSize, setBarSize] = useState(25);
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
@@ -88,7 +91,12 @@ export function PostEngagement() {
           }
         />
         <Tooltip />
-        <Bar dataKey="shares" stackId="a" fill="#FFD712" barSize={25} />
+        <Bar
+          dataKey="shares"
+          stackId="a"
+          fill="#FFD712"
+          barSize={windowWidth(768) ? 15 : 25}
+        />
         <Bar dataKey="sentiment" stackId="a" fill="#2F5CFC" />
         <Bar dataKey="comments" stackId="a" fill="#DA3252" />
         <Bar dataKey="likes" stackId="a" fill="#22C24F" />

@@ -4,6 +4,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 3rem;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const ChartContainer = styled.div`

@@ -8,9 +8,11 @@ import {
   KeyIndicatorContent,
   KeyIndicatorsContainer,
   PageContainer,
+  PostEngagmentContainer,
   PostsAndComments,
   PostsContainer,
   PostsHeader,
+  ScoreChartContainer,
   SeeMorePosts,
   Tip,
 } from "./styles";
@@ -46,22 +48,22 @@ export function SocialMidiaPage({ pageType }: Props) {
   return (
     <PageContainer>
       <ChartsContainer>
-        <ChartContainer>
+        {/* <PostEngagmentContainer>
           <TitleWithBar
             content="Engajamento de Publicações"
             barColor="#12A9E7"
-            className="mb-4"
+            className="mb-4 title"
           />
           <PostEngagement />
-        </ChartContainer>
+        </PostEngagmentContainer> */}
 
-        <ChartContainer>
-          {/* SCORE */}
+        {/* Score */}
+        <ScoreChartContainer>
           <TitleWithBar
             content="Sentimento Médio dos Comentários:"
             barColor="#2F5CFC"
             subTitle
-            width="27rem"
+            className="title"
           />
           <div
             className="mb-5"
@@ -86,9 +88,9 @@ export function SocialMidiaPage({ pageType }: Props) {
           <div className="p-5">
             <SmallBarChart />
           </div>
-        </ChartContainer>
+        </ScoreChartContainer>
 
-        <ChartContainer>
+        {/* <ChartContainer>
           <TitleWithBar
             content="Indicadores Chave:"
             barColor="#12A9E7"
@@ -118,9 +120,9 @@ export function SocialMidiaPage({ pageType }: Props) {
               </div>
             ))}
           </KeyIndicatorsContainer>
-        </ChartContainer>
+        </ChartContainer> */}
 
-        <ChartContainer>
+        {/* <ChartContainer>
           <TitleWithBar
             content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
             barColor="#12A9E7"
@@ -146,10 +148,10 @@ export function SocialMidiaPage({ pageType }: Props) {
               horários.
             </p>
           </Tip>
-        </ChartContainer>
+        </ChartContainer> */}
       </ChartsContainer>
 
-      <PostsAndComments>
+      {/* <PostsAndComments>
         <PostsContainer>
           <PostsHeader>
             <div
@@ -273,7 +275,7 @@ export function SocialMidiaPage({ pageType }: Props) {
             />
           </Comments>
         </CommentsContainer>
-      </PostsAndComments>
+      </PostsAndComments> */}
     </PageContainer>
   );
 }

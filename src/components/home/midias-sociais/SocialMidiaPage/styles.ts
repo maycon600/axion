@@ -3,18 +3,26 @@ import styled from "styled-components";
 export const PageContainer = styled.div`
   max-width: 1225px;
   margin: auto;
+  padding: 0.5rem;
 `;
 
 export const ChartsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
-  justify-items: center; */
+  display: grid;
+  grid-template-columns: 33rem 33rem;
+  justify-items: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 1.2rem;
+  margin: 1.2rem auto 0;
+
+  @media (max-width: 1420px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      padding: 0.5rem;
+    }
+  }
 `;
 
 export const ChartContainer = styled.div`
@@ -22,11 +30,38 @@ export const ChartContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  width: 35rem;
-  height: 25rem;
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
+
+  @media (max-width: 500px) {
+    padding: 1rem 0.3rem;
+  }
+`;
+
+export const PostEngagmentContainer = styled(ChartContainer)`
+  width: 33rem;
+  height: 25rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 25rem;
+    padding: 0;
+
+    .title {
+      margin: 1rem 1rem 3rem 1rem;
+    }
+  }
+`;
+
+export const ScoreChartContainer = styled(PostEngagmentContainer)`
+  @media (max-width: 768px) {
+    height: 30rem;
+  }
+
+  @media (max-width: 500px) {
+    height: 36rem;
+  }
 `;
 
 export const Tip = styled.div`
