@@ -15,6 +15,7 @@ import {
   ScoreChartContainer,
   SeeMorePosts,
   Tip,
+  VotersActiveContainer,
 } from "./styles";
 import { PostEngagement } from "../PostEngagement";
 import { ScoreChart } from "../../ScoreChart";
@@ -27,6 +28,7 @@ import { OrderSelect } from "../OrderSelect";
 import { PostComponent } from "../PostComponent";
 import { CommentComponent } from "../ComentComponent";
 import { ChartTip } from "../ChartTip";
+import { KeyIndicators } from "../KeyIndicators";
 
 interface Props {
   pageType: "instagram" | "facebook" | "youtube" | "tiktok";
@@ -48,14 +50,14 @@ export function SocialMidiaPage({ pageType }: Props) {
   return (
     <PageContainer>
       <ChartsContainer>
-        {/* <PostEngagmentContainer>
+        <PostEngagmentContainer>
           <TitleWithBar
             content="Engajamento de Publicações"
             barColor="#12A9E7"
             className="mb-4 title"
           />
           <PostEngagement />
-        </PostEngagmentContainer> */}
+        </PostEngagmentContainer>
 
         {/* Score */}
         <ScoreChartContainer>
@@ -90,54 +92,23 @@ export function SocialMidiaPage({ pageType }: Props) {
           </div>
         </ScoreChartContainer>
 
-        {/* <ChartContainer>
+        <KeyIndicatorsContainer>
           <TitleWithBar
             content="Indicadores Chave:"
             barColor="#12A9E7"
-            width="27rem"
+            subTitle
           />
           <ChartTip content="my text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a..." />
-          <KeyIndicatorsContainer>
-            {keyIndicatorsData.map((indicator, index) => (
-              <div>
-                <KeyIndicatorContent>
-                  <strong style={{ fontWeight: 400, fontSize: "1.1rem" }}>
-                    {indicator.name}
-                  </strong>
-                  <KeyIndicator
-                    key={index}
-                    previousValue={indicator.previousValue}
-                    currentValue={indicator.currentValue}
-                  />
-                </KeyIndicatorContent>
-                <div
-                  style={{
-                    width: "100%",
-                    borderTop: "1px solid #C8C8C8",
-                    margin: "0 auto",
-                  }}
-                />
-              </div>
-            ))}
-          </KeyIndicatorsContainer>
-        </ChartContainer> */}
+          <KeyIndicators />
+        </KeyIndicatorsContainer>
 
-        {/* <ChartContainer>
+        <VotersActiveContainer>
           <TitleWithBar
             content="Horário que os Eleitores estão mais Ativos em Sua Rede Social:"
             barColor="#12A9E7"
             subTitle
-            width="27rem"
           />
-          <div
-            style={{
-              height: "300px",
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div className="chart">
             <VotersActive />
           </div>
 
@@ -148,7 +119,7 @@ export function SocialMidiaPage({ pageType }: Props) {
               horários.
             </p>
           </Tip>
-        </ChartContainer> */}
+        </VotersActiveContainer>
       </ChartsContainer>
 
       {/* <PostsAndComments>

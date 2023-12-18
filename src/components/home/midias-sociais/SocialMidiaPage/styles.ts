@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const PageContainer = styled.div`
   max-width: 1225px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
   padding: 0.5rem;
 `;
 
@@ -11,8 +12,7 @@ export const ChartsContainer = styled.div`
   grid-template-columns: 33rem 33rem;
   justify-items: center;
   align-items: center;
-  gap: 1rem;
-  margin: 1.2rem auto 0;
+  gap: 2rem;
 
   @media (max-width: 1420px) {
     grid-template-columns: 1fr;
@@ -60,7 +60,39 @@ export const ScoreChartContainer = styled(PostEngagmentContainer)`
   }
 
   @media (max-width: 500px) {
-    height: 36rem;
+    height: 37rem;
+  }
+`;
+
+export const KeyIndicatorsContainer = styled(ChartContainer)`
+  width: 33rem;
+  height: 30rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 550px) {
+    height: 31rem;
+    padding: 1rem 0.4rem;
+  }
+`;
+
+export const VotersActiveContainer = styled(ChartContainer)`
+  width: 33rem;
+  height: 30rem;
+
+  .chart {
+    height: 23rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 29rem;
+
+    .chart {
+      height: 18rem;
+    }
   }
 `;
 
@@ -76,14 +108,14 @@ export const Tip = styled.div`
   }
 `;
 
-export const KeyIndicatorsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%;
-  padding-top: 3rem;
-`;
+// export const KeyIndicatorsContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   height: 100%;
+//   width: 100%;
+//   padding-top: 3rem;
+// `;
 
 export const KeyIndicatorContent = styled.div`
   width: 100%;
