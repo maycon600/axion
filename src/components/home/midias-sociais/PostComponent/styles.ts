@@ -18,6 +18,15 @@ export const PostContainer = styled.div<PostProps>`
         ? "#E03855"
         : "#FF0000"};
   padding: 1rem 1rem 0.4rem 0.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .logo {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
 `;
 
 export const PostContent = styled.div`
@@ -42,6 +51,10 @@ export const PostFeedback = styled.div`
 
   @media (max-width: 1450px) {
     gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
   }
 `;
 

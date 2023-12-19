@@ -149,6 +149,11 @@ export const PostsHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 3rem;
+  }
 `;
 
 export const LabelAndSelect = styled.div`
@@ -156,6 +161,10 @@ export const LabelAndSelect = styled.div`
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
+
+  @media (max-width: 768px) {
+    /* flex-direction: column; */
+  }
 `;
 
 export const SeeMorePosts = styled.div`

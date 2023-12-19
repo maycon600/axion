@@ -9,6 +9,7 @@ import {
 import { HeartSVG } from "../../../../../public/dashboard/midias-sociais/heartSVG";
 import { MessageSVG } from "../../../../../public/dashboard/midias-sociais/messageSVG";
 import { ViewSVG } from "../../../../../public/dashboard/midias-sociais/viewSVG";
+import { windowWidth } from "@/utils/windowWidth";
 
 interface Props {
   type: "instagram" | "facebook" | "youtube" | "tiktok";
@@ -28,20 +29,30 @@ export function PostComponent({ type, likes, comments, feedbacks }: Props) {
 
   return (
     <PostContainer type={type}>
-      <Image
-        width={80}
-        height={80}
-        src={
-          type === "facebook"
-            ? "/dashboard/midias-sociais/facebookLogo.png"
-            : type === "instagram"
-            ? "/dashboard/midias-sociais/instagramLogo.png"
-            : type === "youtube"
-            ? "/dashboard/midias-sociais/youtubeLogo.png"
-            : "/dashboard/midias-sociais/tiktokLogo.png"
-        }
-        alt={""}
-      />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Image
+          width={80}
+          height={80}
+          src={
+            type === "facebook"
+              ? "/dashboard/midias-sociais/facebookLogo.png"
+              : type === "instagram"
+              ? "/dashboard/midias-sociais/instagramLogo.png"
+              : type === "youtube"
+              ? "/dashboard/midias-sociais/youtubeLogo.png"
+              : "/dashboard/midias-sociais/tiktokLogo.png"
+          }
+          alt={""}
+          className="logo"
+        />
+        {windowWidth(768) && <PostDate>02/12/2023 - 16:32</PostDate>}
+      </div>
       <PostContent>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita
@@ -148,7 +159,7 @@ export function PostComponent({ type, likes, comments, feedbacks }: Props) {
               </FeedbackContainer>
             </PostFeedback>
           )}
-          <PostDate>02/12/2023 - 16:32</PostDate>
+          {!windowWidth(768) && <PostDate>02/12/2023 - 16:32</PostDate>}
         </div>
       </PostContent>
     </PostContainer>
