@@ -1,18 +1,25 @@
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  max-width: 1225px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  max-width: 1200px;
+  margin: auto;
   padding: 0.5rem;
 `;
 
 export const ChartsContainer = styled.div`
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* display: grid;
   grid-template-columns: 33rem 33rem;
   justify-items: center;
-  align-items: center;
-  gap: 2rem;
+  align-items: center; */
+  /* gap: 1rem; */
+  width: 100%;
 
   @media (max-width: 1420px) {
     grid-template-columns: 1fr;
@@ -33,6 +40,7 @@ export const ChartContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 0.3px solid #c3c3c3;
+  margin-bottom: 2rem;
 
   @media (max-width: 500px) {
     padding: 1rem 0.3rem;
@@ -194,7 +202,16 @@ export const CommentsContainer = styled.div`
   }
 `;
 
-export const CommentsHeader = styled.div``;
+export const CommentsHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 3rem;
+  }
+`;
 
 export const Comments = styled.div`
   display: flex;

@@ -10,6 +10,7 @@ import {
 } from "./styles";
 import { MessageSVG } from "../../../../../public/dashboard/midias-sociais/messageSVG";
 import { HeartSVG } from "../../../../../public/dashboard/midias-sociais/heartSVG";
+import { windowWidth } from "@/utils/windowWidth";
 
 interface Props {
   type: "instagram" | "facebook" | "youtube" | "tiktok";
@@ -34,16 +35,23 @@ export function CommentComponent({
 
   return (
     <CommentContainer type={type}>
-      <Image
-        width={50}
-        height={50}
-        src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
-        alt=""
-        className="rounded-5"
-      />
+      <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Image
+            width={50}
+            height={50}
+            src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
+            alt=""
+            className="rounded-5"
+          />
+          {windowWidth(768) && (
+            <strong style={{ fontSize: "0.925rem" }}>Nome</strong>
+          )}
+        </div>
+      </div>
       <CommentContent>
         <NameAndContent>
-          <strong>Nome</strong>
+          {!windowWidth(768) && <strong>Nome</strong>}
           <p>my text of the printing and typesetting industry.</p>
         </NameAndContent>
         <CommentFeedback type={type}>

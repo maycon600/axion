@@ -18,6 +18,10 @@ export const CommentContainer = styled.div<CommentProps>`
         : "#FF0000"};
   border-radius: 10px;
   padding: 1rem 1rem 0.4rem 0.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const CommentContent = styled.div`
@@ -38,7 +42,8 @@ export const NameAndContent = styled.div`
 
 export const CommentFeedback = styled.div<CommentProps>`
   display: flex;
-  justify-content: ${({ type}) => type === "facebook" ? "flex-start" : "space-between"};
+  justify-content: ${({ type }) =>
+    type === "facebook" ? "flex-start" : "space-between"};
   align-items: center;
   gap: 1rem;
 `;
@@ -77,4 +82,4 @@ export const CommentDate = styled.div`
   font-weight: 700;
   color: #494949;
   font-size: 0.7rem;
-`
+`;

@@ -50,7 +50,7 @@ export function SocialMidiaPage({ pageType }: Props) {
 
   return (
     <PageContainer>
-      {/* <ChartsContainer>
+      <ChartsContainer>
         <PostEngagmentContainer>
           <TitleWithBar
             content="Engajamento de Publicações"
@@ -120,7 +120,7 @@ export function SocialMidiaPage({ pageType }: Props) {
             </p>
           </Tip>
         </VotersActiveContainer>
-      </ChartsContainer> */}
+      </ChartsContainer>
 
       <PostsAndComments>
         <PostsContainer>
@@ -164,39 +164,24 @@ export function SocialMidiaPage({ pageType }: Props) {
           </SeeMorePosts>
         </PostsContainer>
 
-        {/* <CommentsContainer>
+        <CommentsContainer>
           <CommentsHeader>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "1rem",
-              }}
-            >
-              <TitleWithBar content="Comentários" barColor="#12A9E7" />
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1rem",
-                  padding: "0.5rem",
-                }}
+            <TitleWithBar content="Publicações" barColor="#12A9E7" />
+            <LabelAndSelect>
+              <strong
+                onClick={() =>
+                  document.getElementById("posts-order-select")?.focus()
+                }
               >
-                <strong
-                  onClick={() =>
-                    document.getElementById("comments-order-select")?.focus()
-                  }
-                >
-                  Ordenar por:
-                </strong>
-                <OrderSelect
-                  selectedValue={selectedValue}
-                  values={values}
-                  setSelectedValue={setSelectedValue}
-                  id="comments-order-select"
-                />
-              </div>
-            </div>
+                Ordenar por:
+              </strong>
+              <OrderSelect
+                selectedValue={selectedValue}
+                values={values}
+                setSelectedValue={setSelectedValue}
+                id="posts-order-select"
+              />
+            </LabelAndSelect>
           </CommentsHeader>
           <Comments>
             <CommentComponent
@@ -230,7 +215,7 @@ export function SocialMidiaPage({ pageType }: Props) {
               commentScore={700}
             />
           </Comments>
-        </CommentsContainer> */}
+        </CommentsContainer>
       </PostsAndComments>
     </PageContainer>
   );
