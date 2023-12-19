@@ -10,13 +10,6 @@ export const SentimentContainer = styled.div`
     gap: 3.25rem;
     margin-top: 1.5rem;
     margin-left: 1rem;
-
-    style={{
-          display: "flex",
-          gap: "3.25rem",
-          marginTop: "1.5rem",
-          marginLeft: "1rem",
-        }}
   }
 
   @media (max-width: 768px) {
