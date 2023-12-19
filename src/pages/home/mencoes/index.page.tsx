@@ -77,7 +77,7 @@ export default function SeuEleitorado() {
               </div>
               <TotalQuotes />
 
-              <div style={{ width: "30rem" }}>
+              <div className="sentimentChartContainer">
                 <SentimentChart
                   positive={343349}
                   negative={243312}
@@ -94,7 +94,7 @@ export default function SeuEleitorado() {
             >
               Sites de Notícias
             </h2>
-            <TopCardsContainer>
+            {/* <TopCardsContainer>
               <div
                 style={{
                   width: "17.25rem",
@@ -166,7 +166,7 @@ export default function SeuEleitorado() {
                 date="22/10/2023"
                 content="Candidato a Prefeitura de Sinop é acusado de corrupção"
               />
-            </CardsContainer>
+            </CardsContainer> */}
           </Main>
         </Content>
       </RootLayout>

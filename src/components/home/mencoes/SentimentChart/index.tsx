@@ -45,14 +45,7 @@ export function SentimentChart({ positive, neutral, negative }: Props) {
         )}
       </ChartContainer>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "3.25rem",
-          marginTop: "1.5rem",
-          marginLeft: "1rem",
-        }}
-      >
+      <div className="legends">
         <LegendContainer>
           <div
             style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}

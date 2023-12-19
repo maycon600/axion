@@ -13,7 +13,7 @@ export const Content = styled.div`
   width: calc(100% - 17rem);
   left: calc(100% - 17rem);
 
-  @media(max-width: 1024px) {
+  @media (max-width: 1024px) {
     width: 100%;
     left: 100%;
   }
@@ -22,6 +22,8 @@ export const Content = styled.div`
 export const Main = styled.main`
   margin: 2%;
   border-radius: 10px;
+  max-width: 1080px;
+  margin: 2% auto;
 `;
 
 export const TopCardsContainer = styled.div`
@@ -29,6 +31,28 @@ export const TopCardsContainer = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  @media (max-width: 1420px) {
+    max-width: 800px;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  .sentimentChartContainer {
+    width: 30rem;
+
+    @media (max-width: 1420px) {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
 `;
 
 export const CardsContainer = styled.div`

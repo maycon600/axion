@@ -3,7 +3,25 @@ import styled from "styled-components";
 export const SentimentContainer = styled.div`
   padding: 1rem 1.5rem;
   background-color: white;
-  border-radius: 10px
+  border-radius: 10px;
+
+  .legends {
+    display: flex;
+    gap: 3.25rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+
+    style={{
+          display: "flex",
+          gap: "3.25rem",
+          marginTop: "1.5rem",
+          marginLeft: "1rem",
+        }}
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 export const ChartContainer = styled.div`
