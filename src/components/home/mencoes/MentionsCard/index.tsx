@@ -96,7 +96,9 @@ export function MentionsCard({ sentiment, source, content, date }: Props) {
             lineHeight: "1.2",
           }}
         >
-          <p style={{ margin: 0 }}>{content}</p>
+          <p style={{ margin: 0 }} className="content">
+            {content}
+          </p>
         </div>
         <div
           style={{
@@ -117,7 +119,10 @@ export function MentionsCard({ sentiment, source, content, date }: Props) {
           </p>
         </div>
       </CardContainer>
-      <MentionsModal show={showNewsModal} onHide={() => setShowNewsModal(false)} />
+      <MentionsModal
+        show={showNewsModal}
+        onHide={() => setShowNewsModal(false)}
+      />
     </>
   );
 }

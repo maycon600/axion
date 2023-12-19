@@ -20,6 +20,21 @@ export const Main = styled.main`
 export const Sentiments = styled.div`
   width: 80%;
   margin: 3.5rem auto 0;
+
+  .scores {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 0.9rem;
+    }
+
+    .scores {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const ScoreChartContainer = styled.div`
@@ -30,6 +45,10 @@ export const ScoreChartContainer = styled.div`
 
   span {
     font-size: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
   }
 `;
 
@@ -67,8 +86,19 @@ export const Footer = styled.footer`
 `;
 
 export const CommentsHeader = styled.div`
-  
-`
+  .title {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  @media (max-width: 991px) {
+    .title {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+`;
 
 export const Comments = styled.div`
   width: 70%;
@@ -76,4 +106,8 @@ export const Comments = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `;

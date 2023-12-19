@@ -35,7 +35,13 @@ export function CommentComponent({
 
   return (
     <CommentContainer type={type}>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <div style={{ display: "flex", alignItems: "center" }}>
           <Image
             width={50}
@@ -48,6 +54,11 @@ export function CommentComponent({
             <strong style={{ fontSize: "0.925rem" }}>Nome</strong>
           )}
         </div>
+        {windowWidth(768) && (
+          <CommentDate>
+            <span>23/10/2023 - 16:42</span>
+          </CommentDate>
+        )}
       </div>
       <CommentContent>
         <NameAndContent>
@@ -138,7 +149,7 @@ export function CommentComponent({
               <div className="bar" />
             </CommentScore>
           </div>
-          {type !== "facebook" && (
+          {type !== "facebook" && !windowWidth(768) && (
             <CommentDate>
               <span>23/10/2023 - 16:42</span>
             </CommentDate>

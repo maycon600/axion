@@ -14,6 +14,17 @@ export const SentimentContainer = styled.div`
 
   @media (max-width: 768px) {
     padding: 1rem 0.5rem;
+
+    .legends {
+      /* flex-direction: column; */
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .legends {
+      flex-direction: column;
+    }
   }
 `;
 

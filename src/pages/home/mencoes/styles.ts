@@ -17,6 +17,10 @@ export const Content = styled.div`
     width: 100%;
     left: 100%;
   }
+
+  @media (max-width: 768px) {
+    padding: 1.2rem 0.5rem;
+  }
 `;
 
 export const Main = styled.main`
@@ -57,9 +61,13 @@ export const TopCardsContainer = styled.div`
 
 export const CardsContainer = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   margin: 1.8rem 0;
+
+  @media (max-width: 1320px) {
+    justify-content: space-around;
+  }
 `;

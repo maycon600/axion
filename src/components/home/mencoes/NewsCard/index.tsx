@@ -95,7 +95,14 @@ export function NewsCard({ sentiment, source, content, date }: Props) {
             lineHeight: "1.2",
           }}
         >
-          <p style={{ margin: 0 }}>{content}</p>
+          <p
+            style={{
+              margin: 0,
+            }}
+            className="content"
+          >
+            {content}
+          </p>
         </div>
         <div
           style={{

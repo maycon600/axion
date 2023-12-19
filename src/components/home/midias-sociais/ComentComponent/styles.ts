@@ -21,6 +21,7 @@ export const CommentContainer = styled.div<CommentProps>`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 0.5rem;
   }
 `;
 

@@ -69,7 +69,7 @@ export function MentionsModal({ show, onHide }: Props) {
           </NewContent>
           <Sentiments>
             <hr />
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="scores">
               <ScoreChartContainer>
                 <span style={{ maxWidth: "14rem", height: "3rem" }}>
                   Sentimento da Menção
@@ -91,13 +91,7 @@ export function MentionsModal({ show, onHide }: Props) {
           </Sentiments>
 
           <CommentsHeader>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "1rem",
-              }}
-            >
+            <div className="title">
               <TitleWithBar content="Comentários" barColor="#12A9E7" />
               <div
                 style={{
