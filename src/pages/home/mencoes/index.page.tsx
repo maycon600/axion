@@ -126,7 +126,7 @@ export default function SeuEleitorado() {
                 />
               </div>
             </TopCardsContainer>
-            <TitleBottomBar title="Notícias em Destaque" />
+            <TitleBottomBar title="Notícias em Destaque" className="mt-4" />
             <CardsContainer>
               <NewsCard
                 sentiment="positive"
