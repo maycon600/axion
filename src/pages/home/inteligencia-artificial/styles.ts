@@ -9,7 +9,7 @@ export const Content = styled.div`
   width: calc(100% - 17rem);
   left: calc(100% - 17rem);
 
-  @media(max-width: 1024px) {
+  @media (max-width: 1024px) {
     width: 100%;
     left: 100%;
   }
@@ -21,6 +21,10 @@ export const ChatConteiner = styled.div`
   border-radius: 50px;
   padding: 2rem 0 1rem;
   transition: 0.3s ease-in;
+
+  @media (max-width: 768px) {
+    border-radius: 15px;
+  }
 `;
 
 export const ChatContent = styled.div`
@@ -31,12 +35,32 @@ export const ChatContent = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: auto;
+
+  .welcomeMessage {
+    font-family: "Bruno Ace SC", serif;
+    font-size: 2rem;
+    color: #0d123c;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .welcomeMessage {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export const ChatHeader = styled.header`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    img {
+      width: 12rem;
+      height: auto;
+    }
+  }
 `;
 
 export const IaImgContainer = styled.div`
@@ -47,6 +71,17 @@ export const IaImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 2rem;
+    height: auto;
+    padding: 0.2rem;
+
+    img {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
 `;
 
 export const ChatFooter = styled.div`
@@ -74,6 +109,7 @@ export const TextareaAndButton = styled.div`
   align-items: flex-end;
   justify-content: center;
   gap: 1rem;
+  padding: 0 1rem;
 
   #chatInput {
     border-radius: 10px;
@@ -107,6 +143,10 @@ export const TextareaAndButton = styled.div`
       color: #8c8c8c;
       font-size: 1.2rem;
     }
+
+    &:focus {
+      outline: 2px solid #0d123c;
+    }
   }
 
   button {
@@ -117,6 +157,16 @@ export const TextareaAndButton = styled.div`
     &:disabled {
       cursor: not-allowed;
       opacity: 0.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #chatInput {
+      font-size: 1rem;
+
+      &::placeholder {
+        font-size: 1rem;
+      }
     }
   }
 `;

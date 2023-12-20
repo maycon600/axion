@@ -25,6 +25,20 @@ export const SuggestionContainer = styled.div`
       opacity: 1;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 14rem;
+    padding: 1rem 2rem 1rem 0.5rem;
+
+    img {
+      width: 1.3rem;
+      height: auto;
+    }
+
+    strong {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const TipContainer = styled.div`
@@ -39,6 +53,11 @@ export const TipContainer = styled.div`
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  @media (max-width: 768px) {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 `;
 
@@ -55,7 +74,7 @@ export const Message = styled.div<MessageProps>`
   border: 1px solid black;
   border-radius: 10px;
   text-align: justify;
-  color: #1F1F1F;
+  color: #1f1f1f;
   background-color: white;
   z-index: ${({ show }) => (show ? 100 : -1)};
   opacity: ${({ show }) => (show ? 1 : 0)};
@@ -67,10 +86,9 @@ export const Message = styled.div<MessageProps>`
     width: 2rem;
     height: 2rem;
     right: 2.1rem;
-    
+
     transform: rotate(45deg);
     border-right: 1px solid black;
     border-bottom: 1px solid black;
   }
 `;
-

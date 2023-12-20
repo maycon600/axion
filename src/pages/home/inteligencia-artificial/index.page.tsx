@@ -86,15 +86,7 @@ export default function InteligenciaArtificial() {
                   <Image width={32} height={20} src={"/ia.png"} alt="" />
                 </IaImgContainer>
               </ChatHeader>
-              <div
-                style={{
-                  fontFamily: "Bruno Ace SC",
-                  fontSize: "2rem",
-                  color: "#0D123C",
-                }}
-              >
-                Como posso te Ajudar Hoje?
-              </div>
+              <div className="welcomeMessage">Como posso te Ajudar Hoje?</div>
               <ChatFooter>
                 <SuggestionsContainer>
                   <PrompSuggestion
