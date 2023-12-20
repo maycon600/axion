@@ -4,22 +4,37 @@ import gsap from "gsap";
 import { useRouter } from "next/router";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
+  ChatBody,
   ChatConteiner,
   ChatContent,
   ChatFooter,
   ChatHeader,
   Content,
   IaImgContainer,
+  IaMessage,
   SuggestionsContainer,
   TextareaAndButton,
+  UserMessage,
 } from "./styles";
 import Image from "next/image";
 import { SuggestionContainer } from "@/components/home/inteligencia-artificial/PromptSuggestion/styles";
 import { PrompSuggestion } from "@/components/home/inteligencia-artificial/PromptSuggestion";
+import { useChatFunctions } from "./ia";
+  
 
 export default function InteligenciaArtificial() {
   const main = useRef(null);
   const content = useRef(null);
+  const {
+    messages,
+    userMessage,
+    isLoading,
+    setUserMessage,
+    handleUserMessageSubmit,
+    handleTypingComplete,
+    receivedChunks,
+    handleKeyDown,
+  } = useChatFunctions();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -51,6 +66,7 @@ export default function InteligenciaArtificial() {
       }
     }, 500);
   }, []);
+  const [firstMessage, setFirstMessage] = useState(false);
 
   useEffect(() => {
     const textarea = document.getElementById(
@@ -86,8 +102,35 @@ export default function InteligenciaArtificial() {
                   <Image width={32} height={20} src={"/ia.png"} alt="" />
                 </IaImgContainer>
               </ChatHeader>
+              {firstMessage ?(
+                <>
               <div className="welcomeMessage">Como posso te Ajudar Hoje?</div>
+              </>
+              ) : (
+          <ChatBody>
+            {messages
+              .filter((item: any, index: any) => index >= 2) // Filtrar mensagens com role diferente de "system"
+              .map((item: any, index: any) => (
+                <>
+                  {item.role === "assistant" ? (
+                    <>
+                      <IaMessage>{item.content}</IaMessage>
+                    </>
+                  ) : (
+                    <>
+                      <UserMessage>
+                        <pre>{item.content}</pre>
+                      </UserMessage>
+                    </>
+                  )}
+                </>
+              ))}
+          </ChatBody>
+              )
+              }
+
               <ChatFooter>
+                {firstMessage ? (
                 <SuggestionsContainer>
                   <PrompSuggestion
                     content="Insights de Marketing"
@@ -105,15 +148,16 @@ export default function InteligenciaArtificial() {
                     tipContent="Insights de marketing"
                   />
                 </SuggestionsContainer>
+                ) : <></>}
                 <TextareaAndButton>
                   <textarea
                     name=""
                     id="chatInput"
                     placeholder="Fale com nossa IA..."
-                    value={textareaValue}
-                    onChange={(e) => setTextareaValue(e.target.value)}
+                    value={userMessage}
+                    onChange={(e: any) => setUserMessage(e.target.value)}
                   />
-                  <button disabled={!textareaValue}>
+                  <button disabled={!userMessage} onClick={handleUserMessageSubmit}>
                     <Image
                       width={30}
                       height={30}

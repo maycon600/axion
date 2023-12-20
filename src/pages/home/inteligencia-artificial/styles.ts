@@ -91,6 +91,48 @@ export const ChatFooter = styled.div`
   align-items: center;
   gap: 2.75rem;
 `;
+export const ChatBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+  overflow: scroll;
+  padding-bottom: 0.5rem;
+`;
+
+export const IaMessage = styled.div`
+  border-radius: 0px 15px 15px 15px;
+  color: white;
+  background: ${({ theme }) => theme.color.darkBlueAxion};
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: justify;
+  padding: 1rem 0.5rem;
+  margin-right: 1rem;
+
+  pre {
+    white-space: pre-wrap;
+  }
+
+  @media (min-width: 1024px) {
+    border-radius: 0px 30px 30px 30px;
+    font-size: 1rem;
+  }
+`;
+
+export const UserMessage = styled(IaMessage)`
+  border-radius: 15px 0 15px 15px;
+  margin-right: 0;
+  margin-left: 1rem;
+  color: ${({ theme }) => theme.color.darkBlueAxion};
+  background: white;
+  border: 2px solid ${({ theme }) => theme.color.darkBlueAxion};
+  @media (min-width: 1024px) {
+    border-radius: 30px 0 30px 30px;
+    font-size: 1rem;
+  }
+`;
 
 export const SuggestionsContainer = styled.div`
   display: flex;
