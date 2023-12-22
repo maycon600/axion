@@ -1,30 +1,19 @@
 import OpenAI from "openai";
 import React, { useState } from "react";
+import { CampaignMessages, FinanceMessages, MarketingMessages, StartMessage } from "./iaPath";
 
-export const StartMessage = [
-  {
-    role: "system",
-    content: `Entre no personagem, você é uma inteligência artificial chamada Axioon, NUNCA SAIA DO PERSONAGEM.
-           Sua função será passada pelo usuário, faça perguntas que ajudem você a entender melhor o que ele quer caso necessário.
-            `,
-  },
-  {
-    role: "system",
-    content: `
-           Seja sempre prestativa e educada, sempre faça o pedido do usuário com capricho e atenção.
-          `,
-  },
-];
+
 
 export function useChatFunctions() {
-  const [messages, setMessages] = useState<any>([...StartMessage]);
+  const [messages, setMessages] = useState<any>([]);
   const [userMessage, setUserMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [receivedChunks, setReceivedChunks] = useState<any>([]);
+  const [firstMessageCount, setFirstMessageCount] = useState(0);
 
   async function handleApiCall(messageList: any[]): Promise<string | null> {
     const openai = new OpenAI({
-      apiKey: "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",
+      apiKey: "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",
       dangerouslyAllowBrowser: true,
     });
 
@@ -34,10 +23,10 @@ export function useChatFunctions() {
         messages: messageList,
         stream: true,
       });
-      let finalResponse = ""; // Inicialize uma string vazia para armazenar a resposta final
-
+      let finalResponse = ""; // Inicialize uma string vazia para armazenar a resposta final)
       for await (const chunk of response) {
         const chunkContent = chunk.choices[0].delta.content;
+        
           // Verifique se o chunkContent não é undefined
           const systemResponse = { role: "assistant", content: finalResponse };
 
@@ -64,6 +53,27 @@ export function useChatFunctions() {
       throw err;
     }
   }
+  const setMessagesForSuggestion = (tipContent: string) => {
+    let suggestionMessages = [];
+
+    // Logic to set messages based on the tipContent
+    if (tipContent === "Insights de Marketing") {
+      suggestionMessages = MarketingMessages;
+      setFirstMessageCount(suggestionMessages.length);
+    } else if (tipContent === "Idéias de Campanhas") {
+      suggestionMessages = CampaignMessages;
+      setFirstMessageCount(suggestionMessages.length);
+    } else if (tipContent === "IA Financeira") {
+      suggestionMessages = FinanceMessages;
+      setFirstMessageCount(suggestionMessages.length);
+    }
+    else {
+      suggestionMessages = StartMessage;
+      setFirstMessageCount(suggestionMessages.length);
+    }
+
+    setMessages([ ...suggestionMessages]);
+  };
   async function handleUserMessageSubmit() {
     if (userMessage.trim() !== "") {
       setIsLoading(true);
@@ -101,8 +111,10 @@ export function useChatFunctions() {
   }
 
   return {
+    setMessagesForSuggestion,
     messages,
     userMessage,
+    firstMessageCount,
     isLoading,
     setMessages,
     setUserMessage,

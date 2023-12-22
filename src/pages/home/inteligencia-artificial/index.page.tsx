@@ -12,6 +12,8 @@ import {
   Content,
   IaImgContainer,
   IaMessage,
+  Message,
+  ReloadButton,
   SuggestionsContainer,
   TextareaAndButton,
   UserMessage,
@@ -32,8 +34,10 @@ export default function InteligenciaArtificial() {
     setUserMessage,
     handleUserMessageSubmit,
     handleTypingComplete,
+    firstMessageCount,
     receivedChunks,
     handleKeyDown,
+    setMessagesForSuggestion,
   } = useChatFunctions();
 
   useLayoutEffect(() => {
@@ -66,7 +70,11 @@ export default function InteligenciaArtificial() {
       }
     }, 500);
   }, []);
-  const [firstMessage, setFirstMessage] = useState(false);
+  const [firstMessage, setFirstMessage] = useState(true);
+  function handleSuggestionClick (tipContent: string){
+    setFirstMessage(false);
+    setMessagesForSuggestion(tipContent);
+  };
 
   useEffect(() => {
     const textarea = document.getElementById(
@@ -88,6 +96,35 @@ export default function InteligenciaArtificial() {
   }, []);
 
   const [textareaValue, setTextareaValue] = useState("");
+  function KeyDown (event: React.KeyboardEvent<HTMLTextAreaElement>){
+    if (event.key === "Enter" && !event.shiftKey) {
+      if (firstMessage) {
+        setFirstMessage(false);
+        handleSuggestionClick("StartMessages");
+        handleUserMessageSubmit();
+        event.preventDefault();
+      } else {
+        handleUserMessageSubmit();
+        event.preventDefault();
+      }
+    }
+
+  }
+  function SendMessage() {
+    if (firstMessage) {
+      setFirstMessage(false);
+      handleSuggestionClick("StartMessages");
+      handleUserMessageSubmit();
+    } else {
+      handleUserMessageSubmit();
+    }
+  }
+  const [showTip, setShowTip] = useState(false);
+  function Reload () {
+    setShowTip(false)
+    setFirstMessage(true);
+    setMessagesForSuggestion("StartMessages");
+  }
 
   return (
     <main ref={main}>
@@ -101,7 +138,23 @@ export default function InteligenciaArtificial() {
                 <IaImgContainer>
                   <Image width={32} height={20} src={"/ia.png"} alt="" />
                 </IaImgContainer>
+                
               </ChatHeader>
+              {!firstMessage ?(
+              <div style={{alignSelf: "flex-end", position: 'relative',marginRight: "1rem"}}>
+              <Message show={showTip}>
+                Reiniciar Conversa
+                <div className="arrow" />
+              </Message>
+              <ReloadButton
+                onMouseEnter={() => setShowTip(true)}
+                onMouseLeave={() => setShowTip(false)}
+                onClick={() => Reload()}
+              >
+                <img src="/refreshIco.svg"/>
+              </ReloadButton>
+              </div>
+              ) : <></>}
               {firstMessage ?(
                 <>
               <div className="welcomeMessage">Como posso te Ajudar Hoje?</div>
@@ -109,7 +162,7 @@ export default function InteligenciaArtificial() {
               ) : (
           <ChatBody>
             {messages
-              .filter((item: any, index: any) => index >= 2) // Filtrar mensagens com role diferente de "system"
+              .filter((item: any, index: any) => index >= firstMessageCount) // Filtrar mensagens com role diferente de "system"
               .map((item: any, index: any) => (
                 <>
                   {item.role === "assistant" ? (
@@ -136,16 +189,19 @@ export default function InteligenciaArtificial() {
                     content="Insights de Marketing"
                     imgSrc="/dashboard/inteligencia-artificial/marketingInsights.svg"
                     tipContent="Insights de marketing"
+                    onClick={() => handleSuggestionClick("Insights de Marketing")}
                   />
                   <PrompSuggestion
                     content="Idéias de Campanhas"
                     imgSrc="/dashboard/inteligencia-artificial/campaignIdeas.svg"
                     tipContent="Insights de marketing"
+                    onClick={() => handleSuggestionClick("Idéias de Campanhas")}
                   />
                   <PrompSuggestion
                     content="IA Financeira"
                     imgSrc="/dashboard/inteligencia-artificial/financialIa.svg"
                     tipContent="Insights de marketing"
+                    onClick={() => handleSuggestionClick("IA Financeira")}
                   />
                 </SuggestionsContainer>
                 ) : <></>}
@@ -156,8 +212,9 @@ export default function InteligenciaArtificial() {
                     placeholder="Fale com nossa IA..."
                     value={userMessage}
                     onChange={(e: any) => setUserMessage(e.target.value)}
+                    onKeyDown={KeyDown}
                   />
-                  <button disabled={!userMessage} onClick={handleUserMessageSubmit}>
+                  <button disabled={!userMessage} onClick={SendMessage}>
                     <Image
                       width={30}
                       height={30}

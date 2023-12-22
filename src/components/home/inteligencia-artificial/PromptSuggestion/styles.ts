@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SuggestionContainer = styled.div`
+export const SuggestionContainer = styled.button`
   position: relative;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@ export const SuggestionContainer = styled.div`
   width: 17.4rem;
   cursor: pointer;
   transition: 0.2s;
-
+  background-color: white;
   &:hover {
     background-color: #ededed;
   }
